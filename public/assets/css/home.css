@@ -1,0 +1,491 @@
+body,html{
+    font-family: 'Kanit', sans-serif;
+
+  overflow-x: hidden;
+  }
+  .padding-under{
+    padding-bottom: 300px;
+  }
+  /* ดีลสุดพิเศษ */
+  .specialDeal{
+
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .img-special-deal {
+  width: 90%;
+  margin: 0
+  auto;
+  }
+  /*end ดีลสุดพิเศษ */
+  .line-header{
+    margin: auto;
+    background-color: #00AEEF;
+    width:150px;
+    padding-top: 5px;
+  }
+  .background-cate-place-hit{
+      background-color: #E8F9FF;
+      width: 100%;
+      padding-bottom: 5%;
+      padding-top: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+      text-align: center;
+    }
+
+    .grid-container {
+      display: grid;
+      gap: 50px 100px;
+      grid-template-columns: auto auto auto;
+      background-color: #2196F3;
+      padding: 10px;
+    }
+
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .img-cate-place-hit{
+      width:140px;
+      height: 140px;
+      border-radius:50%;
+      border-style: solid ;
+      border-width: 2px;
+      border-color: black;
+    }
+    .text-cate-place-hit{
+        text-decoration: none;
+    }
+
+
+
+    a{
+      text-decoration: none;
+    }
+
+    /* <!-- สถานที่ยอดฮิต --> */
+    .place-top-destination{
+      text-align: center;
+      font-size: 16px;
+    }.img-top-destination{
+      filter: grayscale(50%);
+    }
+
+    .text-header-place-hit{
+      font-size: 30px;
+    }
+    .background-cate-place-hit{
+      background-color: #E8F9FF;
+      width: 100%;
+      padding-bottom: 5%;
+      padding-top: 5%;
+      padding-left: 10%;
+      padding-right: 10%;
+      text-align: center;
+      font-size: 26px;
+
+    }
+    .text-content-top-dessination {
+      margin: auto;
+      width: 60%;
+     color: #535151 ;
+      text-align: center;
+      padding-bottom: 40px;
+    }
+
+  /* เกี่ยวกับ card สถานที่ยอดฮิต */
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  .card {
+    max-width: 460px;
+    margin: 50px auto;
+  }
+  /***** Efecto *****/
+  .card-with-hover {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 250px;
+    border-radius: 30px;
+  }
+
+  .card-with-hover > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+   .card-caption-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    transition: all 0.3s;
+  color: #fff;
+    transform: translate3d(0);
+    will-change: transform;
+  }
+
+   .card-caption h2{
+    display: block;
+    color: #fff;
+    margin: 0;
+    padding: 1.5rem;
+
+  }
+  .card-with-hover:hover > .card-caption h2,p {
+    background-color: rgba(255, 255, 255, 0);
+    transform: translateY(0%);
+  }
+  /* เกี่ยวกับ card สถานที่ยอดฮิต */
+
+
+    /* package tour */
+    .img-card-packageTour {
+      width: 100%;
+      height: 15vw;
+      object-fit: cover;
+
+  }
+  .text-content-packageTour {
+    margin: auto;
+    width: 60%;
+   color: #535151 ;
+    text-align: center;
+  }
+
+  .best-seller{
+    background-color: #00AEEF;
+    width: 100px;
+    padding: 7px;
+    border-radius: 5px;
+
+  }
+  .text-card-pakageTour{
+    color: #9B9898;
+    font-size: 12px;
+  }
+
+  .text-address-card-pakageTour{
+    color: #9B9898;
+    font-size: 12px;
+  }
+  .text-price-card-pakageTour{
+    width: 100px;
+    padding: 5px;
+    border-radius: 20px;
+      text-align:center;
+    border: 3px solid red;
+    font-size: 15px;
+  }
+  .br-card-pakageTour{
+    display: none;
+  }
+  .text-activity-card-pakageTour{
+    font-size: 12px;
+  }
+    /*end package tour */
+
+
+    /* <!-- Story Tips Guide (Blog) --> */
+    .img-card-story {
+      width: 100%;
+      height: 15vw;
+      object-fit: cover;
+  }
+  .text-content-story{
+    margin: auto;
+    width: 60%;
+   color: black ;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  .img-story{
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+     url("https://woodychannel.com/wp-content/uploads/2014/09/gwanphayao-750x476.jpg")no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;;
+  }
+
+  .text-place-card-story{
+    font-size: 13px;
+    color: #868383;
+  }
+    /* <!-- end Story Tips Guide (Blog) --> */
+
+
+    /* <!-- ประสบการณ์นักท่องเที่ยว --> */
+  .text-content-experience{
+  color: #535151;
+  font-size: 12px;
+  }
+  .img-experience{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .star-experience{
+    color: yellow;
+  }
+   /* <!--end ประสบการณ์นักท่องเที่ยว --> *
+
+   /* <!-- บริการเสริม --> */
+   .other-service-background{
+    background-color: #FCF5E1;
+    width: 100%;
+    padding-bottom: 1%;
+    padding-top: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+    text-align: center;
+  }
+  .other-service{
+    background-color: rgb(255, 255, 255);
+    width: 250px;
+    height:250px;
+    text-align:center;
+    padding: 20px;
+    margin: auto;
+    border-radius:10px;
+  }
+  .img-other-service{
+    width:80px;
+  /* padding-top:50px; */
+  padding-top:50px;
+  transition: transform .2s; /* Animation */
+  }
+
+  .img-other-service:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+
+  .text-other-service {
+      color: #18272F;
+    position: relative;
+    text-decoration: none;
+
+    font-size: 10px;
+  }
+
+  .text-other-service::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+
+  .text-other-service:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  .size-other-service{
+    width: 230px;
+    height: 230px;
+  }
+
+   /* <!-- บริการเสริม --> */
+
+
+
+
+   /* .knowledge .splide__pagination {
+    position: absolute;
+    z-index: 1;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+  }
+  .knowledge .splide__pagination__page {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #D9D9D9;
+    border-radius: 50%;
+    margin: 3px;
+    padding: 0;
+    transition: transform .2s linear;
+    border: none;
+    opacity: 1;
+  }
+  .splide__pagination__page.is-active {
+    transform: scale(1);
+    background: #4B84EC;
+  }
+
+  .service-information .splide .card-img-top{
+  /*max-height: 146px;*/
+  /*object-fit: cover;*/
+
+
+
+
+
+    @media only screen and (max-width: 840px) {
+
+      .text-content-packageTour {
+        font-size: 16px;
+         width: 100%;
+         text-align: center;
+         color: #535151 ;
+         padding-top: 10px;
+       }
+       .text-content-top-dessination {
+        font-size: 16px;
+         width: 100%;
+         text-align: center;
+         color: #535151 ;
+         padding-top: 10px;
+      }
+
+
+      .text-address-card-pakageTour{
+        color: #9B9898;
+        font-size: 12px;
+      }
+    }
+    .br-card-pakageTour{
+     display: inline-block;
+    }
+
+    @media only screen and (max-width: 450px)   {
+      body{
+        background-color: rgb(255, 255, 255);
+        font-family: 'Kanit', sans-serif;
+      }
+      .padding-under{
+        padding-bottom: 800px;
+      }
+      .line-header{
+        margin: auto;
+        background-color: #00AEEF;
+        width:150px;
+        padding-top: 3px;
+        border-radius: 2px;
+       }
+
+      .img-cate-place-hit{
+        width:80px;
+        height: 80px;
+        border-radius:50%;
+        font-size: 8px;
+        border-style: solid ;
+        border-width: 2px;
+        border-color: black;
+      }
+
+      .background-cate-place-hit{
+        background-color: #E8F9FF;
+        width: 100%;
+        padding-bottom: 5%;
+        padding-top: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: center;
+        font-size: 16px;
+
+      }
+
+      /* ดีลสุดพิเศษ */
+  .specialDeal{
+
+    width: 350px;
+    height: 170px;
+    border-radius: 5px;
+  }
+
+
+  /*end ดีลสุดพิเศษ */
+
+        /* package tour */
+        .img-card-packageTour {
+          width: 100%;
+          height: 50vw;
+          object-fit: cover;
+
+      }
+
+     /*end package tour */
+
+
+
+
+
+      /* <!-- สถานที่ยอดฮิต --> */
+  /***** Efecto *****/
+  .card-with-hover {
+    position: relative;
+
+    height: 100px;
+    border-radius: 30px;
+  }
+  .card-with-hover > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+   .card-caption h2{
+    display: block;
+    color: #fff;
+    margin: 15;
+    padding: 2rem;
+  }
+  .card-with-hover:hover > .card-caption h2,p {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .text-header-place-hit{
+    font-size: 8px;
+  }
+  .text-content-top-dessination{
+    font-size: 8px;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+      /* <!--end สถานที่ยอดฮิต --> */
+
+
+    /* package tour */
+  .text-content-packageTour {
+   font-size: 8px;
+    width: 100%;
+    text-align: center;
+    color: #535151 ;
+    padding-top: 10px;
+  }
+    /*end package tour */
+
+    /* Story Tips Guide (Blog) */
+    .img-card-story {
+      width: 100%;
+      height: 50vw;
+      object-fit: cover;
+  }
+    /*Story Tips Guide (Blog) */
+
+
+    }
