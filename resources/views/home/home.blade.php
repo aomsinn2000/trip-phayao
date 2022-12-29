@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,17 +12,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <!-- slider img -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--end slider img -->
-    <!-- font style -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--end slider img -->
+  <!-- font style -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
-    <!--end font style -->
+<!--end font style -->
 
-    <!-- cdn jquery -->
+<!-- cdn jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!--end cdn jquery -->
+<!--end cdn jquery -->
 
 
 
@@ -37,7 +36,6 @@
 </style>
 
 </head>
-
 <body>
 
 
@@ -167,21 +165,21 @@
               <p style="padding-top: 20px;">อุทยานแห่งชาติ </p>
             </a>
 
-                </div>
             </div>
+          </div>
         </div>
         <!-- end หมวดหมู่สถานที่ยอดฮิต -->
 
         <br>
 
-        <!-- สถานที่ยอดฮิต -->
+<!-- สถานที่ยอดฮิต -->
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-11">
-                    <div class="container place-top-destination">
-                        <h2>สถานที่ยอดฮิต Top Destination </h2>
-                        <p class="line-header"></p>
-                        <p style="color: #535151;" class="text-content-top-dessination">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
+          <div class="row justify-content-center">
+            <div class="col-11">
+              <div class="container place-top-destination">
+          <h2>สถานที่ยอดฮิต Top Destination </h2>
+          <p class="line-header"></p>
+           <p style="color: #535151;" class="text-content-top-dessination">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up  your everyday objects, you elevate your daily rituals.</p>
 
 
            <div class="container">
@@ -207,96 +205,6 @@
               </figure>
             </a>
 
-                                </div>
-                                <div class="col">
-                                    <figure class="card-with-hover">
-                                        <!-- Photo by Iga Palacz on Unsplash -->
-                                        <img src="http://travel.mthai.com/app/uploads/2014/01/1452433_474903079293849_933924344_n.jpg" alt="img24" width="100%" height="70%">
-                                        <figcaption class="card-caption">
-                                            <div class="card-caption-content">
-                                                <br>
-                                                <br>
-                                                <br>
-                                                <div>
-                                                    <p class="text-header-place-hit">ภูลังกา</h1>
-                                                    <p><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
-                                                </div>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col">
-                                    <figure class="card-with-hover">
-                                        <!-- Photo by Iga Palacz on Unsplash -->
-                                        <img src="https://www.emagtravel.com/wp-content/uploads/2013/09/phusang-800-2.jpg" alt="img24" width="100%" height="70%">
-                                        <figcaption class="card-caption">
-                                            <div class="card-caption-content">
-                                                <br>
-                                                <br>
-                                                <br>
-                                                <div>
-                                                    <p class="text-header-place-hit">น้ำตกภูซาง</p>
-                                                    <p><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
-                                                </div>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col">
-                                    <figure class="card-with-hover">
-                                        <!-- Photo by Iga Palacz on Unsplash -->
-                                        <img class="img-top-destination" src="http://www.ท่องทั่วไทย.com/wp-content/uploads/2015/03/phunang-02.jpg" alt="img24" width="100%" height="70%">
-                                        <figcaption class="card-caption">
-                                            <div class="card-caption-content">
-                                                <br>
-                                                <br>
-                                                <br>
-                                                <div>
-                                                    <p class="text-header-place-hit">อุทยานแห่งชาติดอยภูนาง </p>
-                                                    <p><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
-                                                </div>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col">
-                                    <figure class="card-with-hover">
-                                        <!-- Photo by Iga Palacz on Unsplash -->
-                                        <img src="https://www.trekkingthai.com/wp-content/uploads/2018/10/15439956_10209975146207255_6269812643284831473_n.jpg" alt="img24" width="100%" height="70%">
-                                        <figcaption class="card-caption">
-                                            <div class="card-caption-content">
-                                                <br>
-                                                <br>
-                                                <br>
-                                                <div>
-                                                    <p class="text-header-place-hit">ดอยหนอกดอยหลวง</p>
-                                                    <p><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
-                                                </div>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col">
-                                    <figure class="card-with-hover">
-                                        <!-- Photo by Iga Palacz on Unsplash -->
-                                        <img class="img-top-destination"src="https://www.paiduaykan.com/travel/wp-content/uploads/2022/02/SON08569.jpg" alt="img24" width="100%" height="70%">
-                                        <figcaption class="card-caption">
-                                            <div class="card-caption-content">
-                                                <br>
-                                                <br>
-                                                <br>
-                                                <div>
-                                                    <p class="text-header-place-hit">วัดในเมืองพะเยา</p>
-                                                    <p class="todsob"><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
-                                                </div>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
               <div class="col">  <figure class="card-with-hover">
                 <!-- Photo by Iga Palacz on Unsplash -->
@@ -379,7 +287,7 @@
             </div>
           </div>
         </div>
-        <!--end สถานที่ยอดฮิต -->
+  <!--end สถานที่ยอดฮิต -->
 
 
 
@@ -479,8 +387,8 @@
    <br>
            <br>
 
-        <!-- package tour -->
-        <div class="container">
+          <!-- package tour -->
+          <div class="container">
             <div class="row justify-content-center">
               <div class="col-11">
                 <div class="container">
@@ -888,14 +796,10 @@
 
 
 
-        <br>
+<br><br>
 
-
-
-
-
-        <!-- Story Tips Guide (Blog) -->
-        <div class="img-story">
+           <!-- บริการเสริม -->
+           <div class="other-service-background">
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-10">
@@ -963,167 +867,7 @@
 
        <!-- end บริการเสริม -->
 
-
-
-
-        </div>
-        <!--end Story Tips Guide (Blog) -->
-
-
-        <br>
-        <br>
-
-
-        <!-- ประสบการณ์นักท่องเที่ยว -->
-
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-10">
-                    <h3 style="text-align: center;"><b>ประสบการณ์นักท่องเที่ยว</b></h3>
-                    <p class="line-header"></p>
-                    <div class="container">
-                        <div class="row row-cols-1 row-cols-md-3 ">
-                            <div class="col">
-                                <div class="card mb-1">
-                                    <div class="card-body ">
-                                        <h5 class="card-title" style="text-align: center;"><span style="color: #FCB930;"><i class="bi bi-quote"></i></span> very good<span style="color: #FCB930;"><i class="bi bi-quote"></i></span></h5>
-                                        <p class="text-content-experience">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
-                                    </div>
-                                    <div class="card-footer bg-transparent ">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="me-auto p-1 bd-highlight">
-                                                <img src="https://media.istockphoto.com/id/1311634222/photo/portrait-of-successful-black-male-modern-day-student-holding-smartphone.jpg?s=612x612&w=0&k=20&c=vl2FeMtO91rpRUcq0reIfqAQPrQsf30JF-JAxU5baro=" class="img-experience" alt="">
-                                            </div>
-                                            <div class="p-2 flex-shrink-1 bd-highlight" style="font-size: 12px;">John P
-                                                <p class="star-experience">
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card mb-1">
-                                    <div class="card-body ">
-                                        <h5 class="card-title" style="text-align: center;"><span style="color: #FCB930;"><i class="bi bi-quote"></i></span> very good<span style="color: #FCB930;"><i class="bi bi-quote"></i></span></h5>
-                                        <p class="text-content-experience">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
-                                    </div>
-                                    <div class="card-footer bg-transparent ">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="me-auto p-1 bd-highlight">
-                                                <img src="https://media.istockphoto.com/id/1311634222/photo/portrait-of-successful-black-male-modern-day-student-holding-smartphone.jpg?s=612x612&w=0&k=20&c=vl2FeMtO91rpRUcq0reIfqAQPrQsf30JF-JAxU5baro=" class="img-experience" alt="">
-                                            </div>
-                                            <div class="p-2 flex-shrink-1 bd-highlight" style="font-size: 12px;">John P
-                                                <p class="star-experience">
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card mb-1">
-                                    <div class="card-body ">
-                                        <h5 class="card-title" style="text-align: center;"><span style="color: #FCB930;"><i class="bi bi-quote"></i></span> very good<span style="color: #FCB930;"><i class="bi bi-quote"></i></span></h5>
-                                        <p class="text-content-experience">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
-                                    </div>
-                                    <div class="card-footer bg-transparent ">
-                                        <div class="d-flex bd-highlight">
-                                            <div class="me-auto p-1 bd-highlight">
-                                                <img src="https://media.istockphoto.com/id/1311634222/photo/portrait-of-successful-black-male-modern-day-student-holding-smartphone.jpg?s=612x612&w=0&k=20&c=vl2FeMtO91rpRUcq0reIfqAQPrQsf30JF-JAxU5baro=" class="img-experience" alt="">
-                                            </div>
-                                            <div class="p-2 flex-shrink-1 bd-highlight" style="font-size: 12px;">John P
-                                                <p class="star-experience">
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <i class="bi bi-star-fill"></i>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-        <!-- end ประสบการณ์นักท่องเที่ยว -->
-
-        <br><br>
-
-        <!-- บริการเสริม -->
-        <div class="other-service-background">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-10">
-                        <h3 style="text-align: center;"><b> PACKAGE TOUR</b></h3>
-                        <p class="line-header"></p>
-                        <p class="text-content-packageTour">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
-                        <br>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <div class="card-body size-other-service">
-                                        <a href=""> <img src="https://www.pngall.com/wp-content/uploads/13/Taxi-Yellow-PNG-Photo.png" alt="" class="img-other-service">
-                                            <br><br>
-                                            <p class="text-other-service">บริการรถรับ-ส่ง สนามบิน</p><br>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <div class="card-body size-other-service">
-                                        <a href=""> <img src="https://www.pngall.com/wp-content/uploads/13/Taxi-Yellow-PNG-Photo.png" alt="" class="img-other-service">
-                                            <br><br>
-                                            <p class="text-other-service">บริการเช่ารถ รายวัน/ชั่วโมง</p><br>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card size-other-service">
-                                    <div class="card-body">
-                                        <a href=""> <img src="https://freepngimg.com/save/12940-bicycle-png-8/2400x1410" alt="" class="img-other-service text-other-service">
-                                            <br><br>
-                                            <p class="text-other-service">บริการเช่าอื่นๆ</p><br>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 ">
-                                <div class="card size-other-service">
-                                    <div class="card-body">
-                                        <a href=""> <img src="https://www.pngall.com/wp-content/uploads/11/Guide-PNG-Photos.png" alt="" class="img-other-service text-other-service">
-                                            <br><br>
-                                            <p class="text-other-service">บริการไกด์นำเที่ยว</p><br>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end บริการเสริม -->
-
-        <div class="padding-under"></div>
+       <div class="padding-under"></div>
 
 
  @include('layouts.footer')
@@ -1131,36 +875,37 @@
 
 
 
-    <!--script Story Tips Guide (Blog) -->
-    <script>
-        $(document).ready(function() {
-            $('#textCardStory1').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
-                $(this).text(newstr);
-            });
-            $('#textCardStory2').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
-                $(this).text(newstr);
-            });
-            $('#textCardStory3').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
-                $(this).text(newstr);
-            });
-            $('#textCardStory4').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
-                $(this).text(newstr);
-            });
-            $('#textCardStory5').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
-                $(this).text(newstr);
-            });
-            $('#textCardStory6').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
-                $(this).text(newstr);
-            });
-        })
-    </script>
-    <!--script Story Tips Guide (Blog) -->
+
+           <!--script Story Tips Guide (Blog) -->
+           <script>
+            $(document).ready(function(){
+                 $('#textCardStory1').each(function (f) {
+                     var newstr = $(this).text().substring(0,80);
+                     $(this).text(newstr);
+                   });
+                   $('#textCardStory2').each(function (f) {
+                     var newstr = $(this).text().substring(0,80);
+                     $(this).text(newstr);
+                   });
+                   $('#textCardStory3').each(function (f) {
+                     var newstr = $(this).text().substring(0,80);
+                     $(this).text(newstr);
+                   });
+                   $('#textCardStory4').each(function (f) {
+                     var newstr = $(this).text().substring(0,80);
+                     $(this).text(newstr);
+                   });
+                   $('#textCardStory5').each(function (f) {
+                     var newstr = $(this).text().substring(0,80);
+                     $(this).text(newstr);
+                   });
+                   $('#textCardStory6').each(function (f) {
+                     var newstr = $(this).text().substring(0,80);
+                     $(this).text(newstr);
+                   });
+               })
+         </script>
+         <!--script Story Tips Guide (Blog) -->
 
 
 
@@ -1168,16 +913,16 @@
 
 
 
-    <br>
-    <br>
+<br>
+<br>
 
 
 
-    <!-- script slider -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- end script slider -->
+      <!-- script slider -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <!-- end script slider -->
 
 
 {{--script slick ดีลสุดพิเศษ --}}
@@ -1315,5 +1060,4 @@ $('#experience').slick({
 
 
 </body>
-
 </html>
