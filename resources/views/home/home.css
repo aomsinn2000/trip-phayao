@@ -1,11 +1,11 @@
 body,html{
   font-family: 'Kanit', sans-serif;
- 
+
 overflow-x: hidden;
 }
 /* ดีลสุดพิเศษ */
 .specialDeal{
-         
+
   width: 400px;
   height: 200px;
   border-radius: 10px;
@@ -40,7 +40,7 @@ padding-right: 10%;
     background-color: #2196F3;
     padding: 10px;
   }
-  
+
   .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
@@ -50,13 +50,14 @@ padding-right: 10%;
   }
 
   .img-cate-place-hit{
-    width:140px; 
-    height: 140px; 
+    width:140px;
+    height: 140px;
     border-radius:50%;
     border-style: solid ;
     border-width: 2px;
-    border-color: black;
+    border-color: black; 
   }
+
 
   a{
     text-decoration: none;
@@ -82,7 +83,7 @@ padding-right: 10%;
     padding-right: 10%;
     text-align: center;
     font-size: 26px;
-    
+
   }
   .text-content-top-dessination {
     margin: auto;
@@ -150,7 +151,7 @@ color: #fff;
     width: 100%;
     height: 15vw;
     object-fit: cover;
-    
+
 }
 .text-content-packageTour {
   margin: auto;
@@ -207,7 +208,7 @@ color: #fff;
 }
 .img-story{
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-   url("https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5b155bed5711a8176e9f9783/6017b0d737f84d000bc74532/files/thailand-phayao-travel-photo-20210131144203166-main-image.jpg")no-repeat center center fixed; 
+   url("https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5b155bed5711a8176e9f9783/6017b0d737f84d000bc74532/files/thailand-phayao-travel-photo-20210131144203166-main-image.jpg")no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
@@ -234,7 +235,7 @@ font-size: 12px;
 .star-experience{
   color: yellow;
 }
- /* <!--end ประสบการณ์นักท่องเที่ยว --> * 
+ /* <!--end ประสบการณ์นักท่องเที่ยว --> *
 
  /* <!-- บริการเสริม --> */
  .other-service-background{
@@ -294,7 +295,7 @@ transition: transform .2s; /* Animation */
   transform: scaleX(1);
 }
 .size-other-service{
-  width: 230px; 
+  width: 230px;
   height: 230px;
 }
 
@@ -375,10 +376,10 @@ transition: transform .2s; /* Animation */
       padding-top: 3px;
       border-radius: 2px;
      }
-    
+
     .img-cate-place-hit{
-      width:80px; 
-      height: 80px; 
+      width:80px;
+      height: 80px;
       border-radius:50%;
       font-size: 8px;
       border-style: solid ;
@@ -395,12 +396,12 @@ transition: transform .2s; /* Animation */
       padding-right: 10%;
       text-align: center;
       font-size: 16px;
-      
+
     }
 
     /* ดีลสุดพิเศษ */
 .specialDeal{
-         
+
   width: 350px;
   height: 170px;
   border-radius: 5px;
@@ -414,13 +415,13 @@ transition: transform .2s; /* Animation */
         width: 100%;
         height: 50vw;
         object-fit: cover;
-        
+
     }
 
    /*end package tour */
 
 
-   
+
 
 
     /* <!-- สถานที่ยอดฮิต --> */
@@ -475,6 +476,6 @@ transition: transform .2s; /* Animation */
     object-fit: cover;
 }
   /*Story Tips Guide (Blog) */
-    
-    
+
+
   }
