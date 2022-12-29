@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <!-- bootstrap -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    <title>footer</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +39,7 @@ footer {
   left: 0;
   padding: 1rem;
   background-color: #efefef;
- 
+
 }
 </style>
 
@@ -52,9 +48,9 @@ footer {
         <!-- FOOTER -->
         <div>
         <footer class="w-100 py-1 flex-shrink-0" style="font-family: 'Roboto', sans-serif;">
-            <div class="row py-4">
+            <div class="row py-1">
                 <div class="row gy-4 gx-5">
-                    <div class="col-lg-2 col-md-2 todsob" >
+                    <div class="col-lg-2 col-md-2" >
                       <img class="logo" src="{{asset('assets/image/logo-phayao.png')}}" alt=""><br><br>
                       <span>
                        <i class="bi bi-facebook px-2"> </i>
@@ -118,6 +114,8 @@ footer {
         </footer>
 
 </div>
+
+
 
 
 </body>

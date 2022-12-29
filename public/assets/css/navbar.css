@@ -59,6 +59,13 @@ body{
     .nav-link:hover{
         color: blue;
     }
+    .textSearch{
+        width: 40%;
+        height: 50%;
+    }
+    .padding-navbar{
+        padding-left: 60px;
+    }
 
 
 
@@ -83,11 +90,10 @@ body{
     }
 
     .logo-phayao{
-      width: 70px;
-      height: 5%;
+     display: none;
     }
 
-    .signUp,.signIn,.textSearch,.iconSearch{
+    .signUp,.signIn{
       display: none;
     }
 
@@ -95,6 +101,14 @@ body{
       display: block;
     }
 
+    .textSearch{
+        width: 50%;
+        height: 50%;
+    }
+
+    .padding-navbar{
+        padding-left: 5px;
+    }
 
 
     }

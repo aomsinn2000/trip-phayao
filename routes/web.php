@@ -19,6 +19,8 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('layouts.navbar');
 });
-
+Route::get('/footer', function () {
+    return view('layouts.footer');
+});
 Route::get('/show', 'HomeController\HomeController@showHome');
 // Route::get('/test', 'HomeController\HomeController@testnav');
