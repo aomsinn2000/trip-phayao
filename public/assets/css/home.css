@@ -1,23 +1,27 @@
 body,html{
     font-family: 'Kanit', sans-serif;
 
-  overflow-x: hidden;
   }
+  .banner-slider{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
   .padding-under{
-    padding-bottom: 300px;
+    padding-bottom: 80px;
   }
   /* ดีลสุดพิเศษ */
   .specialDeal{
-
-    width: 400px;
-    height: 200px;
+    width: 410px;
+    height: 220px;
     border-radius: 10px;
+    object-fit: cover;
   }
 
   .img-special-deal {
   width: 90%;
-  margin: 0
-  auto;
+  margin: 0 auto;
+
   }
   /*end ดีลสุดพิเศษ */
   .line-header{
@@ -62,10 +66,9 @@ body,html{
     }
     .text-cate-place-hit{
         text-decoration: none;
+        color: #00AEEF;
+
     }
-
-
-
     a{
       text-decoration: none;
     }
@@ -85,7 +88,7 @@ body,html{
       background-color: #E8F9FF;
       width: 100%;
       padding-bottom: 5%;
-      padding-top: 5%;
+      padding-top: 3%;
       padding-left: 10%;
       padding-right: 10%;
       text-align: center;
@@ -99,7 +102,9 @@ body,html{
       text-align: center;
       padding-bottom: 40px;
     }
-
+    .address-place-hit{
+        font-size: 16px;
+    }
   /* เกี่ยวกับ card สถานที่ยอดฮิต */
   .center {
     display: flex;
@@ -151,7 +156,7 @@ body,html{
     transform: translateY(0%);
   }
   /* เกี่ยวกับ card สถานที่ยอดฮิต */
-
+/* <!--end สถานที่ยอดฮิต --> */
 
     /* package tour */
     .img-card-packageTour {
@@ -198,6 +203,95 @@ body,html{
     font-size: 12px;
   }
     /*end package tour */
+
+
+
+    /*กิจกรรมยอดฮิต Trending Activitiesr */
+    .img-trending {
+        position: relative;
+        max-width: 400px;
+        margin: 0 auto;
+
+      }
+
+      .img-trending img {vertical-align: middle;object-fit: cover;}
+
+      .img-trending .content {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #f1f1f1;
+        width:260px;
+        height:120px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      .card-trending{
+      width:260px;
+      height:310px;
+      border-radius: 5px;
+      }
+      .text-map-trending{
+        padding-top: 10px;
+        font-size: 10px;
+      }
+      .text-content-trending{
+        font-size: 8px;
+      }
+      .slick-prev:before {
+        color: rgb(94, 92, 92) !important;
+
+      }
+      .slick-next:before {
+        color: rgb(110, 105, 105) !important;
+
+      }
+    /*end กิจกรรมยอดฮิต Trending Activitiesr */
+
+/* จองโรงแรม */
+    .box-hotel {
+        position: relative;
+        text-align: center;
+        color: white;
+
+
+      }
+
+      .img-hotel {
+        border-radius: 20px;
+        height:100px;
+        width:75%;
+        object-fit: cover;
+        /* box-shadow: 5px 10px 8px #888888; */
+        box-shadow: 0 0 5px 5px rgb(224, 224, 224);
+      }
+      .text-right-hotel {
+        position: absolute;
+        top: 50%;
+        left: 79%;
+        transform: translate(-50%, -50%);
+        font-size: 36px;
+       color: #ffff;
+
+      }
+      .text-left-hotel {
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        transform: translate(-50%, -50%);
+        color: #0FA0AB;
+        font-size: 40px;
+     }
+      .button-hotel{
+        width: 200px;
+        height: 70px;
+        border-radius: 20px;
+        border-color: #FCB930;
+        background-color: #FCB930;
+      }
+/* end จองโรงแรม */
 
 
     /* <!-- Story Tips Guide (Blog) --> */
@@ -248,104 +342,71 @@ body,html{
    .other-service-background{
     background-color: #FCF5E1;
     width: 100%;
-    padding-bottom: 1%;
+    padding-bottom: 10%;
     padding-top: 2%;
   padding-left: 10%;
   padding-right: 10%;
     text-align: center;
   }
-  .other-service{
-    background-color: rgb(255, 255, 255);
-    width: 250px;
-    height:250px;
-    text-align:center;
-    padding: 20px;
-    margin: auto;
-    border-radius:10px;
-  }
+
   .img-other-service{
-    width:80px;
+    /* width:50%;
+    height: 50%; */
+    width:120px;
+    height: 120px;
+    object-fit: contain;
   /* padding-top:50px; */
   padding-top:50px;
-  transition: transform .2s; /* Animation */
   }
-
-  .img-other-service:hover {
-    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
-
-
   .text-other-service {
       color: #18272F;
     position: relative;
     text-decoration: none;
-
     font-size: 10px;
   }
 
-  .text-other-service::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 4px;
-    background-color: #18272F;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .3s ease-in-out;
+  .card-other-service{
+    margin: 10px auto;
+    box-shadow: 0px 2px 4px 0 rgba(0,0,0,0.2);
+    border-radius: 6px;
+    height: 100%;
+    transition: 0.3s;
+    background-color: #fff;
   }
+.card-other-service:hover {
+  box-shadow: 1px 10px 16px 0 rgba(0,0,0,0.3);
+}
 
-  .text-other-service:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
+  .card-image{
+    text-align: center;
+    margin: 5vh 0;
   }
-  .size-other-service{
-    width: 230px;
-    height: 230px;
+  .card-text{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
   }
-
    /* <!-- บริการเสริม --> */
 
 
 
 
-   /* .knowledge .splide__pagination {
-    position: absolute;
-    z-index: 1;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0;
-  }
-  .knowledge .splide__pagination__page {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background: #D9D9D9;
-    border-radius: 50%;
-    margin: 3px;
-    padding: 0;
-    transition: transform .2s linear;
-    border: none;
-    opacity: 1;
-  }
-  .splide__pagination__page.is-active {
-    transform: scale(1);
-    background: #4B84EC;
-  }
-
-  .service-information .splide .card-img-top{
-  /*max-height: 146px;*/
-  /*object-fit: cover;*/
-
-
-
-
-
     @media only screen and (max-width: 840px) {
-
+        .banner-slider{
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .padding-under{
+            padding-bottom: 280px;
+          }
+          .specialDeal {
+            width: 300px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
       .text-content-packageTour {
         font-size: 16px;
          width: 100%;
@@ -366,18 +427,197 @@ body,html{
         color: #9B9898;
         font-size: 12px;
       }
+
+       /*กิจกรรมยอดฮิต Trending Activitiesr */
+       .img-trending img {vertical-align: middle;}
+
+       .img-trending .content {
+         position: absolute;
+         bottom: 0;
+         background: rgb(0, 0, 0); /* Fallback color */
+         background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+         color: #f1f1f1;
+         width:210px;
+         height:100px;
+
+         border-bottom-left-radius: 10px;
+         border-bottom-right-radius: 10px;
+       }
+       .card-trending{
+       width:210px;
+       height:280px;
+       border-radius: 10px;
+       }
+       .text-map-trending{
+         padding-top: 10px;
+         font-size: 10px;
+       }
+       .text-content-trending{
+         font-size: 8px;
+       }
+     /*end กิจกรรมยอดฮิต Trending Activitiesr */
+
+
+
+     /* จองโรงแรม */
+      .text-right-hotel {
+        position: absolute;
+        top: 50%;
+        left: 76%;
+        transform: translate(-50%, -50%);
+        font-size: 25;
+       color: #ffff;
+
+      }
+      .text-left-hotel {
+        position: absolute;
+        top: 50%;
+        right: 8%;
+        transform: translate(-50%, -50%);
+        color: #0FA0AB;
+        font-size: 25px;
+     }
+      .button-hotel{
+        width: 120px;
+        height: 60px;
+        border-radius: 20px;
+        border-color: #FCB930;
+        background-color: #FCB930;
+      }
+/* end จองโรงแรม */
+   /* <!-- บริการเสริม --> */
+   .other-service-background{
+    background-color: #FCF5E1;
+    width: 100%;
+    padding-bottom: 10%;
+    padding-top: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+    text-align: center;
+  }
+
+  .img-other-service{
+    /* width:50%;
+    height: 50%; */
+    width:100px;
+    height: 100px;
+    object-fit: contain;
+  /* padding-top:50px; */
+  padding-top:50px;
+  }
+  .text-other-service {
+      color: #18272F;
+    position: relative;
+    text-decoration: none;
+    font-size: 10px;
+  }
+
+  .card-other-service{
+    margin: 10px auto;
+    box-shadow: 0px 2px 4px 0 rgba(0,0,0,0.2);
+    border-radius: 6px;
+    height: 100%;
+    transition: 0.3s;
+    background-color: #fff;
+  }
+.card-other-service:hover {
+  box-shadow: 1px 10px 16px 0 rgba(0,0,0,0.3);
+}
+
+  .card-image{
+    text-align: center;
+    margin: 2vh 0;
+  }
+  .card-text{
+    text-align: center;
+    font-size: 8px;
+  }
+   /* <!-- บริการเสริม --> */
+
+/* สถานที่ยอดฮิต Top Destination */
+   .card-with-hover {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 200px;
+    border-radius: 25px;
+  }
+  .address-place-hit{
+    font-size: 12px;
+}
+.text-header-place-hit{
+    font-size: 25px;
+  }
+  /* end สถานที่ยอดฮิต Top Destination */
     }
     .br-card-pakageTour{
      display: inline-block;
     }
+
+    @media only screen and (max-width: 780px){
+
+
+        .banner-slider{
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .specialDeal {
+            width: 290px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+ /* จองโรงแรม */
+ .text-right-hotel {
+    position: absolute;
+    top: 50%;
+    left: 76%;
+    transform: translate(-50%, -50%);
+    font-size: 25;
+   color: #ffff;
+
+  }
+  .text-left-hotel {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(-50%, -50%);
+    color: #0FA0AB;
+    font-size: 23px;
+ }
+  .button-hotel{
+    width: 120px;
+    height: 60px;
+    border-radius: 20px;
+    border-color: #FCB930;
+    background-color: #FCB930;
+  }
+/* end จองโรงแรม */
+    }
+
 
     @media only screen and (max-width: 450px)   {
       body{
         background-color: rgb(255, 255, 255);
         font-family: 'Kanit', sans-serif;
       }
+      .banner-slider{
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .specialDeal{
+        width: 220px;
+        height: 120px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
       .padding-under{
-        padding-bottom: 800px;
+        padding-bottom: 700px;
       }
       .line-header{
         margin: auto;
@@ -395,7 +635,10 @@ body,html{
         border-style: solid ;
         border-width: 2px;
         border-color: black;
+
       }
+
+
 
       .background-cate-place-hit{
         background-color: #E8F9FF;
@@ -409,16 +652,15 @@ body,html{
 
       }
 
-      /* ดีลสุดพิเศษ */
-  .specialDeal{
 
-    width: 350px;
-    height: 170px;
-    border-radius: 5px;
-  }
+  /* ดีลสุดพิเศษ */
+
 
 
   /*end ดีลสุดพิเศษ */
+
+
+
 
         /* package tour */
         .img-card-packageTour {
@@ -437,10 +679,11 @@ body,html{
       /* <!-- สถานที่ยอดฮิต --> */
   /***** Efecto *****/
   .card-with-hover {
-    position: relative;
-
-    height: 100px;
-    border-radius: 30px;
+       position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 180px;
+    border-radius: 25px;
   }
   .card-with-hover > img {
     width: 100%;
@@ -458,7 +701,7 @@ body,html{
     background-color: rgba(255, 255, 255, 0);
   }
   .text-header-place-hit{
-    font-size: 8px;
+    font-size: 20px;
   }
   .text-content-top-dessination{
     font-size: 8px;
@@ -488,4 +731,62 @@ body,html{
     /*Story Tips Guide (Blog) */
 
 
+
+
+/* จองโรงแรม */
+.box-hotel {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .text-hotel{
+    font-size: 10px;
+          }
+  .img-hotel {
+    border-radius: 20px;
+    height:100px;
+    width:75%;
+    object-fit: cover;
+    /* box-shadow: 5px 10px 8px #888888; */
+    box-shadow: 0 0 5px 5px rgb(224, 224, 224);
+  }
+  .text-right-hotel {
+    position: absolute;
+    top: 50%;
+    left: 79%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+   color: #ffff;
+
+  }
+  .text-left-hotel {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    color: #0FA0AB;
+    font-size: 12px;
+ }
+  .button-hotel{
+    width: 50px;
+    height: 80px;
+    border-radius: 20px;
+    border-color: #FCB930;
+    background-color: #FCB930;
+  }
+/* end จองโรงแรม */
+
+
+
+   /* <!-- บริการเสริม --> */
+   .other-service-background{
+    background-color: #FCF5E1;
+    width: 100%;
+    padding-bottom: 30%;
+    padding-top: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+    text-align: center;
+  }
+   /* <!-- บริการเสริม --> */
     }
