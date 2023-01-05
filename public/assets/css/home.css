@@ -52,7 +52,7 @@ body,html{
       gap: 50px 100px;
       grid-template-columns: auto auto auto;
       background-color: #2196F3;
-      padding: 10px;
+      padding: 180px;
     }
 
     .grid-item {
@@ -76,6 +76,7 @@ body,html{
         color: #00AEEF;
 
     }
+
     a{
       text-decoration: none;
     }
@@ -202,6 +203,7 @@ body,html{
     font-size: 12px;
   }
 
+
   .text-address-card-pakageTour{
     color: #9B9898;
     font-size: 12px;
@@ -213,6 +215,11 @@ body,html{
       text-align:center;
     border: 3px solid red;
     font-size: 15px;
+  }
+  .text-more-pakageTour{
+    text-align: center;
+    text-decoration: none;
+    color: #242424;
   }
   .br-card-pakageTour{
     display: none;
@@ -628,6 +635,9 @@ body,html{
     font-size: 25px;
   }
   /* end สถานที่ยอดฮิต Top Destination */
+  .responsive-ipad{
+    display: none;
+  }
     }
     .br-card-pakageTour{
      display: inline-block;

@@ -174,7 +174,9 @@
                 <h2 style="padding-bottom: 40px;">หมวดหมู่สถานที่ยอดฮิต</h2>
                 <div id="catePlace" class="img-special-deal">
                     <div class="col-4 col-lg-2 col-xs-4">
-                        <a href="" class="text-cate-place-hit"> <img class="img-cate-place-hit" src="https://charatoon.com/photo/1646.png" alt="">
+                        <a href="" class="text-cate-place-hit" style="text-align: center">
+
+                            <img class="img-cate-place-hit" src="https://charatoon.com/photo/1646.png" alt="">
                             <p style="padding-top: 20px;">กาแฟ / คาเฟ่</p>
                         </a>
                     </div>
@@ -489,8 +491,9 @@
                         <p class="text-content-packageTour">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
                         <div class="row row-cols-1 row-cols-lg-3 row-cols-md-6 g-4">
                             <div class="col col-lg-4 col-md-6">
-                                <div class="card  text-white">
-                                    <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
+                                <a href="" style=" text-decoration: none;">
+                                      <div class="card  text-white">
+                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
                                     <div class="card-img-overlay">
                                         <p class="best-seller">Best Seller</p>
                                     </div>
@@ -523,10 +526,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                </a>
+
                             </div>
                             <div class="col col-lg-4 col-md-6">
-                                <div class="card  text-white">
-                                    <img src="https://mychiangmaitour.com/wp-content/uploads/2019/05/Kwan-Phayao14.jpg" class=" img-card-packageTour" alt="...">
+                                <a href="" style=" text-decoration: none;">
+                                      <div class="card  text-white">
+                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
                                     <div class="card-img-overlay">
                                         <p class="best-seller">Best Seller</p>
                                     </div>
@@ -559,17 +565,20 @@
                                         </div>
                                     </div>
                                 </div>
+                                </a>
+
                             </div>
-                            <div class="col col-lg-4 col-md-6">
-                                <div class="card  text-white">
-                                    <img src="https://img.kapook.com/u/2018/sutasinee/01/d8.jpg" class=" img-card-packageTour" alt="...">
+                            <div class="col col-lg-4 col-md-6 responsive-ipad" >
+                                <a href="" style=" text-decoration: none;">
+                                      <div class="card  text-white">
+                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
                                     <div class="card-img-overlay">
                                         <p class="best-seller">Best Seller</p>
                                     </div>
                                     <div class="card-body text-black">
                                         <div class="d-flex bd-highlight mb-3">
                                             <div class="p-2 bd-highlight">
-                                                <h4>ภูลังกา</h4>
+                                                <h4>กว๊านพะเยา</h4>
                                             </div>
                                             <div class="ms-auto p-2 bd-highlight text-card-pakageTour">
                                                 <i class="bi bi-geo-alt"></i><span>พะเยา,ประเทศไทย</span>
@@ -595,9 +604,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                </a>
+
                             </div>
                         </div>
+                        <h5 style="text-align: center;"><a href="" class="text-more-pakageTour" ><u>ดู Pakage Tour เพิ่มเติม</u> </a></h5>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -1047,7 +1060,7 @@
             responsive: [{
                     breakpoint: 1025,
                     settings: {
-                        slidesToShow: 3,
+                        slidesToShow: 7,
                         slidesToScroll: 3,
                         infinite: true,
                         dots: true,
@@ -1071,8 +1084,8 @@
                         arrows: false,
                         centerMode: false,
                         centerPadding: '60px',
-                        slidesToShow: 4,
-                        slidesToScroll: 2,
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
                     }
                 },
                 {
