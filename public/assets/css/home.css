@@ -17,6 +17,13 @@ body,html{
     border-radius: 10px;
     object-fit: cover;
   }
+  .specialDeal:hover{
+    width: 410px;
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 2px 10px 5px 0 rgba(0, 0, 0, 0.3);
+  }
 
   .img-special-deal {
   width: 90%;
@@ -74,6 +81,7 @@ body,html{
     }
 
     /* <!-- สถานที่ยอดฮิต --> */
+
     .place-top-destination{
       text-align: center;
       font-size: 16px;
@@ -84,6 +92,7 @@ body,html{
     .text-header-place-hit{
       font-size: 30px;
     }
+
     .background-cate-place-hit{
       background-color: #E8F9FF;
       width: 100%;
@@ -115,12 +124,21 @@ body,html{
     margin: 50px auto;
   }
   /***** Efecto *****/
+
   .card-with-hover {
     position: relative;
     overflow: hidden;
     text-align: center;
     height: 250px;
     border-radius: 30px;
+  }
+    .card-with-hover:hover {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 252px;
+    border-radius: 30px;
+    box-shadow: 1px 10px 16px 0 rgba(17, 0, 114, 0.3);
   }
 
   .card-with-hover > img {
@@ -213,6 +231,13 @@ body,html{
         margin: 0 auto;
 
       }
+.img-trending:hover {
+        position: relative;
+        max-width: 400px;
+        margin: 0 auto;
+  box-shadow: 1px 10px 16px 0 rgba(0,0,0,0.3);
+      }
+
 
       .img-trending img {vertical-align: middle;object-fit: cover;}
 
@@ -224,6 +249,18 @@ body,html{
         color: #f1f1f1;
         width:260px;
         height:120px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+       .img-trending .content:hover {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #cce7f5;
+        width:260px;
+        height:160px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
       }
@@ -356,7 +393,7 @@ body,html{
     height: 120px;
     object-fit: contain;
   /* padding-top:50px; */
-  padding-top:50px;
+  padding-top:40px;
   }
   .text-other-service {
       color: #18272F;
@@ -379,16 +416,58 @@ body,html{
 
   .card-image{
     text-align: center;
-    margin: 5vh 0;
+    margin: 2vh 0;
   }
   .card-text{
     text-align: center;
     text-decoration: none;
     color: black;
-    font-size: 12px;
+    font-size: 16px;
   }
    /* <!-- บริการเสริม --> */
 
+   @media only screen and (max-width: 1025px) {
+      /*กิจกรรมยอดฮิต Trending Activitiesr */
+      .img-trending img {vertical-align: middle;}
+
+      .img-trending .content {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #f1f1f1;
+        width:210px;
+        height:100px;
+
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .card-trending{
+      width:210px;
+      height:280px;
+      border-radius: 10px;
+      }
+      .text-map-trending{
+        padding-top: 10px;
+        font-size: 10px;
+      }
+      .text-content-trending{
+        font-size: 8px;
+      }
+    /*end กิจกรรมยอดฮิต Trending Activitiesr */
+
+
+    .img-cate-place-hit {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 2px;
+        border-color: black;
+    }
+
+
+   }
 
 
 
@@ -503,7 +582,7 @@ body,html{
     height: 100px;
     object-fit: contain;
   /* padding-top:50px; */
-  padding-top:50px;
+  padding-top:40px;
   }
   .text-other-service {
       color: #18272F;
@@ -610,7 +689,7 @@ body,html{
     }
 
     .specialDeal{
-        width: 220px;
+        width: 240px;
         height: 120px;
         border-radius: 10px;
         object-fit: cover;
@@ -683,7 +762,7 @@ body,html{
     overflow: hidden;
     text-align: center;
     height: 180px;
-    border-radius: 25px;
+    border-radius: 20px;
   }
   .card-with-hover > img {
     width: 100%;
