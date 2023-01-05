@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DealController\DealController;
+use App\Http\Controllers\PlaceHitController\PlaceHitController;
 use App\Http\Controllers\HomeController\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,5 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home']);
+Route::get('deal', [DealController::class, 'deal']);
+
+
+Route::get('placeHit', [PlaceHitController::class, 'placeHit']);
+Route::get('DescriptionPlaceHit', [PlaceHitController::class, 'descriptionShow']);
 
 /* Route::get('/test', 'HomeController\HomeController@testnav'); */
+// Route::get('test', function () {
+//     return view('layouts.navbar');
+// });

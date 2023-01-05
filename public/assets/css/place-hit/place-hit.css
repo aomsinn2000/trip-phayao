@@ -1,0 +1,145 @@
+.padding-footer{
+    padding-top: 280px;
+}
+
+.line-header{
+    margin: auto;
+    background-color: #00AEEF;
+    width:150px;
+    padding-top: 5px;
+  }
+.map {
+    height: 100%;
+  }
+
+.banner-placeHit{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.text-head1-placeHit{
+    font-size: 50px;
+    color: #00AEEF;
+}
+.text-head2-placeHit{
+    font-size: 30px;
+    color: rgba(0, 174, 239, 0.8);
+}
+.text-content-placeHit{
+    font-size: 18px;
+}
+.video-placeHit{
+    width: 420px;
+    height:500px;
+    object-fit: cover;
+
+}
+.text-content-top-dessination {
+    margin: auto;
+    width: 60%;
+   color: #535151 ;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+.text-card-add-placeHit{
+ color: #9B9898;
+ font-size: 12px;
+}
+.text-card-content-placeHit{
+    font-size: 12px;
+}
+.text-review-placeHit{
+    color: #9B9898;
+    font-size: 12px;
+}
+.bi-star-fill{
+    color: #FFDE17;
+}
+.button-placeHit{
+    color: #fff;
+    border-radius: 5%;
+    background-color: #00AEEF;
+}
+.img-card-placeHit{
+    border-radius: 5px;
+}
+.featured-placeHit{
+    background-color: #FDB85A;
+    width: 70px;
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.padding-card-placeHit{
+    text-align: center;
+    padding-bottom: 10px;
+    z-index: 1;
+}
+
+
+
+  .wrapper{
+    padding: 70px 0;
+    overflow-x: hidden;
+  }
+
+
+  .my-slider{
+    padding: 0 70px;
+  }
+
+
+
+
+  .slick-next, .slick-prev{
+    z-index: 5;
+  }
+  .slick-next{
+    right: 15px;
+  }
+  .slick-prev{
+    left: 15px;
+  }
+  .slick-next:before, .slick-prev:before{
+    color: #000;
+    font-size: 26px;
+  }
+
+
+
+  @media only screen and (max-width: 830px) {
+    .banner-placeHit{
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+    }
+    .video-placeHit{
+        width: 100%;
+
+        object-fit: cover;
+
+    }
+  }
+
+
+
+
+@media only screen and (max-width: 430px) {
+    .banner-placeHit{
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+    .video-placeHit{
+        width: 300px;
+        height:500px;
+        object-fit: cover;
+
+    }
+    .padding-footer{
+        padding-top: 780px;
+    }
+  }
+
+
+

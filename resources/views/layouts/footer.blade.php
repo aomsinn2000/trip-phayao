@@ -60,30 +60,30 @@ footer {
                    </span>
                     </div>
                     <div class="col-lg-2 col-md-3 ">
-                        <h5 class="text-white mb-2 text-header-footer">Quick links</h5>
+                        <h5 class="text-white mb-2 text-header-footer"><b>column one</b></h5>
                         <ul class="list-unstyled text-muted">
-                            <li><a href="#" class="text-content-footer">Home</a></li>
-                            <li><a href="#" class="text-content-footer">About</a></li>
-                            <li><a href="#" class="text-content-footer">Get started</a></li>
-                            <li><a href="#" class="text-content-footer">FAQ</a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link one</b></a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link two</b></a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link three</b></a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link four</b></a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-3">
-                      <h5 class="text-white mb-2 text-header-footer">Quick links</h5>
-                      <ul class="list-unstyled text-muted">
-                          <li><a href="#" class="text-content-footer">Home</a></li>
-                          <li><a href="#" class="text-content-footer">About</a></li>
-                          <li><a href="#" class="text-content-footer">Get started</a></li>
-                          <li><a href="#" class="text-content-footer">FAQ</a></li>
-                      </ul>
+                        <h5 class="text-white mb-2 text-header-footer"><b>column one</b></h5>
+                        <ul class="list-unstyled text-muted">
+                            <li><a href="#" class="text-content-footer"><b>Link one</b></a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link two</b></a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link three</b></a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link four</b></a></li>
+                        </ul>
                     </div>
                     <div class="col-lg-2 col-md-3">
-                      <h5 class="text-white mb-2 text-header-footer">Quick links</h5>
+                        <h5 class="text-white mb-2 text-header-footer"><b>column one</b></h5>
                         <ul class="list-unstyled text-muted">
-                            <li><a href="#" class="text-content-footer">Home</a></li>
-                            <li><a href="#" class="text-content-footer">About</a></li>
-                            <li><a href="#" class="text-content-footer">Get started</a></li>
-                            <li><a href="#" class="text-content-footer">FAQ</a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link one</b></a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link two</b></a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link three</b></a></li>
+                            <li><a href="#" class="text-content-footer"><b>Link four</b></a></li>
                         </ul>
                   </div>
                     <div class="col-lg-4 col-md-6 input-box">

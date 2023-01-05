@@ -1,0 +1,336 @@
+
+
+.padding-footer{
+    padding-top: 280px;
+}
+
+.naval-background-deal{
+    background-color: #F5F5F5;
+    width: 100%;
+    height: 60px;
+    padding-left: 80px;
+    padding-top: 20px;
+
+}
+
+.text-nav-deal{
+    color: #868383;
+    text-decoration: none;
+}
+
+
+
+
+.js .slider-single > div:nth-child(1n+2) { display: none }
+
+.js .slider-single.slick-initialized > div:nth-child(1n+2) { display: block }
+
+
+
+.slider-single img {
+	line-height: 10rem;
+}
+
+.slider-nav img::before {
+	content: "";
+	display: block;
+	padding-top: 75%;
+}
+
+.slider-nav img span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.slider-nav .slick-slide { cursor: pointer; }
+
+.slick-slide.is-active img {
+	color: #c00;
+	background-color: #fff
+}
+.slick-prev:before {
+    color: rgb(94, 92, 92) !important;
+
+    }
+.slick-next:before {
+    color: rgb(110, 105, 105) !important;
+    }
+.image-large-deal{
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+}
+.image-small-deal{
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+
+
+  .container img {vertical-align: middle;}
+
+  .container .content {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 250px;
+    height:  150px;
+    border-radius: 10px;
+
+  }
+  .content{
+    padding-top: 20px;
+    font-size: 32px;
+    text-align: center;
+  }
+  .discout-deal{
+    background-color: #FFEAC0;
+    width: 5%;
+    color: #FCB930;
+    text-align:center;
+    border-radius: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+.text-deal{
+    font-size: 24px;
+}
+.text-time-detail-deal{
+    background-color: #DDF4FC;
+    width: 5%;
+    font-size: 24px;
+    color: #00AEEF;
+    text-align:center;
+    border-radius: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #00AEEF;
+    border-radius: 5px;
+  }
+  .add-line-deal{
+    background-color: #22B61F;
+    width: 90%;
+    height: 100px;
+    text-align:center;
+    padding: 15px;
+    font-size: 45px;
+    border-radius:50px;
+    margin: auto;
+  }
+  .text-add-line-deal{
+    color: #ffff;
+    text-decoration: none;
+  }
+  .total-deal{
+    color: red;
+    text-align:right;
+  }
+
+
+  #container {
+    display: flex;
+	  flex-direction: row;
+	  justify-content: space-between;
+    padding: 10px;
+    height: 50px;
+    }
+    .item {
+    width: 20%;
+    border: solid 1px #000;
+    text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+    .image-large-deal{
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+    }
+    .image-small-deal{
+        width: 180px;
+        height: 100px;
+        border-radius: 5px;
+    }
+    .container img {vertical-align: middle;}
+
+    .container .content {
+      position: absolute;
+      bottom: 0;
+      background: rgb(0, 0, 0); /* Fallback color */
+      background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+      color: #f1f1f1;
+      width: 180px;
+      height:  100px;
+      border-radius: 5px;
+
+    }
+    .content{
+      padding-top: 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+    .discout-deal{
+      background-color: #FFEAC0;
+      width: 5%;
+      color: #FCB930;
+      text-align:center;
+      border-radius: 2px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .padding-footer{
+        padding-top: 300px;
+    }
+    .total-deal{
+        color: red;
+        text-align:right;
+        font-size: 20px;
+      }
+  }
+
+
+@media only screen and (max-width: 820px) {
+    .image-large-deal{
+        width: 100%;
+        height: 260px;
+        border-radius: 10px;
+    }
+    .image-small-deal{
+        width: 100px;
+        height: 60px;
+        border-radius: 5px;
+    }
+    .container img {vertical-align: middle;}
+
+    .container .content {
+      position: absolute;
+      bottom: 0;
+      background: rgb(0, 0, 0); /* Fallback color */
+      background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+      color: #f1f1f1;
+      width: 100px;
+      height:  60px;
+      border-radius: 5px;
+
+    }
+    .content{
+      padding-top: 20px;
+      font-size: 10px;
+      text-align: center;
+    }
+    .discout-deal{
+      background-color: #FFEAC0;
+      width: 5%;
+      color: #FCB930;
+      text-align:center;
+      border-radius: 2px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .padding-footer{
+        padding-top: 480px;
+    }
+    .total-deal{
+        color: red;
+        text-align:right;
+        font-size: 20px;
+      }
+  }
+
+
+
+
+@media only screen and (max-width: 420px) {
+    .image-large-deal{
+        width: 100%;
+        height: 150px;
+        border-radius: 10px;
+    }
+    .image-small-deal{
+        width: 90px;
+        height: 50px;
+        border-radius: 5px;
+    }
+    .container img {vertical-align: middle;}
+
+    .container .content {
+      position: absolute;
+      bottom: 0;
+      background: rgb(0, 0, 0); /* Fallback color */
+      background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+      color: #f1f1f1;
+      width: 90px;
+      height:  50px;
+      border-radius: 5px;
+
+    }
+    .content{
+      padding-top: 10px;
+      font-size: 10px;
+      text-align: center;
+    }
+    .discout-deal{
+      background-color: #FFEAC0;
+      width: 5%;
+      color: #FCB930;
+      text-align:center;
+      border-radius: 2px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .padding-footer{
+        padding-top: 900px;
+    }
+    .total-deal{
+        color: red;
+        text-align:right;
+        font-size: 12px;
+      }
+      .text-time-detail-deal{
+        background-color: #DDF4FC;
+        width: 5%;
+        font-size: 12px;
+        color: #00AEEF;
+        text-align:center;
+        border-radius: 2px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: 1px solid #00AEEF;
+        border-radius: 5px;
+      }
+      .add-line-deal{
+        background-color: #22B61F;
+        width: 90%;
+        height: 70px;
+        text-align:center;
+        padding: 15px;
+        font-size: 24px;
+        border-radius:50px;
+        margin: auto;
+      }
+      .text-add-line-deal{
+        color: #ffff;
+        text-decoration: none;
+      }
+      .naval-background-deal{
+        background-color: #F5F5F5;
+        width: 100%;
+        height: 60px;
+        padding-left: 20px;
+        padding-top: 20px;
+    font-size: 12px;
+    }
+  }
