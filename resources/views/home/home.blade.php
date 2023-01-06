@@ -680,7 +680,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="card">
+                                    <div class="card ">
                                         <a href="">
                                             <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
                                         </a>
@@ -989,6 +989,9 @@
 
         <!-- end บริการเสริม -->
 
+
+
+
         <div class="padding-under"></div>
 
 
@@ -1002,27 +1005,27 @@
     <script>
         $(document).ready(function() {
             $('#textCardStory1').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
+                var newstr = $(this).text().substring(0, 60);
                 $(this).text(newstr);
             });
             $('#textCardStory2').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
+                var newstr = $(this).text().substring(0, 60);
                 $(this).text(newstr);
             });
             $('#textCardStory3').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
+                var newstr = $(this).text().substring(0, 60);
                 $(this).text(newstr);
             });
             $('#textCardStory4').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
+                var newstr = $(this).text().substring(0, 60);
                 $(this).text(newstr);
             });
             $('#textCardStory5').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
+                var newstr = $(this).text().substring(0, 60);
                 $(this).text(newstr);
             });
             $('#textCardStory6').each(function(f) {
-                var newstr = $(this).text().substring(0, 80);
+                var newstr = $(this).text().substring(0, 60);
                 $(this).text(newstr);
             });
         })
@@ -1182,7 +1185,7 @@
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                       
+
                         arrows: false
                     }
                 }

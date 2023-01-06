@@ -94,7 +94,7 @@ footer {
                               <input type="text" id="" class="form-control" placeholder="Enter your email" style="width: 200px; ">
                               <button type="button" class="btn btn-outline-primary" style="border-color: aliceblue; color: aliceblue;">Subscribe</button>
 
-                              <p style="color: aliceblue; font-size: 12px;">By subscribing you agree to with our Privacy Policy</p>
+                              <p style="color: aliceblue; font-size: 12px;"><b> By subscribing you agree to with our Privacy Policy</b></p>
 
                             </div>
 
@@ -106,9 +106,9 @@ footer {
           <div class="justify-content-start" style="padding-left:20px;">  ©2022, All right reserved.</div>
 
           <div class="ms-auto p-2 bd-highlight ">
-            <span><a href="" class="text-last-right-footer">Privacy Policy</a></span>
-            <span><a href="" class="text-last-right-footer"> Terms of Service</a></span>
-            <span><a href="" class="text-last-right-footer"> Cookies Settings</a></span>
+            <span><a href="" class="text-last-right-footer"><b>Privacy Policy</b> </a></span>
+            <span><a href="" class="text-last-right-footer"><b>Terms of Service</b> </a></span>
+            <span><a href="" class="text-last-right-footer"><b>Cookies Settings</b> </a></span>
           </div>
           </div>
         </footer>

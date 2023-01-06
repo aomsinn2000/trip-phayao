@@ -499,6 +499,7 @@ p {
         font-size: 40px;
 
     }
+
 }
 @media only screen and (max-width: 1600px) {
     .text-left-hotel {
@@ -1149,7 +1150,9 @@ p {
         padding-right: 10%;
         text-align: center;
     }
-
+ .card {
+    margin: 0px auto;
+    }
     /* <!-- บริการเสริม --> */
 }
 
@@ -1161,6 +1164,9 @@ p {
     border-radius: 10px;
     object-fit: cover;
 }
+.card {
+    margin: 0px auto;
+    }
 }
 
 
@@ -1192,4 +1198,10 @@ p {
         height: 280px;
         border-radius: 10px;
     }
+
+    .card {
+    margin: 0px auto;
+    }
+
+
 }
