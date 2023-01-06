@@ -514,13 +514,14 @@
                                                     <p>ปั่นจักรยาน</p>
                                                     <p>ปั่นจักรยาน</p>
                                                 </div>
-                                                <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-                                                    <div class="mt-auto p-2 bd-highlight">ราคาแพ็กเกจ
-                                                        <p class="br-card-pakageTour"><br></p>
-                                                        <span class="text-price-card-pakageTour">
-                                                            1,000฿/วัน
-                                                        </span>
-                                                    </div>
+
+                                            </div>
+                                            <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+                                                <div class="mt-auto  bd-highlight">ราคาแพ็กเกจ
+                                                    <p class="br-card-pakageTour"><br></p>
+                                                    <span class="text-price-card-pakageTour">
+                                                        1,000฿/วัน
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -553,13 +554,13 @@
                                                     <p>ปั่นจักรยาน</p>
                                                     <p>ปั่นจักรยาน</p>
                                                 </div>
-                                                <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-                                                    <div class="mt-auto p-2 bd-highlight">ราคาแพ็กเกจ
-                                                        <p class="br-card-pakageTour"><br></p>
-                                                        <span class="text-price-card-pakageTour">
-                                                            1,000฿/วัน
-                                                        </span>
-                                                    </div>
+                                            </div>
+                                            <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+                                                <div class="mt-auto  bd-highlight">ราคาแพ็กเกจ
+                                                    <p class="br-card-pakageTour"><br></p>
+                                                    <span class="text-price-card-pakageTour">
+                                                        1,000฿/วัน
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -592,13 +593,13 @@
                                                     <p>ปั่นจักรยาน</p>
                                                     <p>ปั่นจักรยาน</p>
                                                 </div>
-                                                <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-                                                    <div class="mt-auto p-2 bd-highlight">ราคาแพ็กเกจ
-                                                        <p class="br-card-pakageTour"><br></p>
-                                                        <span class="text-price-card-pakageTour">
-                                                            1,000฿/วัน
-                                                        </span>
-                                                    </div>
+                                            </div>
+                                            <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+                                                <div class="mt-auto  bd-highlight">ราคาแพ็กเกจ
+                                                    <p class="br-card-pakageTour"><br></p>
+                                                    <span class="text-price-card-pakageTour">
+                                                        1,000฿/วัน
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -963,7 +964,7 @@
                                             <div class="card-image">
                                                 <img class="img-other-service" src="https://www.pngitem.com/pimgs/m/4-41456_clipart-freeuse-bike-transparent-animated-riding-bicycle-gif.png">
                                             </div>
-                                            <p>บริการเช่าอื่นๆ</p>
+                                             <p>บริการเช่าอื่นๆ</p>
                                         </a>
                                     </div>
                                 </div>
@@ -1112,9 +1113,38 @@
             speed: 300,
             slidesToShow: 3,
             centerMode: true,
+            slidesToScroll: 2,
             arrows: true,
 
-            responsive: [{
+            responsive: [
+                {
+                    breakpoint: 2000,
+                    settings: {
+                        centerMode: true,
+                        slidesToShow: 4,
+                        slidesToScroll: 2
+
+                    }
+                },
+                {
+                    breakpoint: 1600,
+                    settings: {
+                        centerMode: true,
+                        slidesToShow: 3,
+                        slidesToScroll: 2
+
+                    }
+                },
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        centerMode: true,
+                        slidesToShow: 3,
+                        slidesToScroll: 2
+
+                    }
+                },
+                {
                     breakpoint: 1025,
                     settings: {
                         slidesToShow: 2,
@@ -1122,6 +1152,15 @@
                         infinite: true,
                         centerPadding: '30px',
                         dots: true
+                    }
+                },
+                {
+                    breakpoint: 821,
+                    settings: {
+                        centerMode: true,
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+
                     }
                 },
                 {
@@ -1136,6 +1175,14 @@
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
+                        arrows: false
+                    }
+                },{
+                    breakpoint: 376,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                       
                         arrows: false
                     }
                 }
@@ -1155,7 +1202,35 @@
             arrows: true,
             slidesToShow: 3,
 
-            responsive: [{
+            responsive: [
+                {
+                    breakpoint: 2000,
+                    settings: {
+                        centerMode: false,
+                        slidesToShow: 6,
+                        slidesToScroll: 3
+
+                    }
+                },
+                {
+                    breakpoint: 1600,
+                    settings: {
+                        centerMode: true,
+                        slidesToShow: 3,
+                        slidesToScroll: 2
+
+                    }
+                },
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        centerPadding: '350px',
+                        dots: true
+                    }
+                },{
                     breakpoint: 1025,
                     settings: {
                         slidesToShow: 3,
@@ -1173,6 +1248,7 @@
                         centerMode: true,
                         centerPadding: '0.5px',
                         slidesToShow: 3
+
                     }
                 },
                 {
