@@ -14,7 +14,7 @@
   <!--end font style -->
 
 
-  <link href="{{ asset('assets/css/nav.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet">
 
 
 </head>
