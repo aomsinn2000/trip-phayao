@@ -91,7 +91,7 @@ footer {
                         <p class="small  text-header-footer"><b>Subscribe</b> </p>
 
                             <div >
-                              <input type="text" id="" class="form-control" placeholder="Enter your email" style="width: 200px; ">
+                              <input type="text" id="" class="form-control text-email" placeholder="Enter your email" >
                               <button type="button" class="btn btn-outline-primary" style="border-color: aliceblue; color: aliceblue;">Subscribe</button>
 
                               <p style="color: aliceblue; font-size: 12px;"><b> By subscribing you agree to with our Privacy Policy</b></p>

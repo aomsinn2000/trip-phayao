@@ -54,6 +54,9 @@
 .form-control{
   display: inline;
 }
+.text-email{
+    width: 200px;
+   }
 
 @media only screen and (max-width: 950px) {
   .form-control{
@@ -86,5 +89,8 @@
     font-size: 12px;
     color:#ffff ;
   }
+  .text-email{
+    width: 150px;
+   }
 
 }

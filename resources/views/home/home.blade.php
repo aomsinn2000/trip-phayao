@@ -46,11 +46,6 @@
         <!-- image slider -->
 
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
 
 
             <div class="carousel-inner">
@@ -122,6 +117,7 @@
             </div>
         </div>
 
+
         <!-- ดีลสุดพิเศษ -->
 
         <br>
@@ -175,7 +171,6 @@
                 <div id="catePlace" class="img-special-deal">
                     <div class="col-4 col-lg-2 col-xs-4">
                         <a href="" class="text-cate-place-hit" style="text-align: center">
-
                             <img class="img-cate-place-hit" src="https://charatoon.com/photo/1646.png" alt="">
                             <p style="padding-top: 20px;">กาแฟ / คาเฟ่</p>
                         </a>
@@ -227,6 +222,7 @@
                     </div>
 
                 </div>
+
 
             </div>
         </div>
@@ -468,9 +464,7 @@
             <img class="img-hotel" src="https://png.pngtree.com/thumb_back/fw800/background/20190903/pngtree-pink-sparkling-background-image_313710.jpg" alt="Snow">
 
             <div class="text-right-hotel">
-                <button type="button" class="button-hotel text-hotel">
-                    <p style="color: #ffff">คลิก!</p>
-                </button>
+                <button type="button" class="button-hotel text-white text-hotel ">คลิก!</button>
             </div>
             <div class="text-left-hotel">
                 <span><b>จองโรงแรมในราคาสุดพิเศษได้ Hot DeAL</b> </span>
@@ -517,7 +511,7 @@
 
                                             </div>
                                             <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-                                                <div class="mt-auto  bd-highlight">ราคาแพ็กเกจ
+                                                <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
                                                     <p class="br-card-pakageTour"><br></p>
                                                     <span class="text-price-card-pakageTour">
                                                         1,000฿/วัน
@@ -556,7 +550,7 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-                                                <div class="mt-auto  bd-highlight">ราคาแพ็กเกจ
+                                                <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
                                                     <p class="br-card-pakageTour"><br></p>
                                                     <span class="text-price-card-pakageTour">
                                                         1,000฿/วัน
@@ -595,7 +589,7 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-                                                <div class="mt-auto  bd-highlight">ราคาแพ็กเกจ
+                                                <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
                                                     <p class="br-card-pakageTour"><br></p>
                                                     <span class="text-price-card-pakageTour">
                                                         1,000฿/วัน
@@ -609,7 +603,8 @@
 
                             </div>
                         </div>
-                        <h5 style="text-align: center;"><a href="" class="text-more-pakageTour" ><u>ดู Pakage Tour เพิ่มเติม</u> </a></h5>
+                        <br>
+                        <h5 style="text-align: center;"><a href="" type="button" class="d-grid gap-2 col-lg-6 col-md-6 col-sm-12 mx-auto btn btn-info  text-more-pakageTour" style="border-radius:50px; color:#535151;">ดู Pakage Tour เพิ่มเติม </a></h5>
                     </div>
 
                 </div>
@@ -772,7 +767,7 @@
 
                             </div>
                             <div class="d-flex bd-highlight mb-3">
-                                <div class="ms-auto p-2 bd-highlight" style="padding-right:60px;"><a href="#" style="color: black;"><u>บทความเพิ่มเติม</u></a>></div>
+                                <div class="ms-auto p-2 bd-highlight" style="padding-right:60px;"><a href="#" type="button" class="btn btn-info" style=" color: black; border-radius:10px; " >บทความเพิ่มเติม ></a></div>
                             </div>
                         </div>
                     </div>
@@ -1121,10 +1116,19 @@
 
             responsive: [
                 {
-                    breakpoint: 2000,
+                    breakpoint: 2200,
+                    settings: {
+                        centerMode: false,
+                        slidesToShow: 4,
+                        slidesToScroll: 2
+
+                    }
+                },
+                {
+                    breakpoint: 1900,
                     settings: {
                         centerMode: true,
-                        slidesToShow: 4,
+                        slidesToShow: 3,
                         slidesToScroll: 2
 
                     }
@@ -1143,6 +1147,15 @@
                     settings: {
                         centerMode: true,
                         slidesToShow: 3,
+                        slidesToScroll: 2
+
+                    }
+                },
+                {
+                    breakpoint: 1300,
+                    settings: {
+                        centerMode: true,
+                        slidesToShow: 2,
                         slidesToScroll: 2
 
                     }
@@ -1207,11 +1220,20 @@
 
             responsive: [
                 {
-                    breakpoint: 2000,
+                    breakpoint: 2200,
                     settings: {
                         centerMode: false,
                         slidesToShow: 6,
                         slidesToScroll: 3
+
+                    }
+                },
+                {
+                    breakpoint: 1800,
+                    settings: {
+                        centerMode: true,
+                        slidesToShow: 3,
+                        slidesToScroll: 2
 
                     }
                 },
@@ -1225,12 +1247,22 @@
                     }
                 },
                 {
-                    breakpoint: 1400,
+                    breakpoint: 1450,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 3,
                         infinite: true,
                         centerPadding: '350px',
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 1360,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        centerPadding: '300px',
                         dots: true
                     }
                 },{
