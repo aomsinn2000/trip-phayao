@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\DealController\DealController;
-use App\Http\Controllers\PlaceHitController\PlaceHitController;
 use App\Http\Controllers\HomeController\HomeController;
+use App\Http\Controllers\ArticleController\ArticleController;
+use App\Http\Controllers\LoginController\LoginController;
+use App\Http\Controllers\PlaceHitController\PlaceHitController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,12 +20,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home']);
+
+Route::get('login', [LoginController::class, 'showLogin']);
+
+
 Route::get('deal', [DealController::class, 'deal']);
 
 
 Route::get('placeHit', [PlaceHitController::class, 'placeHit']);
-Route::get('DescriptionPlaceHit', [PlaceHitController::class, 'descriptionShow']);
+Route::get('descriptionPlaceHit', [PlaceHitController::class, 'descriptionShow']);
 
+Route::get('article', [ArticleController::class, 'showArticle']);
 /* Route::get('/test', 'HomeController\HomeController@testnav'); */
 // Route::get('test', function () {
 //     return view('layouts.navbar');

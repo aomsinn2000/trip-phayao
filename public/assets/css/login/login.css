@@ -1,0 +1,139 @@
+
+body {
+    overflow: hidden;
+
+
+}
+
+.img-login {
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+}
+.img-logo{
+    width: 200px;
+    height: 90px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-signIn{
+    width: 100%;
+    color: #ffff;
+    background-color: #00AEEF;
+}
+.text-remember{
+    font-size: 12px;
+    color:#262262;
+}
+.text-forgotPass{
+    font-size: 12px;
+    float: right;
+    padding-top: 5px;
+}
+.text-phone{
+    font-size: 12px;
+    color: #646464;
+    text-align: center;
+}
+.text-login{
+    font-size: 16px;
+    text-align: center;
+    color:#262262;
+}
+
+.input-email,.input-password{
+    width: 100%;
+    border-color: #00AEEF;
+}
+::placeholder{
+    overflow: visible;
+    font-size: 14px;
+    }
+
+
+
+@media only screen and (max-width: 2000px) {
+    .img-login {
+        width: 100%;
+        height: 1100px;
+        object-fit: cover;
+    }
+    .form-login {
+        width: 360px;
+        height: 500px;
+        margin: auto;
+        margin-top: 219px;
+        align-items: center;
+    }
+}
+@media only screen and (max-width: 1600px) {
+    .img-login {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+    }
+    .form-login {
+        width: 300px;
+        height: 500px;
+        margin: auto;
+        margin-top: 130px;
+        align-items: center;
+
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .img-login {
+        width: 100%;
+        height: 750px;
+        object-fit: cover;
+        display: none;
+    }
+    .form-login {
+        width: 470px;
+        height: 500px;
+        margin: auto;
+        margin-top: 100px;
+        align-items: center;
+
+    }
+
+}
+@media only screen and (max-width: 1025px) {
+    .img-login {
+        width: 100%;
+        height: 750px;
+        object-fit: cover;
+        display: none;
+    }
+    .form-login {
+        width: 470px;
+        height: 500px;
+        margin: auto;
+        margin-top: 280px;
+        align-items: center;
+
+
+    }
+
+
+}
+
+
+@media only screen and (max-width: 450px) {
+    .img-login {
+        width: 100%;
+        height: 750px;
+        object-fit: cover;
+        display: none;
+    }
+    .form-login{
+        width: 300px;
+        height: 500px;
+      margin: auto;
+      margin-top: 50px;
+        align-items: center;
+
+    }
+
+}
