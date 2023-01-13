@@ -51,6 +51,57 @@ body {
     font-size: 14px;
     }
 
+/* ส่วนหน้าลืมรหัสผ่าน */
+.text-email-forgot{
+    font-size: 12px;
+    color: #2B2B4C;
+}
+
+.icon-sentEmail{
+  color: #FCB533;
+  font-size: 60px;
+
+}
+.text-sentEmail-again{
+    font-size: 13px;
+    color: #646464;
+    text-align: center;
+}
+.text-sentEmail-again2{
+    font-size: 13px;
+    color: #FCB533;
+    text-align: center;
+}
+
+
+.background-top{
+    background-color: #262262;
+    width: 600px;
+    height: 25px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.background-bottom{
+    background-color: #1509c4;
+    width: 600px;
+    height: 25px;
+    display: flex;
+    align-items: flex-end;
+}
+.background-link{
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    margin-top: 120px;
+    background-color: #00AEEF;
+    border-radius: 20px;
+}
+
+
+
+
+
+
 
 
 @media only screen and (max-width: 2000px) {
@@ -77,10 +128,12 @@ body {
         width: 300px;
         height: 500px;
         margin: auto;
-        margin-top: 130px;
+        margin-top: 80px;
         align-items: center;
 
     }
+
+
 }
 @media only screen and (max-width: 1200px) {
     .img-login {
