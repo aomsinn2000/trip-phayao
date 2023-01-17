@@ -14,14 +14,14 @@
   <!--end font style -->
 
 
-  <link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/layouts/navbar.css') }}" rel="stylesheet">
 
 
 </head>
 <body>
 
     <ul class="nav-social sticky-top" >
-        <div class="container">
+        <div class="px-5">
                   <li><a class="svg-social nav-li nav-a" href=""><i class="bi bi-facebook"></i></a></li>
                  <li><a class="svg-social nav-li nav-a" href=""><i class="bi bi-instagram"></i></a></li>
                  <li><a class="svg-social nav-li nav-a" href=""><i class="bi bi-twitter"></i></a></li>
@@ -30,10 +30,11 @@
         </div>
         <div class="d-flex">
           <li  class="nav-li nav-a" style="margin-left: auto;">
-              <a href="" style="color: #ffff;  text-decoration: none;">
                   <img src="{{asset('assets/image/thai.png')}}" style="width: 10%;" alt="">
-                  <span>TH / EN</span>
-              </a>
+              <span>
+                <a href="" class="select-language">TH</a> /
+                <a href="" class="select-language">EN</a>
+             </span>
           </li>
         </div>
       </ul>
@@ -59,13 +60,13 @@
                     <a class="nav-link" href="#" >แพ็คเกตทัวร์</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" >บทความ</a>
+                  <a class="nav-link" href="{{url('article')}}" >บทความ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" >บริการต่างๆ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" >ติดต่อเรา</a>
+                    <a class="nav-link" href="{{url('contactUs')}}" >ติดต่อเรา</a>
                 </li>
             </ul>
           </div>
@@ -82,8 +83,8 @@
             <ul class="navbar-nav d-flex">
               <li class="nav-item">
                 <div class="text-left py-1">
-                    <button type="button" class="btn btn-warning signli">sign up</button>
-                    <button type="button" class="btn btn-outline-warning signInli">sign in</button>
+                    <a href="#" type="button" class="btn btn-warning text-white signli">Register</a>
+                    <a href="{{url('login')}}" type="button" class="btn btn-outline-warning signInli">Login</a>
 
                 </div>
 

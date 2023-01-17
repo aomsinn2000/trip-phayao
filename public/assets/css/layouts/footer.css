@@ -1,0 +1,96 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+  footer{
+
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+
+      background: linear-gradient(100.15deg, #1896C5 12.48%, #65CDF3 86.59%);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .footer{
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+      background: linear-gradient(100.15deg, #1896C5 12.48%, #65CDF3 86.59%);
+    color: white;
+
+  }
+  .logo{
+    width: 120px;
+    height: 40%;
+  }
+  .text-header-footer{
+    font-size: 16px;
+    color:#ffff ;
+  }
+  .text-content-footer{
+    font-size: 12px;
+    text-align: left;
+    color: #ffff;
+    text-decoration: none;
+  }
+  .text-subscribe{
+    padding-top: 10px;
+    font-size: 10px;
+  }
+  .text-last-footer{
+    padding-top: 15px;
+    font-size:12px ;
+  }
+  .text-last-right-footer{
+    padding-top: 15px;
+    font-size:12px ;
+    padding-right: 60px;
+    text-decoration: none;
+    color: #ffff;
+  }
+
+.form-control{
+  display: inline;
+}
+.text-email{
+    width: 200px;
+   }
+
+@media only screen and (max-width: 950px) {
+  .form-control{
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .form-control{
+    display: inline;
+  }
+
+  .text-subscribe{
+    padding-top: 10px;
+    font-size: 10px;
+    display: inline;
+  }
+  .logo{
+    width: 120px;
+    height: 50%;
+  }
+  .text-last-right-footer{
+    padding-top: 15px;
+    font-size:12px ;
+    padding-right: 5px;
+    text-decoration: none;
+    color: #ffff;
+  }
+  .text-header-footer{
+    font-size: 12px;
+    color:#ffff ;
+  }
+  .text-email{
+    width: 150px;
+   }
+
+}
