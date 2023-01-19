@@ -50,7 +50,7 @@
 
                       <div class="col-5">
                         <!-- Simple link -->
-                        <a href="#!" class="text-forgotPass">ลืมรหัสผ่าน?</a>
+                        <a href="{{url ('forgotPassword')}}" class="text-forgotPass">ลืมรหัสผ่าน?</a>
                       </div>
                     </div>
 
