@@ -106,17 +106,19 @@
             text-align: left;
             color: rgb(177, 4, 53);
         }
-        .statusOff{
+
+        .statusOff {
             border-color: red;
             border-style: solid;
             border-width: 3px;
             width: 90px;
             height: 30px;
-            color:red;
+            color: red;
             border-radius: 20px;
             padding: 3px;
         }
-        .statusOn{
+
+        .statusOn {
             background-color: #00BB56;
             width: 90px;
             height: 30px;
@@ -124,17 +126,17 @@
             border-radius: 20px;
             padding: 3px;
         }
-      .selectStyle{
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 5.5;
-    color: #ffffff;
-    /* background-color: #fff; */
-    width: 110px;
-    border: none;
-    background: transparent;
-}
 
+        .selectStyle {
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 5.5;
+            color: #ffffff;
+            /* background-color: #fff; */
+            width: 110px;
+            border: none;
+            background: transparent;
+        }
     </style>
 
 </head>
@@ -229,12 +231,11 @@
                                         <table class="table table table-striped position-relative my-3" id="allSpecialDeal-table">
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
-                                                    <th class=""><input id='invoices-mainbox' type="checkbox"></th>
                                                     <th style="text-align: left;">รหัสดีล</th>
-                                                    <th>ชื่อดีล</th>
-                                                    <th>หมวดหมู่
+                                                    <th style="text-align: left;">ชื่อดีล</th>
+                                                    <th style="text-align: center;">หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
-                                                            <option selected >ทั้งหมด</option>
+                                                            <option selected>ทั้งหมด</option>
                                                             <option style="padding-top: 10px;">ที่พัก</option>
                                                             <option>ท่องเที่ยว</option>
                                                         </select>
@@ -242,7 +243,7 @@
                                                     <th>ระยะเวลา</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
-                                                    <th>สถานะ
+                                                    <th style="text-align: center;">สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
                                                             <option>เปิดใช้งาน</option>
@@ -254,20 +255,21 @@
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td class=""><input id='invoices-mainbox' type="checkbox"></td>
                                                     <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
+                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
                                                     <td>ที่พัก</td>
                                                     <td>ไม่กำหนด</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td><div class="statusOff">ปิดใช้งาน</div></td>
-                                                    <td><button class="btn-trash">
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
+                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -275,20 +277,21 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=""><input id='invoices-mainbox' type="checkbox"></td>
                                                     <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
+                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
                                                     <td>ที่พัก</td>
                                                     <td>01/01/2565 - 01/01/2565 </td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td><div class="statusOn">เปิดใช้งาน</div></td>
-                                                    <td><button class="btn-trash">
+                                                    <td>
+                                                        <div class="statusOn">เปิดใช้งาน</div>
+                                                    </td>
+                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -326,12 +329,11 @@
                                         <table class="table table table-striped position-relative my-3" id="onSpecialDeal-table">
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
-                                                    <th class=""><input id='invoices-mainbox' type="checkbox"></th>
                                                     <th style="text-align: left;">รหัสดีล</th>
-                                                    <th>ชื่อดีล</th>
-                                                    <th>หมวดหมู่
+                                                    <th style="text-align: left;">ชื่อดีล</th>
+                                                    <th style="text-align: center;">หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
-                                                            <option selected >ทั้งหมด</option>
+                                                            <option selected>ทั้งหมด</option>
                                                             <option style="padding-top: 10px;">ที่พัก</option>
                                                             <option>ท่องเที่ยว</option>
                                                         </select>
@@ -339,7 +341,7 @@
                                                     <th>ระยะเวลา</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
-                                                    <th>สถานะ
+                                                    <th style="text-align: center;">สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
                                                             <option>เปิดใช้งาน</option>
@@ -351,20 +353,21 @@
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td class=""><input id='invoices-mainbox' type="checkbox"></td>
                                                     <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
+                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
                                                     <td>ที่พัก</td>
                                                     <td>ไม่กำหนด</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td><div class="statusOff">ปิดใช้งาน</div></td>
-                                                    <td><button class="btn-trash">
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
+                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -372,20 +375,21 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class=""><input id='invoices-mainbox' type="checkbox"></td>
                                                     <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
+                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
                                                     <td>ที่พัก</td>
                                                     <td>01/01/2565 - 01/01/2565 </td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td><div class="statusOn">เปิดใช้งาน</div></td>
-                                                    <td><button class="btn-trash">
+                                                    <td>
+                                                        <div class="statusOn">เปิดใช้งาน</div>
+                                                    </td>
+                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -395,10 +399,10 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                     {{--end เปิดการใช้งาน --}}
+                                    {{-- end เปิดการใช้งาน --}}
 
 
-                                        {{-- ปิดการใช้งาน --}}
+                                    {{-- ปิดการใช้งาน --}}
                                     <div class="tab-pane fade" id="off-specialDeal" role="tabpanel" aria-labelledby="">
                                         <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
 
@@ -423,12 +427,11 @@
                                         <table class="table table-striped position-relative my-3 " id="offSpecialDeal-table">
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
-                                                  <th class=""><input id='invoices-mainbox' type="checkbox"></th>
                                                     <th style="text-align: left;">รหัสดีล</th>
-                                                    <th>ชื่อดีล</th>
-                                                    <th>หมวดหมู่
+                                                    <th style="text-align: left;">ชื่อดีล</th>
+                                                    <th style="text-align: center;">หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
-                                                            <option selected >ทั้งหมด</option>
+                                                            <option selected>ทั้งหมด</option>
                                                             <option style="padding-top: 10px;">ที่พัก</option>
                                                             <option>ท่องเที่ยว</option>
                                                         </select>
@@ -436,7 +439,7 @@
                                                     <th>ระยะเวลา</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
-                                                    <th>สถานะ
+                                                    <th style="text-align: center;">สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
                                                             <option>เปิดใช้งาน</option>
@@ -448,42 +451,43 @@
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td class=""><input id='invoices-mainbox' type="checkbox"></td>
                                                     <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
+                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
                                                     <td>ที่พัก</td>
                                                     <td>ไม่กำหนด</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td><div class="statusOff">ปิดใช้งาน</div></td>
-                                                    <td><button class="btn-trash">
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
+                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
                                                             </svg>
                                                     </td>
                                                 </tr>
-
-                                                 <tr>
-                                                    <td class=""><input id='invoices-mainbox' type="checkbox"></td>
+                                                <tr>
                                                     <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
+                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
                                                     <td>ที่พัก</td>
                                                     <td>01/01/2565 - 01/01/2565 </td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                       <label for=""> 01/01/2566 12:12</label>
+                                                        <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td><div class="statusOn">เปิดใช้งาน</div></td>
-                                                    <td><button class="btn-trash">
+                                                    <td>
+                                                        <div class="statusOn">เปิดใช้งาน</div>
+                                                    </td>
+                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -493,16 +497,39 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                     {{-- end ปิดการใช้งาน --}}
+                                    {{-- end ปิดการใช้งาน --}}
 
                                 </div>
 
 
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- Modal ถึงขยะ -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body text-center">
+                                <br>
+                                <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
+                                <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                </svg>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                                <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!--end Modal ถึงขยะ -->
             </div>
             <!-- Container closed -->
         </div>
@@ -593,15 +620,15 @@
     <script>
         $('#allSpecialDeal-table').DataTable({
             aLengthMenu: [
-			        [10,25, 50, 100, 200, -1],
-			        [10,25, 50, 100, 200, "All"]
-			    ],
-			    iDisplayLength:-1,
-				"ordering": false,
-				"dom": '<<t>ilp>',
-				rowReorder: {
-		            selector: '.move-selector'
-		        },
+                [10, 25, 50, 100, 200, -1],
+                [10, 25, 50, 100, 200, "All"]
+            ],
+            iDisplayLength: -1,
+            "ordering": false,
+            "dom": '<<t>ilp>',
+            rowReorder: {
+                selector: '.move-selector'
+            },
             scrollX: true,
             paging: true,
             searching: false,
@@ -610,12 +637,8 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [{
-                width: "2%",
-                render: function(data, type, row) {
-                    return `<td><input class='subbox' type="checkbox" value=""></td>`;
-                }
-            }, {
+            columns: [
+                {
                 "width": "40px"
             }, {
                 "width": "250px",
@@ -641,15 +664,15 @@
     <script>
         $('#onSpecialDeal-table').DataTable({
             aLengthMenu: [
-			        [10,25, 50, 100, 200, -1],
-			        [10,25, 50, 100, 200, "All"]
-			    ],
-			    iDisplayLength:-1,
-				"ordering": false,
-				"dom": '<<t>ilp>',
-				rowReorder: {
-		            selector: '.move-selector'
-		        },
+                [10, 25, 50, 100, 200, -1],
+                [10, 25, 50, 100, 200, "All"]
+            ],
+            iDisplayLength: -1,
+            "ordering": false,
+            "dom": '<<t>ilp>',
+            rowReorder: {
+                selector: '.move-selector'
+            },
             scrollX: true,
             paging: true,
             searching: false,
@@ -658,12 +681,7 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [{
-                width: "2%",
-                render: function(data, type, row) {
-                    return `<td><input class='subbox' type="checkbox" value=""></td>`;
-                }
-            }, {
+            columns: [ {
                 "width": "40px"
             }, {
                 "width": "250px",
@@ -690,15 +708,15 @@
     <script>
         $('#offSpecialDeal-table').DataTable({
             aLengthMenu: [
-			        [10,25, 50, 100, 200, -1],
-			        [10,25, 50, 100, 200, "All"]
-			    ],
-			    iDisplayLength:-1,
-				"ordering": false,
-				"dom": '<<t>ilp>',
-				rowReorder: {
-		            selector: '.move-selector'
-		        },
+                [10, 25, 50, 100, 200, -1],
+                [10, 25, 50, 100, 200, "All"]
+            ],
+            iDisplayLength: -1,
+            "ordering": false,
+            "dom": '<<t>ilp>',
+            rowReorder: {
+                selector: '.move-selector'
+            },
             scrollX: true,
             paging: true,
             searching: false,
@@ -708,11 +726,6 @@
                 emptyTable: "ไม่พบข้อมูล"
             },
             columns: [{
-                width: "2%",
-                render: function(data, type, row) {
-                    return `<td><input class='subbox' type="checkbox" value=""></td>`;
-                }
-            }, {
                 "width": "40px"
             }, {
                 "width": "250px",
@@ -733,25 +746,6 @@
     </script>
 
 
-    {{-- check box --}}
-    <script>
-        $('#invoices-mainbox').on('change', function(e) {
-            if (this.checked == true) {
-                $('.subbox').prop('checked', true)
-            } else {
-                $('.subbox').prop('checked', false)
-            }
-            $('.subbox')
-        });
-        $('#invoices-mangage-mainbox').on('change', function(e) {
-            if (this.checked == true) {
-                $('.subbox').prop('checked', true)
-            } else {
-                $('.subbox').prop('checked', false)
-            }
-            $('.subbox')
-        });
-    </script>
 
 
 </body>
