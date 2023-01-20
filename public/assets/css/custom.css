@@ -171,7 +171,7 @@ table.dataTable thead th, table.dataTable tbody td {
 }
 
 div.dataTables_wrapper div.dataTables_length select {
-   background:  url(../img/redcross/icon/arrow-down-select.svg) no-repeat;
+   background:  url(../images/arrow-down-select.png) no-repeat;
    background-position: right 5px center;
    background-size: 12px 6px;
    min-width: 70px;
@@ -188,26 +188,26 @@ div.dataTables_wrapper div.dataTables_length select {
     height: 30px;
 }
 .dataTables_paginate .page-item.active .page-link {
-    background-color: #F26F3A;
-    border: 1px solid #F26F3A;
+    background-color: #3fa5ff;
+    border: 1px solid #3fa5ff;
 }
 .pagination .page-link:hover {
-    background-color: #F26F3A!important;
-    border: 1px solid #F26F3A!important;
+    background-color: #0b4ba4!important;
+    border: 1px solid #0b4ba4!important;
 }
 .dataTables_wrapper .dataTables_paginate .page-item.disabled .page-link {
     background-color: #ECF0FA;
-    width: 30px;
-    width: 30px;
+    width: 81px;
+    /* width: 30px; */
     color: #b1c1d6;
-    border-radius: 50%;
+    border-radius: 19px;
 
 }
 .pagination .page-item:last-child .page-link, .pagination .page-item:first-child .page-link {
     background-color: #ECF0FA;
-    width: 30px;
+    width: 80px;
     color: #b1c1d6;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 .page-link i {
     font-size: 11px;
@@ -610,8 +610,9 @@ input:readonly{
 
 
 table.dataTable thead th, table.dataTable thead td {
-    color: #F26F3A;
+    color: #050834;
     background: #FFF;
+    line-height: 0px;
 }
 
 .alink-st-1{
@@ -3020,3 +3021,4 @@ tr.selected td{
     background: #22A78C;
 
 }*/
+
