@@ -64,6 +64,11 @@
     <link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="assets/plugins/summernote/summernote-bs4.min.css" rel="stylesheet">
+
+        {{-- script datatogle เปิด/ปิด --}}
+        <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+        {{-- script datatogle เปิด/ปิด --}}
     <style>
         input[type=checkbox] {
             transform: scale(2.5);
@@ -140,6 +145,26 @@
             position: absolute;
             z-index: -1;
         }
+        .toggle-off.btn-xs {
+            padding-right: 1rem;
+            padding-top: 8px;
+            font-size: 12px;
+            background-color: red;
+            color: #ffff;
+        }
+
+        .toggle-on.btn-xs {
+            padding-right: 1rem;
+            padding-top: 8px;
+            font-size: 12px;
+            background-color: green;
+        }
+        .toggle.btn-xs {
+            min-width: 2.19rem;
+            min-height: 1.375rem;
+            border-radius: 50px;
+        }
+
     </style>
 
 
@@ -151,7 +176,7 @@
 
     <!-- Loader -->
     <div id="global-loader">
-        <img src="assets/img/loader.svg" class="loader-img" alt="Loader">
+        <img src="assets/images/loader.svg" class="loader-img" alt="Loader">
     </div>
     <!-- /Loader -->
 
@@ -177,9 +202,8 @@
                                 </svg>
                                 Dashborad >
                             </h5>
-                            <a href="{{ url('viewDeal') }}">
-                                <h5 class="content-title mb-0 my-auto px-2">จัดการดีลสุดพิเศษ ></h5>
-                            </a>
+                            <a href="{{url('viewSpecialDeal')}}"><h5 class="content-title mb-0 my-auto px-2">จัดการดีลสุดพิเศษ ></h5></a>
+                            <h5 class="content-title mb-0 my-auto ">แก้ไข</h5>
                         </div>
                     </div>
                 </div>
@@ -191,7 +215,21 @@
                 <form action="">
                     <div class="col-xl-7">
                         <div class="card card-body">
-                            <p>เพิ่มข้อมูล</p>
+
+                            <div class="form-group row py-2">
+                                <label for="idUser" class="col-sm-2 col-form-label">รหัสผู้ใช้งาน</label>
+                                <div class="col-sm-4">
+                                  <input type="text" readonly class="form-control" id="idUser"  value="AE21120001">
+                                </div>
+                                <div class="col-sm-5"><button type="button" class="btn btn-link">ใช้รหัสอัตโนมัติ</button></div>
+                            </div>
+                            <div class="row d-flex justify-content-between py-2">
+                                <div class="col-6"> <h5><b>เพิ่มข้อมูล</b></h5></div>
+                                <div class="row-6 ">
+                                    <label for="">สถานะ</label>
+                                    <input type="checkbox" style="border-radius:50px;" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                </div>
+                            </div>
                             <div class="">
                                 <label for="nameDealTh">ชื่อดีล(TH)</label>
                                 <span id="showNumTh" style="float: right;">0/100</span>
@@ -344,7 +382,7 @@
                                     <button type="button" style="border-radius:50%; height:40px;border-color:#ffff;" class="dropify-clear"><img src="{{ asset('assets/images/icon/ion_trash-bin.png') }}" width="25"></button>
                                 </div>
                                 <div class="col-9">
-                                    <a href="" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
+                                    <a href="{{url('viewSpecialDeal')}}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
                                     <span class="px-2">
                                         <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
                                     </span>
