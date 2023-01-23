@@ -116,6 +116,7 @@
             color: red;
             border-radius: 20px;
             padding: 3px;
+            text-align: center;
         }
 
         .statusOn {
@@ -125,6 +126,7 @@
             color: #ffff;
             border-radius: 20px;
             padding: 3px;
+            text-align: center;
         }
 
         .selectStyle {
@@ -136,6 +138,13 @@
             width: 110px;
             border: none;
             background: transparent;
+        }
+
+        .img-category {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50px;
         }
     </style>
 
@@ -167,12 +176,12 @@
                     <div class="my-auto">
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg>
-                                ดีลพิเศษ >
+                                <svg xmlns="http://www.w3.org/2000/svg"  style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
+                                    <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
+                                  </svg>
+                                จัดการข้อมูลหมวดหมู่ >
                             </h5>
-                            <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;">จัดการดีลพิเศษ</h5>
+                            <h5 class="content-title mb-0 my-auto px-2"  style="padding-bottom: 5px;">จัดการหมวดหมู่ดีลพิเศษ</h5>
                         </div>
                     </div>
                 </div>
@@ -186,18 +195,19 @@
 
                                 <div class="row">
                                     <div class="col-6">
-                                        <h5><b>จัดการดีลพิเศษ</b></h5>
+                                        <h5><b>จัดการหมวดหมู่ดีลพิเศษ</b></h5>
                                     </div>
                                     <div class="col-6">
-                                        <a style="float: right; margin-right:35px;" href="{{ url('addSpecialDeal') }}" type="button" class="btn btn-info">เพิ่มดีลพิเศษ</a>
+                                        <a style="float: right; margin-right:35px;" href="{{ url('addSpecialDealCategory') }}" type="button" class="btn btn-info">เพิ่มหมวดหมู่ดีลพิเศษ</a>
                                     </div>
                                 </div>
                                 <div style="padding-top:60px;"></div>
                                 <nav>
                                     <div class="nav main-nav-line" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-specialDeal" role="tab" aria-selected="true"><b>ทั้งหมด (100)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-specialDeal" role="tab" aria-selected="false"><b>เปิดการใช้งาน (50)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-specialDeal" role="tab" aria-selected="false"><b>ปิดการใช้งาน (50)</b></a>
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-specialDeal" role="tab" aria-selected="true"><b>ทั้งหมด (50)</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#accommodation" role="tab" aria-selected="false"><b>ที่พัก / โรงแรม (5)</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#restaurant" role="tab" aria-selected="false"><b>ร้านอาหาร (5)</b></a>
+
 
                                     </div>
                                 </nav>
@@ -206,38 +216,35 @@
 
                                     {{-- ทั้งหมด --}}
                                     <div class="tab-pane fade show active" id="all-specialDeal" role="tabpanel" aria-labelledby="all-specialDeal-tab">
-                                        <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
-
-                                            <div class="col-2 py-3">
-                                                <button type="button" class="btn btn-info text-dark btn-color"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
-                                                    </svg> นำข้อมูลออก</button>
+                                        <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
+                                            <div class="col-6 py-3 px-5">
+                                                <button type="button" class="btn btn-info text-dark btn-color">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
+                                                    </svg>
+                                                    <span class="px-2">นำข้อมูลเข้า</span>
+                                                </button>
+                                                <span class="px-3">
+                                                    <button type="button" class="btn btn-info text-dark btn-color">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                                                        </svg>
+                                                        <span class="px-2">นำข้อมูลออก</span>
+                                                    </button>
+                                                </span>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
-                                                <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
-                                            </div>
-                                            <div class="col-3 py-3">
-                                                <label for="endtDay"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                <input type="date" id="endDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
-                                            </div>
-                                            <div class="col-3 py-3">
-                                                <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
+                                                <input type="text" class="form-control" style="border-radius: 5px;" placeholder="รหัสหมวดหมู่ / ชื่อหมวดหมู่">
                                             </div>
                                         </div>
-                                        <table class="table table table-striped position-relative my-3" id="allSpecialDeal-table">
+                                        <table class="table table table-striped position-relative my-3"style="text-align: left;" id="allSpecialDeal-table">
                                             <thead class="thead-dark">
-                                                <tr style="text-align: center;">
-                                                    <th style="text-align: left;">รหัสดีล</th>
-                                                    <th style="text-align: left;">ชื่อดีล</th>
-                                                    <th style="text-align: center;">หมวดหมู่
-                                                        <select class="form-control selectStyle" id="selectCategory">
-                                                            <option selected>ทั้งหมด</option>
-                                                            <option style="padding-top: 10px;">ที่พัก</option>
-                                                            <option>ท่องเที่ยว</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>ระยะเวลา</th>
+                                                <tr>
+                                                    <th>รหัสหมวดหมู่</th>
+                                                    <th style="text-align: center;">ภาพหมวดหมู่</th>
+                                                    <th>ชื่อหมวดหมู่(TH)</th>
+                                                    <th>ชื่อหมวดหมู่(EN)</th>
+                                                    <th>จำนวน</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
                                                     <th style="text-align: center;">สถานะ
@@ -250,12 +257,13 @@
                                                     <th></th>
                                                 </tr>
                                             </thead>
-                                            <tbody style="text-align: center">
+                                            <tbody style="text-align: left">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>ไม่กำหนด</td>
+                                                    <td><a href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal1.jpg') }}" alt=""></td>
+                                                    <td>ร้านอาหาร</td>
+                                                    <td>restaurant</td>
+                                                    <td>10</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -266,7 +274,7 @@
                                                     <td>
                                                         <div class="statusOff">ปิดใช้งาน</div>
                                                     </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
+                                                    <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#trashAll">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -274,10 +282,11 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
+                                                    <td><a href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal.png') }}" alt=""></td>
+                                                    <td>ที่พัก / โรงแรม</td>
+                                                    <td>Accommodation/Hotel</td>
+                                                    <td>10</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -288,7 +297,99 @@
                                                     <td>
                                                         <div class="statusOn">เปิดใช้งาน</div>
                                                     </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
+                                                    <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#trashAll">
+                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                            </svg>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal.png') }}" alt=""></td>
+                                                    <td>ที่พัก / โรงแรม</td>
+                                                    <td>Accommodation/Hotel</td>
+                                                    <td>10</td>
+                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
+                                                    <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#trashAll">
+                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                            </svg>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal1.jpg') }}" alt=""></td>
+                                                    <td>ร้านอาหาร</td>
+                                                    <td>restaurant</td>
+                                                    <td>10</td>
+                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
+                                                    <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#trashAll">
+                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                            </svg>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal.png') }}" alt=""></td>
+                                                    <td>ที่พัก / โรงแรม</td>
+                                                    <td>Accommodation/Hotel</td>
+                                                    <td>10</td>
+                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="statusOn">เปิดใช้งาน</div>
+                                                    </td>
+                                                    <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#trashAll">
+                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                            </svg>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal.png') }}" alt=""></td>
+                                                    <td>ที่พัก / โรงแรม</td>
+                                                    <td>Accommodation/Hotel</td>
+                                                    <td>10</td>
+                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
+                                                    <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#trashAll">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -297,44 +398,45 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+
+
+
+
                                     </div>
                                     {{-- end ทั้งหมด --}}
 
 
                                     {{-- เปิดการใช้งาน --}}
-                                    <div class="tab-pane fade" id="on-specialDeal" role="tabpanel" aria-labelledby="">
-                                        <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
-
-                                            <div class="col-2 py-3">
-                                                <button type="button" class="btn btn-info text-dark btn-color"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
-                                                    </svg> นำข้อมูลออก</button>
+                                    <div class="tab-pane fade" id="accommodation" role="tabpanel" aria-labelledby="">
+                                        <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
+                                            <div class="col-6 py-3 px-5">
+                                                <button type="button" class="btn btn-info text-dark btn-color">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
+                                                    </svg>
+                                                    <span class="px-2">นำข้อมูลเข้า</span>
+                                                </button>
+                                                <span class="px-3">
+                                                    <button type="button" class="btn btn-info text-dark btn-color">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                                                        </svg>
+                                                        <span class="px-2">นำข้อมูลออก</span>
+                                                    </button>
+                                                </span>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
-                                                <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
-                                            </div>
-                                            <div class="col-3 py-3">
-                                                <label for="endtDay"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                <input type="date" id="endDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
-                                            </div>
-                                            <div class="col-3 py-3">
-                                                <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
+                                                <input type="text" class="form-control" style="border-radius: 5px;" placeholder="รหัสหมวดหมู่ / ชื่อหมวดหมู่">
                                             </div>
                                         </div>
-                                        <table class="table table table-striped position-relative my-3" id="onSpecialDeal-table">
+                                        <table class="table table table-striped position-relative my-3" id="accommodation-table">
                                             <thead class="thead-dark">
-                                                <tr style="text-align: center;">
-                                                    <th style="text-align: left;">รหัสดีล</th>
-                                                    <th style="text-align: left;">ชื่อดีล</th>
-                                                    <th style="text-align: center;">หมวดหมู่
-                                                        <select class="form-control selectStyle" id="selectCategory">
-                                                            <option selected>ทั้งหมด</option>
-                                                            <option style="padding-top: 10px;">ที่พัก</option>
-                                                            <option>ท่องเที่ยว</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>ระยะเวลา</th>
+                                                <tr>
+                                                    <th>รหัสหมวดหมู่</th>
+                                                    <th style="text-align: center;">ภาพหมวดหมู่</th>
+                                                    <th>ชื่อหมวดหมู่(TH)</th>
+                                                    <th>ชื่อหมวดหมู่(EN)</th>
+                                                    <th>จำนวน</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
                                                     <th style="text-align: center;">สถานะ
@@ -347,12 +449,13 @@
                                                     <th></th>
                                                 </tr>
                                             </thead>
-                                            <tbody style="text-align: center">
+                                            <tbody style="text-align: left">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>ไม่กำหนด</td>
+                                                    <td><a href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal.png') }}" alt=""></td>
+                                                    <td>ที่พัก / โรงแรม</td>
+                                                    <td>Accommodation/Hotel</td>
+                                                    <td>10</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -363,7 +466,7 @@
                                                     <td>
                                                         <div class="statusOff">ปิดใช้งาน</div>
                                                     </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
+                                                    <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#trashAll">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -371,10 +474,11 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
+                                                    <td><a href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal.png') }}" alt=""></td>
+                                                    <td>ที่พัก / โรงแรม</td>
+                                                    <td>Accommodation/Hotel</td>
+                                                    <td>10</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -385,7 +489,7 @@
                                                     <td>
                                                         <div class="statusOn">เปิดใช้งาน</div>
                                                     </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
+                                                    <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#trashAll">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -394,44 +498,43 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+
                                     </div>
                                     {{-- end เปิดการใช้งาน --}}
 
 
                                     {{-- ปิดการใช้งาน --}}
-                                    <div class="tab-pane fade" id="off-specialDeal" role="tabpanel" aria-labelledby="">
-                                        <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
-
-                                            <div class="col-2 py-3">
-                                                <button type="button" class="btn btn-info text-dark btn-color"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
-                                                    </svg> นำข้อมูลออก</button>
+                                    <div class="tab-pane fade" id="restaurant" role="tabpanel" aria-labelledby="">
+                                        <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
+                                            <div class="col-6 py-3 px-5">
+                                                <button type="button" class="btn btn-info text-dark btn-color">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
+                                                    </svg>
+                                                    <span class="px-2">นำข้อมูลเข้า</span>
+                                                </button>
+                                                <span class="px-3">
+                                                    <button type="button" class="btn btn-info text-dark btn-color">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                                                        </svg>
+                                                        <span class="px-2">นำข้อมูลออก</span>
+                                                    </button>
+                                                </span>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
-                                                <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
-                                            </div>
-                                            <div class="col-3 py-3">
-                                                <label for="endtDay"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                <input type="date" id="endDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
-                                            </div>
-                                            <div class="col-3 py-3">
-                                                <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
+                                                <input type="text" class="form-control" style="border-radius: 5px;" placeholder="รหัสหมวดหมู่ / ชื่อหมวดหมู่">
                                             </div>
                                         </div>
-                                        <table class="table table-striped position-relative my-3 " id="offSpecialDeal-table">
+
+                                        <table class="table table-striped position-relative my-3 " id="restaurant-table">
                                             <thead class="thead-dark">
-                                                <tr style="text-align: center;">
-                                                    <th style="text-align: left;">รหัสดีล</th>
-                                                    <th style="text-align: left;">ชื่อดีล</th>
-                                                    <th style="text-align: center;">หมวดหมู่
-                                                        <select class="form-control selectStyle" id="selectCategory">
-                                                            <option selected>ทั้งหมด</option>
-                                                            <option style="padding-top: 10px;">ที่พัก</option>
-                                                            <option>ท่องเที่ยว</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>ระยะเวลา</th>
+                                                <tr>
+                                                    <th>รหัสหมวดหมู่</th>
+                                                    <th style="text-align: center;">ภาพหมวดหมู่</th>
+                                                    <th>ชื่อหมวดหมู่(TH)</th>
+                                                    <th>ชื่อหมวดหมู่(EN)</th>
+                                                    <th>จำนวน</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
                                                     <th style="text-align: center;">สถานะ
@@ -444,12 +547,13 @@
                                                     <th></th>
                                                 </tr>
                                             </thead>
-                                            <tbody style="text-align: center">
+                                            <tbody style="text-align: left">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>ไม่กำหนด</td>
+                                                    <td><a href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal1.jpg') }}" alt=""></td>
+                                                    <td>ร้านอาหาร</td>
+                                                    <td>restaurant</td>
+                                                    <td>10</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -460,7 +564,7 @@
                                                     <td>
                                                         <div class="statusOff">ปิดใช้งาน</div>
                                                     </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
+                                                    <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#trashAll">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -468,10 +572,11 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
+                                                    <td><a href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal1.jpg') }}" alt=""></td>
+                                                    <td>ร้านอาหาร</td>
+                                                    <td>restaurant</td>
+                                                    <td>10</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -482,7 +587,7 @@
                                                     <td>
                                                         <div class="statusOn">เปิดใช้งาน</div>
                                                     </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
+                                                    <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#trashAll">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
                                                                     d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
@@ -491,44 +596,47 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+
                                     </div>
                                     {{-- end ปิดการใช้งาน --}}
 
                                 </div>
 
-
-
+                                 <!-- Modal ถังขยะ -->
+                                 <div class="modal fade" id="trashAll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body text-center">
+                                                <br>
+                                                <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
+                                                <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                </svg>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                                                <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <!--end Modal ถังขยะ -->
+
+
+
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-                <!-- Modal ถึงขยะ -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body text-center">
-                                <br>
-                                <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
-                                <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                </svg>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <!--end Modal ถึงขยะ -->
             </div>
-            <!-- Container closed -->
+
+
+
         </div>
-        <!-- main-content closed -->
+        <!-- Container closed -->
+    </div>
+    <!-- main-content closed -->
 
     </div>
     <!-- End Page -->
@@ -600,10 +708,10 @@
             $('#allSpecialDeal-table').DataTable().columns.adjust();
         });
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#onSpecialDeal-table').DataTable().columns.adjust();
+            $('#accommodation-table').DataTable().columns.adjust();
         });
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#offSpecialDeal-table').DataTable().columns.adjust();
+            $('#restaurant-table').DataTable().columns.adjust();
         });
     </script>
     {{-- End script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
@@ -632,15 +740,16 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [
-                {
-                "width": "40px"
+            columns: [{
+                "width": "100px"
             }, {
-                "width": "250px",
+                "width": "120px",
             }, {
-                "width": "80px"
+                "width": "150px"
             }, {
-                "width": "180px"
+                "width": "150px"
+            }, {
+                "width": "100px"
             }, {
                 "width": "250px"
             }, {
@@ -657,51 +766,7 @@
 
 
     <script>
-        $('#onSpecialDeal-table').DataTable({
-            aLengthMenu: [
-                [10, 25, 50, 100, 200, -1],
-                [10, 25, 50, 100, 200, "All"]
-            ],
-            iDisplayLength: -1,
-            "ordering": false,
-            "dom": '<<t>ilp>',
-            rowReorder: {
-                selector: '.move-selector'
-            },
-            scrollX: true,
-            paging: true,
-            searching: false,
-            ordering: false,
-            info: true,
-            language: {
-                emptyTable: "ไม่พบข้อมูล"
-            },
-            columns: [ {
-                "width": "40px"
-            }, {
-                "width": "250px",
-            }, {
-                "width": "80px"
-            }, {
-                "width": "180px"
-            }, {
-                "width": "250px"
-            }, {
-                "width": "250px"
-            }, {
-                "width": "80px"
-            }, {
-                "width": "150px"
-            }],
-
-        });
-    </script>
-
-
-
-
-    <script>
-        $('#offSpecialDeal-table').DataTable({
+        $('#accommodation-table').DataTable({
             aLengthMenu: [
                 [10, 25, 50, 100, 200, -1],
                 [10, 25, 50, 100, 200, "All"]
@@ -721,13 +786,15 @@
                 emptyTable: "ไม่พบข้อมูล"
             },
             columns: [{
-                "width": "40px"
+                "width": "100px"
             }, {
-                "width": "250px",
+                "width": "120px",
             }, {
-                "width": "80px"
+                "width": "150px"
             }, {
-                "width": "180px"
+                "width": "150px"
+            }, {
+                "width": "100px"
             }, {
                 "width": "250px"
             }, {
@@ -737,6 +804,53 @@
             }, {
                 "width": "150px"
             }],
+
+        });
+    </script>
+
+
+
+
+    <script>
+        $('#restaurant-table').DataTable({
+            aLengthMenu: [
+                [10, 25, 50, 100, 200, -1],
+                [10, 25, 50, 100, 200, "All"]
+            ],
+            iDisplayLength: -1,
+            "ordering": false,
+            "dom": '<<t>ilp>',
+            rowReorder: {
+                selector: '.move-selector'
+            },
+            scrollX: true,
+            paging: true,
+            searching: false,
+            ordering: false,
+            info: true,
+            language: {
+                emptyTable: "ไม่พบข้อมูล"
+            },
+            columns: [{
+                "width": "100px"
+            }, {
+                "width": "120px",
+            }, {
+                "width": "150px"
+            }, {
+                "width": "150px"
+            }, {
+                "width": "100px"
+            }, {
+                "width": "250px"
+            }, {
+                "width": "250px"
+            }, {
+                "width": "80px"
+            }, {
+                "width": "150px"
+            }],
+
         });
     </script>
 

@@ -99,6 +99,11 @@
 					</ul>
 				</div>
 			</aside> --}}
+            {{-- <style>
+                .app-sidebar .slide.active .side-menu__item {
+                        background: #6b9ee4;
+                    }
+            </style> --}}
             <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 			<aside class="app-sidebar sidebar-scroll">
 				<div class="main-sidebar-header active">
@@ -114,51 +119,51 @@
 
 					<ul class="side-menu">
 						<li class="slide">
-							<a class="side-menu__item" href="icons.html">
-								<svg width="24" height="24" viewBox="0 0 24 24" class="side-menu__icon" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M7.24463 14.7815L10.2378 10.8913L13.652 13.5732L16.581 9.79291" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-									<circle cx="19.9954" cy="4.20024" r="1.9222" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-									<path d="M14.9243 3.12015H7.65655C4.64511 3.12015 2.77783 5.25287 2.77783 8.26431V16.3467C2.77783 19.3581 4.6085 21.4817 7.65655 21.4817H16.2607C19.2721 21.4817 21.1394 19.3581 21.1394 16.3467V9.30779" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-								<span class="side-menu__label">Dashboard</span>
+							<a class="side-menu__item " href="icons.html">
+								<svg xmlns="http://www.w3.org/2000/svg" style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+                                    <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
+                                  </svg>
+								<span class="side-menu__label px-2">Dashboard</span>
 							</a>
 						</li>
-						<li class="slide">
-							<a class="side-menu__item" data-toggle="slide" href="#">
-								<svg width="24" height="24" viewBox="0 0 24 24" class="side-menu__icon"  fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M14.7365 2.7619H8.08351C6.02451 2.7619 4.24951 4.4309 4.24951 6.4909V17.2039C4.24951 19.3799 5.90851 21.1149 8.08351 21.1149H16.0725C18.1325 21.1149 19.8015 19.2649 19.8015 17.2039V8.0379L14.7365 2.7619Z" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M14.4736 2.75021V5.65921C14.4736 7.07921 15.6226 8.23121 17.0416 8.23421C18.3586 8.23721 19.7056 8.23821 19.7966 8.23221" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M14.2837 15.5578H8.88672" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M12.2422 10.6056H8.88623" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-								<span class="side-menu__label">โครงการ</span><i class="angle fe fe-chevron-down"></i>
+                        <li class="slide">
+							<a class="side-menu__item" href="{{url('viewSpecialDeal')}}">
+								<svg xmlns="http://www.w3.org/2000/svg" style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+								<span class="side-menu__label px-2">ดีลพิเศษ</span>
 							</a>
-							<ul class="slide-menu">
-								<li><a class="slide-item" href="page-2.1.html">โครงการทั้งหมด</a></li>
-								<li><a class="slide-item" href="page-2.5.html">หมวดหมู่โครงการ</a></li>
-							</ul>
 						</li>
-						<li class="slide">
+                        <li class="slide">
+							<a class="side-menu__item" href="{{url('view')}}">
+                                  <svg xmlns="http://www.w3.org/2000/svg" style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-signpost-2" viewBox="0 0 16 16">
+                                    <path d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z"/>
+                                  </svg>
+								<span class="side-menu__label px-2">สถานที่ท่องเที่ยว</span>
+							</a>
+						</li>
+                        <li class="slide">
 							<a class="side-menu__item" data-toggle="slide" href="#">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="side-menu__icon" xmlns="http://www.w3.org/2000/svg">
-								<path d="M2.8042 15.477C2.8042 15.477 2.9462 17.215 2.9792 17.763C3.0232 18.498 3.3072 19.319 3.7812 19.889C4.4502 20.697 5.2382 20.982 6.2902 20.984C7.5272 20.986 16.5222 20.986 17.7592 20.984C18.8112 20.982 19.5992 20.697 20.2682 19.889C20.7422 19.319 21.0262 18.498 21.0712 17.763C21.1032 17.215 21.2452 15.477 21.2452 15.477" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M8.49609 5.32949V4.95849C8.49609 3.73849 9.48409 2.75049 10.7041 2.75049H13.2861C14.5051 2.75049 15.4941 3.73849 15.4941 4.95849L15.4951 5.32949" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M11.9951 16.6782V15.3842" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 8.38912V11.8561C4.668 13.1211 6.966 14.0071 9.488 14.3581C9.79 13.2571 10.783 12.4501 11.99 12.4501C13.178 12.4501 14.191 13.2571 14.473 14.3681C17.005 14.0171 19.312 13.1311 21.24 11.8561V8.38912C21.24 6.69512 19.877 5.33112 18.183 5.33112H5.817C4.123 5.33112 2.75 6.69512 2.75 8.38912Z" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-								<span class="side-menu__label">ความคืบหน้าโครงการ</span><i class="angle fe fe-chevron-down"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg"  style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
+                                    <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
+                                  </svg>
+								<span class="side-menu__label px-2">จัดการหมวดหมู่</span><i class="angle fe fe-chevron-down"></i>
 							</a>
 							<ul class="slide-menu">
-								<li><a class="slide-item" href="page-3.1.html">ความคืบหน้าทั้งหมด</a></li>
-								<li><a class="slide-item" href="page-3.5.html">ความเคลื่อนไหวล่าสุด</a></li>
+								<li><a class="slide-item" href="{{url('viewSpecialDealCategory')}}">จัดการหมวดหมู่ดีลสุดพิเศษ</a></li>
+								<li><a class="slide-item" href="{{url('viewouristAttractionCategory')}}">จัดการหมวดหมู่สถานที่ยอดฮิต</a></li>
 							</ul>
 						</li>
-						<li class="slide">
+
+
+						{{-- <li class="slide">
 							<a class="side-menu__item" data-toggle="slide" href="#">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="side-menu__icon" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M21.4446 15.7579C21.4446 19.336 19.336 21.4446 15.7579 21.4446H7.97173C4.38444 21.4446 2.27588 19.336 2.27588 15.7579V7.9626C2.27588 4.38444 3.59031 2.27588 7.16847 2.27588H9.16749C9.88576 2.27588 10.5621 2.61406 10.9931 3.18868L11.9059 4.40269C12.3378 4.97618 13.0135 5.31406 13.7315 5.31549H16.5611C20.1484 5.31549 21.472 7.14108 21.472 10.7923L21.4446 15.7579Z" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M7.05908 14.4891H16.6526" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="side-menu__icon" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.8042 15.477C2.8042 15.477 2.9462 17.215 2.9792 17.763C3.0232 18.498 3.3072 19.319 3.7812 19.889C4.4502 20.697 5.2382 20.982 6.2902 20.984C7.5272 20.986 16.5222 20.986 17.7592 20.984C18.8112 20.982 19.5992 20.697 20.2682 19.889C20.7422 19.319 21.0262 18.498 21.0712 17.763C21.1032 17.215 21.2452 15.477 21.2452 15.477" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.49609 5.32949V4.95849C8.49609 3.73849 9.48409 2.75049 10.7041 2.75049H13.2861C14.5051 2.75049 15.4941 3.73849 15.4941 4.95849L15.4951 5.32949" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11.9951 16.6782V15.3842" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.75 8.38912V11.8561C4.668 13.1211 6.966 14.0071 9.488 14.3581C9.79 13.2571 10.783 12.4501 11.99 12.4501C13.178 12.4501 14.191 13.2571 14.473 14.3681C17.005 14.0171 19.312 13.1311 21.24 11.8561V8.38912C21.24 6.69512 19.877 5.33112 18.183 5.33112H5.817C4.123 5.33112 2.75 6.69512 2.75 8.38912Z" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
 								<span class="side-menu__label">จัดการเว็บไซต์บริจาค</span><i class="angle fe fe-chevron-down"></i>
 							</a>
 							<ul class="slide-menu">
@@ -213,7 +218,7 @@
 								</svg>
 								<span class="side-menu__label">ตั้งค่า</span>
 							</a>
-						</li>
+						</li> --}}
 
 
 					</ul>
