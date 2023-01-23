@@ -6,7 +6,7 @@ use App\Http\Controllers\SpecialDealCategoryController\SpecialDealCategoryContro
 use App\Http\Controllers\TouristAttractionCategoryController\TouristAttractionCategoryController;
 use App\Http\Controllers\HomeController\HomeController;
 use App\Http\Controllers\ArticleController\ArticleController;
-use App\Http\Controllers\PlaceHitController\PlaceHitController;
+use App\Http\Controllers\TouristAttractionController\TouristAttractionController;
 use App\Http\Controllers\ContactUsController\ContactUsController;
 
 
@@ -58,12 +58,16 @@ Route::get('editSpecialDealCategory', [SpecialDealCategoryController::class, 'ed
 //********end หลังบ้านจัดการหมวดหมู่ดีลสุดพิเศษ***********
 
 
-//*********หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต**********
-Route::get('viewouristAttractionCategory', [TouristAttractionCategoryController::class, 'viewouristAttractionCategory']);// ตาราง จัดการหมวดหมู่ดีลสุดพิเศษ
-//********end หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต***********
 
-Route::get('placeHit', [PlaceHitController::class, 'placeHit']);//navbar view สถานที่ยอดฮิต
-Route::get('descriptionPlaceHit', [PlaceHitController::class, 'descriptionShow']);//view รายละเอียดสถานที่ยอดฮิตเมื่อคลิก
+//******************หน้าบ้าน สถานที่ยอดฮิต******************
+Route::get('showTouristAttraction', [TouristAttractionController::class, 'ShowTouristAttraction']);//navbar view สถานที่ยอดฮิต
+Route::get('descriptionTouristAttraction', [TouristAttractionController::class, 'DescriptionTouristAttraction']);//view รายละเอียดสถานที่ยอดฮิตเมื่อคลิก
+//******************end หน้าบ้าน สถานที่ยอดฮิต******************
+//*********หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต**********
+Route::get('viewTouristAttractionCategory', [TouristAttractionCategoryController::class, 'viewTouristAttractionCategory']);// ตาราง จัดการหมวดหมู่สถานที่ยอดฮิต
+Route::get('addTouristAttractionCategory', [TouristAttractionCategoryController::class, 'addTouristAttractionCategory']);// เพิ่มข้อมูล หมวดหมู่สถานที่ยอดฮิต
+Route::get('editTouristAttractionCategory', [TouristAttractionCategoryController::class, 'editTouristAttractionCategory']);// แก้ไขข้อมูล หมวดหมู่สถานที่ยอดฮิต
+//********end หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต***********
 
 
 

@@ -166,6 +166,20 @@
             min-height: 1.375rem;
             border-radius: 50px;
         }
+        .toggle.btn-sm {
+            min-width: 2.19rem;
+            min-height: 1.375rem;
+            border-radius: 50px;
+        }
+        .toggle-on.btn-sm {
+            padding-right: 1rem;
+            background-color: #ffbe00;
+        }
+        .toggle-off.btn-sm {
+            padding-right: 1rem;
+            background-color: #ff0000;
+            color: #fff;
+        }
     </style>
 
 
@@ -202,8 +216,8 @@
                                   </svg>
                                 จัดการหมวดหมู่ >
                             </h5>
-                            <a href="{{url('viewSpecialDealCategory')}}"><h5 class="content-title mb-0 my-auto px-2">จัดการหมวดหมู่ดีลพิเศษ ></h5></a>
-                            <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;">แก้ไขหมวดหมู่ดีลพิเศษ</h5>
+                            <a href="{{url('viewTouristAttractionCategory')}}"><h5 class="content-title mb-0 my-auto px-2">จัดการหมวดหมู่สถานที่ยอดฮิต ></h5></a>
+                            <h5 class="content-title mb-0 my-auto" style="padding-bottom: 5px;">เพิ่มหมวดหมู่สถานที่ยอดฮิต</h5>
                         </div>
                     </div>
                 </div>
@@ -215,36 +229,36 @@
                 <form action="">
                     <div class="col-xl-7">
                         <div class="card card-body">
-                            <div class="form-group row py-2">
-                                <label for="idUser" class="col-sm-3 col-form-label">รหัสหมวดหมู่ดีลพิเศษ</label>
-                                <div class="col-sm-3">
-                                  <input type="text" readonly class="form-control" id="idUser"  value="CBC001">
-                                </div>
-
+                            <div class="row py-3">
+                                <label for="" style="padding-top: 10px;" class="px-3">รหัสหมวดหมู่สถานที่ยอดฮิต</label>
+                                <input type="text" readonly class="form-control" id=""style="width:25%" value="CBC001">
                             </div>
                             <div class="row d-flex justify-content-between py-2">
                                 <div class="col-6">
-                                     <div class="row">
+                                    <div class="row">
                                         <svg style="margin-top: 3px; margin-left:10px; color:#00AEEF;"class="bi bi-exclamation-circle-fill "   xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                                         </svg>
-                                       <h5 class="px-2"><b>แก้ไขข้อมูล</b></h5>
-                                    </div>
+                                       <h5 class="px-2"><b>เพิ่มข้อมูล</b></h5></div>
+                                </div>
+                                <div class="col-3">
+                                    <label for="">ยอดนิยม</label>
+                                    <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm">
                                 </div>
                                 <div class="row-6 ">
                                     <label for="">สถานะ</label>
-                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs" >
+                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
                                 </div>
                             </div>
 
 
                             <div class="">
-                                <label>ชื่อหมวดหมู่ดีลพิเศษ(TH)</label>
+                                <label>ชื่อหมวดหมู่สถานที่ (TH)</label>
                                 <span id="showNumCateTh" style="float: right;">0/100</span>
-                                <input value="ที่พัก" type="text" class="form-control nameDealCateTh mb-2" id="" onkeyup="inputNameCateTh(this)" placeholder="กรุณากรอกชื่อหมวดหมู่ดีลภาษาไทย">
-                                <label class="my-2">ชื่อหมวดหมู่ดีลพิเศษ(EN)</label>
+                                <input type="text" class="form-control nameDealCateTh mb-2" id="" onkeyup="inputNameCateTh(this)" placeholder="กรุณากรอกชื่อหมวดหมู่ภาษาไทย">
+                                <label class="my-2">ชื่อหมวดหมู่สถานที่ (EN)</label>
                                 <span class="my-2" id="showNumCateEn" style="float: right;">0/100</span>
-                                <input value="Accommodation/Hotel" type="text" class="form-control nameDealCateEn" id="" onkeyup="inputNameCateEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อหมวดหมู่ดีลภาษาอังกฤษ">
+                                <input type="text" class="form-control nameDealCateEn" id="" onkeyup="inputNameCateEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อหมวดหมู่ภาษาอังกฤษ">
                             </div>
                         </div>
 
@@ -256,21 +270,16 @@
                                 <svg style="color:#00AEEF;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
                                     <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
                                   </svg>
-                                ภาพหมวดหมู่ดีลพิเศษ
+                                ภาพหมวดหมู่สถานที่
                                 <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div>
-                            <div class="card-body">
+                             <div class="card-body">
                                 <div class="">
                                     <div class="d-flex flex-wrap gallery">
-
-                                        <div class="box-gallery-image">
-                                            <img src="{{ asset('/assets/images/deal.png') }}" alt="">
-                                            <button class="btn btn-link btn-delete p-0" ><img src="/assets/images/icon/btn-delete.png" class="w-100"></button>
-                                        </div>
-
                                         <div class="box-add-image text-center d-flex justify-content-center">
                                             <div class="align-self-center">
                                                 <button type="button" class="btn btn-upload mb-3">
+
                                                     click to upload
                                                 </button>
                                                 <div class="text-center tx-5">Drag & drop files to upload <br>
@@ -287,23 +296,11 @@
 
 
                         <div class="card card-body">
-                            <div class="form-group row">
-                                <label for="user" class="col-sm-2 col-form-label">ผู้สร้าง</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" readonly id="user" value="นางสาวเบญจวรรณ บัวพิทักษ์">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-2" style="float: left;">
-                                    <button type="button"  data-toggle="modal" data-target="#trashAll" style="border-radius:50%; height:40px;border-color:#ffff;" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="25"></button>
-                                </div>
-                                <div class="col-9">
-                                    <a href="{{url('viewSpecialDealCategory')}}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
-                                    <span class="px-2">
-                                        <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
-                                    </span>
-                                </div>
-
+                            <div class="row justify-content-end">
+                                <a href="{{url('viewTouristAttractionCategory')}}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
+                                <span class="px-2">
+                                    <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
+                                </span>
                             </div>
                         </div>
 
@@ -312,26 +309,6 @@
 
 
                     </div>
-                      <!-- Modal ถังขยะ -->
-                      <div class="modal fade" id="trashAll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-body text-center">
-                                    <br>
-                                    <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
-                                    <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                    </svg>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                    <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end Modal ถังขยะ -->
                 </form>
 
 
@@ -424,7 +401,6 @@
 
     {{-- script นับจำนวนตัวอักษรที่พิมพ์ไม่เกิน 100ตัว ชื่ออังกฤษ ชื่อไทย --}}
     <script>
-        $(document).ready()
         function inputNameCateTh(val) {
             var len = val.value.length;
             if (len >= 100) {
