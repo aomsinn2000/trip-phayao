@@ -656,11 +656,8 @@
                                             <thead class="thead-dark">
                                                 <tr>
                                                     <th>รหัสหมวดหมู่</th>
-                                                    <th style="text-align: center;">ภาพหมวดหมู่</th>
-                                                    <th>ยอดนิยม</th>
                                                     <th>ชื่อหมวดหมู่(TH)</th>
                                                     <th>ชื่อหมวดหมู่(EN)</th>
-                                                    <th>จำนวน</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
                                                     <th style="text-align: center;">สถานะ
@@ -676,11 +673,8 @@
                                             <tbody style="text-align: left">
                                                 <tr>
                                                     <td><a style="pointer-events: none;color:#fc2525;" href="{{ url('editTouristAttractionCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td style="text-align: center;"><img class="img-category" src="{{asset('/assets/images/restaurant.jpg')}}" alt=""></td>
-                                                    <td><input disabled type="checkbox" checked  data-on="เปิดใช้งาน" data-off="ปิดใช้งาน"  data-toggle="toggle" data-size="sm"></td>
                                                     <td>ร้านอาหาร</td>
                                                     <td>restaurant</td>
-                                                    <td>10</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -694,11 +688,8 @@
                                                 </tr>
                                                 <tr>
                                                     <td><a style="pointer-events: none;color:#fc2525;" href="{{ url('editTouristAttractionCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td style="text-align: center;"><img class="img-category" src="{{asset('/assets/images/measure.jpg')}}" alt=""></td>
-                                                    <td><input disabled type="checkbox" checked  data-on="เปิดใช้งาน" data-off="ปิดใช้งาน"  data-toggle="toggle" data-size="sm"></td>
                                                     <td>วัด</td>
                                                     <td>temple</td>
-                                                    <td>10</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -712,11 +703,8 @@
                                                 </tr>
                                                 <tr>
                                                     <td><a style="pointer-events: none;color:#fc2525;" href="{{ url('editTouristAttractionCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td style="text-align: center;"><img class="img-category" src="{{asset('/assets/images/waterfall.jpg')}}" alt=""></td>
-                                                    <td><input disabled type="checkbox" checked  data-on="เปิดใช้งาน" data-off="ปิดใช้งาน"  data-toggle="toggle" data-size="sm"></td>
                                                     <td>น้ำตก</td>
                                                     <td>waterfall</td>
-                                                    <td>10</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -756,7 +744,7 @@
                                     <path
                                         d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
                                 </svg><br><br>
-                                <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ กู้คืนไม่ได้</div>
+                                <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ ไม่สามารถกู้คืนได้</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
@@ -1024,15 +1012,9 @@
             {
                 "width": "100px"
             }, {
-                "width": "120px",
-            },  {
-                "width": "100px"
-            }, {
                 "width": "110px"
             }, {
                 "width": "110px"
-            }, {
-                "width": "50px"
             }, {
                 "width": "200px"
             }, {

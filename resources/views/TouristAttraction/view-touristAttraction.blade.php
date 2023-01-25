@@ -158,7 +158,7 @@
             min-height: 30px !important;
             border-radius: 50px;
         }
-        
+
     </style>
 
 </head>
@@ -220,8 +220,6 @@
                                         <a class="nav-item nav-link active" data-toggle="tab" href="#all-touristAttraction" role="tab" aria-selected="true"><b>ทั้งหมด (100)</b></a>
                                         <a class="nav-item nav-link" data-toggle="tab" href="#on-touristAttraction" role="tab" aria-selected="false"><b>เปิดการใช้งาน (50)</b></a>
                                         <a class="nav-item nav-link" data-toggle="tab" href="#off-touristAttraction" role="tab" aria-selected="false"><b>ปิดการใช้งาน (50)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#trash-touristAttraction" role="tab" aria-selected="false"><b>ถังขยะ (50)</b></a>
-
 
                                     </div>
                                 </nav>
@@ -520,88 +518,7 @@
 
 
 
-                                     {{-- ถังขยะ --}}
-                                     <div class="tab-pane fade" id="trash-touristAttraction" role="tabpanel" aria-labelledby="">
-                                        <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
-                                            <div class="col-2 py-3">
-                                                <button type="button" class="btn btn-info text-dark btn-color"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
-                                                    </svg> นำข้อมูลออก</button>
-                                            </div>
-                                            <div class="col-3 py-3">
-                                                <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
-                                                <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
-                                            </div>
-                                            <div class="col-3 py-3">
-                                                <label for="endtDay"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                <input type="date" id="endDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
-                                            </div>
-                                            <div class="col-3 py-3">
-                                                <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
-                                            </div>
-                                        </div>
-                                        <table class="table table-striped position-relative my-3 " id="trashTouristAttraction-table">
-                                            <thead class="thead-dark">
-                                                <tr style="text-align: center;">
-                                                    <th style="text-align: left;">รหัสสถานที่</th>
-                                                    <th style="text-align: left;">ชื่อสถานที่ท่องเที่ยว</th>
-                                                    <th style="text-align: center;">หมวดหมู่
-                                                        <select class="form-control selectStyle" id="selectCategory">
-                                                            <option selected>ทั้งหมด</option>
-                                                            <option style="padding-top: 10px;">ที่พัก</option>
-                                                            <option>ท่องเที่ยว</option>
-                                                        </select>
-                                                    </th>
-                                                    <th>จังหวัด</th>
-                                                    <th>ผู้สร้าง</th>
-                                                    <th>ผู้แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
-                                                        <select class="form-control selectStyle" id="selectStatus">
-                                                            <option>ทั้งหมด</option>
-                                                            <option>เปิดใช้งาน</option>
-                                                            <option>ปิดใช้งาน</option>
-                                                        </select>
-                                                    </th>
 
-                                                </tr>
-                                            </thead>
-                                            <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a style="pointer-events: none;color:#fc2525;" href="{{ url('editTouristAttraction') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">กว๊านพะเยา</td>
-                                                    <td>ธรรมชาติ</td>
-                                                    <td>พะเยา</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statusOff">ปิดใช้งาน</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a  style="pointer-events: none;color:#fc2525;" href="{{ url('editTouristAttraction') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">กว๊านพะเยา</td>
-                                                    <td>ธรรมชาติ</td>
-                                                    <td>พะเยา</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statusOff">ปิดใช้งาน</div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    {{-- end ถังขยะ --}}
 
                                 </div>
 
@@ -625,7 +542,7 @@
                                     <path
                                         d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
                                 </svg><br><br>
-                                <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ กู้คืนไม่ได้</div>
+                                <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ ไม่สามารถกู้คืนได้</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
@@ -719,9 +636,7 @@
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
             $('#offTouristAttraction-table').DataTable().columns.adjust();
         });
-        $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#trashTouristAttraction-table').DataTable().columns.adjust();
-        });
+
     </script>
     {{-- End script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
 
@@ -861,45 +776,6 @@
         });
     </script>
 
-<script>
-    $('#trashTouristAttraction-table').DataTable({
-        aLengthMenu: [
-            [10, 25, 50, 100, 200, -1],
-            [10, 25, 50, 100, 200, "All"]
-        ],
-        iDisplayLength: -1,
-        "ordering": false,
-        "dom": '<<t>ilp>',
-        rowReorder: {
-            selector: '.move-selector'
-        },
-        scrollX: true,
-        paging: true,
-        searching: false,
-        ordering: false,
-        info: true,
-        language: {
-            emptyTable: "ไม่พบข้อมูล"
-        },
-        columns: [
-            {
-            "width": "40px"
-        }, {
-            "width": "150px",
-        }, {
-            "width": "80px"
-        }, {
-            "width": "100px"
-        }, {
-            "width": "250px"
-        }, {
-            "width": "250px"
-        }, {
-            "width": "80px"
-        }],
-
-    });
-</script>
 
 
 
