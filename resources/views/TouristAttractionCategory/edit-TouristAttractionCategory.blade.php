@@ -82,65 +82,16 @@
         }
     </style>
     <style>
-        .box-gallery-image {
-            box-sizing: border-box;
-            border-radius: 13px;
-            height: 150px;
-            width: 150px;
-            position: relative;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            overflow: hidden;
-        }
-
-        .box-add-image .btn-upload {
-            background: #00AEEF;
-            border-radius: 5px;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 20px;
-            text-align: center;
-            color: #FFFFFF;
-        }
-
-        .tx-5 {
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 19px;
-            color: #00AEEF;
-        }
-
-        .box-gallery-image img {
-            object-fit: cover;
-            height: 150px;
-            width: 150px;
-            border-radius: 50%;
-        }
-
-        .box-gallery-image .btn-delete {
-            position: absolute;
-            width: 30px;
-            bottom: 15px;
-            right: 15px;
-        }
-
-        .box-gallery-image .btn-delete img {
-            object-fit: unset;
-            width: 100%;
-            height: 30px;
-        }
-
-        .box-add-image {
-            border: 1px dashed #053ec2;
-            box-sizing: border-box;
-            border-radius: 13px;
-            height: 150px;
-            width: 150px;
-            cursor: pointer;
-            background-color: #F2FBFE;
-        }
+            .dropify-wrapper {
+                border-radius: 50%;
+                height: 150px !important;
+            }
+            .dropify-wrapper .dropify-preview .dropify-render img{
+                object-fit: cover;
+                height: 140px;
+                max-width: 140px;
+                border-radius: 50%;
+            }
 
         .hideinput {
             width: 0;
@@ -273,29 +224,9 @@
                                   </svg>
                                 ภาพหมวดหมู่สถานที่
                                 <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
-                            </div>
-                            <div class="card-body">
-                                <div class="">
-                                    <div class="d-flex flex-wrap gallery">
-                                        <div class="box-gallery-image">
-                                            <img src="{{ asset('/assets/images/deal.png') }}" alt="">
-                                            <button class="btn btn-link btn-delete p-0" ><img src="/assets/images/icon/btn-delete.png" class="w-100"></button>
-                                        </div>
-                                        <div class="box-add-image text-center d-flex justify-content-center">
-                                            <div class="align-self-center">
-                                                <button type="button" class="btn btn-upload mb-3">
-
-                                                    click to upload
-                                                </button>
-                                                <div class="text-center tx-5">Drag & drop files to upload <br>
-                                                    {{-- <label style="color: #5f6062; font-size:10px;">ขนาดภาพที่แนะนำ  853 x 526</label> --}}
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <input type="file" name="files" id="gallery" multiple="" class="hideinput">
+                            </div><br>
+                            <div class="mb-4" style="width: 150px;">
+                                <input type="file" class="input-upload-image" data-default-file="{{asset('/assets/images/deal.png')}}"  data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
                             </div>
                         </div>
 
@@ -461,38 +392,23 @@
 
 
 
-    {{-- script อัพโหลดรูปภาพแกลลอรี รูปเล็ก --}}
-    <script type="text/javascript">
-        $('.box-add-image').on('click', function() {
-            $('#gallery').click()
-        })
-        $('#gallery').on('change', function() {
-            var names = [];
-            for (var i = 0; i < $(this).get(0).files.length; ++i) {
-                preview($(this).get(0).files[i])
-            }
-        })
-        function preview(file) {
-            var reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.addEventListener("load", function(e) {
-                showpreview(e.target.result)
-            });
-        }
-        function showpreview(image) {
-            var html = '';
-            html += '<div class="box-gallery-image">';
-            html += '<img src="' + image + '" class="w-100">';
-            html += '<button class="btn btn-link btn-delete p-0"><img src="/assets/images/icon/btn-delete.png" class="w-100"></button>';
-            html += '</div>';
-            $('.box-add-image').before(html);
-        }
-        $(document).on('click', '.btn-delete', function() {
-            $(this).closest('.box-gallery-image').remove();
-        })
-    </script>
-        {{--end script อัพโหลดรูปภาพแกลลอรี รูปเล็ก --}}
 
+  {{-- script อัพโหลดรูปภาพ banner ใหญ่ --}}
+  <script type="text/javascript">
+    $('.input-upload-image').dropify({
+        tpl: {
+            wrap: '<div class="dropify-wrapper dropify-wrapper-st-2 "></div>',
+            loader: '<div class="dropify-loader"></div>',
+            message: '<div class="dropify-message"><span class="" /><div class="text-center"><button class="btn  btn-link">เพิ่มรูปภาพ</button></div> <p class=""><div class="text-color-1 font-weight-light fs-14">หรือวางไฟล์เพื่ออัพโหลด</div></p></div>',
+            preview: '<label class="dropify-preview " for="drop-1"><span class="dropify-render"><div class="fildrop"></div></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-infos-message"></p></div></div></label>',
+            filename: '<p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>',
+            clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="35"></button>',
+            errorLine: '<p class="dropify-error"></p>',
+            errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
+        }
+    });
+</script>
+{{-- end script อัพโหลดรูปภาพ banner ใหญ่ --}}
 
 
 

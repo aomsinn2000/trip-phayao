@@ -60,14 +60,21 @@ Route::get('editSpecialDealCategory', [SpecialDealCategoryController::class, 'ed
 
 
 //******************หน้าบ้าน สถานที่ยอดฮิต******************
-Route::get('showTouristAttraction', [TouristAttractionController::class, 'ShowTouristAttraction']);//navbar view สถานที่ยอดฮิต
+Route::get('touristAttraction', [TouristAttractionController::class, 'ShowTouristAttraction']);//navbar view สถานที่ยอดฮิต
 Route::get('descriptionTouristAttraction', [TouristAttractionController::class, 'DescriptionTouristAttraction']);//view รายละเอียดสถานที่ยอดฮิตเมื่อคลิก
 //******************end หน้าบ้าน สถานที่ยอดฮิต******************
-//*********หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต**********
+Route::get('viewTouristAttraction', [TouristAttractionController::class, 'viewTouristAttraction']);//navbar view สถานที่ยอดฮิต
+//******************หลังบ้าน สถานที่ยอดฮิต******************
+Route::get('viewTouristAttraction', [TouristAttractionController::class, 'viewTouristAttraction']);//navbar view สถานที่ยอดฮิต
+Route::get('addTouristAttraction', [TouristAttractionController::class, 'addTouristAttraction']);//navbar view สถานที่ยอดฮิต
+Route::get('editTouristAttraction', [TouristAttractionController::class, 'editTouristAttraction']);//navbar view สถานที่ยอดฮิต
+//******************end หลังบ้าน สถานที่ยอดฮิต******************
+
+//*********หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต**************
 Route::get('viewTouristAttractionCategory', [TouristAttractionCategoryController::class, 'viewTouristAttractionCategory']);// ตาราง จัดการหมวดหมู่สถานที่ยอดฮิต
 Route::get('addTouristAttractionCategory', [TouristAttractionCategoryController::class, 'addTouristAttractionCategory']);// เพิ่มข้อมูล หมวดหมู่สถานที่ยอดฮิต
 Route::get('editTouristAttractionCategory', [TouristAttractionCategoryController::class, 'editTouristAttractionCategory']);// แก้ไขข้อมูล หมวดหมู่สถานที่ยอดฮิต
-//********end หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต***********
+//*********end หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต***********
 
 
 

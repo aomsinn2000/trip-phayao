@@ -150,9 +150,9 @@
             height: 40px;
             object-fit: cover;
             border-radius: 50px;
-            border-color:#042e60;
+            /* border-color:#042e60;
             border-width: 2px;
-            border-style: solid;
+            border-style: solid; */
         }
         .toggle-off.btn-xs {
             padding-right: 1rem;
@@ -252,8 +252,7 @@
                                         <a class="nav-item nav-link active" data-toggle="tab" href="#all-touristAttractionCategory" role="tab" aria-selected="true"><b>ทั้งหมด (50)</b></a>
                                         <a class="nav-item nav-link" data-toggle="tab" href="#on-touristAttractionCategory" role="tab" aria-selected="false"><b>เปิดใช้งาน(5)</b></a>
                                         <a class="nav-item nav-link" data-toggle="tab" href="#off-touristAttractionCategory" role="tab" aria-selected="false"><b>ปิดใช้งาน (5)</b></a>
-
-
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#trash-touristAttractionCategory" role="tab" aria-selected="false"><b>ถังขยะ (5)</b></a>
                                     </div>
                                 </nav>
                                 <div class="tab-content" id="nav-tabContent">
@@ -442,7 +441,7 @@
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                                        <div class="statusOn">เปิดใช้งาน</div>
                                                     </td>
                                                     <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -466,7 +465,7 @@
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                                        <div class="statusOn">เปิดใช้งาน</div>
                                                     </td>
                                                     <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -490,7 +489,7 @@
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                                        <div class="statusOn">เปิดใช้งาน</div>
                                                     </td>
                                                     <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -565,7 +564,7 @@
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                                        <div class="statusOff">ปิดใช้งาน</div>
                                                     </td>
                                                     <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -589,7 +588,7 @@
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                                        <div class="statusOff">ปิดใช้งาน</div>
                                                     </td>
                                                     <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -613,7 +612,7 @@
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                                       <div class="statusOff">ปิดใช้งาน</div>
                                                     </td>
                                                     <td style="text-align: center;"><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -622,7 +621,114 @@
                                                             </svg>
                                                     </td>
                                                 </tr>
-                                                 
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    {{-- end ปิดการใช้งาน --}}
+
+
+
+                                    {{-- ถังขยะการใช้งาน --}}
+                                    <div class="tab-pane fade" id="trash-touristAttractionCategory" role="tabpanel" aria-labelledby="">
+                                        <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
+                                            <div class="col-6 py-3 px-5">
+                                                <button type="button" class="btn btn-info text-dark btn-color">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
+                                                    </svg>
+                                                    <span class="px-2">นำข้อมูลเข้า</span>
+                                                </button>
+                                                <span class="px-3">
+                                                    <button type="button" class="btn btn-info text-dark btn-color">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                                                        </svg>
+                                                        <span class="px-2">นำข้อมูลออก</span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                            <div class="col-3 py-3">
+                                                <input type="text" class="form-control" style="border-radius: 5px;" placeholder="รหัสหมวดหมู่ / ชื่อหมวดหมู่">
+                                            </div>
+                                        </div>
+                                        <table class="table table-striped position-relative my-3 " id="trashTouristAttractionCategory-table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>รหัสหมวดหมู่</th>
+                                                    <th style="text-align: center;">ภาพหมวดหมู่</th>
+                                                    <th>ยอดนิยม</th>
+                                                    <th>ชื่อหมวดหมู่(TH)</th>
+                                                    <th>ชื่อหมวดหมู่(EN)</th>
+                                                    <th>จำนวน</th>
+                                                    <th>ผู้สร้าง</th>
+                                                    <th>แก้ไข</th>
+                                                    <th style="text-align: center;">สถานะ
+                                                        <select class="form-control selectStyle" id="selectStatus">
+                                                            <option>ทั้งหมด</option>
+                                                            <option>เปิดใช้งาน</option>
+                                                            <option>ปิดใช้งาน</option>
+                                                        </select>
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody style="text-align: left">
+                                                <tr>
+                                                    <td><a style="pointer-events: none;color:#fc2525;" href="{{ url('editTouristAttractionCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{asset('/assets/images/restaurant.jpg')}}" alt=""></td>
+                                                    <td><input disabled type="checkbox" checked  data-on="เปิดใช้งาน" data-off="ปิดใช้งาน"  data-toggle="toggle" data-size="sm"></td>
+                                                    <td>ร้านอาหาร</td>
+                                                    <td>restaurant</td>
+                                                    <td>10</td>
+                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="pointer-events: none;color:#fc2525;" href="{{ url('editTouristAttractionCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{asset('/assets/images/measure.jpg')}}" alt=""></td>
+                                                    <td><input disabled type="checkbox" checked  data-on="เปิดใช้งาน" data-off="ปิดใช้งาน"  data-toggle="toggle" data-size="sm"></td>
+                                                    <td>วัด</td>
+                                                    <td>temple</td>
+                                                    <td>10</td>
+                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="statusOn">เปิดใช้งาน</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="pointer-events: none;color:#fc2525;" href="{{ url('editTouristAttractionCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{asset('/assets/images/waterfall.jpg')}}" alt=""></td>
+                                                    <td><input disabled type="checkbox" checked  data-on="เปิดใช้งาน" data-off="ปิดใช้งาน"  data-toggle="toggle" data-size="sm"></td>
+                                                    <td>น้ำตก</td>
+                                                    <td>waterfall</td>
+                                                    <td>10</td>
+                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="statusOn">เปิดใช้งาน</div>
+                                                    </td>
+                                                </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -649,7 +755,8 @@
                                 <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                </svg>
+                                </svg><br><br>
+                                <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ กู้คืนไม่ได้</div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
@@ -659,6 +766,7 @@
                     </div>
                 </div>
                  <!--end Modal ถึงขยะ -->
+
             </div>
             <!-- Container closed -->
         </div>
@@ -742,6 +850,9 @@
         });
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
             $('#offTouristAttractionCategory-table').DataTable().columns.adjust();
+        });
+        $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
+            $('#trashTouristAttractionCategory-table').DataTable().columns.adjust();
         });
     </script>
     {{-- End script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
@@ -885,6 +996,49 @@
                 "width": "80px"
             }, {
                 "width": "150px"
+            }],
+
+    });
+</script>
+<script>
+    $('#trashTouristAttractionCategory-table').DataTable({
+        aLengthMenu: [
+            [10, 25, 50, 100, 200, -1],
+            [10, 25, 50, 100, 200, "All"]
+        ],
+        iDisplayLength: -1,
+        "ordering": false,
+        "dom": '<<t>ilp>',
+        rowReorder: {
+            selector: '.move-selector'
+        },
+        scrollX: true,
+        paging: true,
+        searching: false,
+        ordering: false,
+        info: true,
+        language: {
+            emptyTable: "ไม่พบข้อมูล"
+        },
+        columns: [
+            {
+                "width": "100px"
+            }, {
+                "width": "120px",
+            },  {
+                "width": "100px"
+            }, {
+                "width": "110px"
+            }, {
+                "width": "110px"
+            }, {
+                "width": "50px"
+            }, {
+                "width": "200px"
+            }, {
+                "width": "200px"
+            }, {
+                "width": "80px"
             }],
 
     });

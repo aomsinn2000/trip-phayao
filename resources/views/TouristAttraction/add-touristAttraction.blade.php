@@ -11,12 +11,12 @@
     <meta name="Keywords" content="" />
 
     <!-- Title -->
-    <title>จัดการดีลสุดพิเศษ</title>
+    <title>Phayao Trip</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('assets/images/shopping.png') }}" type="image/x-icon" />
-
+    <link rel="icon" href="{{ asset('/assets/images/logo-phayao.png') }}" type="image/x-icon" />
     <!-- Icons css -->
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
 
@@ -62,13 +62,24 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">
 
     <link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="assets/plugins/summernote/summernote-bs4.min.css" rel="stylesheet">
 
-        {{-- script datatogle เปิด/ปิด --}}
-        <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
-        {{-- script datatogle เปิด/ปิด --}}
+    {{-- script datatogle เปิด/ปิด --}}
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    {{-- script datatogle เปิด/ปิด --}}
+
+    {{-- query ตำบล อำเภอจังหวัด --}}
+    <link rel="stylesheet" href="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.css">
+    {{-- end query ตำบล อำเภอจังหวัด --}}
+
+    {{-- hashtags --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" integrity="sha512-xmGTNt20S0t62wHLmQec2DauG9T+owP9e6VU8GigI0anN7OXLip9i7IwEhelasml2osdxX71XcYm6BQunTQeQg==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
+    {{-- end hashtags --}}
+
     <style>
         input[type=checkbox] {
             transform: scale(2.5);
@@ -84,8 +95,8 @@
         .box-gallery-image {
             box-sizing: border-box;
             border-radius: 13px;
-            height: 150px;
-            width: 150px;
+            height: 140px;
+            width: 200px;
             position: relative;
             margin-right: 10px;
             margin-bottom: 10px;
@@ -113,8 +124,8 @@
 
         .box-gallery-image img {
             object-fit: cover;
-            height: 150px;
-            width: 150px;
+            height: 140px;
+            width: 200px;
         }
 
         .box-gallery-image .btn-delete {
@@ -134,8 +145,8 @@
             border: 1px dashed #053ec2;
             box-sizing: border-box;
             border-radius: 13px;
-            height: 150px;
-            width: 150px;
+            height: 140px;
+            width: 200px;
             cursor: pointer;
             background-color: #F2FBFE;
         }
@@ -145,6 +156,7 @@
             position: absolute;
             z-index: -1;
         }
+
         .toggle-off.btn-xs {
             padding-right: 1rem;
             padding-top: 8px;
@@ -159,12 +171,29 @@
             font-size: 12px;
             background-color: green;
         }
+
         .toggle.btn-xs {
             min-width: 2.19rem;
             min-height: 1.375rem;
             border-radius: 50px;
         }
 
+        .dropify-wrapper {
+            height: 170px !important;
+        }
+        .bootstrap-tagsinput .tag {
+            margin-right: 2px;
+            color: #3fa5ff;
+            background-color: #fff;
+            font-size: 15px;
+            border-radius: 50px;
+            border-color: #3fa5ff;
+            border-style: solid;
+            border-width: 2px;
+        }
+        .bootstrap-tagsinput {
+            width: 80%;
+        }
     </style>
 
 
@@ -176,7 +205,7 @@
 
     <!-- Loader -->
     <div id="global-loader">
-        <img src="assets/images/loader.svg" class="loader-img" alt="Loader">
+        <img src="/assets/images/loader.svg" class="loader-img" alt="Loader">
     </div>
     <!-- /Loader -->
 
@@ -196,14 +225,16 @@
                     <div class="my-auto">
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
-                                <svg style="margin-bottom: 4px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
-                                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
-                                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" style="color: black;margin-bottom:5px;" width="24" height="24" fill="currentColor" class="bi bi-signpost-2" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z" />
                                 </svg>
-                                Dashborad >
+                                สถานที่ท่องเที่ยว >
                             </h5>
-                            <a href="{{url('viewSpecialDeal')}}"><h5 class="content-title mb-0 my-auto px-2">จัดการดีลสุดพิเศษ ></h5></a>
-                            <h5 class="content-title mb-0 my-auto ">แก้ไข</h5>
+                            <a href="{{ url('viewTouristAttraction') }}">
+                                <h5 class="content-title mb-0 my-auto px-2" style="padding-top: 1px;">จัดการสถานที่ท่องเที่ยว ></h5>
+                            </a>
+                            <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;">เพิ่มสถานที่ท่องเที่ยว</h5>
                         </div>
                     </div>
                 </div>
@@ -215,92 +246,99 @@
                 <form action="">
                     <div class="col-xl-7">
                         <div class="card card-body">
-
                             <div class="form-group row py-2">
-                                <label for="idUser" class="col-sm-2 col-form-label">รหัสผู้ใช้งาน</label>
-                                <div class="col-sm-4">
-                                  <input type="text" readonly class="form-control" id="idUser"  value="AE21120001">
+                                <label for="idUser" class="col-sm-3 col-form-label">รหัสสถานที่ท่องเที่ยว</label>
+                                <div class="col-sm-3">
+                                    <input type="text" readonly class="form-control" id="idUser" value="AE21120001">
                                 </div>
-                                <div class="col-sm-5"><button type="button" class="btn btn-link">ใช้รหัสอัตโนมัติ</button></div>
+
                             </div>
                             <div class="row d-flex justify-content-between py-2">
-                                <div class="col-6"> <h5><b>เพิ่มข้อมูล</b></h5></div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <svg style="margin-top: 3px; margin-left:10px; color:#00AEEF;"class="bi bi-exclamation-circle-fill " xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                        </svg>
+                                        <h5 class="px-2"><b>เพิ่มข้อมูล</b></h5>
+                                    </div>
+                                </div>
                                 <div class="row-6 ">
                                     <label for="">สถานะ</label>
-                                    <input type="checkbox" style="border-radius:50px;" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
                                 </div>
                             </div>
+
+
                             <div class="">
-                                <label for="nameDealTh">ชื่อดีล(TH)</label>
+                                <label>ชื่อสถานที่ท่องเที่ยว (TH)</label>
                                 <span id="showNumTh" style="float: right;">0/100</span>
-                                <input type="text" class="form-control nameDealTh mb-2" id="" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อดีลภาษาไทย">
-                                <label for="nameDealEn">ชื่อดีล(EN)</label>
+                                <input type="text" class="form-control nameDealTh mb-2" id="" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อสถานที่ภาษาไทย">
+                                <label>ชื่อสถานที่ท่องเที่ยว (EN)</label>
                                 <span id="showNumEn" style="float: right;">0/100</span>
-                                <input type="text" class="form-control test" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อดีลภาษาอังกฤษ">
+                                <input type="text" class="form-control test" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อสถานที่ภาษาอังกฤษ">
                             </div>
-
-
-
-
-
-
-
                             <div class="row my-2">
                                 <div class="form-group col-6">
                                     <label for="category">หมวดหมู่</label>
                                     <select class="form-control" id="category" aria-placeholder="">
                                         <option selected disabled>กรุณาเลือกหมวดหมู่</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option>ที่พัก</option>
+                                        <option>ธรรมชาติ</option>
+                                        <option>สถานที่ศักดิ์สิทธิ์</option>
+                                        <option>วัด</option>
                                     </select>
-                                </div>
-                                <div class="col-6">
-                                    <label for="rights">จำนวนสิทธิ์</label><br>
-                                    <input type="text" class="form-control" id="rights" placeholder="กรุณาระบุจำนวนสิทธิ์">
                                 </div>
                             </div>
                         </div>
 
                         <div class="card card-body">
-                            <p>ราคาและระยะเวลาโปรโมชั่น</p>
-                            <div class="row">
-                                <div class="col-4 py-2">
-                                    <label for="price">ราคาปกติ</label><br>
-                                    <input type="text" class="form-control" id="price" placeholder="0">
+                            <div class="row py-3">
+                                <svg style="margin-top: 3px; margin-left:10px; color:#00AEEF;"class="bi bi-exclamation-circle-fill " xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                </svg>
+                                <h5 class="px-2"><b>สถานที่ตั้ง</b></h5>
+                            </div>
+                            <div class="row my-2">
+                                <div class="form-group col-6">
+                                    <label>ตำบล</label>
+                                    <input type="text" id="sub_district" class="form-control" placeholder="กรุณากรอกตำบล">
                                 </div>
-                                <div class="col-4 py-2">
-                                    <label for="price">ราคาปกติ</label><br>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="0" aria-label="" aria-describedby="basic-addon2">
-                                        <div class="input-group-append ">
-                                            <span class="" id="basic-addon2">
-                                                <select class="form-control" style="background-color: #e8e8e9;">
-                                                    <option selected><b>%</b></option>
-                                                    <option><b>บาท</b></option>
-                                                </select>
-                                            </span>
-                                        </div>
-                                    </div>
+                                <div class="form-group col-6">
+                                    <label>อำเภอ</label>
+                                    <input type="text" id="district" class="form-control" placeholder="กรุณากรอกอำเภอ">
                                 </div>
-                                <div class="col-4 py-2">
-                                    <label for="priceSpecial">ราคาปกติพิเศษ</label><br>
-                                    <input type="text" class="form-control" id="priceSpecial" placeholder="0" readonly>
+                                <div class="form-group col-6">
+                                    <label>จังหวัด</label>
+                                    <input type="text" id="province" class="form-control" placeholder="กรุณากรอกจังหวัด">
                                 </div>
-                                <div class="col-4 py-2">
-                                    <label for="firstDay">วันที่เริ่มต้น</label><br>
-                                    <input type="date" id="firstDay" name="" style="height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;">
+                                <div class="form-group col-6">
+                                    <label>รหัสไปรษณีย์</label>
+                                    <input type="text" id="postcode" class="form-control" placeholder="กรุณากรอกรหัสไปรษณีย์">
                                 </div>
-                                <div class="col-4 py-2">
-                                    <label for="endDay">วันที่สิ้นสุด</label><br>
-                                    <input type="date" id="endDay" name="" style="height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;">
+                            </div>
+                        </div>
+
+
+                        <div class="card card-body">
+                            <div class="row py-3">
+                                <svg style="margin-top: 3px; margin-left:10px; color:#00AEEF;"class="bi bi-exclamation-circle-fill " xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                </svg>
+                                <h5 class="px-2"><b>การเดินทางและช่วงฤดูท่องเที่ยว</b></h5>
+                            </div>
+                            <div class="row my-2">
+                                <div class="form-group col-12">
+                                    <label>การเดินทาง</label>
+                                    <span id="showNumTravel" style="float: right;">0/300</span>
+                                    <textarea name="" id="" cols="30" rows="10" class="form-control  mb-2" id="" onkeyup="inputNameTravel(this)" placeholder="ใส่ข้อความที่นี" style="height: 60px;"></textarea>
+
                                 </div>
-                                <div class="col-4 py-2">
-                                    <label for="indefinitelyDay">ไม่มีกำหนด</label><br>
-                                    <input class="form-check-input position-static " type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                                <div class="form-group col-12">
+                                    <label>ช่วงฤดูท่องเที่ยว</label>
+                                    <span id="showNumSeason" style="float: right;">0/300</span>
+                                    <textarea  name="" id="" cols="30" rows="10"class="form-control  mb-2" id="" onkeyup="inputNameSeason(this)" placeholder="ใส่ข้อความที่นี" style="height: 60px;"></textarea>
                                 </div>
+
                             </div>
                         </div>
 
@@ -317,43 +355,39 @@
 
 
 
-                        <div class="card card-body">
-                            <div class="row mb-3">
-                                <div class="col-6">เงื่อนไขการใช้งาน</div>
-                                <div class="col-6">
-                                    <span id="maxContentPost2"style="float: right;">0/800</span>
-                                </div>
-                            </div>
-                            <textarea class="summernote2"></textarea>
-                        </div>
 
 
                         <div class="card card-body">
-                            <div>ภาพปก <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span></div>
-                            <div class="mb-4" style="width: 415px;">
-                                <input type="file" class="input-upload-image" data-default-file="{{asset('assets/images/deal.png')}}"  data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
-
+                            <div>
+                                <svg style="color:#00AEEF;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
+                                    <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
+                                </svg>
+                                ภาพปก
+                                <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
+                            </div><br>
+                            <div class="mb-4" style="width: 315px;">
+                                <input type="file" class="input-upload-image" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
                             </div>
                             <br><br>
 
-
-                            <div>แกลลอรี <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span></div>
+                            <div>
+                                <svg style="color:#00AEEF;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
+                                    <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
+                                </svg>
+                                ภาพสถานที่ท่องเที่ยว
+                                <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
+                            </div>
                             <div class="card-body">
                                 <div class="">
                                     <div class="d-flex flex-wrap gallery">
-
-                                        <div class="box-gallery-image">
-                                            <img src="{{ asset('assets/images/icon/ion_trash-bin.png') }}" alt="">
-                                            <button class="btn btn-link btn-delete p-0"><img src="assets/images/icon/btn-delete.png" class="w-100"></button>
-                                        </div>
-
                                         <div class="box-add-image text-center d-flex justify-content-center">
                                             <div class="align-self-center">
                                                 <button type="button" class="btn btn-upload mb-3">
+
                                                     click to upload
                                                 </button>
                                                 <div class="text-center tx-5">Drag & drop files to upload <br>
-                                                    {{-- <label style="color: #5f6062; font-size:10px;">ขนาดภาพที่แนะนำ  853 x 526</label> --}}
+                                                    <label style="color:#C4C4C4; font-size:10px;">ขนาดภาพที่แนะนำ 853 x 526</label>
                                                 </div>
 
                                             </div>
@@ -362,32 +396,20 @@
                                 </div>
                                 <input type="file" name="files" id="gallery" multiple="" class="hideinput">
                             </div>
+                            <div class="card-body" style="border: none;">
+                                <label><b>Tags :</b></label>
+                                <input type="text" data-role="tagsinput" name="tags" class="form-control" style="width: 100%; height:40px;">
+                                <label style="color: red; font-size:12px;">*กรุณากด Enter ต่อหนึ่งคำเพื่อเพิ่ม Tags</label>
+                            </div>
                         </div>
 
 
                         <div class="card card-body">
-                            <div class="form-group row">
-                                <label for="user" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="user" value="นางสาวเบญจวรรณ บัวพิทักษ์">
-                                </div>
-                            </div>
-
-
-
-
-
-                            <div class="row">
-                                <div class="col-2" style="float: left;">
-                                    <button type="button" style="border-radius:50%; height:40px;border-color:#ffff;" class="dropify-clear"><img src="{{ asset('assets/images/icon/ion_trash-bin.png') }}" width="25"></button>
-                                </div>
-                                <div class="col-9">
-                                    <a href="{{url('viewSpecialDeal')}}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
-                                    <span class="px-2">
-                                        <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
-                                    </span>
-                                </div>
-
+                            <div class="row justify-content-end">
+                                <a href="{{ url('viewTouristAttraction') }}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
+                                <span class="px-2">
+                                    <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
+                                </span>
                             </div>
                         </div>
 
@@ -480,19 +502,31 @@
     <script src="assets/js/jquery.autotab.min.js"></script>
     {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
 
-
+    {{-- query ตำบล อำเภอจังหวัด --}}
+    <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/JQL.min.js"></script>
+    <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
+    <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+    <script>
+        $.Thailand({
+            $district: $("#sub_district"), // input ของตำบล
+            $amphoe: $("#district"), // input ของอำเภอ
+            $province: $("#province"), // input ของจังหวัด
+            $zipcode: $("#postcode") // input ของรหัสไปรษณีย์
+        });
+    </script>
+    {{-- end query ตำบล อำเภอจังหวัด --}}
 
 
     {{-- script อัพโหลดรูปภาพ banner ใหญ่ --}}
     <script type="text/javascript">
         $('.input-upload-image').dropify({
             tpl: {
-                wrap: '<div class="dropify-wrapper dropify-wrapper-st-2 "></div>',
+                wrap: '<div class="dropify-wrapper dropify-wrapper"></div>',
                 loader: '<div class="dropify-loader"></div>',
-                message: '<div class="dropify-message"><span class="" /><div class="text-center"><button class="btn  btn-link">เพิ่มรูปภาพ</button></div> <p class=""><div class="text-color-1 font-weight-light fs-14">หรือวางไฟล์เพื่ออัพโหลด</div></p></div>',
+                message: '<div class="dropify-message"><span class="" /><div class="text-center"><button class="btn  btn-link">เพิ่มรูปภาพ</button></div> <p class=""><div class="text-color-1 font-weight-light fs-14" style="color:#00AEEF"><b>หรือวางไฟล์เพื่ออัพโหลด</b><p style="color:#C4C4C4;font-size:12px;">ขนาดที่แนะนำ 1200*628</p></div></p></div>',
                 preview: '<label class="dropify-preview " for="drop-1"><span class="dropify-render"><div class="fildrop"></div></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-infos-message"></p></div></div></label>',
                 filename: '<p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>',
-                clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('assets/images/icon/ion_trash-bin.png') }}" width="35"></button>',
+                clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="35"></button>',
                 errorLine: '<p class="dropify-error"></p>',
                 errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
             }
@@ -523,6 +557,34 @@
         };
     </script>
     {{-- script นับจำนวนตัวอักษรที่พิมพ์ไม่เกิน 100ตัว ชื่ออังกฤษ ชื่อไทย --}}
+
+    {{-- script นับจำนวนตัวอักษรที่พิมพ์ไม่เกิน 300ตัว การเดินทาง ฤดูกาลท่องเที่ยว --}}
+    <script>
+        function inputNameTravel(val) {
+            var len = val.value.length;
+            if (len >= 300) {
+                val.value = val.value.substring(0, 300);
+            } else {
+                $('#showNumTravel').text(300 - len + ' / 300');
+            }
+        };
+
+        function inputNameSeason(val) {
+            var len = val.value.length;
+            if (len >= 300) {
+                val.value = val.value.substring(0, 300);
+            } else {
+                $('#showNumSeason').text(300 - len + ' / 300');
+            }
+        };
+    </script>
+    {{-- script นับจำนวนตัวอักษรที่พิมพ์ไม่เกิน 300ตัว การเดินทาง ฤดูกาลท่องเที่ยว --}}
+
+
+
+
+
+
 
 
     {{-- ลิมิตพิมพ์ได้กี่ตัว  เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
@@ -565,11 +627,6 @@
                 $('#maxContentPost').text(max + '/800')
             });
         });
-        $(function() {
-            registerSummernote('.summernote2', 'Leave a comment', 800, function(max) {
-                $('#maxContentPost2').text(max + '/800')
-            });
-        });
     </script>
     {{-- end เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
 
@@ -601,7 +658,7 @@
             var html = '';
             html += '<div class="box-gallery-image">';
             html += '<img src="' + image + '" class="w-100">';
-            html += '<button class="btn btn-link btn-delete p-0"><img src="assets/images/icon/btn-delete.png" class="w-100"></button>';
+            html += '<button class="btn btn-link btn-delete p-0"><img src="/assets/images/icon/btn-delete.png" class="w-100"></button>';
             html += '</div>';
             $('.box-add-image').before(html);
         }
@@ -610,6 +667,8 @@
         })
     </script>
     {{-- end script อัพโหลดรูปภาพแกลลอรี รูปเล็ก --}}
+
+
 
 
 </body>

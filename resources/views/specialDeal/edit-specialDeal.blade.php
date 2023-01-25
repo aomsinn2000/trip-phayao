@@ -66,10 +66,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="assets/plugins/summernote/summernote-bs4.min.css" rel="stylesheet">
 
-        {{-- script datatogle เปิด/ปิด --}}
-        <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
-        {{-- script datatogle เปิด/ปิด --}}
+    {{-- script datatogle เปิด/ปิด --}}
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    {{-- script datatogle เปิด/ปิด --}}
+
     <style>
         input[type=checkbox] {
             transform: scale(2.5);
@@ -366,7 +367,7 @@
 
                         <div class="card card-body">
                             <div class="form-group row">
-                                <label for="user" class="col-sm-2 col-form-label">Email</label>
+                                <label for="user" class="col-sm-2 col-form-label">ผู้สร้าง</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="user" value="นางสาวเบญจวรรณ บัวพิทักษ์">
                                 </div>

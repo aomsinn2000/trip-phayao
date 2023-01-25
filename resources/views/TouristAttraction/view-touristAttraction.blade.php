@@ -158,6 +158,7 @@
             min-height: 30px !important;
             border-radius: 50px;
         }
+        
     </style>
 
 </head>
@@ -188,12 +189,12 @@
                     <div class="my-auto">
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
-                                </svg>
-                                ดีลพิเศษ >
+                                <svg xmlns="http://www.w3.org/2000/svg" style="color: black;margin-bottom:5px;" width="24" height="24" fill="currentColor" class="bi bi-signpost-2" viewBox="0 0 16 16">
+                                    <path d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z"/>
+                                  </svg>
+                                สถานที่ท่องเที่ยว >
                             </h5>
-                            <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;">จัดการดีลพิเศษ</h5>
+                            <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;">จัดการสถานที่ท่องเที่ยว</h5>
                         </div>
                     </div>
                 </div>
@@ -207,19 +208,20 @@
 
                                 <div class="row">
                                     <div class="col-6">
-                                        <h5><b>จัดการดีลพิเศษ</b></h5>
+                                        <h5><b>จัดการสถานที่ท่องเที่ยว</b></h5>
                                     </div>
                                     <div class="col-6">
-                                        <a style="float: right; margin-right:35px;" href="{{ url('addSpecialDeal') }}" type="button" class="btn btn-info">เพิ่มดีลพิเศษ</a>
+                                        <a style="float: right; margin-right:35px;" href="{{ url('addTouristAttraction') }}" type="button" class="btn btn-info">เพิ่มสถานที่ท่องเที่ยว</a>
                                     </div>
                                 </div>
                                 <div style="padding-top:60px;"></div>
                                 <nav>
                                     <div class="nav main-nav-line" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-specialDeal" role="tab" aria-selected="true"><b>ทั้งหมด (100)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-specialDeal" role="tab" aria-selected="false"><b>เปิดการใช้งาน (50)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-specialDeal" role="tab" aria-selected="false"><b>ปิดการใช้งาน (50)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#trash-specialDeal" role="tab" aria-selected="false"><b>ถังขยะ (50)</b></a>
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-touristAttraction" role="tab" aria-selected="true"><b>ทั้งหมด (100)</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-touristAttraction" role="tab" aria-selected="false"><b>เปิดการใช้งาน (50)</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-touristAttraction" role="tab" aria-selected="false"><b>ปิดการใช้งาน (50)</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#trash-touristAttraction" role="tab" aria-selected="false"><b>ถังขยะ (50)</b></a>
+
 
                                     </div>
                                 </nav>
@@ -227,7 +229,7 @@
 
 
                                     {{-- ทั้งหมด --}}
-                                    <div class="tab-pane fade show active" id="all-specialDeal" role="tabpanel" aria-labelledby="all-specialDeal-tab">
+                                    <div class="tab-pane fade show active" id="all-touristAttraction" role="tabpanel" aria-labelledby="all-specialDeal-tab">
                                         <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
 
                                             <div class="col-2 py-3">
@@ -247,11 +249,11 @@
                                                 <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
                                             </div>
                                         </div>
-                                        <table class="table table table-striped position-relative my-3" id="allSpecialDeal-table">
+                                        <table class="table table table-striped position-relative my-3" id="allTouristAttraction-table">
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
-                                                    <th style="text-align: left;">รหัสดีล</th>
-                                                    <th style="text-align: left;">ชื่อดีล</th>
+                                                    <th style="text-align: left;">รหัสสถานที่</th>
+                                                    <th style="text-align: left;">ชื่อสถานที่ท่องเที่ยว</th>
                                                     <th style="text-align: center;">หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
                                                             <option selected>ทั้งหมด</option>
@@ -259,9 +261,9 @@
                                                             <option>ท่องเที่ยว</option>
                                                         </select>
                                                     </th>
-                                                    <th>ระยะเวลา</th>
+                                                    <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
-                                                    <th>แก้ไข</th>
+                                                    <th>ผู้แก้ไข</th>
                                                     <th style="text-align: center;">สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
@@ -274,16 +276,16 @@
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>ไม่กำหนด</td>
+                                                    <td style="text-align: left;"><a href="{{ url('editTouristAttraction') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td style="text-align: left;">กว๊านพะเยา</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
@@ -296,16 +298,16 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
+                                                    <td style="text-align: left;"><a href="{{ url('editTouristAttraction') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td style="text-align: left;">กว๊านพะเยา</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
@@ -324,7 +326,7 @@
 
 
                                     {{-- เปิดการใช้งาน --}}
-                                    <div class="tab-pane fade" id="on-specialDeal" role="tabpanel" aria-labelledby="">
+                                    <div class="tab-pane fade" id="on-touristAttraction" role="tabpanel" aria-labelledby="">
                                         <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
 
                                             <div class="col-2 py-3">
@@ -344,11 +346,11 @@
                                                 <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
                                             </div>
                                         </div>
-                                        <table class="table table table-striped position-relative my-3" id="onSpecialDeal-table">
+                                        <table class="table table table-striped position-relative my-3" id="onTouristAttraction-table">
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
-                                                    <th style="text-align: left;">รหัสดีล</th>
-                                                    <th style="text-align: left;">ชื่อดีล</th>
+                                                    <th style="text-align: left;">รหัสสถานที่</th>
+                                                    <th style="text-align: left;">ชื่อสถานที่ท่องเที่ยว</th>
                                                     <th style="text-align: center;">หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
                                                             <option selected>ทั้งหมด</option>
@@ -356,9 +358,9 @@
                                                             <option>ท่องเที่ยว</option>
                                                         </select>
                                                     </th>
-                                                    <th>ระยะเวลา</th>
+                                                    <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
-                                                    <th>แก้ไข</th>
+                                                    <th>ผู้แก้ไข</th>
                                                     <th style="text-align: center;">สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
@@ -371,16 +373,16 @@
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>ไม่กำหนด</td>
+                                                    <td style="text-align: left;"><a href="{{ url('editTouristAttraction') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td style="text-align: left;">กว๊านพะเยา</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         <div class="statusOn">เปิดใช้งาน</div>
@@ -393,16 +395,16 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
+                                                    <td style="text-align: left;"><a href="{{ url('editTouristAttraction') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td style="text-align: left;">กว๊านพะเยา</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         <div class="statusOn">เปิดใช้งาน</div>
@@ -421,7 +423,7 @@
 
 
                                     {{-- ปิดการใช้งาน --}}
-                                    <div class="tab-pane fade" id="off-specialDeal" role="tabpanel" aria-labelledby="">
+                                    <div class="tab-pane fade" id="off-touristAttraction" role="tabpanel" aria-labelledby="">
                                         <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
 
                                             <div class="col-2 py-3">
@@ -441,11 +443,11 @@
                                                 <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
                                             </div>
                                         </div>
-                                        <table class="table table-striped position-relative my-3 " id="offSpecialDeal-table">
+                                        <table class="table table-striped position-relative my-3 " id="offTouristAttraction-table">
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
-                                                    <th style="text-align: left;">รหัสดีล</th>
-                                                    <th style="text-align: left;">ชื่อดีล</th>
+                                                    <th style="text-align: left;">รหัสสถานที่</th>
+                                                    <th style="text-align: left;">ชื่อสถานที่ท่องเที่ยว</th>
                                                     <th style="text-align: center;">หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
                                                             <option selected>ทั้งหมด</option>
@@ -453,9 +455,9 @@
                                                             <option>ท่องเที่ยว</option>
                                                         </select>
                                                     </th>
-                                                    <th>ระยะเวลา</th>
+                                                    <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
-                                                    <th>แก้ไข</th>
+                                                    <th>ผู้แก้ไข</th>
                                                     <th style="text-align: center;">สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
@@ -468,16 +470,16 @@
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>ไม่กำหนด</td>
+                                                    <td style="text-align: left;"><a href="{{ url('editTouristAttraction') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td style="text-align: left;">กว๊านพะเยา</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         <div class="statusOff">ปิดใช้งาน</div>
@@ -490,16 +492,16 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
+                                                    <td style="text-align: left;"><a href="{{ url('editTouristAttraction') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td style="text-align: left;">กว๊านพะเยา</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         <div class="statusOff">ปิดใช้งาน</div>
@@ -516,10 +518,11 @@
                                     </div>
                                     {{-- end ปิดการใช้งาน --}}
 
-                                       {{-- ถังขยะ --}}
-                                       <div class="tab-pane fade" id="trash-specialDeal" role="tabpanel" aria-labelledby="">
-                                        <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
 
+
+                                     {{-- ถังขยะ --}}
+                                     <div class="tab-pane fade" id="trash-touristAttraction" role="tabpanel" aria-labelledby="">
+                                        <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
                                             <div class="col-2 py-3">
                                                 <button type="button" class="btn btn-info text-dark btn-color"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
                                                         <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
@@ -537,11 +540,11 @@
                                                 <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
                                             </div>
                                         </div>
-                                        <table class="table table-striped position-relative my-3 " id="trashSpecialDeal-table">
+                                        <table class="table table-striped position-relative my-3 " id="trashTouristAttraction-table">
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
-                                                    <th style="text-align: left;">รหัสดีล</th>
-                                                    <th style="text-align: left;">ชื่อดีล</th>
+                                                    <th style="text-align: left;">รหัสสถานที่</th>
+                                                    <th style="text-align: left;">ชื่อสถานที่ท่องเที่ยว</th>
                                                     <th style="text-align: center;">หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
                                                             <option selected>ทั้งหมด</option>
@@ -549,9 +552,9 @@
                                                             <option>ท่องเที่ยว</option>
                                                         </select>
                                                     </th>
-                                                    <th>ระยะเวลา</th>
+                                                    <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
-                                                    <th>แก้ไข</th>
+                                                    <th>ผู้แก้ไข</th>
                                                     <th style="text-align: center;">สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
@@ -559,36 +562,37 @@
                                                             <option>ปิดใช้งาน</option>
                                                         </select>
                                                     </th>
+
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td style="text-align: left;"><a  style="pointer-events: none;color:#fc2525;"  href="{{ url('editSpecialDeal') }}" >DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>ไม่กำหนด</td>
+                                                    <td style="text-align: left;"><a style="pointer-events: none;color:#fc2525;" href="{{ url('editTouristAttraction') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td style="text-align: left;">กว๊านพะเยา</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         <div class="statusOff">ปิดใช้งาน</div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a style="pointer-events: none;color:#fc2525;" href="{{ url('editSpecialDeal') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
+                                                    <td style="text-align: left;"><a  style="pointer-events: none;color:#fc2525;" href="{{ url('editTouristAttraction') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td style="text-align: left;">กว๊านพะเยา</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         <div class="statusOff">ปิดใช้งาน</div>
@@ -623,7 +627,7 @@
                                 </svg><br><br>
                                 <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ กู้คืนไม่ได้</div>
                             </div>
-                            <div class="modal-footer ">
+                            <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
                                 <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
                             </div>
@@ -707,16 +711,16 @@
     {{-- script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
     <script>
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#allSpecialDeal-table').DataTable().columns.adjust();
+            $('#allTouristAttraction-table').DataTable().columns.adjust();
         });
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#onSpecialDeal-table').DataTable().columns.adjust();
+            $('#onTouristAttraction-table').DataTable().columns.adjust();
         });
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#offSpecialDeal-table').DataTable().columns.adjust();
+            $('#offTouristAttraction-table').DataTable().columns.adjust();
         });
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#trashSpecialDeal-table').DataTable().columns.adjust();
+            $('#trashTouristAttraction-table').DataTable().columns.adjust();
         });
     </script>
     {{-- End script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
@@ -726,7 +730,7 @@
 
 
     <script>
-        $('#allSpecialDeal-table').DataTable({
+        $('#allTouristAttraction-table').DataTable({
             aLengthMenu: [
                 [10, 25, 50, 100, 200, -1],
                 [10, 25, 50, 100, 200, "All"]
@@ -749,7 +753,7 @@
                 {
                 "width": "40px"
             }, {
-                "width": "250px",
+                "width": "150px",
             }, {
                 "width": "80px"
             }, {
@@ -770,7 +774,7 @@
 
 
     <script>
-        $('#onSpecialDeal-table').DataTable({
+        $('#onTouristAttraction-table').DataTable({
             aLengthMenu: [
                 [10, 25, 50, 100, 200, -1],
                 [10, 25, 50, 100, 200, "All"]
@@ -789,10 +793,11 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [ {
+            columns: [
+                {
                 "width": "40px"
             }, {
-                "width": "250px",
+                "width": "150px",
             }, {
                 "width": "80px"
             }, {
@@ -806,6 +811,7 @@
             }, {
                 "width": "150px"
             }],
+
 
         });
     </script>
@@ -814,7 +820,7 @@
 
 
     <script>
-        $('#offSpecialDeal-table').DataTable({
+        $('#offTouristAttraction-table').DataTable({
             aLengthMenu: [
                 [10, 25, 50, 100, 200, -1],
                 [10, 25, 50, 100, 200, "All"]
@@ -833,10 +839,11 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [{
+            columns: [
+                {
                 "width": "40px"
             }, {
-                "width": "250px",
+                "width": "150px",
             }, {
                 "width": "80px"
             }, {
@@ -850,12 +857,12 @@
             }, {
                 "width": "150px"
             }],
+
         });
     </script>
-
 
 <script>
-    $('#trashSpecialDeal-table').DataTable({
+    $('#trashTouristAttraction-table').DataTable({
         aLengthMenu: [
             [10, 25, 50, 100, 200, -1],
             [10, 25, 50, 100, 200, "All"]
@@ -874,14 +881,15 @@
         language: {
             emptyTable: "ไม่พบข้อมูล"
         },
-        columns: [{
+        columns: [
+            {
             "width": "40px"
         }, {
-            "width": "250px",
+            "width": "150px",
         }, {
             "width": "80px"
         }, {
-            "width": "180px"
+            "width": "100px"
         }, {
             "width": "250px"
         }, {
@@ -889,9 +897,9 @@
         }, {
             "width": "80px"
         }],
+
     });
 </script>
-
 
 
 
