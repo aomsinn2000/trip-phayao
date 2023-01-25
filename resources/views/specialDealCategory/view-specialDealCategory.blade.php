@@ -227,9 +227,10 @@
                                 <div style="padding-top:60px;"></div>
                                 <nav>
                                     <div class="nav main-nav-line" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-specialDeal" role="tab" aria-selected="true"><b>ทั้งหมด (50)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#accommodation" role="tab" aria-selected="false"><b>ที่พัก / โรงแรม (5)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#restaurant" role="tab" aria-selected="false"><b>ร้านอาหาร (5)</b></a>
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-specialDealCategory" role="tab" aria-selected="true"><b>ทั้งหมด (50)</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-specialDealCategory" role="tab" aria-selected="false"><b>เปิดใช้งาน (5)</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-specialDealCategory" role="tab" aria-selected="false"><b>ปิดใช้งาน (5)</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#trash-specialDealCategory" role="tab" aria-selected="false"><b>ถังขยะ (5)</b></a>
 
 
                                     </div>
@@ -238,7 +239,7 @@
 
 
                                     {{-- ทั้งหมด --}}
-                                    <div class="tab-pane fade show active" id="all-specialDeal" role="tabpanel" aria-labelledby="all-specialDeal-tab">
+                                    <div class="tab-pane fade show active" id="all-specialDealCategory" role="tabpanel" aria-labelledby="all-specialDealCategory-tab">
                                         <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
                                             <div class="col-6 py-3 px-5">
                                                 <button type="button" class="btn btn-info text-dark btn-color">
@@ -260,7 +261,7 @@
                                                 <input type="text" class="form-control" style="border-radius: 5px;" placeholder="รหัสหมวดหมู่ / ชื่อหมวดหมู่">
                                             </div>
                                         </div>
-                                        <table class="table table table-striped position-relative my-3"style="text-align: left;" id="allSpecialDeal-table">
+                                        <table class="table table table-striped position-relative my-3"style="text-align: left;" id="allSpecialDealCategory-table">
                                             <thead class="thead-dark">
                                                 <tr>
                                                     <th>รหัสหมวดหมู่</th>
@@ -430,7 +431,7 @@
 
 
                                     {{-- เปิดการใช้งาน --}}
-                                    <div class="tab-pane fade" id="accommodation" role="tabpanel" aria-labelledby="">
+                                    <div class="tab-pane fade" id="on-specialDealCategory" role="tabpanel" aria-labelledby="">
                                         <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
                                             <div class="col-6 py-3 px-5">
                                                 <button type="button" class="btn btn-info text-dark btn-color">
@@ -452,7 +453,7 @@
                                                 <input type="text" class="form-control" style="border-radius: 5px;" placeholder="รหัสหมวดหมู่ / ชื่อหมวดหมู่">
                                             </div>
                                         </div>
-                                        <table class="table table table-striped position-relative my-3" id="accommodation-table">
+                                        <table class="table table table-striped position-relative my-3" id="onSpecialDealCategory-table">
                                             <thead class="thead-dark">
                                                 <tr>
                                                     <th>รหัสหมวดหมู่</th>
@@ -527,7 +528,7 @@
 
 
                                     {{-- ปิดการใช้งาน --}}
-                                    <div class="tab-pane fade" id="restaurant" role="tabpanel" aria-labelledby="">
+                                    <div class="tab-pane fade" id="off-specialDealCategory" role="tabpanel" aria-labelledby="">
                                         <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
                                             <div class="col-6 py-3 px-5">
                                                 <button type="button" class="btn btn-info text-dark btn-color">
@@ -550,7 +551,7 @@
                                             </div>
                                         </div>
 
-                                        <table class="table table-striped position-relative my-3 " id="restaurant-table">
+                                        <table class="table table-striped position-relative my-3 " id="offSpecialDealCategory-table">
                                             <thead class="thead-dark">
                                                 <tr>
                                                     <th>รหัสหมวดหมู่</th>
@@ -622,6 +623,91 @@
 
                                     </div>
                                     {{-- end ปิดการใช้งาน --}}
+
+                                      {{-- ถังขยะ --}}
+                                      <div class="tab-pane fade" id="trash-specialDealCategory" role="tabpanel" aria-labelledby="">
+                                        <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
+                                            <div class="col-6 py-3 px-5">
+                                                <button type="button" class="btn btn-info text-dark btn-color">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
+                                                    </svg>
+                                                    <span class="px-2">นำข้อมูลเข้า</span>
+                                                </button>
+                                                <span class="px-3">
+                                                    <button type="button" class="btn btn-info text-dark btn-color">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                                                        </svg>
+                                                        <span class="px-2">นำข้อมูลออก</span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                            <div class="col-3 py-3">
+                                                <input type="text" class="form-control" style="border-radius: 5px;" placeholder="รหัสหมวดหมู่ / ชื่อหมวดหมู่">
+                                            </div>
+                                        </div>
+
+                                        <table class="table table-striped position-relative my-3 " id="trashSpecialDealCategory-table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>รหัสหมวดหมู่</th>
+                                                    <th style="text-align: center;">ภาพหมวดหมู่</th>
+                                                    <th>ชื่อหมวดหมู่(TH)</th>
+                                                    <th>ชื่อหมวดหมู่(EN)</th>
+                                                    <th>จำนวน</th>
+                                                    <th>ผู้สร้าง</th>
+                                                    <th>แก้ไข</th>
+                                                    <th style="text-align: center;">สถานะ
+                                                        <select class="form-control selectStyle" id="selectStatus">
+                                                            <option>ทั้งหมด</option>
+                                                            <option>เปิดใช้งาน</option>
+                                                            <option>ปิดใช้งาน</option>
+                                                        </select>
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody style="text-align: left">
+                                                <tr>
+                                                    <td><a style="pointer-events: none;color:#fc2525;" href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal1.jpg') }}" alt=""></td>
+                                                    <td>ร้านอาหาร</td>
+                                                    <td>restaurant</td>
+                                                    <td>10</td>
+                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="pointer-events: none;color:#fc2525;" href="{{ url('editSpecialDealCategory') }}" class="text-idSpecailDeal">CBC001</a></td>
+                                                    <td style="text-align: center;"><img class="img-category" src="{{ asset('/assets/images/deal1.jpg') }}" alt=""></td>
+                                                    <td>ร้านอาหาร</td>
+                                                    <td>restaurant</td>
+                                                    <td>10</td>
+                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    {{-- end ถังขยะ --}}
 
                                 </div>
 
@@ -733,13 +819,16 @@
     {{-- script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
     <script>
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#allSpecialDeal-table').DataTable().columns.adjust();
+            $('#allSpecialDealCategory-table').DataTable().columns.adjust();
         });
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#accommodation-table').DataTable().columns.adjust();
+            $('#onSpecialDealCategory-table').DataTable().columns.adjust();
         });
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#restaurant-table').DataTable().columns.adjust();
+            $('#offSpecialDealCategory-table').DataTable().columns.adjust();
+        });
+        $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
+            $('#trashSpecialDealCategory-table').DataTable().columns.adjust();
         });
     </script>
     {{-- End script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
@@ -749,7 +838,7 @@
 
 
     <script>
-        $('#allSpecialDeal-table').DataTable({
+        $('#allSpecialDealCategory-table').DataTable({
             aLengthMenu: [
                 [10, 25, 50, 100, 200, -1],
                 [10, 25, 50, 100, 200, "All"]
@@ -794,7 +883,7 @@
 
 
     <script>
-        $('#accommodation-table').DataTable({
+        $('#onSpecialDealCategory-table').DataTable({
             aLengthMenu: [
                 [10, 25, 50, 100, 200, -1],
                 [10, 25, 50, 100, 200, "All"]
@@ -840,7 +929,7 @@
 
 
     <script>
-        $('#restaurant-table').DataTable({
+        $('#offSpecialDealCategory-table').DataTable({
             aLengthMenu: [
                 [10, 25, 50, 100, 200, -1],
                 [10, 25, 50, 100, 200, "All"]
@@ -881,6 +970,49 @@
 
         });
     </script>
+
+
+
+<script>
+    $('#trashSpecialDealCategory-table').DataTable({
+        aLengthMenu: [
+            [10, 25, 50, 100, 200, -1],
+            [10, 25, 50, 100, 200, "All"]
+        ],
+        iDisplayLength: -1,
+        "ordering": false,
+        "dom": '<<t>ilp>',
+        rowReorder: {
+            selector: '.move-selector'
+        },
+        scrollX: true,
+        paging: true,
+        searching: false,
+        ordering: false,
+        info: true,
+        language: {
+            emptyTable: "ไม่พบข้อมูล"
+        },
+        columns: [{
+            "width": "100px"
+        }, {
+            "width": "120px",
+        }, {
+            "width": "150px"
+        }, {
+            "width": "150px"
+        }, {
+            "width": "100px"
+        }, {
+            "width": "250px"
+        }, {
+            "width": "250px"
+        }, {
+            "width": "80px"
+        }],
+
+    });
+</script>
 
 
 
