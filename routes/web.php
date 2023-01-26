@@ -43,11 +43,11 @@ Route::get('linkEmail', [ForgotPasswordController::class, 'linkReset']);//view �
 
 
 
-Route::get('specialDeal', [SpecialDealController::class, 'showDeal']);//navbar view ดีลสุดพิเศษ
+Route::get('showSpecialDeal', [SpecialDealController::class, 'showSpecialDeal']);//navbar view ดีลสุดพิเศษ
 
-Route::get('viewSpecialDeal', [SpecialDealController::class, 'viewDeal']);// หลังบ้านโชว์ตาราง ดีลสุดพิเศษ
-Route::get('addSpecialDeal', [SpecialDealController::class, 'addDeal']);//หลังบ้านเพิ่มดีลสุดพิเศษ
-Route::get('editSpecialDeal', [SpecialDealController::class, 'editDeal']);//หลังบ้านแก้ไขดีลสุดพิเศษ
+Route::get('viewSpecialDeal', [SpecialDealController::class, 'viewSpecialDeal']);// หลังบ้านโชว์ตาราง ดีลสุดพิเศษ
+Route::get('addSpecialDeal', [SpecialDealController::class, 'addSpecialDeal']);//หลังบ้านเพิ่มดีลสุดพิเศษ
+Route::get('editSpecialDeal', [SpecialDealController::class, 'editSpecialDeal']);//หลังบ้านแก้ไขดีลสุดพิเศษ
 
 
 
@@ -60,10 +60,10 @@ Route::get('editSpecialDealCategory', [SpecialDealCategoryController::class, 'ed
 
 
 //******************หน้าบ้าน สถานที่ยอดฮิต******************
-Route::get('touristAttraction', [TouristAttractionController::class, 'ShowTouristAttraction']);//navbar view สถานที่ยอดฮิต
-Route::get('descriptionTouristAttraction', [TouristAttractionController::class, 'DescriptionTouristAttraction']);//view รายละเอียดสถานที่ยอดฮิตเมื่อคลิก
+Route::get('showTouristAttraction', [TouristAttractionController::class, 'showTouristAttraction']);//navbar view สถานที่ยอดฮิต
+Route::get('showTouristAttractionDescription', [TouristAttractionController::class, 'touristAttractionDescription']);//view รายละเอียดสถานที่ยอดฮิตเมื่อคลิก
 //******************end หน้าบ้าน สถานที่ยอดฮิต******************
-Route::get('viewTouristAttraction', [TouristAttractionController::class, 'viewTouristAttraction']);//navbar view สถานที่ยอดฮิต
+
 //******************หลังบ้าน สถานที่ยอดฮิต******************
 Route::get('viewTouristAttraction', [TouristAttractionController::class, 'viewTouristAttraction']);//navbar view สถานที่ยอดฮิต
 Route::get('addTouristAttraction', [TouristAttractionController::class, 'addTouristAttraction']);//navbar view สถานที่ยอดฮิต
@@ -79,11 +79,11 @@ Route::get('editTouristAttractionCategory', [TouristAttractionCategoryController
 
 
 
-Route::get('article', [ArticleController::class, 'showArticle']);//navbar view หน้าบทความ
-Route::get('descriptionArticle', [ArticleController::class, 'showDescriptionArticle']);//view รายละเอียดบทความเมื่อคลิกเลือกบทความ
+Route::get('showArticle', [ArticleController::class, 'showArticle']);//navbar view หน้าบทความ
+Route::get('showArticleDescription', [ArticleController::class, 'showArticleDescription']);//view รายละเอียดบทความเมื่อคลิกเลือกบทความ
 
 
-Route::get('contactUs', [ContactUsController::class, 'showContactUs']);//navbar view ติดต่อ
+Route::get('showContactUs', [ContactUsController::class, 'showContactUs']);//navbar view ติดต่อ
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
