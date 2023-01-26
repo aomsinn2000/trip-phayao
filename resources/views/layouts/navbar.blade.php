@@ -51,22 +51,22 @@
                     <a class="nav-link" aria-current="page" href="{{url('/')}}">หน้าหลัก</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('deal')}}">ดีลสุดพิเศษ</a>
+                    <a class="nav-link" href="{{url('showSpecialDeal')}}">ดีลสุดพิเศษ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('placeHit')}}">สถานที่ยอดฮิต</a>
+                    <a class="nav-link" href="{{url('showTouristAttraction')}}">สถานที่ยอดฮิต</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" >แพ็คเกตทัวร์</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('article')}}" >บทความ</a>
+                  <a class="nav-link" href="{{url('showArticle')}}" >บทความ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" >บริการต่างๆ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('contactUs')}}" >ติดต่อเรา</a>
+                    <a class="nav-link" href="{{url('showContactUs')}}" >ติดต่อเรา</a>
                 </li>
             </ul>
           </div>
@@ -83,8 +83,8 @@
             <ul class="navbar-nav d-flex">
               <li class="nav-item">
                 <div class="text-left py-1">
-                    <a href="#" type="button" class="btn btn-warning text-white signli">Register</a>
-                    <a href="{{url('login')}}" type="button" class="btn btn-outline-warning signInli">Login</a>
+
+                    <a href="{{url('login')}}" type="button" class="btn btn-warning signInli">Login</a>
 
                 </div>
 
