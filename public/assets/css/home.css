@@ -243,9 +243,15 @@ p {
 }
 
 .text-more-pakageTour {
-    text-align: center;
+    border-radius:50px;
+    color:#ffffff;
+    background-color:#00AEEF;
+    padding-left:50px;
+    padding-right:50px;
     text-decoration: none;
-    color: #242424;
+    padding-top:10px;
+    padding-bottom: 10px;
+    font-size: 16px;
 }
 
 .br-card-pakageTour {
@@ -1267,6 +1273,17 @@ p {
     }
      .text-price-pakageTour{
         font-size: 13px;
+    }
+    .text-more-pakageTour {
+        border-radius:50px;
+        color:#ffffff;
+        background-color:#00AEEF;
+        padding-left:50px;
+        padding-right:50px;
+        text-decoration: none;
+        padding-top:10px;
+        padding-bottom: 10px;
+        font-size: 12px;
     }
 }
 

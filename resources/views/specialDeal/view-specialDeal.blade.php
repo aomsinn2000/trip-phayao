@@ -358,13 +358,7 @@
                                                     <th>ระยะเวลา</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
-                                                        <select class="form-control selectStyle" id="selectStatus">
-                                                            <option>ทั้งหมด</option>
-                                                            <option>เปิดใช้งาน</option>
-                                                            <option>ปิดใช้งาน</option>
-                                                        </select>
-                                                    </th>
+                                                    <th style="text-align: center;">สถานะ </th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -432,7 +426,7 @@
                                                 <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
                                                 <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
                                             </div>
-                                            <div class="col-3 py-3">
+                                            <div class="col-3 py-3">4
                                                 <label for="endtDay"><b>ระยะเวลาที่เผยแพร่</b></label>
                                                 <input type="date" id="endDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
                                             </div>
@@ -441,8 +435,8 @@
                                             </div>
                                         </div>
                                         <table class="table table-striped position-relative my-3 " id="offSpecialDeal-table">
-                                            <thead class="thead-dark">
-                                                <tr style="text-align: center;">
+                                            <thead class="thead-dark" >
+                                                <tr style="text-align: center; height:60px !important;">
                                                     <th style="text-align: left;">รหัสดีล</th>
                                                     <th style="text-align: left;">ชื่อดีล</th>
                                                     <th style="text-align: center;">หมวดหมู่
@@ -455,13 +449,7 @@
                                                     <th>ระยะเวลา</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
-                                                        <select class="form-control selectStyle" id="selectStatus">
-                                                            <option>ทั้งหมด</option>
-                                                            <option>เปิดใช้งาน</option>
-                                                            <option>ปิดใช้งาน</option>
-                                                        </select>
-                                                    </th>
+                                                    <th style="text-align: center;">สถานะ </th>
                                                     <th></th>
                                                 </tr>
                                             </thead>

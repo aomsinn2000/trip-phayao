@@ -5,6 +5,8 @@ use App\Http\Controllers\SpecialDealController\SpecialDealController;
 use App\Http\Controllers\SpecialDealCategoryController\SpecialDealCategoryController;
 use App\Http\Controllers\TouristAttractionCategoryController\TouristAttractionCategoryController;
 use App\Http\Controllers\HomeController\HomeController;
+use App\Http\Controllers\ServiceController\ServiceController;
+use App\Http\Controllers\ActivityController\ActivityController;
 use App\Http\Controllers\ArticleController\ArticleController;
 use App\Http\Controllers\TouristAttractionController\TouristAttractionController;
 use App\Http\Controllers\ContactUsController\ContactUsController;
@@ -25,6 +27,55 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Auth::routes();
 Route::get('/', [HomeController::class, 'home']);//navbar view หน้าหลัก
 
@@ -77,14 +128,25 @@ Route::get('editTouristAttractionCategory', [TouristAttractionCategoryController
 //*********end หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต***********
 
 
+//******************หน้าบ้าน หน้ารวมกิจกรรม******************
+Route::get('showActivity', [ActivityController::class, 'showActivity']);//navbar view หน้ารวมกิจกรรม
+//******************end หน้าบ้าน หน้ารวมกิจกรรม******************
 
 
+//******************หน้าบ้านหน้าบริการต่างๆ ******************
+Route::get('showService', [ServiceController::class, 'showService']);//navbar view หน้าบริการต่างๆ
+//******************end หน้าบ้าน หน้ารวมกิจกรรม******************
+
+
+//******************หน้าบ้าน หน้าบทความ******************
 Route::get('showArticle', [ArticleController::class, 'showArticle']);//navbar view หน้าบทความ
 Route::get('showArticleDescription', [ArticleController::class, 'showArticleDescription']);//view รายละเอียดบทความเมื่อคลิกเลือกบทความ
+//******************end หน้าบ้าน หน้าบทความ******************
 
 
+//****************** หน้าบ้าน หน้าติดต่อ******************
 Route::get('showContactUs', [ContactUsController::class, 'showContactUs']);//navbar view ติดต่อ
-
+//******************end หน้าบ้าน หน้าติดต่อ******************
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

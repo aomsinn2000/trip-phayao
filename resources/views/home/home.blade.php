@@ -27,7 +27,7 @@
 
 
 
-    <link href="{{ asset('assets/css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/home/home.css') }}" rel="stylesheet">
     <style>
         /* .sticky-top1{
         position: -webkit-sticky;
@@ -603,8 +603,14 @@
 
                             </div>
                         </div>
+
+
                         <br>
-                        <h5 style="text-align: center;"><a href="" type="button" class="d-grid gap-2 col-lg-6 col-md-6 col-sm-12 mx-auto btn btn-info  text-more-pakageTour" style="border-radius:50px; color:#535151;">ดู Pakage Tour เพิ่มเติม </a></h5>
+                        <h5 style="text-align: center;">
+
+                            <a href="" type="button" class=" text-more-pakageTour" style="" >ดู Pakage Tour เพิ่มเติม </a>
+                        </h5>
+
                     </div>
 
                 </div>
@@ -767,7 +773,7 @@
 
                             </div>
                             <div class="d-flex bd-highlight mb-3">
-                                <div class="ms-auto p-2 bd-highlight" style="padding-right:60px;"><a href="#" type="button" class="btn btn-info" style=" color: black; border-radius:10px; " >บทความเพิ่มเติม ></a></div>
+                                <div class="ms-auto p-2 bd-highlight" style="padding-right:60px;"><a href="#" type="button" class="btn btn-info" style=" color: #ffff; border-radius:10px; background-color:#00AEEF;" >บทความเพิ่มเติม ></a></div>
                             </div>
                         </div>
                     </div>

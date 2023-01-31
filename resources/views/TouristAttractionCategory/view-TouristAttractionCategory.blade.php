@@ -406,7 +406,7 @@
                                         </div>
                                         <table class="table table table-striped position-relative my-3" id="onTouristAttractionCategory-table">
                                             <thead class="thead-dark">
-                                                <tr>
+                                                <tr  style=" height:60px !important;">
                                                     <th>รหัสหมวดหมู่</th>
                                                     <th style="text-align: center;">ภาพหมวดหมู่</th>
                                                     <th>ยอดนิยม</th>
@@ -415,13 +415,7 @@
                                                     <th>จำนวน</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
-                                                        <select class="form-control selectStyle" id="selectStatus">
-                                                            <option>ทั้งหมด</option>
-                                                            <option>เปิดใช้งาน</option>
-                                                            <option>ปิดใช้งาน</option>
-                                                        </select>
-                                                    </th>
+                                                    <th style="text-align: center;">สถานะ</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -529,7 +523,7 @@
                                         </div>
                                         <table class="table table-striped position-relative my-3 " id="offTouristAttractionCategory-table">
                                             <thead class="thead-dark">
-                                                <tr>
+                                                <tr  style=" height:60px !important;">
                                                     <th>รหัสหมวดหมู่</th>
                                                     <th style="text-align: center;">ภาพหมวดหมู่</th>
                                                     <th>ยอดนิยม</th>
@@ -538,13 +532,7 @@
                                                     <th>จำนวน</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
-                                                        <select class="form-control selectStyle" id="selectStatus">
-                                                            <option>ทั้งหมด</option>
-                                                            <option>เปิดใช้งาน</option>
-                                                            <option>ปิดใช้งาน</option>
-                                                        </select>
-                                                    </th>
+                                                    <th style="text-align: center;">สถานะ</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>

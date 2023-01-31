@@ -57,13 +57,13 @@
                     <a class="nav-link" href="{{url('showTouristAttraction')}}">สถานที่ยอดฮิต</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" >แพ็คเกตทัวร์</a>
+                    <a class="nav-link" href="{{url('showActivity')}}" >รวมกิจกรรม</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{url('showArticle')}}" >บทความ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" >บริการต่างๆ</a>
+                    <a class="nav-link" href="{{url('showService')}}" >บริการต่างๆ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('showContactUs')}}" >ติดต่อเรา</a>

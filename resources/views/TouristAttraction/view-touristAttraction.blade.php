@@ -359,13 +359,7 @@
                                                     <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
-                                                        <select class="form-control selectStyle" id="selectStatus">
-                                                            <option>ทั้งหมด</option>
-                                                            <option>เปิดใช้งาน</option>
-                                                            <option>ปิดใช้งาน</option>
-                                                        </select>
-                                                    </th>
+                                                    <th style="text-align: center;">สถานะ </th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -456,13 +450,7 @@
                                                     <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
-                                                        <select class="form-control selectStyle" id="selectStatus">
-                                                            <option>ทั้งหมด</option>
-                                                            <option>เปิดใช้งาน</option>
-                                                            <option>ปิดใช้งาน</option>
-                                                        </select>
-                                                    </th>
+                                                    <th style="text-align: center;">สถานะ</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>

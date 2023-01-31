@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ดีลสุดพิเศษ</title>
     @include('layouts.head-LinkScript')
-    <link href="{{ asset('assets/css/specialDeal/deal.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/specialDeal/specialDeal.css') }}" rel="stylesheet">
 
 </head>
 <body>

@@ -22,7 +22,7 @@
         <div class="nav-background-placeHit">
             <p>
                 <a href="{{ url('/') }}" class="text-nav-placeHit"> หน้าหลัก /</a>
-                <span><a href="{{ url('placeHit') }}" class="text-nav-placeHit"> สถานที่ยอดฮิต /</a></span>
+                <span><a href="{{ url('showTouristAttraction') }}" class="text-nav-placeHit"> สถานที่ยอดฮิต /</a></span>
                 <span><a href="" class="text-nav-placeHit" style="color: #27AAE1"> <b>วนอุทยานแห่งชาติภูลังกา</b></a></span>
             </p>
         </div>

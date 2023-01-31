@@ -8,16 +8,20 @@ use Illuminate\Http\Request;
 class SpecialDealController extends Controller
 {
     //
-    public function showDeal(){
-        return view('specialDeal.deal');
+    public function showSpecialDeal(){
+        return view('specialDeal.show-SpecialDeal');
     }
-    public function viewDeal(){
-        return view('specialDeal.view-deal');
+    public function viewSpecialDeal(){
+        return view('specialDeal.view-specialDeal');
     }
-    public function addDeal(){
-        return view('specialDeal.add-deal');
+    public function addSpecialDeal(){
+        return view('specialDeal.add-specialDeal');
     }
-    public function editDeal(){
-        return view('specialDeal.edit-deal');
+    public function editSpecialDeal(){
+        return view('specialDeal.edit-specialDeal');
     }
+
+
+
+
 }
