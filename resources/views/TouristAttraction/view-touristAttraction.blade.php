@@ -239,9 +239,11 @@
                                                 <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
                                                 <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
                                             </div>
-                                            <div class="col-3 py-3">
-                                                <label for="endtDay"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                <input type="date" id="endDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
+                                            <div class="col-4 py-3">
+                                                <div class="row">
+                                                    <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
+                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                </div>
                                             </div>
                                             <div class="col-3 py-3">
                                                 <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
@@ -336,9 +338,11 @@
                                                 <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
                                                 <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
                                             </div>
-                                            <div class="col-3 py-3">
-                                                <label for="endtDay"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                <input type="date" id="endDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
+                                            <div class="col-4 py-3">
+                                                <div class="row">
+                                                    <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
+                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                </div>
                                             </div>
                                             <div class="col-3 py-3">
                                                 <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
@@ -427,9 +431,11 @@
                                                 <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
                                                 <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
                                             </div>
-                                            <div class="col-3 py-3">
-                                                <label for="endtDay"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                <input type="date" id="endDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
+                                            <div class="col-4 py-3">
+                                                <div class="row">
+                                                    <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
+                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                </div>
                                             </div>
                                             <div class="col-3 py-3">
                                                 <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
@@ -489,6 +495,7 @@
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
+
                                                     <td>
                                                         <div class="statusOff">ปิดใช้งาน</div>
                                                     </td>
@@ -612,6 +619,60 @@
     {{-- script datatogle เปิด/ปิด --}}
 
 
+
+     {{-- Script ปฏิทิน --}}
+     <link type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" />
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+     {{-- End Script ปฏิทิน --}}
+
+
+   {{-- Script ปฏิทิน --}}
+     <script>
+         $('input[name="datefilter"]').daterangepicker({
+             autoUpdateInput: false,
+             locale: {
+                 cancelLabel: 'Clear'
+             }
+         });
+
+         $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+             $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+         });
+
+         $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+             $(this).val('');
+         });
+
+         var start = moment().subtract(1, 'month');
+         var end = moment();
+
+         function cb(start, end) {
+             start = moment(start);
+             end = moment(end);
+             $('.daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+         }
+
+         $('.daterange').daterangepicker({
+             startDate: start,
+             endDate: end,
+             autoUpdateInput: true,
+             alwaysShowCalendars: true,
+             locale: {
+                 format: 'DD/MM/YYYY',
+             },
+             ranges: {
+                 'Today': [moment(), moment()],
+                 'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                 'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                 'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                 'This Month': [moment().startOf('month'), moment().endOf('month')],
+                 'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+             }
+         }, cb);
+
+         cb(start, end);
+     </script>
+ {{-- End Script ปฏิทิน --}}
 
     {{-- script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
     <script>
