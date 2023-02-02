@@ -79,6 +79,15 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/', [HomeController::class, 'home']);//navbar view หน้าหลัก
 
+//*********หลังบ้านจัดการแบนเนอร์**********
+Route::get('viewBanner', [HomeController::class, 'viewBanner']);
+Route::get('addBanner', [HomeController::class, 'addBanner']);
+Route::get('editBanner', [HomeController::class, 'editBanner']);
+
+//*********end หลังบ้านจัดการแบนเนอร์**********
+
+
+
 // Route::get('login', [LoginController::class, 'showLogin']);
 Route::get('resetPassword', [ResetPasswordController::class, 'showResetPassword']);//view ใส่รหัสผ่านใหม่เมื่อลืมรหัสผ่าน
 
