@@ -5,6 +5,7 @@ use App\Http\Controllers\SpecialDealController\SpecialDealController;
 use App\Http\Controllers\SpecialDealCategoryController\SpecialDealCategoryController;
 use App\Http\Controllers\TouristAttractionCategoryController\TouristAttractionCategoryController;
 use App\Http\Controllers\HomeController\HomeController;
+use App\Http\Controllers\destinationFoldersController\destinationFoldersController;
 use App\Http\Controllers\ServiceController\ServiceController;
 use App\Http\Controllers\ActivityController\ActivityController;
 use App\Http\Controllers\ArticleController\ArticleController;
@@ -83,8 +84,14 @@ Route::get('/', [HomeController::class, 'home']);//navbar view หน้าห�
 Route::get('viewBanner', [HomeController::class, 'viewBanner']);
 Route::get('addBanner', [HomeController::class, 'addBanner']);
 Route::get('editBanner', [HomeController::class, 'editBanner']);
-
 //*********end หลังบ้านจัดการแบนเนอร์**********
+
+
+//*********หลังบ้านโฟลเดอร์**********
+Route::get('viewDestinationFolders', [destinationFoldersController::class, 'viewDestinationFolders']);
+Route::get('addDestinationFolders', [destinationFoldersController::class, 'addDestinationFolders']);
+Route::get('editDestinationFolders', [destinationFoldersController::class, 'editDestinationFolders']);
+//*********end หลังบ้านโฟลเดอร์**********
 
 
 
