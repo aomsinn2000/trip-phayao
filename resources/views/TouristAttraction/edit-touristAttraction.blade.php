@@ -71,14 +71,17 @@
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     {{-- script datatogle เปิด/ปิด --}}
 
-    {{-- query ตำบล อำเภอจังหวัด --}}
-    <link rel="stylesheet" href="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.css">
-    {{-- end query ตำบล อำเภอจังหวัด --}}
+      {{-- query ตำบล อำเภอจังหวัด --}}
+      <link rel="stylesheet" href="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.css">
+      {{-- end query ตำบล อำเภอจังหวัด --}}
 
-    {{-- hashtags --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" integrity="sha512-xmGTNt20S0t62wHLmQec2DauG9T+owP9e6VU8GigI0anN7OXLip9i7IwEhelasml2osdxX71XcYm6BQunTQeQg==" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
-    {{-- end hashtags --}}
+      {{-- hashtags --}}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" integrity="sha512-xmGTNt20S0t62wHLmQec2DauG9T+owP9e6VU8GigI0anN7OXLip9i7IwEhelasml2osdxX71XcYm6BQunTQeQg==" crossorigin="anonymous" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
+      {{-- end hashtags --}}
+
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ asset('assets/css/input-tag.css') }}">
 
     <style>
         input[type=checkbox] {
@@ -399,21 +402,50 @@
                                 </div>
                                 <input type="file" name="files" id="gallery" multiple="" class="hideinput">
                             </div>
-                            <div class="card-body" style="border: none;">
-                                <label><b>Tags :</b></label>
-                                <input  value="ภูลังกา,ที่พัก" type="text" data-role="tagsinput" name="tags" class="form-control" style="width: 100%; height:40px;">
-                                <label style="color: red; font-size:12px;">*กรุณากด Enter ต่อหนึ่งคำเพื่อเพิ่ม Tags</label>
+                            <div class=" py-2">
+                                <div style="border: none;">
+                                    <label class="px-2"><b>Tags :</b></label><label style="color: red; font-size:12px;">*กรุณากด Spacebar ต่อหนึ่งคำเพื่อเพิ่ม Tags</label>
+                                    <div class="select-item-container">
+                                        <div class="select-item-list">
+                                            <div class="select-item-list--single">
+                                                <div class="directorist-select directorist-select-multi" id="multiSelect" data-isSearch="true" data-max="10"
+                                                    data-multiSelect="['ภูเขา', 'ธรรมชาติ', 'วัด','เดินป่า', 'กางเต้นท์','วัดศรีโคมคำ', 'กว๊านพะเยา', 'วัดติโลกอาราม', 'วัดศรีอุโมงค์คำ','วัดอนาลโยทิพยาราม (หลวงปู่ไพบูลย์)', 'วัดพระธาตุจอมทอง']">
+                                                    <input type="hidden" id="searchText">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="py-2">
+                                <label><b>จัดกลุ่มโฟลเดอร์สถานที่ยอดฮิต</b></label>
+                                <multi-input>
+                                    <input list="speakers" style="width:100%;" placeholder="เลือกแท็ก">
+                                    <datalist id="speakers">
+                                        <option value="กว๊านพะเยา"></option>
+                                        <option value="อำเภอปง"></option>
+                                        <option value="อำเภอเชียงคำ"></option>
+                                        <option value="อำเภอเมือง">
+                                        <option value="วัดในพะเยา">
+                                    </datalist>
+                                </multi-input>
                             </div>
                         </div>
 
-
                         <div class="card card-body">
+                            <div class="form-group row">
+                                <label for="user" class="col-sm-2 col-form-label">ผู้สร้าง</label>
+                                <div class="col-sm-10">
+                                    <input type="text" readonly class="form-control" id="user" value="นางสาวเบญจวรรณ บัวพิทักษ์">
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-2" style="float: left;">
                                     <button type="button"  data-toggle="modal" data-target="#trashAll" style="border-radius:50%; height:40px;border-color:#ffff;" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="25"></button>
                                 </div>
                                 <div class="col-9">
-                                    <a href="{{ url('viewTouristAttraction') }}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
+                                    <a href="{{url('viewTouristAttraction')}}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
                                     <span class="px-2">
                                         <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
                                     </span>
@@ -531,11 +563,30 @@
     <script src="assets/js/jquery.autotab.min.js"></script>
     {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน  textarea พร้อมเครื่องมือเพิ่มเติม--}}
 
+
     {{-- query ตำบล อำเภอจังหวัด --}}
     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/JQL.min.js"></script>
     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
-    <script>
+    {{--end query ตำบล อำเภอจังหวัด --}}
+
+
+    {{-- select เอาไว้เลือกแท็ก --}}
+        <script src="{{ asset('assets/js/input-tag.js') }}"></script> {{-- เลือกแท็กได้และสร้างแท็กได้  --}}
+        <script src="{{ asset('assets/js/input-tag-bySelect.js') }}"></script> {{-- เลือกแท็กได้เพียงอย่างเดียว  --}}
+    {{-- select เอาไว้เลือกแท็ก --}}
+
+
+
+
+    {{-- select เอาไว้เลือกแท็ก --}}
+        <script>
+            pureScriptSelect('#multiSelect');
+        </script>
+     {{-- end select เอาไว้เลือกแท็ก --}}
+
+    {{-- query ตำบล อำเภอจังหวัด --}}
+       <script>
         $.Thailand({
             $district: $("#sub_district"), // input ของตำบล
             $amphoe: $("#district"), // input ของอำเภอ

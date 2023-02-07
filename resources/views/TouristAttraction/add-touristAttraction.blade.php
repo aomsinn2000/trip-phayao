@@ -80,6 +80,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
     {{-- end hashtags --}}
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('assets/css/input-tag.css') }}">
+
+
+
     <style>
         input[type=checkbox] {
             transform: scale(2.5);
@@ -181,6 +186,7 @@
         .dropify-wrapper {
             height: 170px !important;
         }
+
         .bootstrap-tagsinput .tag {
             margin-right: 2px;
             color: #3fa5ff;
@@ -191,6 +197,7 @@
             border-style: solid;
             border-width: 2px;
         }
+
         .bootstrap-tagsinput {
             width: 80%;
         }
@@ -315,8 +322,22 @@
                                     <label>รหัสไปรษณีย์</label>
                                     <input type="text" id="postcode" class="form-control" placeholder="กรุณากรอกรหัสไปรษณีย์">
                                 </div>
+                                <div class="form-group col-12">
+                                    <label>พิกัด (Google Maps)</label>
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกลิงก์ google maps">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>ละติจูด (Lat)</label>
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกละติจูด(Lat) ">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>ลองติจูด (Long) </label>
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกลองติจูด(Long)">
+                                </div>
                             </div>
                         </div>
+
+
 
 
                         <div class="card card-body">
@@ -336,7 +357,7 @@
                                 <div class="form-group col-12">
                                     <label>ช่วงฤดูท่องเที่ยว</label>
                                     <span id="showNumSeason" style="float: right;">0/300</span>
-                                    <textarea  name="" id="" cols="30" rows="10"class="form-control  mb-2" id="" onkeyup="inputNameSeason(this)" placeholder="ใส่ข้อความที่นี" style="height: 60px;"></textarea>
+                                    <textarea name="" id="" cols="30" rows="10"class="form-control  mb-2" id="" onkeyup="inputNameSeason(this)" placeholder="ใส่ข้อความที่นี" style="height: 60px;"></textarea>
                                 </div>
 
                             </div>
@@ -357,7 +378,9 @@
 
 
 
-                        <div class="card card-body">
+
+
+                        <div class="card card-body" style="height:auto !important;">
                             <div>
                                 <svg style="color:#00AEEF;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
                                     <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
@@ -377,7 +400,7 @@
                                 ภาพสถานที่ท่องเที่ยว
                                 <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div>
-                            <div class="card-body">
+                            <div class="py-3">
                                 <div class="">
                                     <div class="d-flex flex-wrap gallery">
                                         <div class="box-add-image text-center d-flex justify-content-center">
@@ -396,12 +419,38 @@
                                 </div>
                                 <input type="file" name="files" id="gallery" multiple="" class="hideinput">
                             </div>
-                            <div class="card-body" style="border: none;">
-                                <label><b>Tags :</b></label>
-                                <input type="text" data-role="tagsinput" name="tags" class="form-control" style="width: 100%; height:40px;">
-                                <label style="color: red; font-size:12px;">*กรุณากด Enter ต่อหนึ่งคำเพื่อเพิ่ม Tags</label>
+                            <div class=" py-2">
+                                <div style="border: none;">
+                                    <label class="px-2"><b>Tags :</b></label><label style="color: red; font-size:12px;">*กรุณากด Spacebar ต่อหนึ่งคำเพื่อเพิ่ม Tags</label>
+                                    <div class="select-item-container">
+                                        <div class="select-item-list">
+                                            <div class="select-item-list--single">
+                                                <div class="directorist-select directorist-select-multi" id="multiSelect" data-isSearch="true" data-max="10"
+                                                    data-multiSelect="['ภูเขา', 'ธรรมชาติ', 'วัด','เดินป่า', 'กางเต้นท์','วัดศรีโคมคำ', 'กว๊านพะเยา', 'วัดติโลกอาราม', 'วัดศรีอุโมงค์คำ','วัดอนาลโยทิพยาราม (หลวงปู่ไพบูลย์)', 'วัดพระธาตุจอมทอง']">
+                                                    <input type="hidden" id="searchText">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="py-2">
+                                <label><b>จัดกลุ่มโฟลเดอร์สถานที่ยอดฮิต</b></label>
+                                <multi-input>
+                                    <input list="speakers" style="width:100%;" placeholder="เลือกแท็ก">
+                                    <datalist id="speakers">
+                                        <option value="กว๊านพะเยา"></option>
+                                        <option value="อำเภอปง"></option>
+                                        <option value="อำเภอเชียงคำ"></option>
+                                        <option value="อำเภอเมือง">
+                                        <option value="วัดในพะเยา">
+                                    </datalist>
+                                </multi-input>
                             </div>
                         </div>
+
+
 
 
                         <div class="card card-body">
@@ -506,6 +555,24 @@
     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/JQL.min.js"></script>
     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+    {{-- end query ตำบล อำเภอจังหวัด --}}
+
+
+    {{-- select เอาไว้เลือกแท็ก --}}
+    <script src="{{ asset('assets/js/input-tag.js') }}"></script> {{-- เลือกแท็กได้และสร้างแท็กได้  --}}
+    <script src="{{ asset('assets/js/input-tag-bySelect.js') }}"></script> {{-- เลือกแท็กได้เพียงอย่างเดียว  --}}
+    {{-- select เอาไว้เลือกแท็ก --}}
+
+
+
+
+    {{-- select เอาไว้เลือกแท็ก --}}
+    <script>
+        pureScriptSelect('#multiSelect');
+    </script>
+    {{--end select เอาไว้เลือกแท็ก --}}
+
+   {{--  query ตำบล อำเภอจังหวัด --}}
     <script>
         $.Thailand({
             $district: $("#sub_district"), // input ของตำบล

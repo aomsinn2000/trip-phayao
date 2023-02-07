@@ -64,8 +64,87 @@
 
 
 
+                        <div id="page">
+                            <div class="row">
+                                <div class="column small-11 small-centered">
+                                    <div class="slider slider-single">
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6debdcb0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ec832f0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://www.lavieenroad.com/wp-content/uploads/2017/12/got6339.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0d1f000001gmc84F7DF_C_900_600.png_.webp?proc=source%2ftrip" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0h1f000001gpe575EB2_C_900_600.png_.webp?proc=source%2ftrip" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://youimg1.tripcdn.com/target/ww081f000001go0id8860_C_760_506.png" alt="">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="slider slider-nav">
 
 
+                                        <div class="px-1">
+                                            <span>
+                                                <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
+                                            </span>
+
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                 <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6debdcb0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                    <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ec832f0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="Nature" >
+                                            </span>
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                <img class="image-small-touristAttraction" src="https://www.lavieenroad.com/wp-content/uploads/2017/12/got6339.jpg" alt="">
+                                            </span>
+
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                 <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0d1f000001gmc84F7DF_C_900_600.png_.webp?proc=source%2ftrip" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0h1f000001gpe575EB2_C_900_600.png_.webp?proc=source%2ftrip" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww081f000001go0id8860_C_760_506.png" alt="Nature" >
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+{{--
                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
                             <div class="carousel-inner">
@@ -87,22 +166,21 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
-                        </div>
+                        </div> --}}
 
                         <br><br>
 
 
                         {{-- เนื้อหา --}}
-                        <p class="text-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta fugiat enim quis, officiis harum tenetur reiciendis consequatur magnam! Porro ad nam qui dignissimos mollitia! Dolorum magnam exercitationem incidunt sint ipsam.
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, reprehenderit saepe nostrum perferendis iusto dolorem ullam maxime aut, error incidunt harum alias asperiores labore nisi, possimus optio nam similique amet?
-                        </p>
-                        <img class="image-content py-3" src="https://cms.dmpcdn.com/travel/2022/05/19/a7ff3520-d73d-11ec-b003-ad49049c5364_webp_original.jpg" alt="">
+                        <p class="text-content">วัดอนาลโยทิพยาราม หรือที่เรียกสั้นๆ ว่า วัดอนาลโย ตั้งอยู่บริเวณดอยบุษราคัม และม่อนพระนอน เป็นวัดที่เต็มไปด้วยพระพุทธรูปต่างๆ มากมาย ทั้ง ศิลปะแบบสุโขทัย พระพุทธไสยาสน์ พระพุทธรูปปางลีลา พระพุทธรูปปางนาคปรก เป็นต้น ซึ่งทั้งหมดก็สร้างด้วยความประณีต
+                            สวยงามอย่างมาก
+                            รวมถึงมีไฮไลท์อย่าง รัตนเจดีย์ ที่สร้างในรูปแบบของศิลปะอินเดียพุทธคยา และยังมีเก๋งจีน ไว้ประดิษฐาน เจ้าแม่กวนอิม มีหอพระแก้วมรกตจำลอง ซึ่งถ้ามองวิวจากยอดเขาก็
+                            สามารถชมทัศนียภาพสวยๆ ของกว๊านพะเยาได้ด้วย                     </p>
+                        <img class="image-content py-3" src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
 
-                        <img class="image-content" src="https://inzpy.com/wp-content/uploads/2022/10/1200x800-Cover-Phu-Langka-Phayao-a-beautiful-viewpoint-of-the-sea-of-%E2%80%8B%E2%80%8Bmist-scaled.jpg" alt="">
+                        <img class="image-content" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
                         <br><br>
-                        <p class="text-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta fugiat enim quis, officiis harum tenetur reiciendis consequatur magnam! Porro ad nam qui dignissimos mollitia! Dolorum magnam exercitationem incidunt sint ipsam.
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, reprehenderit saepe nostrum perferendis iusto dolorem ullam maxime aut, error incidunt harum alias asperiores labore nisi, possimus optio nam similique amet?
-                        </p>
+                        <p class="text-content">วัดอนาลโยทิพยาราม แห่งนี้ คือสถานที่ปฏิบัติธรรมรายล้อมไปด้วยธรรมชาติ สร้างขึ้นด้วยแรงศรัทธาของผู้เลื่อมใสในพระพุทธศาสนาและวัตรปฏิบัติของ พระปัญญาพิศาลเถร หรือ หลวงพ่อไพบูลย์ สุมังคโล พระสายวิปัสนาที่มีลูกศิษย์ให้ความเคารพศรัทธาอย่างมาก จนทำให้เกิดสถานที่ปฏิบัติธรรมบนดอยบุษราคัมแห่งนี้นั่นเอง  </p>
                         {{-- end เนื้อหา --}}
 
 
@@ -122,15 +200,15 @@
                         <p>
                         <h3><b>Tage : </b></h3>
                         <span>
-                            <button type="button" class="btn btn-outline-secondary">ธรรมชาติ</button>
-                            <button type="button" class="btn btn-outline-secondary">ภูเขา</button>
-                            <button type="button" class="btn btn-info">ดอย</button>
-                            <button type="button" class="btn btn-outline-secondary">กางเต้นท์</button>
-                            <button type="button" class="btn btn-outline-secondary">ชมวิว</button>
-                            <button type="button" class="btn btn-outline-secondary">พะเยา</button>
-                            <button type="button" class="btn btn-outline-secondary">ทะเลหมอก</button>
-                            <button type="button" class="btn btn-outline-secondary">กิจกรรมกลางแจ้ง</button>
-                            <button type="button" class="btn btn-outline-secondary">เดินป่า</button>
+                            <button type="button" class="btn btn-outline-info">ธรรมชาติ</button>
+                            <button type="button" class="btn btn-outline-info">ภูเขา</button>
+                            <button type="button" class="btn btn-outline-info">ดอย</button>
+                            <button type="button" class="btn btn-outline-info">กางเต้นท์</button>
+                            <button type="button" class="btn btn-outline-info">ชมวิว</button>
+                            <button type="button" class="btn btn-outline-info">พะเยา</button>
+                            <button type="button" class="btn btn-outline-info">ทะเลหมอก</button>
+                            <button type="button" class="btn btn-outline-info">กิจกรรมกลางแจ้ง</button>
+                            <button type="button" class="btn btn-outline-info">เดินป่า</button>
                         </span>
                         </p>
 
@@ -157,7 +235,7 @@
 
 
         {{-- reviews --}}
-        <div class="review-background">
+        {{-- <div class="review-background">
             <br>
             <h3 style="text-align: center"><b>Reviews</b></h3>
             <div class="container ">
@@ -332,7 +410,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         {{-- end reviews --}}
 
 
@@ -401,6 +479,71 @@
 });
 </script>
 
+
+
+
+<script>
+    $('.slider-single').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: false,
+        adaptiveHeight: true,
+        infinite: false,
+        useTransform: true,
+        speed: 400,
+        cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
+    });
+
+    $('.slider-nav')
+        .on('init', function(event, slick) {
+            $('.slider-nav .slick-slide.slick-current').addClass('is-active');
+        })
+        .slick({
+            arrows: true,
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            dots: false,
+            focusOnSelect: false,
+            infinite: false,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    arrows: true,
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                    centerPadding: '2px',
+                }
+            }, {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    centerPadding: '250px',
+                }
+            }, {
+                breakpoint: 420,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            }]
+        });
+
+    $('.slider-single').on('afterChange', function(event, slick, currentSlide) {
+        $('.slider-nav').slick('slickGoTo', currentSlide);
+        var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+        $('.slider-nav .slick-slide.is-active').removeClass('is-active');
+        $(currrentNavSlideElem).addClass('is-active');
+    });
+
+    $('.slider-nav').on('click', '.slick-slide', function(event) {
+        event.preventDefault();
+        var goToSingleSlide = $(this).data('slick-index');
+
+        $('.slider-single').slick('slickGoTo', goToSingleSlide);
+    });
+</script>
 
 </body>
 

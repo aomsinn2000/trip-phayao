@@ -39,13 +39,20 @@
 
                         <div class="row">
                             <div class="col-lg-8 col-xs-12">
-                                <p class="text-head1-placeHit"><b>เกี่ยวกับ</b></p>
-                                <p class="text-head2-placeHit">The Best travel Agency for Hikers</p>
-                                <p class="text-content-placeHit">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione soluta, veniam maiores possimus eligendi velit. Numquam sint facilis blanditiis voluptatem ex aspernatur repudiandae, accusamus, culpa sapiente dolor quidem at impedit.
-                                    <br><br><br>
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque autem, in distinctio ab harum ad et modi ipsum, itaque porro fuga accusantium aut quos, reiciendis eligendi eius libero corporis vitae.
-                                </p>
+                                <p class="text-head1-placeHit"><b>กว๊านพะเยา</b></p>
+                                <p class="text-head2-placeHit">สายน้ำแห่งชีวิต</p>
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <p class="text-content-placeHit">
+                                            กว๊านพะเยา อยู่ในเขตอำเภอเมืองพะเยา จังหวัดพะเยา เป็นแหล่งน้ำธรรมชาติที่อยู่ใจกลางเมือง
+                                            คำว่า กว๊าน เป็นภาษาพื้นเมืองซึ่งหมายถึง หนองน้ำ หรือบึงน้ำขนาดใหญ่ คำนี้มีใช้ในท้องถิ่นล้านนาเฉพาะที่จังหวัดพะเยาแห่งเดียวเท่านั้น กว๊านพะเยาเป็นบึงน้ำขนาดใหญ่ที่รวบรวมลำห้วยต่างๆ ไว้มากถึง ๑๘ สาย เป็นทะเลสาบน้ำจืดใหญ่เป็นอันดับ ๑ ในภาคเหนือ
+                                            เป็นแหล่งประมงน้ำจืดที่สำคัญที่สุดของภาคเหนือตอนบน มีพันธุ์ปลาน้ำจืดกว่า ๔๘ ชนิด เป็นแหล่งเพาะพันธุ์ปลาชนิดต่างๆ เช่น ปลากราย ปลาสวาย ปลาเทโพ ปลาจีน ปลาไน และปลานิล
+                                            กว๊านพะเยา มีลักษณะเป็นบึงน้ำขนาดใหญ่รูปพระจันทร์เสี้ยว เป็นบึงน้ำกว้างใหญ่สุดสายตา โอบล้อมด้วยทิวเขาสลับซับซ้อนอย่างสวยงาม เมื่อหลายร้อยปี พื้นที่ในบริเวณกว๊านพะเยาเป็นชุมชนมีวัดวาอารามอยู่มากมาย
+                                            ต่อมาเมื่อกรมประมงสร้างประตูกั้นน้ำในกว๊านพะเยาเพื่อกักเก็บน้ำ จึงทำให้บริเวณกว๊านพะเยาที่แต่เดิมเป็นชุมชนโบราณ และวัดหลายแห่งต้องจมอยู่ในกว๊านพะเยา
+                                        </p>
+                                    </div>
+                                </div>
+
                                 <br><br><br>
                                 <button type="button" class="btn btn-warning" style="color: #fff;">Read More <i class="bi bi-arrow-right"></i></button>
                             </div>
@@ -78,9 +85,10 @@
                         <div class="wrapper">
                             <div class="row row-cols-lg-8">
                                 <h4>หมวดหมู่ :
-                                    <button type="button" class="btn btn-outline-info btn-category">ร้านอาหาร</button>
-                                    <button type="button" class="btn btn-outline-info btn-category">โรงแรม</button>
-                                    <button type="button" class="btn btn-outline-info btn-category">คาเฟ่ / กาแฟ</button>
+                                    <button type="button" class="btn btn-outline-info ">ร้านอาหาร</button>
+                                    <button type="button" class="btn btn-outline-info">โรงแรม</button>
+                                    <button type="button" class="btn btn-outline-info">คาเฟ่ / กาแฟ</button>
+                                    <button type="button" class="btn btn-info">วัด</button>
                                 </h4>
                             </div>
 
@@ -89,13 +97,32 @@
 
                                 <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                     <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
+                                        <img src="https://thailandtourismdirectory.go.th/assets/upload/2021/11/1//be10d8aa-10d6-4906-a139-0309df29406e.jpg" class="img-card-placeHit" alt="...">
                                         <div class="card-body text-black">
                                             <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
+                                            <h4>วัดติโลกอาราม</h4>
+                                            <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
+                                            <p>
+                                                <i class="bi bi-star-fill"></i>
+                                                <span> <i class="bi bi-star-fill"></i></span>
+                                                <span> <i class="bi bi-star-fill"></i></span>
+                                                <span> <i class="bi bi-star-fill"></i></span>
+                                                <span> <i class="bi bi-star-fill"></i></span>
+                                                <span class="text-review-placeHit">10+ รีวิว</span>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="padding-card-placeHit">
+                                        <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
+                                    </div>
+                                </div>
+                                <div class="list-item col-lg-3 col-md-6 mb-lg-3">
+                                    <div class="card  text-white" style="border: none;">
+                                        <img src="https://pyo.onab.go.th/th/file/get/file/2022082427d73a953e10be34f0077b4bae6e0c42100202.jpg" class="img-card-placeHit" alt="...">
+                                        <div class="card-body text-black">
+                                            <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
+                                            <h4>วัดศรีโคมคำ </h4>
                                             <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
                                             <p>
                                                 <i class="bi bi-star-fill"></i>
@@ -114,13 +141,10 @@
                                 </div>
                                 <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                     <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
+                                        <img src="https://www.museumthailand.com/upload/evidence/1500976585_57492.jpg" class="img-card-placeHit" alt="...">
                                         <div class="card-body text-black">
                                             <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
+                                            <h4>วัดศรีอุโมงค์คำ</h4>
                                             <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
                                             <p>
                                                 <i class="bi bi-star-fill"></i>
@@ -139,13 +163,10 @@
                                 </div>
                                 <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                     <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
+                                        <img src="https://thailandtourismdirectory.go.th/assets/upload/2021/11/1//be10d8aa-10d6-4906-a139-0309df29406e.jpg" class="img-card-placeHit" alt="...">
                                         <div class="card-body text-black">
                                             <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
+                                            <h4>วัดติโลกอาราม</h4>
                                             <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
                                             <p>
                                                 <i class="bi bi-star-fill"></i>
@@ -164,13 +185,10 @@
                                 </div>
                                 <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                     <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
+                                        <img src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" class="img-card-placeHit" alt="...">
                                         <div class="card-body text-black">
                                             <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
+                                            <h4>วัดอนาลโย ทิพยาราม</h4>
                                             <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
                                             <p>
                                                 <i class="bi bi-star-fill"></i>
@@ -189,13 +207,10 @@
                                 </div>
                                 <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                     <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
+                                        <img src="https://cms.dmpcdn.com/travel/2021/03/16/1d9b2fa0-864f-11eb-a403-33d334b99f04_original.jpg" class="img-card-placeHit" alt="...">
                                         <div class="card-body text-black">
                                             <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
+                                            <h4>วัดพระธาตุจอมทอง</h4>
                                             <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
                                             <p>
                                                 <i class="bi bi-star-fill"></i>
@@ -214,13 +229,10 @@
                                 </div>
                                 <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                     <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
+                                        <img src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" class="img-card-placeHit" alt="...">
                                         <div class="card-body text-black">
                                             <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
+                                            <h4> วัดอนาลโยทิพยาราม (หลวงปู่ไพบูลย์)</h4>
                                             <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
                                             <p>
                                                 <i class="bi bi-star-fill"></i>
@@ -237,189 +249,11 @@
                                         <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
                                     </div>
                                 </div>
-                                <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                    <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
-                                        <div class="card-body text-black">
-                                            <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
-                                            <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                            <p>
-                                                <i class="bi bi-star-fill"></i>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span class="text-review-placeHit">10+ รีวิว</span>
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                    <div class="padding-card-placeHit">
-                                        <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                    </div>
-                                </div>
-                                <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                    <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
-                                        <div class="card-body text-black">
-                                            <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
-                                            <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                            <p>
-                                                <i class="bi bi-star-fill"></i>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span class="text-review-placeHit">10+ รีวิว</span>
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                    <div class="padding-card-placeHit">
-                                        <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                    </div>
-                                </div>
-                                <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                    <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
-                                        <div class="card-body text-black">
-                                            <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
-                                            <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                            <p>
-                                                <i class="bi bi-star-fill"></i>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span class="text-review-placeHit">10+ รีวิว</span>
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                    <div class="padding-card-placeHit">
-                                        <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                    </div>
-                                </div>
-                                <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                    <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
-                                        <div class="card-body text-black">
-                                            <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
-                                            <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                            <p>
-                                                <i class="bi bi-star-fill"></i>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span class="text-review-placeHit">10+ รีวิว</span>
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                    <div class="padding-card-placeHit">
-                                        <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                    </div>
-                                </div>
-                                <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                    <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
-                                        <div class="card-body text-black">
-                                            <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
-                                            <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                            <p>
-                                                <i class="bi bi-star-fill"></i>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span class="text-review-placeHit">10+ รีวิว</span>
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                    <div class="padding-card-placeHit">
-                                        <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                    </div>
-                                </div>
-                                <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                    <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
-                                        <div class="card-body text-black">
-                                            <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
-                                            <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                            <p>
-                                                <i class="bi bi-star-fill"></i>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span class="text-review-placeHit">10+ รีวิว</span>
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                    <div class="padding-card-placeHit">
-                                        <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                    </div>
-                                </div>
-                                <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                    <div class="card  text-white" style="border: none;">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-placeHit" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="featured-placeHit">featured</p>
-                                        </div>
-                                        <div class="card-body text-black">
-                                            <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                            <h4>กว๊านพะเยา</h4>
-                                            <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                            <p>
-                                                <i class="bi bi-star-fill"></i>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span> <i class="bi bi-star-fill"></i></span>
-                                                <span class="text-review-placeHit">10+ รีวิว</span>
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                    <div class="padding-card-placeHit">
-                                        <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                    </div>
-                                </div>
-
-
-
                             </div>
 
-                        <div class="row justify-content-center">
-                            <div id="pagination"class="padding-pagination1"></div>
-                        </div>
+                            <div class="row justify-content-center">
+                                <div id="pagination"class="padding-pagination1"></div>
+                            </div>
                         </div>
 
 
@@ -451,7 +285,6 @@
 
 
 
-
     <script>
         let map;
 
@@ -463,10 +296,12 @@
                     lng: 100.2868165
                 },
             };
+
             map = new google.maps.Map(document.getElementById("map"), mapOptions);
             const marker = new google.maps.Marker({
                 // The below line is equivalent to writing:
                 // position: new google.maps.LatLng(-34.397, 150.644)
+
                 position: {
                     lat: 19.18,
                     lng: 100.19
@@ -474,6 +309,7 @@
                 map: map,
             });
             const infowindow = new google.maps.InfoWindow({
+                content: "<p>Marker Location:" + marker.getPosition() + "</p>",
                 content: "<p>Marker Location:" + marker.getPosition() + "</p>",
             });
             google.maps.event.addListener(marker, "click", () => {
