@@ -2094,12 +2094,12 @@ table.table-bordered.dataTable tbody tr:last-child td{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #F26F3A;
+  background: #ffffff;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #F26F3A;
+  background: #ffffff;
 }
 
 /* Handle on hover */
@@ -3033,4 +3033,7 @@ tr.selected td{
     left: -20px;
     width: 2px;
     background-color: rgb(255 255 255 / 60%);
+}
+::-webkit-scrollbar-thumb {
+    background: #3fa5ff !important;
 }
