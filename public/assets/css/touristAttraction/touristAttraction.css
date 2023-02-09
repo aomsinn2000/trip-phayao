@@ -83,7 +83,7 @@ body {
 
 
   .wrapper{
-    padding: 70px 0;
+    /* padding: 70px 0; */
     overflow-x: hidden;
   }
 
@@ -220,6 +220,13 @@ body {
         width: 35%;
         text-align: center;
         color: #00AEEF;
+    }
+    .text-head-content-placeHit {
+        margin: auto;
+        width: 100%;
+        color: #535151;
+        text-align: center;
+        padding-top: 10px;
     }
   }
 
