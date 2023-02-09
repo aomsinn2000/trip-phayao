@@ -72,6 +72,7 @@ body {
     padding: 7px;
     border-radius: 5px;
     font-size: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .padding-card-placeHit{
     text-align: center;
@@ -110,17 +111,13 @@ body {
 
 
 
-  .btn-category{
-    color:black !important;
-    border-radius: 50px !important;
-    border-color: #D9D9D9 !important;
-    border-width: 2px !important;
-
-  }
   .btn-map{
     border-radius: 50px !important;
     background-color: #00AEEF !important;
 
+  }
+  .btn-outline-info,.btn-info{
+    border-radius: 50px !important;
   }
 
   /* เกี่ยวกับ pagination */
@@ -180,8 +177,23 @@ body {
 .padding-pagination1{
    margin-left: 80%;
 }
+/* .light-theme .current {
+    background: linear-gradient(100.15deg, #1896C5 12.48%, #65CDF3 86.59%);
+    color: #FFF;
+    border-radius: 50%;
+} */
 /* end เกี่ยวกับ pagination */
 
+.select-style{
+    border: none;
+    width: 35%;
+    text-align: center;
+    color: #00AEEF;
+}
+.search-tags{
+    border-color: black !important;
+    width: 100% !important;
+}
 
   @media only screen and (max-width: 830px) {
     .banner-placeHit{
@@ -197,6 +209,17 @@ body {
     }
     .padding-footer{
         padding-top: 380px;
+    }
+    .search-tags{
+        border-color: black !important;
+        width: 50% !important;
+        margin-left: 15px !important;
+    }
+    .select-style {
+        border: none;
+        width: 35%;
+        text-align: center;
+        color: #00AEEF;
     }
   }
 
