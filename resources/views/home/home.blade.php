@@ -81,37 +81,37 @@
 
         <div id="specialDeal" class="img-special-deal">
             <div class="px-3">
-                <a href="">
+                <a href="{{url('showSpecialDeal')}}">
                     <img class="specialDeal" src="https://positioningmag.com/wp-content/uploads/2016/05/pruksaNew.png" alt="...">
                 </a>
             </div>
             <div class="px-3">
-                <a href="">
+                <a href="{{url('showSpecialDeal')}}">
                     <img class="specialDeal" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_kJ_dS0EXSRTAsGsZSjY-mIyEd8qNg0eRUkUexvZPfZXZOPhfLhqtw0cIrLfqz2V0HVw&usqp=CAU" class="" alt="...">
                 </a>
             </div>
             <div class="px-3">
-                <a href="">
+                <a href="{{url('showSpecialDeal')}}">
                     <img class="specialDeal" src="https://www.ktc.co.th/pub/media/ktcworld/Travel/Online-Travel-Agency/traveloka-ecoupon/traveloka-ecoupon-promo-m.jpg" class="d-block w-100" alt="...">
                 </a>
             </div>
             <div class="px-3">
-                <a href="">
+                <a href="{{url('showSpecialDeal')}}">
                     <img class="specialDeal" src="https://ik.imagekit.io/tvlk/image/imageResource/2022/12/08/1670499241316-2edbc571bfe17f447bc1dfbbf201a8ef.jpeg?tr=q-75,w-307,h-154" class="d-block w-100" alt="...">
                 </a>
             </div>
             <div class="px-3">
-                <a href="">
+                <a href="{{url('showSpecialDeal')}}">
                     <img class="specialDeal" src="https://positioningmag.com/wp-content/uploads/2016/05/pruksaNew.png" alt="...">
                 </a>
             </div>
             <div class="px-3">
-                <a href="">
+                <a href="{{url('showSpecialDeal')}}">
                     <img class="specialDeal" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_kJ_dS0EXSRTAsGsZSjY-mIyEd8qNg0eRUkUexvZPfZXZOPhfLhqtw0cIrLfqz2V0HVw&usqp=CAU" class="" alt="...">
                 </a>
             </div>
             <div class="px-3">
-                <a href="">
+                <a href="{{url('showSpecialDeal')}}">
                     <img class="specialDeal" src="https://www.ktc.co.th/pub/media/ktcworld/Travel/Online-Travel-Agency/traveloka-ecoupon/traveloka-ecoupon-promo-m.jpg" class="d-block w-100" alt="...">
                 </a>
             </div>
@@ -242,20 +242,17 @@
                         <div class="container">
                             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-xs-2 g-4">
                                 <div class="col">
-                                    <a href="">
+                                    <a href="{{url('showTouristAttraction')}}">
                                         <figure class="card-with-hover">
                                             <!-- Photo by Iga Palacz on Unsplash -->
                                             <img class="img-top-destination"
                                                 src="https://www.seub.or.th/seubweb/wp-content/uploads/2018/12/%E0%B8%81%E0%B8%B4%E0%B8%99%E0%B8%9B%E0%B8%A5%E0%B8%B2-%E0%B8%A2%E0%B8%B1%E0%B9%88%E0%B8%87%E0%B8%A2%E0%B8%B7%E0%B8%99-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%B2%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%A3%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2.jpg"
-                                                alt="img24" width="100%" height="70%">
+                                                alt="img24" width="100%" height="70%" >
                                             <figcaption class="card-caption">
-                                                <div class="card-caption-content">
-                                                    <br>
-                                                    <br>
-                                                    <br>
+                                                <div class="card-caption-content py-lg-5 py-md-5 py-5">
                                                     <div>
                                                         <p class="text-header-place-hit">กว๊านพะเยา</p>
-                                                        <p class="address-place-hit"><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                        <p class="address-place-hit"><b style="color: #FCB930"> กิจกรรม 16 | สถานที่ 25 </b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
                                                     </div>
                                                 </div>
                                             </figcaption>
@@ -263,18 +260,15 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="">
+                                    <a href="{{url('showTouristAttraction')}}">
                                         <figure class="card-with-hover">
                                             <!-- Photo by Iga Palacz on Unsplash -->
                                             <img src="http://travel.mthai.com/app/uploads/2014/01/1452433_474903079293849_933924344_n.jpg" alt="img24" width="100%" height="70%">
                                             <figcaption class="card-caption">
-                                                <div class="card-caption-content">
-                                                    <br>
-                                                    <br>
-                                                    <br>
+                                                <div class="card-caption-content py-lg-5 py-md-5 py-5">
                                                     <div>
                                                         <p class="text-header-place-hit">ภูลังกา</h1>
-                                                        <p class="address-place-hit"><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                            <p class="address-place-hit"><b style="color: #FCB930"> กิจกรรม 16 | สถานที่ 25 </b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
                                                     </div>
                                                 </div>
                                             </figcaption>
@@ -282,18 +276,15 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="">
+                                    <a href="{{url('showTouristAttraction')}}">
                                         <figure class="card-with-hover">
                                             <!-- Photo by Iga Palacz on Unsplash -->
                                             <img src="https://www.emagtravel.com/wp-content/uploads/2013/09/phusang-800-2.jpg" alt="img24" width="100%" height="70%">
                                             <figcaption class="card-caption">
-                                                <div class="card-caption-content">
-                                                    <br>
-                                                    <br>
-                                                    <br>
+                                                <div class="card-caption-content py-lg-5 py-md-5 py-5">
                                                     <div>
                                                         <p class="text-header-place-hit">น้ำตกภูซาง</p>
-                                                        <p class="address-place-hit"><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                        <p class="address-place-hit"><b style="color: #FCB930"> กิจกรรม 16 | สถานที่ 25 </b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
                                                     </div>
                                                 </div>
                                             </figcaption>
@@ -301,18 +292,15 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="">
+                                    <a href="{{url('showTouristAttraction')}}">
                                         <figure class="card-with-hover">
                                             <!-- Photo by Iga Palacz on Unsplash -->
                                             <img class="img-top-destination" src="http://www.ท่องทั่วไทย.com/wp-content/uploads/2015/03/phunang-02.jpg" alt="img24" width="100%" height="70%">
                                             <figcaption class="card-caption">
-                                                <div class="card-caption-content">
-                                                    <br>
-                                                    <br>
-                                                    <br>
+                                                <div class="card-caption-content py-lg-5 py-md-5 py-5">
                                                     <div>
                                                         <p class="text-header-place-hit">อุทยานแห่งชาติดอยภูนาง </p>
-                                                        <p class="address-place-hit"><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                        <p class="address-place-hit"><b style="color: #FCB930"> กิจกรรม 16 | สถานที่ 25 </b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
                                                     </div>
                                                 </div>
                                             </figcaption>
@@ -320,18 +308,15 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="">
+                                    <a href="{{url('showTouristAttraction')}}">
                                         <figure class="card-with-hover">
                                             <!-- Photo by Iga Palacz on Unsplash -->
                                             <img src="https://www.trekkingthai.com/wp-content/uploads/2018/10/15439956_10209975146207255_6269812643284831473_n.jpg" alt="img24" width="100%" height="70%">
-                                            <figcaption class="card-caption">
-                                                <div class="card-caption-content">
-                                                    <br>
-                                                    <br>
-                                                    <br>
+                                            <figcaption class="card-caption ">
+                                                <div class="card-caption-content py-lg-5 py-md-5 py-5">
                                                     <div>
                                                         <p class="text-header-place-hit">ดอยหนอกดอยหลวง</p>
-                                                        <p class="address-place-hit"><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                        <p class="address-place-hit"><b style="color: #FCB930"> กิจกรรม 16 | สถานที่ 25 </b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
                                                     </div>
                                                 </div>
                                             </figcaption>
@@ -339,18 +324,15 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="">
+                                    <a href="{{url('showTouristAttraction')}}">
                                         <figure class="card-with-hover">
                                             <!-- Photo by Iga Palacz on Unsplash -->
                                             <img class="img-top-destination"src="https://www.paiduaykan.com/travel/wp-content/uploads/2022/02/SON08569.jpg" alt="img24" width="100%" height="70%">
                                             <figcaption class="card-caption">
-                                                <div class="card-caption-content">
-                                                    <br>
-                                                    <br>
-                                                    <br>
+                                                <div class="card-caption-content py-lg-5 py-md-5 py-5">
                                                     <div>
                                                         <p class="text-header-place-hit">วัดในเมืองพะเยา</p>
-                                                        <p class="address-place-hit"><b> โรงแรม 50 กิจกรรม 16 สถานที่ท่องเที่ยว 25</b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                        <p class="address-place-hit"><b style="color: #FCB930"> กิจกรรม 16 | สถานที่ 25 </b> <br>ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
                                                     </div>
                                                 </div>
                                             </figcaption>
