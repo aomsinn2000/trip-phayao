@@ -158,12 +158,6 @@
             min-height: 30px !important;
             border-radius: 50px;
         }
-        .img-fix{
-            width: 50px;
-            height: 40px;
-            object-fit: cover;
-            border-radius: 3px;
-        }
 
     </style>
 
@@ -195,12 +189,12 @@
                     <div class="my-auto">
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg"  style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
-                                    <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
-                                </svg>
-                                จัดการหมวดหมู่ >
+                                <svg xmlns="http://www.w3.org/2000/svg" style="color: black;margin-bottom:5px;" width="24" height="24" fill="currentColor" class="bi bi-signpost-2" viewBox="0 0 16 16">
+                                    <path d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z"/>
+                                  </svg>
+                                สถานที่ท่องเที่ยว >
                             </h5>
-                            <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;">ตั้งค่าโฟลเดอร์สถานที่ยอดฮิต</h5>
+                            <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;">จัดการสถานที่ท่องเที่ยว</h5>
                         </div>
                     </div>
                 </div>
@@ -214,18 +208,18 @@
 
                                 <div class="row">
                                     <div class="col-6">
-                                        <h5><b>ตั้งค่าโฟลเดอร์สถานที่ยอดฮิต</b></h5>
+                                        <h5><b>จัดการสถานที่ท่องเที่ยว</b></h5>
                                     </div>
                                     <div class="col-6">
-                                        <a style="float: right; margin-right:35px;" href="{{ url('addDestinationFolders') }}" type="button" class="btn btn-info">เพิ่มโฟลเดอร์</a>
+                                        <a style="float: right; margin-right:35px;" href="{{ url('/tourist-attractions/add') }}" type="button" class="btn btn-info">เพิ่มสถานที่ท่องเที่ยว</a>
                                     </div>
                                 </div>
                                 <div style="padding-top:60px;"></div>
                                 <nav>
                                     <div class="nav main-nav-line" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-destinationFolders" role="tab" aria-selected="true"><b>ทั้งหมด (100)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-destinationFolders" role="tab" aria-selected="false"><b>เปิดการใช้งาน (50)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-destinationFolders" role="tab" aria-selected="false"><b>ปิดการใช้งาน (50)</b></a>
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-touristAttraction" role="tab" aria-selected="true"><b>ทั้งหมด (100)</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-touristAttraction" role="tab" aria-selected="false"><b>เปิดการใช้งาน (50)</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-touristAttraction" role="tab" aria-selected="false"><b>ปิดการใช้งาน (50)</b></a>
 
                                     </div>
                                 </nav>
@@ -233,35 +227,42 @@
 
 
                                     {{-- ทั้งหมด --}}
-                                    <div class="tab-pane fade show active" id="all-destinationFolders" role="tabpanel" aria-labelledby="all-specialDeal-tab">
-                                        <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
-                                            <div class="col-6 py-3 px-5">
-                                                <button type="button" class="btn btn-info text-dark btn-color">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
-                                                    </svg>
-                                                    <span class="px-2">นำข้อมูลเข้า</span>
-                                                </button>
-                                                <span class="px-3">
-                                                    <button type="button" class="btn btn-info text-dark btn-color">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
-                                                        </svg>
-                                                        <span class="px-2">นำข้อมูลออก</span>
-                                                    </button>
-                                                </span>
+                                    <div class="tab-pane fade show active" id="all-touristAttraction" role="tabpanel" aria-labelledby="all-specialDeal-tab">
+                                        <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
+
+                                            <div class="col-2 py-3">
+                                                <button type="button" class="btn btn-info text-dark btn-color"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                                                    </svg> นำข้อมูลออก</button>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <input type="text" class="form-control" style="border-radius: 5px;" placeholder="ค้นหารหัสหมวดหมู่ / ชื่อหมวดหมู่">
+                                                <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
+                                                <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
+                                            </div>
+                                            <div class="col-4 py-3">
+                                                <div class="row">
+                                                    <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
+                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 py-3">
+                                                <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
                                             </div>
                                         </div>
-                                        <table class="table table table-striped position-relative my-3" id="allDestinationFolders-table">
+                                        <table class="table table table-striped position-relative my-3" id="allTouristAttraction-table">
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
-                                                    <th style="text-align: left;">รหัสหมวดหมู่</th>
-                                                    <th>ภาพปกโฟลเดอร์</th>
-                                                    <th>ชื่อโฟลเดอร์สถานที่(TH) </th>
-                                                    <th style="text-align: center;">ชื่อโฟลเดอร์สถานที่(EN) </th>
+                                                    <th style="text-align: left;">รหัสสถานที่</th>
+                                                    <th>ชื่อสถานที่ท่องเที่ยว</th>
+                                                    <th>รายละเอียด</th>
+                                                    <th style="text-align: center;">หมวดหมู่
+                                                        <select class="form-control selectStyle" id="selectCategory">
+                                                            <option selected>ทั้งหมด</option>
+                                                            <option style="padding-top: 10px;">ที่พัก</option>
+                                                            <option>ท่องเที่ยว</option>
+                                                        </select>
+                                                    </th>
+                                                    <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
                                                     <th style="text-align: center;">สถานะ
@@ -276,16 +277,18 @@
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolders') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
                                                     <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
+                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
+                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
@@ -298,16 +301,18 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolders') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
                                                     <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
+                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
+                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
@@ -326,55 +331,66 @@
 
 
                                     {{-- เปิดการใช้งาน --}}
-                                    <div class="tab-pane fade" id="on-destinationFolders" role="tabpanel" aria-labelledby="">
-                                        <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
-                                            <div class="col-6 py-3 px-5">
-                                                <button type="button" class="btn btn-info text-dark btn-color">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
-                                                    </svg>
-                                                    <span class="px-2">นำข้อมูลเข้า</span>
-                                                </button>
-                                                <span class="px-3">
-                                                    <button type="button" class="btn btn-info text-dark btn-color">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
-                                                        </svg>
-                                                        <span class="px-2">นำข้อมูลออก</span>
-                                                    </button>
-                                                </span>
+                                    <div class="tab-pane fade" id="on-touristAttraction" role="tabpanel" aria-labelledby="">
+                                        <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
+
+                                            <div class="col-2 py-3">
+                                                <button type="button" class="btn btn-info text-dark btn-color"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                                                    </svg> นำข้อมูลออก</button>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <input type="text" class="form-control" style="border-radius: 5px;" placeholder="ค้นหารหัสหมวดหมู่ / ชื่อหมวดหมู่">
+                                                <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
+                                                <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
+                                            </div>
+                                            <div class="col-4 py-3">
+                                                <div class="row">
+                                                    <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
+                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 py-3">
+                                                <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
                                             </div>
                                         </div>
-                                        <table class="table table table-striped position-relative my-3" id="onDestinationFolders-table">
+                                        <table class="table table table-striped position-relative my-3" id="onTouristAttraction-table">
                                             <thead class="thead-dark">
-                                                <tr style="text-align: center; height:60px !important;">
-                                                    <th style="text-align: left;">รหัสหมวดหมู่</th>
-                                                    <th>ภาพปกโฟลเดอร์</th>
-                                                    <th>ชื่อโฟลเดอร์สถานที่(TH) </th>
-                                                    <th style="text-align: center;">ชื่อโฟลเดอร์สถานที่(EN) </th>
+                                                <tr style="text-align: center;">
+                                                    <th style="text-align: left;">รหัสสถานที่</th>
+                                                    <th>ชื่อสถานที่ท่องเที่ยว</th>
+                                                    <th>รายละเอียด</th>
+                                                    <th style="text-align: center;">หมวดหมู่
+                                                        <select class="form-control selectStyle" id="selectCategory">
+                                                            <option selected>ทั้งหมด</option>
+                                                            <option style="padding-top: 10px;">ที่พัก</option>
+                                                            <option>ท่องเที่ยว</option>
+                                                        </select>
+                                                    </th>
+                                                    <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
-                                                    <th>สถานะ</th>
+                                                    <th style="text-align: center;">สถานะ </th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolders') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
                                                     <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
+                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
+                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td><div class="statusOn">เปิดใช้งาน</div></td>
+                                                    <td>
+                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                                    </td>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -383,18 +399,22 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolders') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
                                                     <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
+                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
+                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td><div class="statusOn">เปิดใช้งาน</div></td>
+                                                    <td>
+                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                                    </td>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -409,55 +429,66 @@
 
 
                                     {{-- ปิดการใช้งาน --}}
-                                    <div class="tab-pane fade" id="off-destinationFolders" role="tabpanel" aria-labelledby="">
-                                        <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
-                                            <div class="col-6 py-3 px-5">
-                                                <button type="button" class="btn btn-info text-dark btn-color">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
-                                                    </svg>
-                                                    <span class="px-2">นำข้อมูลเข้า</span>
-                                                </button>
-                                                <span class="px-3">
-                                                    <button type="button" class="btn btn-info text-dark btn-color">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
-                                                        </svg>
-                                                        <span class="px-2">นำข้อมูลออก</span>
-                                                    </button>
-                                                </span>
+                                    <div class="tab-pane fade" id="off-touristAttraction" role="tabpanel" aria-labelledby="">
+                                        <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
+
+                                            <div class="col-2 py-3">
+                                                <button type="button" class="btn btn-info text-dark btn-color"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z" />
+                                                    </svg> นำข้อมูลออก</button>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <input type="text" class="form-control" style="border-radius: 5px;" placeholder="ค้นหารหัสหมวดหมู่ / ชื่อหมวดหมู่">
+                                                <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
+                                                <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
+                                            </div>
+                                            <div class="col-4 py-3">
+                                                <div class="row">
+                                                    <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
+                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 py-3">
+                                                <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
                                             </div>
                                         </div>
-                                        <table class="table table-striped position-relative my-3 " id="offDestinationFolders-table">
+                                        <table class="table table-striped position-relative my-3 " id="offTouristAttraction-table">
                                             <thead class="thead-dark">
-                                                <tr style="text-align: center; ">
-                                                    <th style="text-align: left; height:40px !important;">รหัสหมวดหมู่</th>
-                                                    <th>ภาพปกโฟลเดอร์</th>
-                                                    <th>ชื่อโฟลเดอร์สถานที่(TH) </th>
-                                                    <th style="text-align: center;">ชื่อโฟลเดอร์สถานที่(EN) </th>
+                                                <tr style="text-align: center;">
+                                                    <th style="text-align: left;">รหัสสถานที่</th>
+                                                    <th>ชื่อสถานที่ท่องเที่ยว</th>
+                                                    <th>รายละเอียด</th>
+                                                    <th style="text-align: center;">หมวดหมู่
+                                                        <select class="form-control selectStyle" id="selectCategory">
+                                                            <option selected>ทั้งหมด</option>
+                                                            <option style="padding-top: 10px;">ที่พัก</option>
+                                                            <option>ท่องเที่ยว</option>
+                                                        </select>
+                                                    </th>
+                                                    <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
-                                                    <th>สถานะ</th>
+                                                    <th style="text-align: center;">สถานะ</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolders') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
                                                     <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
+                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
+                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td><div class="statusOff">ปิดใช้งาน</div></td>
+                                                    <td>
+                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                                    </td>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -466,18 +497,22 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolders') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
                                                     <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
+                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
+                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
+                                                    <td>ธรรมชาติ</td>
+                                                    <td>พะเยา</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
                                                     <td>
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
+                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td><div class="statusOff">ปิดใช้งาน</div></td>
+                                                    <td>
+                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                                    </td>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -489,6 +524,8 @@
                                         </table>
                                     </div>
                                     {{-- end ปิดการใช้งาน --}}
+
+
 
 
 
@@ -516,7 +553,7 @@
                                 </svg><br><br>
                                 <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ ไม่สามารถกู้คืนได้</div>
                             </div>
-                            <div class="modal-footer ">
+                            <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
                                 <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
                             </div>
@@ -597,69 +634,70 @@
 
 
 
-    {{-- Script ปฏิทิน --}}
-    <link type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    {{-- End Script ปฏิทิน --}}
+     {{-- Script ปฏิทิน --}}
+     <link type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" />
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+     {{-- End Script ปฏิทิน --}}
 
 
+   {{-- Script ปฏิทิน --}}
+     <script>
+         $('input[name="datefilter"]').daterangepicker({
+             autoUpdateInput: false,
+             locale: {
+                 cancelLabel: 'Clear'
+             }
+         });
 
-    <script>
-        $('input[name="datefilter"]').daterangepicker({
-            autoUpdateInput: false,
-            locale: {
-                cancelLabel: 'Clear'
-            }
-        });
+         $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+             $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+         });
 
-        $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-            $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
-        });
+         $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+             $(this).val('');
+         });
 
-        $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-            $(this).val('');
-        });
+         var start = moment().subtract(1, 'month');
+         var end = moment();
 
-        var start = moment().subtract(1, 'month');
-        var end = moment();
+         function cb(start, end) {
+             start = moment(start);
+             end = moment(end);
+             $('.daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+         }
 
-        function cb(start, end) {
-            start = moment(start);
-            end = moment(end);
-            $('.daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-        }
+         $('.daterange').daterangepicker({
+             startDate: start,
+             endDate: end,
+             autoUpdateInput: true,
+             alwaysShowCalendars: true,
+             locale: {
+                 format: 'DD/MM/YYYY',
+             },
+             ranges: {
+                 'Today': [moment(), moment()],
+                 'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                 'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                 'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                 'This Month': [moment().startOf('month'), moment().endOf('month')],
+                 'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+             }
+         }, cb);
 
-        $('.daterange').daterangepicker({
-            startDate: start,
-            endDate: end,
-            autoUpdateInput: true,
-            alwaysShowCalendars: true,
-            locale: {
-                format: 'DD/MM/YYYY',
-            },
-            ranges: {
-                'Today': [moment(), moment()],
-                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-            }
-        }, cb);
-
-        cb(start, end);
-    </script>
+         cb(start, end);
+     </script>
+ {{-- End Script ปฏิทิน --}}
 
     {{-- script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
     <script>
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#allDestinationFolders-table').DataTable().columns.adjust();
+            $('#allTouristAttraction-table').DataTable().columns.adjust();
         });
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#onDestinationFolders-table').DataTable().columns.adjust();
+            $('#onTouristAttraction-table').DataTable().columns.adjust();
         });
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-            $('#offDestinationFolders-table').DataTable().columns.adjust();
+            $('#offTouristAttraction-table').DataTable().columns.adjust();
         });
 
     </script>
@@ -670,7 +708,7 @@
 
 
     <script>
-        $('#allDestinationFolders-table').DataTable({
+        $('#allTouristAttraction-table').DataTable({
             aLengthMenu: [
                 [10, 25, 50, 100, 200, -1],
                 [10, 25, 50, 100, 200, "All"]
@@ -691,20 +729,22 @@
             },
             columns: [
                 {
-                "width": "100px"
+                "width": "40px"
             }, {
-                "width": "120px",
+                "width": "150px",
             }, {
-                "width": "150px"
-            },  {
-                "width": "250px"
-            },  {
+                "width": "250px",
+            }, {
+                "width": "80px"
+            }, {
                 "width": "180px"
             }, {
                 "width": "250px"
             }, {
+                "width": "250px"
+            }, {
                 "width": "80px"
-            },{
+            }, {
                 "width": "150px"
             }],
 
@@ -714,7 +754,7 @@
 
 
     <script>
-        $('#onDestinationFolders-table').DataTable({
+        $('#onTouristAttraction-table').DataTable({
             aLengthMenu: [
                 [10, 25, 50, 100, 200, -1],
                 [10, 25, 50, 100, 200, "All"]
@@ -735,22 +775,25 @@
             },
             columns: [
                 {
-                "width": "100px"
+                "width": "40px"
             }, {
-                "width": "120px",
+                "width": "150px",
             }, {
-                "width": "150px"
-            },  {
-                "width": "250px"
-            },  {
+                "width": "250px",
+            }, {
+                "width": "80px"
+            }, {
                 "width": "180px"
             }, {
                 "width": "250px"
             }, {
+                "width": "250px"
+            }, {
                 "width": "80px"
-            },{
+            }, {
                 "width": "150px"
             }],
+
 
         });
     </script>
@@ -759,7 +802,7 @@
 
 
     <script>
-        $('#offDestinationFolders-table').DataTable({
+        $('#offTouristAttraction-table').DataTable({
             aLengthMenu: [
                 [10, 25, 50, 100, 200, -1],
                 [10, 25, 50, 100, 200, "All"]
@@ -780,26 +823,27 @@
             },
             columns: [
                 {
-                "width": "100px"
+                "width": "40px"
             }, {
-                "width": "120px",
+                "width": "150px",
             }, {
-                "width": "150px"
-            },  {
-                "width": "250px"
-            },  {
+                "width": "250px",
+            }, {
+                "width": "80px"
+            }, {
                 "width": "180px"
             }, {
                 "width": "250px"
             }, {
+                "width": "250px"
+            }, {
                 "width": "80px"
-            },{
+            }, {
                 "width": "150px"
             }],
+
         });
     </script>
-
-
 
 
 

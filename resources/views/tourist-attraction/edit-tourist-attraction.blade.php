@@ -64,26 +64,25 @@
     <link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="assets/plugins/summernote/summernote-bs4.min.css" rel="stylesheet">
+    <link href="{{asset('assets/plugins/summernote/summernote-bs4.min.css')}}" rel="stylesheet">
 
     {{-- script datatogle เปิด/ปิด --}}
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     {{-- script datatogle เปิด/ปิด --}}
 
-    {{-- query ตำบล อำเภอจังหวัด --}}
-    <link rel="stylesheet" href="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.css">
-    {{-- end query ตำบล อำเภอจังหวัด --}}
+      {{-- query ตำบล อำเภอจังหวัด --}}
+      <link rel="stylesheet" href="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.css">
+      {{-- end query ตำบล อำเภอจังหวัด --}}
 
-    {{-- hashtags --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" integrity="sha512-xmGTNt20S0t62wHLmQec2DauG9T+owP9e6VU8GigI0anN7OXLip9i7IwEhelasml2osdxX71XcYm6BQunTQeQg==" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
-    {{-- end hashtags --}}
+      {{-- hashtags --}}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" integrity="sha512-xmGTNt20S0t62wHLmQec2DauG9T+owP9e6VU8GigI0anN7OXLip9i7IwEhelasml2osdxX71XcYm6BQunTQeQg==" crossorigin="anonymous" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
+      {{-- end hashtags --}}
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('assets/css/input-tag.css') }}">
-
-
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ asset('assets/css/input-tag.css') }}">
+      <link rel="stylesheet" href="{{ asset('assets/css/input-tagByselect.css') }}">
 
     <style>
         input[type=checkbox] {
@@ -186,7 +185,6 @@
         .dropify-wrapper {
             height: 170px !important;
         }
-
         .bootstrap-tagsinput .tag {
             margin-right: 2px;
             color: #3fa5ff;
@@ -197,7 +195,6 @@
             border-style: solid;
             border-width: 2px;
         }
-
         .bootstrap-tagsinput {
             width: 80%;
         }
@@ -238,10 +235,10 @@
                                 </svg>
                                 สถานที่ท่องเที่ยว >
                             </h5>
-                            <a href="{{ url('viewTouristAttraction') }}">
+                            <a href="{{ url('/tourist-attractions/') }}">
                                 <h5 class="content-title mb-0 my-auto px-2" style="padding-top: 1px;">จัดการสถานที่ท่องเที่ยว ></h5>
                             </a>
-                            <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;">เพิ่มสถานที่ท่องเที่ยว</h5>
+                            <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;">แก้ไขสถานที่ท่องเที่ยว</h5>
                         </div>
                     </div>
                 </div>
@@ -266,7 +263,7 @@
                                         <svg style="margin-top: 3px; margin-left:10px; color:#00AEEF;"class="bi bi-exclamation-circle-fill " xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                         </svg>
-                                        <h5 class="px-2"><b>เพิ่มข้อมูล</b></h5>
+                                        <h5 class="px-2"><b>แก้ไขข้อมูล</b></h5>
                                     </div>
                                 </div>
                                 <div class="row-6 ">
@@ -282,7 +279,10 @@
                                 <input type="text" class="form-control nameDealTh mb-2" id="" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อสถานที่ภาษาไทย">
                                 <label>ชื่อสถานที่ท่องเที่ยว (EN)</label>
                                 <span id="showNumEn" style="float: right;">0/100</span>
-                                <input type="text" class="form-control test" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อสถานที่ภาษาอังกฤษ">
+                                <input type="text" class="form-control mb-2" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อสถานที่ภาษาอังกฤษ">
+                                <label>รายละเอียด</label>
+                                <span id="showDescription" style="float: right;">0/150</span>
+                                <textarea type="text" class="form-control" id="" onkeyup="inputDescription(this)"  maxlength="150" placeholder="กรุณากรอกรายละเอียด"></textarea>
                             </div>
                             <div class="row my-2">
                                 <div class="form-group col-6">
@@ -338,8 +338,6 @@
                         </div>
 
 
-
-
                         <div class="card card-body">
                             <div class="row py-3">
                                 <svg style="margin-top: 3px; margin-left:10px; color:#00AEEF;"class="bi bi-exclamation-circle-fill " xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -357,7 +355,7 @@
                                 <div class="form-group col-12">
                                     <label>ช่วงฤดูท่องเที่ยว</label>
                                     <span id="showNumSeason" style="float: right;">0/300</span>
-                                    <textarea name="" id="" cols="30" rows="10"class="form-control  mb-2" id="" onkeyup="inputNameSeason(this)" placeholder="ใส่ข้อความที่นี" style="height: 60px;"></textarea>
+                                    <textarea  name="" id="" cols="30" rows="10"class="form-control  mb-2" id="" onkeyup="inputNameSeason(this)" placeholder="ใส่ข้อความที่นี" style="height: 60px;"></textarea>
                                 </div>
 
                             </div>
@@ -366,7 +364,7 @@
 
                         <div class="card card-body">
                             <div class="row mb-3">
-                                <div class="col-6">รายละเอียด</div>
+                                <div class="col-6">รายละเอียดย่อยสถานที่ท่องเที่ยว</div>
                                 <div class="col-6">
                                     <span id="maxContentPost"style="float: right;">0/800</span>
                                 </div>
@@ -378,9 +376,7 @@
 
 
 
-
-
-                        <div class="card card-body" style="height:auto !important;">
+                        <div class="card card-body">
                             <div>
                                 <svg style="color:#00AEEF;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
                                     <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
@@ -389,7 +385,7 @@
                                 <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div><br>
                             <div class="mb-4" style="width: 315px;">
-                                <input type="file" class="input-upload-image" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
+                                <input type="file" data-default-file="{{asset('/assets/images/deal.png')}}" class="input-upload-image" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
                             </div>
                             <br><br>
 
@@ -400,13 +396,16 @@
                                 ภาพสถานที่ท่องเที่ยว
                                 <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div>
-                            <div class="py-3">
+                            <div class="card-body">
                                 <div class="">
                                     <div class="d-flex flex-wrap gallery">
+                                        <div class="box-gallery-image">
+                                            <img src="{{ asset('/assets/images/853-526.png') }}" alt="">
+                                            <button class="btn btn-link btn-delete p-0"><img src="/assets/images/icon/btn-delete.png" class="w-100"></button>
+                                        </div>
                                         <div class="box-add-image text-center d-flex justify-content-center">
                                             <div class="align-self-center">
                                                 <button type="button" class="btn btn-upload mb-3">
-
                                                     click to upload
                                                 </button>
                                                 <div class="text-center tx-5">Drag & drop files to upload <br>
@@ -434,31 +433,30 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="py-2">
-                                <label><b>จัดกลุ่มโฟลเดอร์สถานที่ยอดฮิต</b></label>
-                                <multi-input>
-                                    <input list="speakers" style="width:100%;" placeholder="เลือกแท็ก">
-                                    <datalist id="speakers">
-                                        <option value="กว๊านพะเยา"></option>
-                                        <option value="อำเภอปง"></option>
-                                        <option value="อำเภอเชียงคำ"></option>
-                                        <option value="อำเภอเมือง">
-                                        <option value="วัดในพะเยา">
-                                    </datalist>
-                                </multi-input>
+                            <div class="py-2" >
+                                <label class="px-2"><b>จัดกลุ่มโฟลเดอร์สถานที่ยอดฮิต</b></label>
+                                 <input  type="text" class="tagator"  data-tagator-show-all-options-on-focus="true" data-tagator-autocomplete="['ภูเขา', 'ธรรมชาติ', 'วัด','เดินป่า', 'กางเต้นท์','วัดศรีโคมคำ', 'กว๊านพะเยา']" style=" width: 99%;" placeholder="เพิ่มแท็ก...">
                             </div>
                         </div>
 
-
-
-
                         <div class="card card-body">
-                            <div class="row justify-content-end">
-                                <a href="{{ url('viewTouristAttraction') }}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
-                                <span class="px-2">
-                                    <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
-                                </span>
+                            <div class="form-group row">
+                                <label for="user" class="col-sm-2 col-form-label">ผู้สร้าง</label>
+                                <div class="col-sm-10">
+                                    <input type="text" readonly class="form-control" id="user" value="นางสาวเบญจวรรณ บัวพิทักษ์">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2" style="float: left;">
+                                    <button type="button"  data-toggle="modal" data-target="#trashAll" style="border-radius:50%; height:40px;border-color:#ffff;" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="25"></button>
+                                </div>
+                                <div class="col-9">
+                                    <a href="{{url('/tourist-attractions/')}}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
+                                    <span class="px-2">
+                                        <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
+                                    </span>
+                                </div>
+
                             </div>
                         </div>
 
@@ -467,6 +465,26 @@
 
 
                     </div>
+                      <!-- Modal ถังขยะ -->
+                      <div class="modal fade" id="trashAll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body text-center">
+                                    <br>
+                                    <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
+                                    <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                    </svg>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                                    <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end Modal ถังขยะ -->
                 </form>
 
 
@@ -546,34 +564,35 @@
     <script src="{{ asset('assets/plugins/fileuploads/js/fileupload.js') }}"></script>
 
 
-    {{-- script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
-    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
-    <script src="assets/js/jquery.autotab.min.js"></script>
-    {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
+    {{-- script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea พร้อมเครื่องมือเพิ่มเติม --}}
+    <script src="{{asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.autotab.min.js')}}"></script>
+    {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน  textarea พร้อมเครื่องมือเพิ่มเติม--}}
+
 
     {{-- query ตำบล อำเภอจังหวัด --}}
     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/JQL.min.js"></script>
     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
-    {{-- end query ตำบล อำเภอจังหวัด --}}
+    {{--end query ตำบล อำเภอจังหวัด --}}
 
 
     {{-- select เอาไว้เลือกแท็ก --}}
-    <script src="{{ asset('assets/js/input-tag.js') }}"></script> {{-- เลือกแท็กได้และสร้างแท็กได้  --}}
-    <script src="{{ asset('assets/js/input-tag-bySelect.js') }}"></script> {{-- เลือกแท็กได้เพียงอย่างเดียว  --}}
+    <script src="{{ asset('assets/js/input-tag.js') }}"></script>
+    <script src="{{ asset('assets/js/input-tagByselect.js') }}"></script>
     {{-- select เอาไว้เลือกแท็ก --}}
 
 
 
 
     {{-- select เอาไว้เลือกแท็ก --}}
-    <script>
-        pureScriptSelect('#multiSelect');
-    </script>
-    {{--end select เอาไว้เลือกแท็ก --}}
+        <script>
+            pureScriptSelect('#multiSelect');
+        </script>
+     {{-- end select เอาไว้เลือกแท็ก --}}
 
-   {{--  query ตำบล อำเภอจังหวัด --}}
-    <script>
+    {{-- query ตำบล อำเภอจังหวัด --}}
+       <script>
         $.Thailand({
             $district: $("#sub_district"), // input ของตำบล
             $amphoe: $("#district"), // input ของอำเภอ
@@ -620,6 +639,15 @@
                 val.value = val.value.substring(0, 100);
             } else {
                 $('#showNumEn').text(100 - len + ' / 100');
+            }
+        };
+
+        function inputDescription(val) {
+            var len = val.value.length;
+            if (len >= 150) {
+                val.value = val.value.substring(0, 150);
+            } else {
+                $('#showDescription').text(150 - len + ' / 150');
             }
         };
     </script>
