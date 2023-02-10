@@ -64,7 +64,7 @@
 
     <link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="assets/plugins/summernote/summernote-bs4.min.css" rel="stylesheet">
+    <link href="{{asset('assets/plugins/summernote/summernote-bs4.min.css')}}" rel="stylesheet">
 
     {{-- script datatogle เปิด/ปิด --}}
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
@@ -106,6 +106,20 @@
             min-width: 2.19rem;
             min-height: 1.375rem;
             border-radius: 50px;
+        }
+        .toggle.btn-sm {
+            min-width: 2.19rem;
+            min-height: 1.375rem;
+            border-radius: 50px;
+        }
+        .toggle-on.btn-sm {
+            padding-right: 1rem;
+            background-color: #ffbe00;
+        }
+        .toggle-off.btn-sm {
+            padding-right: 1rem;
+            background-color: #ff0000;
+            color: #fff;
         }
 
 
@@ -166,7 +180,7 @@
                                 </svg>
                                 แบนเนอร์ >
                             </h5>
-                            <a href="{{ url('viewBanner') }}">
+                            <a href="{{ url('/home-banners/') }}">
                                 <h5 class="content-title mb-0 my-auto px-2">จัดการแบนเนอร์ ></h5>
                             </a>
                             <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;">เพิ่มแบนเนอร์</h5>
@@ -196,6 +210,10 @@
                                        <h5 class="px-2"><b>เพิ่มข้อมูล</b></h5>
                                     </div>
                                 </div>
+                                <div class="col-3">
+                                    <label for="">ยอดนิยม</label>
+                                    <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm">
+                                </div>
                                 <div class="row-6 ">
                                     <label for="">สถานะ</label>
                                     <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
@@ -211,7 +229,7 @@
                             <div class="row my-2">
                                 <div class="col-4 py-2">
                                     <label for="firstDay">วันที่เริ่มต้น</label><br>
-                                    <input type="date" id="firstDay" name="" style="display:inline; height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;">
+                                    <input type="date" id="firstDay"  data-date-inline-picker="true" name="" style="display:inline; height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;">
                                 </div>
                                 <div class="col-4 py-2">
                                     <label for="endDay">วันที่สิ้นสุด</label><br>
@@ -219,7 +237,7 @@
                                 </div>
                                 <div class="col-4 py-2">
                                     <label for="indefinitelyDay">ไม่มีกำหนด</label><br>
-                                    <input class="form-check-input position-static " id="myCheck"  type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                                    <input class="form-check-input position-static"  type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
                                 </div>
                             </div>
                         </div>
@@ -253,7 +271,7 @@
 
                         <div class="card card-body">
                             <div class="row justify-content-end">
-                                <a href="{{url('viewSpecialDealCategory')}}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
+                                <a href="{{url('/home-banners/')}}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
                                 <span class="px-2">
                                     <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
                                 </span>
@@ -345,9 +363,9 @@
 
 
     {{-- script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
-    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
-    <script src="assets/js/jquery.autotab.min.js"></script>
-    {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
+    <script src="{{ asset('assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.autotab.min.js') }}"></script>
+    {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน -->
 
 
 
@@ -387,15 +405,6 @@
 </script>
 {{-- end script อัพโหลดรูปภาพ banner ใหญ่ --}}
 
-
-  {{-- script checkbox disabled --}}
-  <script>
-    document.getElementById('myCheck').onchange = function() {
-        document.getElementById('firstDay').disabled = this.checked;
-        document.getElementById('endDay').disabled = this.checked;
-    };
-</script>
-{{--end script checkbox disabled --}}
 
 
 

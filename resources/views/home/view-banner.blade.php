@@ -160,8 +160,26 @@
         }
         .img-banner{
             width: 200px;
-            height: 50px;
+            height: 60px;
             object-fit: cover;
+        }
+        .toggle.btn-sm {
+            min-width: 75px !important;
+            min-height: 28px !important;
+            border-radius: 50px;
+        }
+        .toggle-on.btn-sm {
+            padding-right: 1rem;
+            background-color: #ffbe00;
+            padding-top: 4px;
+            font-size: 12px;
+        }
+        .toggle-off.btn-sm {
+            padding-right: 1rem;
+            background-color: #ff0000;
+            color: #fff;
+            padding-top: 4px;
+            font-size: 12px;
         }
 
     </style>
@@ -217,7 +235,7 @@
                                         <h5><b>จัดการแบนเนอร์</b></h5>
                                     </div>
                                     <div class="col-6">
-                                        <a style="float: right; margin-right:35px;" href="{{ url('addBanner') }}" type="button" class="btn btn-info">เพิ่มแบนเนอร์</a>
+                                        <a style="float: right; margin-right:35px;" href="{{ url('/home-banners/add') }}" type="button" class="btn btn-info">เพิ่มแบนเนอร์</a>
                                     </div>
                                 </div>
                                 <div style="padding-top:60px;"></div>
@@ -259,8 +277,9 @@
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
                                                     <th style="text-align: left;">รหัส</th>
-                                                    <th style="text-align: left;">ภาพแบนเนอร์</th>
-                                                    <th style="text-align: left;">ชื่อแบนเนอร์</th>
+                                                    <th>ภาพแบนเนอร์</th>
+                                                    <th>ยอดนิยม</th>
+                                                    <th>ชื่อแบนเนอร์</th>
                                                     <th style="text-align: center;">วันที่เผยแพร่</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
@@ -276,10 +295,11 @@
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editBanner') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;"> <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td style="text-align: left;"><a href="{{ url('/home-banners/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td> <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td>   <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm"></td>
                                                     <td style="text-align: left;"> เว็บของคนรักการเดินทาง... ประสบการณ์ใหม่ที่รอคุณอยู่</td>
-                                                    <td> ไม่กำหนด</td>
+                                                    <td> 01/01/2565 12:12 - 01/01/2565 12:12 </td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -298,12 +318,11 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editBanner') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">
-                                                        <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt="">
-                                                    </td>
+                                                    <td style="text-align: left;"><a href="{{ url('/home-banners/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td> <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td>   <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm"></td>
                                                     <td style="text-align: left;"> เว็บของคนรักการเดินทาง... ประสบการณ์ใหม่ที่รอคุณอยู่</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
+                                                    <td> ไม่กำหนด</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -354,8 +373,9 @@
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
                                                     <th style="text-align: left;">รหัส</th>
-                                                    <th style="text-align: left;">ภาพแบนเนอร์</th>
-                                                    <th style="text-align: left;">ชื่อแบนเนอร์</th>
+                                                    <th>ภาพแบนเนอร์</th>
+                                                    <th>ยอดนิยม</th>
+                                                    <th>ชื่อแบนเนอร์</th>
                                                     <th style="text-align: center;">วันที่เผยแพร่</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
@@ -371,10 +391,11 @@
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editBanner') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;"> <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td style="text-align: left;"><a href="{{ url('/home-banners/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td> <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td>   <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm"></td>
                                                     <td style="text-align: left;"> เว็บของคนรักการเดินทาง... ประสบการณ์ใหม่ที่รอคุณอยู่</td>
-                                                    <td>ไม่กำหนด</td>
+                                                    <td> 01/01/2565 12:12 - 01/01/2565 12:12 </td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -382,9 +403,7 @@
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
+                                                    <th style="text-align: center;"><div class="statusOn">เปิดใช้งาน</div></th>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -393,12 +412,11 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editBanner') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">
-                                                        <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt="">
-                                                    </td>
+                                                    <td style="text-align: left;"><a href="{{ url('/home-banners/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td> <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td>   <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm"></td>
                                                     <td style="text-align: left;"> เว็บของคนรักการเดินทาง... ประสบการณ์ใหม่ที่รอคุณอยู่</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
+                                                    <td> ไม่กำหนด</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
@@ -406,9 +424,7 @@
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
+                                                    <th style="text-align: center;"><div class="statusOn">เปิดใช้งาน</div></th>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -449,8 +465,9 @@
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
                                                     <th style="text-align: left;">รหัส</th>
-                                                    <th style="text-align: left;">ภาพแบนเนอร์</th>
-                                                    <th style="text-align: left;">ชื่อแบนเนอร์</th>
+                                                    <th>ภาพแบนเนอร์</th>
+                                                    <th>ยอดนิยม</th>
+                                                    <th>ชื่อแบนเนอร์</th>
                                                     <th style="text-align: center;">วันที่เผยแพร่</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>แก้ไข</th>
@@ -466,8 +483,31 @@
                                             </thead>
                                             <tbody style="text-align: center">
                                                 <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editBanner') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;"> <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td style="text-align: left;"><a href="{{ url('/home-banners/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td> <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td>   <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm"></td>
+                                                    <td style="text-align: left;"> เว็บของคนรักการเดินทาง... ประสบการณ์ใหม่ที่รอคุณอยู่</td>
+                                                    <td> 01/01/2565 12:12 -
+                                                        01/01/2565 12:12</td>
+                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <td>
+                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
+                                                        <label for=""> 01/01/2566 12:12</label>
+                                                    </td>
+                                                    <th style="text-align: center;"><div class="statusOff">ปิดใช้งาน</div></th>
+                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
+                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                            </svg>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: left;"><a href="{{ url('/home-banners/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
+                                                    <td> <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
+                                                    <td>   <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm"></td>
                                                     <td style="text-align: left;"> เว็บของคนรักการเดินทาง... ประสบการณ์ใหม่ที่รอคุณอยู่</td>
                                                     <td> ไม่กำหนด</td>
                                                     <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
@@ -477,33 +517,7 @@
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editBanner') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">
-                                                        <img class="img-banner" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt="">
-                                                    </td>
-                                                    <td style="text-align: left;"> เว็บของคนรักการเดินทาง... ประสบการณ์ใหม่ที่รอคุณอยู่</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
+                                                    <th style="text-align: center;"><div class="statusOff">ปิดใช้งาน</div></th>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -721,9 +735,11 @@
             }, {
                 "width": "250px",
             }, {
-                "width": "150px"
+                "width": "100px"
             },  {
                 "width": "250px"
+            },  {
+                "width": "150px"
             },  {
                 "width": "180px"
             }, {
@@ -759,14 +775,17 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [   {
+            columns: [
+                {
                 "width": "40px"
             }, {
                 "width": "250px",
             }, {
-                "width": "150px"
-            }, {
+                "width": "100px"
+            },  {
                 "width": "250px"
+            },  {
+                "width": "150px"
             },  {
                 "width": "180px"
             }, {
@@ -809,9 +828,11 @@
             }, {
                 "width": "250px",
             }, {
-                "width": "150px"
+                "width": "100px"
             },  {
                 "width": "250px"
+            },  {
+                "width": "150px"
             },  {
                 "width": "180px"
             }, {
@@ -821,6 +842,7 @@
             },{
                 "width": "150px"
             }],
+
         });
     </script>
 
