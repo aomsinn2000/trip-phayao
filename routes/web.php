@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController\HomeController;
 use App\Http\Controllers\ServiceController\ServiceController;
 use App\Http\Controllers\ActivityController\ActivityController;
 use App\Http\Controllers\ArticleController\ArticleController;
+use App\Http\Controllers\PakageTourController\PakageTourController;
 use App\Http\Controllers\TouristAttractionController\TouristAttractionController;
 use App\Http\Controllers\ContactUsController\ContactUsController;
 use App\Http\Controllers\DestinationFolderController\DestinationFolderController;
@@ -69,7 +70,8 @@ Route::prefix('/home-banners')->group(function () {
 
 Route::prefix('/destinationfolders')->group(function () {
     Route::get('/', [DestinationFolderController::class, 'showDestinationFolder']);
-    });
+    Route::get('/description', [DestinationFolderController::class, 'showDestinationFolderDescription']);
+});
 //*********end หน้าบ้านโฟลเดอร์**********
 //*********หลังบ้านโฟลเดอร์**********
 Route::prefix('/destination-folders')->group(function () {
@@ -200,12 +202,28 @@ Route::prefix('tourist-attraction-categories')->group(function () {
 
 
 //******************หน้าบ้าน หน้ารวมกิจกรรม******************
-Route::get('/activities', [ActivityController::class, 'showActivity']); //navbar view หน้ารวมกิจกรรม
+Route::prefix('activities')->group(function () {
+    Route::get('/', [ActivityController::class, 'showActivity']);
+    Route::get('/description', [ActivityController::class, 'showActivityDescription']);
+});
 //******************end หน้าบ้าน หน้ารวมกิจกรรม******************
 
 
-//******************หน้าบ้านหน้าบริการต่างๆ ******************
 
+//******************หน้าบ้าน แพ็คเกจทัวร์******************
+Route::prefix('pakagetours')->group(function () {
+    Route::get('/', [PakageTourController::class, 'showPakageTour']);
+    Route::get('/description', [PakageTourController::class, 'showPakageTourDescription']);
+});
+//******************หน้าบ้าน แพ็คเกจทัวร์******************
+
+
+
+
+
+
+
+//******************หน้าบ้านหน้าบริการต่างๆ ******************
 Route::prefix('services')->group(function () {
     Route::get('/', [ServiceController::class, 'showService']);
     Route::get('/category', [ServiceController::class, 'showServiceCategory']);

@@ -1,7 +1,9 @@
 
 body{
 font-family: 'Kanit', sans-serif;
+
 }
+
 .padding-footer{
     padding-top: 200px;
 }
@@ -173,7 +175,6 @@ font-family: 'Kanit', sans-serif;
 .btn-outline-info{
     border-radius: 50px !important;
 }
-
 
 
 
