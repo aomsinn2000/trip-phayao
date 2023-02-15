@@ -9,16 +9,19 @@ class SpecialDealController extends Controller
 {
     //
     public function showSpecialDeal(){
-        return view('specialDeal.show-SpecialDeal');
+        return view('special-deal.show-special-deal');
+    }
+    public function showSpecialDealDescription(){
+        return view('special-deal.show-special-deal-description');
     }
     public function viewSpecialDeal(){
-        return view('specialDeal.view-specialDeal');
+        return view('special-deal.view-special-deal');
     }
     public function addSpecialDeal(){
-        return view('specialDeal.add-specialDeal');
+        return view('special-deal.add-special-deal');
     }
     public function editSpecialDeal(){
-        return view('specialDeal.edit-specialDeal');
+        return view('special-deal.edit-special-deal');
     }
 
 

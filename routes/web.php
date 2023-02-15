@@ -32,9 +32,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 //  Login
-Route::get('login', [LoginController::class, 'showLogin']);
-Route::post('handle', [LoginController::class, 'handle']);
-Route::get('logout', [LoginController::class, 'logout']);
+// Route::get('login', [LoginController::class, 'showLogin']);
+// Route::post('handle', [LoginController::class, 'handle']);
+// Route::get('logout', [LoginController::class, 'logout']);
 // end Login
 // ลืมรหัสผ่าน
 Route::post('sendEmail', [ForgotPasswordController::class, 'showSentEmail']); //view ตอบกลับว่าส่งไปอีเมล์ไหนเมื่อลืมรหัสผ่าน
@@ -64,6 +64,13 @@ Route::prefix('/home-banners')->group(function () {
 });
 //*********end หลังบ้านจัดการแบนเนอร์**********
 
+
+//*********หน้าบ้านโฟลเดอร์**********
+
+Route::prefix('/destinationfolders')->group(function () {
+    Route::get('/', [DestinationFolderController::class, 'showDestinationFolder']);
+    });
+//*********end หน้าบ้านโฟลเดอร์**********
 //*********หลังบ้านโฟลเดอร์**********
 Route::prefix('/destination-folders')->group(function () {
     Route::get('/', [DestinationFolderController::class, 'viewDestinationFolder']);
@@ -84,7 +91,13 @@ Route::prefix('/destination-folders')->group(function () {
 //*********end หลังบ้านโฟลเดอร์**********
 
 // ดีลพิเศษ หน้าบ้าน
-Route::get('specialdeals', [SpecialDealController::class, 'showSpecialDeal']); //navbar view ดีลสุดพิเศษ
+// Route::get('specialdeals', [SpecialDealController::class, 'showSpecialDeal']); //navbar view ดีลสุดพิเศษ
+Route::prefix('/specialdeals')->group(function () {
+    Route::get('/', [SpecialDealController::class, 'showSpecialDeal']); //navbar view หน้าบทความ
+    Route::get('/description', [SpecialDealController::class, 'showSpecialDealDescription']); //view รายละเอียดบทความเมื่อคลิกเลือกบทความ
+});
+
+
 
 //*********หลังบ้านจัดการดีลสุดพิเศษ**********
 Route::prefix('/special-deals')->group(function () {
@@ -132,10 +145,10 @@ Route::prefix('/special-deal-categories')->group(function () {
 //******************หน้าบ้าน สถานที่ยอดฮิต******************
 Route::prefix('/touristattractions')->group(function () {
     Route::get('/', [TouristAttractionController::class, 'showTouristAttraction']); //navbar view สถานที่ยอดฮิต
-    Route::get('/description', [TouristAttractionController::class, 'touristAttractionDescription']); //view รายละเอียดสถานที่ยอดฮิตเมื่อคลิก
+    Route::get('/description', [TouristAttractionController::class, 'showTouristAttractionDescription']); //view รายละเอียดสถานที่ยอดฮิตเมื่อคลิก
+    Route::get('/tags', [TouristAttractionController::class, 'showTouristAttractionTags']);
 });
-
-//******************end หน้าบ้าน สถานที่ยอดฮิต******************
+//******************end หน้าบ้าน สถานที่ยอดฮิต**************
 
 //******************หลังบ้าน สถานที่ยอดฮิต******************
 Route::prefix('/tourist-attractions')->group(function () {
@@ -155,6 +168,15 @@ Route::prefix('/tourist-attractions')->group(function () {
     Route::post('/tourist-attraction-off-datatable', [TouristAttractionController::class, 'touristAttractionOffDataTable']);
 });
 //******************end หลังบ้าน สถานที่ยอดฮิต******************
+
+
+
+//*********หน้าบ้าน หมวดหมู่สถานที่ยอดฮิต**********
+Route::prefix('touristattractioncategories')->group(function () {
+    Route::get('/', [TouristAttractionCategoryController::class, 'showTouristAttractionCategoryHome']); // ตาราง จัดการหมวดหมู่สถานที่ยอดฮิตนที่ยอดฮิต
+});
+//*********end หน้าบ้าน หมวดหมู่สถานที่ยอดฮิต**********
+
 
 //*********หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต**********
 Route::prefix('tourist-attraction-categories')->group(function () {
@@ -183,16 +205,43 @@ Route::get('/activities', [ActivityController::class, 'showActivity']); //navbar
 
 
 //******************หน้าบ้านหน้าบริการต่างๆ ******************
-Route::get('/services', [ServiceController::class, 'showService']); //navbar view หน้าบริการต่างๆ
-//******************end หน้าบ้าน หน้ารวมกิจกรรม******************
+
+Route::prefix('services')->group(function () {
+    Route::get('/', [ServiceController::class, 'showService']);
+    Route::get('/category', [ServiceController::class, 'showServiceCategory']);
+    Route::get('/description', [ServiceController::class, 'showServiceDescription']);
+});
+//******************end หน้าบ้านหน้าบริการต่างๆ******************
+
+//******************หลังบ้านหน้าบริการต่างๆ ******************
+Route::prefix('service-manages')->group(function () {
+    Route::get('/', [ServiceController::class, 'viewService']);
+    Route::get('/add', [ServiceController::class, 'addService']);
+    Route::get("/edit/{id}", [ServiceController::class, 'editService']);
+});
+//******************end หลังบ้านหน้าบริการต่างๆ******************
+
+
+
+
+
+
+
+
 
 //******************หน้าบ้าน หน้าบทความ******************
 Route::prefix('/articles')->group(function () {
     Route::get('/', [ArticleController::class, 'showArticle']); //navbar view หน้าบทความ
     Route::get('/description', [ArticleController::class, 'showArticleDescription']); //view รายละเอียดบทความเมื่อคลิกเลือกบทความ
 });
-
 //******************end หน้าบ้าน หน้าบทความ******************
+//******************หลังบ้าน หน้าบทความ******************
+Route::prefix('/article-manages')->group(function () {
+    Route::get('/', [ArticleController::class, 'viewArticle']);
+    Route::get('/add', [ArticleController::class, 'addArticle']);
+    Route::get('/edit/{id}', [ArticleController::class, 'editArticle']);
+});
+//******************end หลังบ้าน หน้าบทความ******************
 
 //****************** หน้าบ้าน หน้าติดต่อ******************
 Route::get('/contactus', [ContactUsController::class, 'showContactUs']); //navbar view ติดต่อ
