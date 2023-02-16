@@ -198,6 +198,26 @@
         .bootstrap-tagsinput {
             width: 80%;
         }
+        .select-tags {
+            width: 100%;
+            /* display: none; */
+        }  .toggle.btn-sm {
+            min-width: 2.19rem;
+            min-height: 1.375rem;
+            border-radius: 50px;
+        }
+
+        .toggle-on.btn-sm {
+            padding-right: 1rem;
+            background-color: #37b049;
+        }
+
+        .toggle-off.btn-sm {
+            padding-right: 1rem;
+            background-color: #ff0000;
+            color: #fff;
+        }
+
     </style>
 
 
@@ -433,9 +453,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="py-2" >
-                                <label class="px-2"><b>จัดกลุ่มโฟลเดอร์สถานที่ยอดฮิต</b></label>
-                                 <input  type="text" class="tagator"  data-tagator-show-all-options-on-focus="true" data-tagator-autocomplete="['ภูเขา', 'ธรรมชาติ', 'วัด','เดินป่า', 'กางเต้นท์','วัดศรีโคมคำ', 'กว๊านพะเยา']" style=" width: 99%;" placeholder="เพิ่มแท็ก...">
+                            <div class="row px-2 py-2">
+                                <label class="px-2"><b>จัดกลุ่มสถานที่ยอดฮิต* :</b></label>
+                                <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm">
+                                {{-- <div class="form-check px-4">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="select-on" checked>
+                                    <label class="form-check-label" for="select-on" style="color: #077417">
+                                        เปิดใช้งาน
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="select-off">
+                                    <label class="form-check-label" for="select-off" style="color: #e90303">
+                                        ปิดใช้งาน
+                                    </label>
+                                </div> --}}
+                                <div class="select-tags">
+                                    <input type="text" readonly class="tagator" data-tagator-show-all-options-on-focus="true" data-tagator-autocomplete="['ภูเขา', 'ธรรมชาติ', 'วัด','เดินป่า', 'กางเต้นท์','วัดศรีโคมคำ', 'กว๊านพะเยา']" style=" width: 99%;" placeholder="เพิ่มแท็ก...">
+                                </div>
                             </div>
                         </div>
 
@@ -763,6 +798,25 @@
     </script>
     {{-- end script อัพโหลดรูปภาพแกลลอรี รูปเล็ก --}}
 
+
+
+
+    {{-- script checkbox ปิดเปิดแท็กว่าจะใช้งานหรือไม่ --}}
+    <script>
+        const selectOn = document.getElementById("select-on");
+        const selectOff = document.getElementById("select-off");
+        const selectTags = document.querySelector(".select-tags");
+
+        selectOn.addEventListener("change", function() {
+            selectTags.style.display = "";
+        });
+
+        selectOff.addEventListener("change", function() {
+            selectTags.style.display = "none";
+        });
+    </script>
+
+    {{-- end script checkbox ปิดเปิดแท็กว่าจะใช้งานหรือไม่ --}}
 
 
 

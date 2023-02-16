@@ -64,11 +64,13 @@
     <link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="{{asset('assets/plugins/summernote/summernote-bs4.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css') }}" rel="stylesheet">
 
     {{-- script datatogle เปิด/ปิด --}}
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+
     {{-- script datatogle เปิด/ปิด --}}
 
     {{-- query ตำบล อำเภอจังหวัด --}}
@@ -203,6 +205,28 @@
         .bootstrap-tagsinput {
             width: 80%;
         }
+
+        .toggle.btn-sm {
+            min-width: 2.19rem;
+            min-height: 1.375rem;
+            border-radius: 50px;
+        }
+
+        .toggle-on.btn-sm {
+            padding-right: 1rem;
+            background-color: #37b049;
+        }
+
+        .toggle-off.btn-sm {
+            padding-right: 1rem;
+            background-color: #ff0000;
+            color: #fff;
+        }
+
+        .select-tags {
+            width: 100%;
+            /* display: none; */
+        }
     </style>
 
 
@@ -287,7 +311,7 @@
                                 <input type="text" class="form-control mb-2" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อสถานที่ภาษาอังกฤษ">
                                 <label>รายละเอียด</label>
                                 <span id="showDescription" style="float: right;">0/150</span>
-                                <textarea type="text" class="form-control" id="" onkeyup="inputDescription(this)"  maxlength="150" placeholder="กรุณากรอกรายละเอียด"></textarea>
+                                <textarea type="text" class="form-control" id="" onkeyup="inputDescription(this)" maxlength="150" placeholder="กรุณากรอกรายละเอียด"></textarea>
                             </div>
                             <div class="row my-2">
                                 <div class="form-group col-6">
@@ -440,9 +464,26 @@
                                 </div>
                             </div>
 
-                            <div class="py-2" >
-                                <label class="px-2"><b>จัดกลุ่มโฟลเดอร์สถานที่ยอดฮิต</b></label>
-                                <input  type="text" class="tagator"  data-tagator-show-all-options-on-focus="true" data-tagator-autocomplete="['ภูเขา', 'ธรรมชาติ', 'วัด','เดินป่า', 'กางเต้นท์','วัดศรีโคมคำ', 'กว๊านพะเยา']" style=" width: 99%;" placeholder="เพิ่มแท็ก...">
+
+
+                            <div class="row px-2 py-2">
+                                <label class="px-2"><b>จัดกลุ่มสถานที่ยอดฮิต* :</b></label>
+                                <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm">
+                                {{-- <div class="form-check px-4">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="select-on" checked>
+                                    <label class="form-check-label" for="select-on" style="color: #077417">
+                                        เปิดใช้งาน
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="select-off">
+                                    <label class="form-check-label" for="select-off" style="color: #e90303">
+                                        ปิดใช้งาน
+                                    </label>
+                                </div> --}}
+                                <div class="select-tags">
+                                    <input type="text" readonly class="tagator" data-tagator-show-all-options-on-focus="true" data-tagator-autocomplete="['ภูเขา', 'ธรรมชาติ', 'วัด','เดินป่า', 'กางเต้นท์','วัดศรีโคมคำ', 'กว๊านพะเยา']" style=" width: 99%;" placeholder="เพิ่มแท็ก...">
+                                </div>
                             </div>
 
                         </div>
@@ -544,8 +585,8 @@
 
 
     {{-- script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
-    <script src="{{asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.autotab.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.autotab.min.js') }}"></script>
     {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
 
     {{-- query ตำบล อำเภอจังหวัด --}}
@@ -556,9 +597,9 @@
 
 
     {{-- select เอาไว้เลือกแท็ก --}}
-     <script src="{{ asset('assets/js/input-tag.js') }}"></script> {{-- เลือกแท็กได้และสร้างแท็กได้  --}}
-     <script src="{{ asset('assets/js/input-tagByselect.js') }}"></script>
-     {{-- select เอาไว้เลือกแท็ก --}}
+    <script src="{{ asset('assets/js/input-tag.js') }}"></script> {{-- เลือกแท็กได้และสร้างแท็กได้  --}}
+    <script src="{{ asset('assets/js/input-tagByselect.js') }}"></script>
+    {{-- select เอาไว้เลือกแท็ก --}}
 
 
 
@@ -567,9 +608,9 @@
     <script>
         pureScriptSelect('#multiSelect');
     </script>
-    {{--end select เอาไว้เลือกแท็ก --}}
+    {{-- end select เอาไว้เลือกแท็ก --}}
 
-   {{--  query ตำบล อำเภอจังหวัด --}}
+    {{--  query ตำบล อำเภอจังหวัด --}}
     <script>
         $.Thailand({
             $district: $("#sub_district"), // input ของตำบล
@@ -619,6 +660,7 @@
                 $('#showNumEn').text(100 - len + ' / 100');
             }
         };
+
         function inputDescription(val) {
             var len = val.value.length;
             if (len >= 150) {
@@ -649,7 +691,6 @@
                 $('#showNumSeason').text(300 - len + ' / 300');
             }
         };
-
     </script>
     {{-- script นับจำนวนตัวอักษรที่พิมพ์ไม่เกิน 300ตัว การเดินทาง ฤดูกาลท่องเที่ยว --}}
 
@@ -743,6 +784,23 @@
 
 
 
+    {{-- script checkbox ปิดเปิดแท็กว่าจะใช้งานหรือไม่ --}}
+    <script>
+        const selectOn = document.getElementById("select-on");
+        const selectOff = document.getElementById("select-off");
+        const selectTags = document.querySelector(".select-tags");
+
+        selectOn.addEventListener("change", function() {
+            selectTags.style.display = "";
+        });
+
+        selectOff.addEventListener("change", function() {
+            selectTags.style.display = "none";
+        });
+    </script>
+
+
+    {{-- end script checkbox ปิดเปิดแท็กว่าจะใช้งานหรือไม่ --}}
 
 </body>
 

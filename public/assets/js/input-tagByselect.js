@@ -531,6 +531,7 @@
 }(jQuery));
 
 
+
 $(function () {
 	$('.tagator').each(function () {
 		var $this = $(this);
