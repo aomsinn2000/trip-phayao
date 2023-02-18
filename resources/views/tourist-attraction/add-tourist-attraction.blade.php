@@ -69,22 +69,21 @@
     {{-- script datatogle เปิด/ปิด --}}
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
-
-
     {{-- script datatogle เปิด/ปิด --}}
 
     {{-- query ตำบล อำเภอจังหวัด --}}
     <link rel="stylesheet" href="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.css">
     {{-- end query ตำบล อำเภอจังหวัด --}}
 
-    {{-- hashtags --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" integrity="sha512-xmGTNt20S0t62wHLmQec2DauG9T+owP9e6VU8GigI0anN7OXLip9i7IwEhelasml2osdxX71XcYm6BQunTQeQg==" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
-    {{-- end hashtags --}}
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('assets/css/input-tag.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/input-tagByselect.css') }}">
+
+    {{-- ให้เลือกแท็ก โฟลเดอร์ --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/tagify.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/@yaireo/dragsort/dist/dragsort.css" media="print" onload="this.media='all'">
+
+    {{-- end ให้เลือกแท็ก โฟลเดอร์ --}}
+
 
 
 
@@ -327,6 +326,8 @@
                             </div>
                         </div>
 
+
+
                         <div class="card card-body">
                             <div class="row py-3">
                                 <svg style="margin-top: 3px; margin-left:10px; color:#00AEEF;"class="bi bi-exclamation-circle-fill " xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -468,22 +469,16 @@
 
                             <div class="row px-2 py-2">
                                 <label class="px-2"><b>จัดกลุ่มสถานที่ยอดฮิต* :</b></label>
-                                <input type="checkbox" checked  data-on="เปิด" data-off="ปิด"  data-toggle="toggle" data-size="sm">
-                                {{-- <div class="form-check px-4">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="select-on" checked>
-                                    <label class="form-check-label" for="select-on" style="color: #077417">
-                                        เปิดใช้งาน
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="select-off">
-                                    <label class="form-check-label" for="select-off" style="color: #e90303">
-                                        ปิดใช้งาน
-                                    </label>
-                                </div> --}}
-                                <div class="select-tags">
-                                    <input type="text" readonly class="tagator" data-tagator-show-all-options-on-focus="true" data-tagator-autocomplete="['ภูเขา', 'ธรรมชาติ', 'วัด','เดินป่า', 'กางเต้นท์','วัดศรีโคมคำ', 'กว๊านพะเยา']" style=" width: 99%;" placeholder="เพิ่มแท็ก...">
-                                </div>
+                                <input type="checkbox" checked data-on="เปิด" data-off="ปิด" data-toggle="toggle" data-size="sm">
+
+                                <br>
+
+                                    <section id='section-manual-suggestions' style="width:100%;">
+                                        <aside class='rightSide'>
+                                            <input name='tags-manual-suggestions' placeholder='เลือกแท็ก'>
+                                        </aside>
+                                    </section>
+
                             </div>
 
                         </div>
@@ -597,18 +592,21 @@
 
 
     {{-- select เอาไว้เลือกแท็ก --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tagify/4.17.7/tagify.min.js" integrity="sha512-BO4lu2XUJSxHo+BD3WLBQ9QoYgmtSv/X/4XFsseeCAxK+eILeyEXtGLHFs2UMfzNN9lhtoGy8v8EMFPIl8y+0w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>{{-- เลือกแท็กโฟลเดอร์  --}}
+    <script src="{{ asset('assets/js/jQuery.tagify.min.js') }}"></script> {{-- เลือกแท็กโฟลเดอร์  --}}
     <script src="{{ asset('assets/js/input-tag.js') }}"></script> {{-- เลือกแท็กได้และสร้างแท็กได้  --}}
-    <script src="{{ asset('assets/js/input-tagByselect.js') }}"></script>
     {{-- select เอาไว้เลือกแท็ก --}}
 
 
 
 
-    {{-- select เอาไว้เลือกแท็ก --}}
+
+
+    {{-- select เอาไว้เลือกแท็กและเพิ่มแท็กได้ --}}
     <script>
         pureScriptSelect('#multiSelect');
     </script>
-    {{-- end select เอาไว้เลือกแท็ก --}}
+    {{-- end select เอาไว้เลือกแท็กและเพิ่มแท็กได้ --}}
 
     {{--  query ตำบล อำเภอจังหวัด --}}
     <script>
@@ -784,23 +782,60 @@
 
 
 
-    {{-- script checkbox ปิดเปิดแท็กว่าจะใช้งานหรือไม่ --}}
-    <script>
-        const selectOn = document.getElementById("select-on");
-        const selectOff = document.getElementById("select-off");
-        const selectTags = document.querySelector(".select-tags");
 
-        selectOn.addEventListener("change", function() {
-            selectTags.style.display = "";
-        });
 
-        selectOff.addEventListener("change", function() {
-            selectTags.style.display = "none";
-        });
+
+
+    {{--  script เลือกแท็กโฟลเดอร์--}}
+    <script data-name="manualSuggestions">
+        (function() {
+
+            var input = document.querySelector('input[name=tags-manual-suggestions]'),
+                // init Tagify script on the above inputs
+                tagify = new Tagify(input, {
+                    whitelist: ["กว๊านพะเยา", "วัด", "ธรรมชาติ", "ภูเขา", "ชมวิว", "กว๊านพdะเยา", "วัdด", "ธรdรมชาติ", "ภูdเขา", "ชมdวิว"],
+                    dropdown: {
+                        position: "manual",
+                        maxItems: Infinity,
+                        enabled: 0,
+                        classname: "customSuggestionsList"
+                    },
+                    templates: {
+                        dropdownItemNoMatch() {
+                            return `<div class='empty'>Nothing Found</div>`;
+                        }
+                    },
+                    enforceWhitelist: true
+                })
+
+            tagify.on("dropdown:show", onSuggestionsListUpdate)
+                .on("dropdown:hide", onSuggestionsListHide)
+                .on('dropdown:scroll', onDropdownScroll)
+
+            renderSuggestionsList() // defined down below
+
+            // ES2015 argument destructuring
+            function onSuggestionsListUpdate({
+                detail: suggestionsElm
+            }) {
+                console.log(suggestionsElm)
+            }
+
+            function onSuggestionsListHide() {
+                console.log("hide dropdown")
+            }
+
+            function onDropdownScroll(e) {
+                console.log(e.detail)
+            }
+
+            function renderSuggestionsList() {
+                tagify.dropdown.show() // load the list
+                tagify.DOM.scope.parentNode.appendChild(tagify.DOM.dropdown)
+            }
+        })()
     </script>
-
-
-    {{-- end script checkbox ปิดเปิดแท็กว่าจะใช้งานหรือไม่ --}}
+    {{-- end script เลือกแท็กโฟลเดอร์--}}
 
 </body>
 
