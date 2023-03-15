@@ -18,10 +18,8 @@
         @include('layouts.navbar')
         <div class="naval-background-deal">
             <p>
-                <a href="{{url('/')}}" class="text-nav-deal"> หน้าหลัก /</a>
-
+                <a href="{{ url('/') }}" class="text-nav-deal"> หน้าหลัก /</a>
                 <span><a href="" class="text-nav-deal" style="color: #27AAE1"> <b>ดีลสุดพิเศษ</b> </a></span>
-
             </p>
         </div>
         <br>
@@ -31,105 +29,34 @@
                     <div class="container ">
 
                         <div class="row py-2">
-                            <div class="col-lg-8"><h3 style="color: #27AAE1"><b>ดีลสุดพิเศษ</b></h3></div>
-                            <div class="col-lg-4"><input type="text" class="form-control"  placeholder="ค้นหา..."></div>
-                        </div>
-
-                        <div class="row py-5">
-                            <div class="col-lg-4 col-md-6">
-                               <a href="{{url('/specialdeals/description')}}" style="text-decoration: none;">
-                                <div class="card" >
-                                    <img src="{{asset('/assets/images/deal.png')}}" class="card-img-top img-category" alt="...">
-                                    <div class="card-body">
-                                        <b class="text-head-category">ทุกสายการบิน ทุกโรงแรม</b>
-                                        <div class="row text-detail-category">
-                                            <div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">ที่พัก</b></span></div>
-                                            <div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>
-                                        </div>
-                                    </div>
-                                  </div>
-                               </a>
+                            <div class="col-lg-8">
+                                <h3 style="color: #27AAE1"><b>ดีลสุดพิเศษ</b></h3>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <a href="{{url('/specialdeals/description')}}" style="text-decoration: none;">
-                                    <div class="card" >
-                                        <img src="{{asset('/assets/images/deal1.jpg')}}" class="card-img-top img-category" alt="...">
-                                        <div class="card-body">
-                                            <b class="text-head-category">ทุกสายการบิน ทุกโรงแรม</b>
-                                            <div class="row text-detail-category">
-                                                <div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">ที่พัก</b></span></div>
-                                                <div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <a href="{{url('/specialdeals/description')}}" style="text-decoration: none;">
-                                    <div class="card" >
-                                        <img src="{{asset('/assets/images/deal1.jpg')}}" class="card-img-top img-category" alt="...">
-                                        <div class="card-body">
-                                            <b class="text-head-category">ทุกสายการบิน ทุกโรงแรม</b>
-                                            <div class="row text-detail-category">
-                                                <div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">ที่พัก</b></span></div>
-                                                <div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <a href="{{url('/specialdeals/description')}}" style="text-decoration: none;">
-                                    <div class="card" >
-                                        <img src="{{asset('/assets/images/deal1.jpg')}}" class="card-img-top img-category" alt="...">
-                                        <div class="card-body">
-                                            <b class="text-head-category">ทุกสายการบิน ทุกโรงแรม</b>
-                                            <div class="row text-detail-category">
-                                                <div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">ที่พัก</b></span></div>
-                                                <div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <a href="{{url('/specialdeals/description')}}" style="text-decoration: none;">
-                                    <div class="card">
-                                        <img src="{{asset('/assets/images/deal1.jpg')}}" class="card-img-top img-category" alt="...">
-                                        <div class="card-body">
-                                            <b class="text-head-category">ทุกสายการบิน ทุกโรงแรม</b>
-                                            <div class="row text-detail-category">
-                                                <div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">ที่พัก</b></span></div>
-                                                <div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <a href="{{url('/specialdeals/description')}}" style="text-decoration: none;">
-                                    <div class="card" >
-                                        <img src="{{asset('/assets/images/deal1.jpg')}}" class="card-img-top img-category" alt="...">
-                                        <div class="card-body">
-                                            <b class="text-head-category">ทุกสายการบิน ทุกโรงแรม</b>
-                                            <div class="row text-detail-category">
-                                                <div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">ที่พัก</b></span></div>
-                                                <div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                            <div class="col-lg-4">
+                                <input type="text" id="search-input" class="form-control" placeholder="ค้นหาดีลพิเศษด้วย ชื่อดีล/ประเภทดีล">
                             </div>
                         </div>
 
+                        <div id="search-results-container" class="row py-5">
+                            @foreach ($specialDeal as $deal)
+                                <div id="" class="col-lg-4 col-md-6">
+                                    <a href="{{ url('/specialdeals/' . $deal->name_th) }}" style="text-decoration: none;">
+                                        <div class="card">
+                                            <img src="{{ asset('/storage/' . $deal->cover_image) }}" class="card-img-top img-category" alt="...">
+                                            <div class="card-body">
+                                                <b class="text-head-category">{{ $deal->name_th }}</b>
+                                                <div class="row text-detail-category">
+                                                    <div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">{{ $deal->specialDealCategory->name_th ?? '' }}</b></span></div>
+                                                    <div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
 
-
-
-
-
-
-
-
+                        {{-- <div id="search-results-container"></div> --}}
 
                     </div>
                 </div>
@@ -149,6 +76,43 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- end script slider -->
+
+    <script>
+        $(document).ready(function() {
+            $('#search-input').on('input', function() {
+                var query = $(this).val();
+                $.ajax({
+                    url: "specialdeals/search",
+                    type: 'GET',
+                    data: {
+                        word: query
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        var html = '';
+                        for (var i = 0; i < data.length; i++) {
+                            html += '<div class="col-lg-4 col-md-6">';
+                            html += '<a href="/specialdeals/' + data[i].name_th + '" style="text-decoration: none;">';
+                            html += '<div class="card">';
+                            html += '<img src="/storage/' + data[i].cover_image + '" class="card-img-top img-category" alt="...">';
+                            html += '<div class="card-body">';
+                            html += '<b class="text-head-category">' + data[i].name_th + '</b>';
+                            html += '<div class="row text-detail-category">';
+                            // html += '<div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">' + (data[i].specialDealCategory ? data[i].specialDealCategory.name_th : '') + '</b></span></div>';
+                            html += '<div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">' + (data[i].special_deal_category ? data[i].special_deal_category.name_th : '') + '</b></span></div>';
+                            html += '<div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>';
+                            html += '</div></div></div></a></div>';
+                        }
+                        // console.log(deals);
+                        $('#search-results-container').html(html);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('Error: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
 
 
     <script>

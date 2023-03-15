@@ -64,7 +64,9 @@
     <style>
         .btn-color {
             background-color: #ffff;
-        } .main-nav-line .nav-link {
+        }
+
+        .main-nav-line .nav-link {
             padding: 0;
             color: #4d5875;
             position: relative;
@@ -139,6 +141,7 @@
             border: none;
             background: transparent;
         }
+
         .toggle-off.btn-xs {
             padding-right: 1rem;
             padding-top: 10px;
@@ -153,12 +156,12 @@
             font-size: 12px;
             background-color: #00a32a;
         }
+
         .toggle.btn-xs {
             min-width: 90px !important;
             min-height: 30px !important;
             border-radius: 50px;
         }
-
     </style>
 
 </head>
@@ -190,8 +193,9 @@
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="color: black;margin-bottom:5px;" width="24" height="24" fill="currentColor" class="bi bi-signpost-2" viewBox="0 0 16 16">
-                                    <path d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z"/>
-                                  </svg>
+                                    <path
+                                        d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z" />
+                                </svg>
                                 สถานที่ท่องเที่ยว >
                             </h5>
                             <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;">จัดการสถานที่ท่องเที่ยว</h5>
@@ -217,9 +221,9 @@
                                 <div style="padding-top:60px;"></div>
                                 <nav>
                                     <div class="nav main-nav-line" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-touristAttraction" role="tab" aria-selected="true"><b>ทั้งหมด (100)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-touristAttraction" role="tab" aria-selected="false"><b>เปิดการใช้งาน (50)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-touristAttraction" role="tab" aria-selected="false"><b>ปิดการใช้งาน (50)</b></a>
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-touristAttraction" role="tab" aria-selected="true"><b id="total">ทั้งหมด ()</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-touristAttraction" role="tab" aria-selected="false"><b id="on">เปิดการใช้งาน ()</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-touristAttraction" role="tab" aria-selected="false"><b id="off">ปิดการใช้งาน ()</b></a>
 
                                     </div>
                                 </nav>
@@ -242,7 +246,7 @@
                                             <div class="col-4 py-3">
                                                 <div class="row">
                                                     <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                    <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
@@ -265,7 +269,7 @@
                                                     <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
+                                                    <th>สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
                                                             <option>เปิดใช้งาน</option>
@@ -276,54 +280,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
-                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
-                                                    <td>ธรรมชาติ</td>
-                                                    <td>พะเยา</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
-                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
-                                                    <td>ธรรมชาติ</td>
-                                                    <td>พะเยา</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -346,7 +302,7 @@
                                             <div class="col-4 py-3">
                                                 <div class="row">
                                                     <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                    <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
@@ -369,59 +325,11 @@
                                                     <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ </th>
+                                                    <th {{-- style="text-align: center;" --}}>สถานะ </th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
-                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
-                                                    <td>ธรรมชาติ</td>
-                                                    <td>พะเยา</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
-                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
-                                                    <td>ธรรมชาติ</td>
-                                                    <td>พะเยา</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -444,7 +352,7 @@
                                             <div class="col-4 py-3">
                                                 <div class="row">
                                                     <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                    <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
@@ -467,81 +375,27 @@
                                                     <th>จังหวัด</th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ</th>
+                                                    <th {{-- style="text-align: center;" --}}>สถานะ</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
-                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
-                                                    <td>ธรรมชาติ</td>
-                                                    <td>พะเยา</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/tourist-attractions/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>สักการะพระธาตุคู่บ้านคู่เมืองเสริมความเป็นสิริ
-                                                        มงคลให้ปังๆ ถือว่าเป็นปูชนียสถานคู่เมือง</td>
-                                                    <td>ธรรมชาติ</td>
-                                                    <td>พะเยา</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label style="color:#696565;"> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                     {{-- end ปิดการใช้งาน --}}
-
-
-
-
-
-                                </div>
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
 
-                <!-- Modal ถึงขยะ -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- Modal ถึงขยะ -->
+            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <form action="{{ url('/tourist-attractions/delete') }}" method="POST">
+                    @csrf
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-body text-center">
@@ -553,18 +407,20 @@
                                 </svg><br><br>
                                 <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ ไม่สามารถกู้คืนได้</div>
                             </div>
+                            <input type="hidden" id="deleteId" name="id">
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
+                                <button type="submit" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                 <!--end Modal ถึงขยะ -->
+                </form>
             </div>
-            <!-- Container closed -->
+            <!--end Modal ถึงขยะ -->
         </div>
-        <!-- main-content closed -->
+        <!-- Container closed -->
+    </div>
+    <!-- main-content closed -->
 
     </div>
     <!-- End Page -->
@@ -634,59 +490,59 @@
 
 
 
-     {{-- Script ปฏิทิน --}}
-     <link type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" />
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-     {{-- End Script ปฏิทิน --}}
+    {{-- Script ปฏิทิน --}}
+    <link type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    {{-- End Script ปฏิทิน --}}
 
 
-   {{-- Script ปฏิทิน --}}
-     <script>
-         $('input[name="datefilter"]').daterangepicker({
-             autoUpdateInput: false,
-             locale: {
-                 cancelLabel: 'Clear'
-             }
-         });
+    {{-- Script ปฏิทิน --}}
+    <script>
+        $('input[name="datefilter"]').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
 
-         $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-             $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
-         });
+        $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+        });
 
-         $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-             $(this).val('');
-         });
+        $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+            $(this).val('');
+        });
 
-         var start = moment().subtract(1, 'month');
-         var end = moment();
+        var start = moment().subtract(1, 'month');
+        var end = moment();
 
-         function cb(start, end) {
-             start = moment(start);
-             end = moment(end);
-             $('.daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-         }
+        function cb(start, end) {
+            start = moment(start);
+            end = moment(end);
+            $('.daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
 
-         $('.daterange').daterangepicker({
-             startDate: start,
-             endDate: end,
-             autoUpdateInput: true,
-             alwaysShowCalendars: true,
-             locale: {
-                 format: 'DD/MM/YYYY',
-             },
-             ranges: {
-                 'Today': [moment(), moment()],
-                 'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                 'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                 'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                 'This Month': [moment().startOf('month'), moment().endOf('month')],
-                 'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-             }
-         }, cb);
+        $('.daterange').daterangepicker({
+            startDate: start,
+            endDate: end,
+            autoUpdateInput: true,
+            alwaysShowCalendars: true,
+            locale: {
+                format: 'DD/MM/YYYY',
+            },
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
 
-         cb(start, end);
-     </script>
- {{-- End Script ปฏิทิน --}}
+        cb(start, end);
+    </script>
+    {{-- End Script ปฏิทิน --}}
 
     {{-- script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
     <script>
@@ -699,12 +555,38 @@
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
             $('#offTouristAttraction-table').DataTable().columns.adjust();
         });
-
     </script>
     {{-- End script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
 
+    {{-- script ส่งid record จากปุ่มลบไปยังmodal --}}
+    <script>
+        $(document).on("click", "#sendIdDelete", function() {
+            var specialDealId = $(this).data('id');
+            $("#deleteId").val(specialDealId);
+        });
+    </script>
+    {{-- end script --}}
 
-
+    {{-- ตัวนับจำนวน --}}
+    <script>
+        function countData() {
+            $.ajax({
+                url: "/tourist-attractions/count",
+                type: "GET",
+                dataType: "json",
+                success: function(count) {
+                    $('#total').text('ทั้งหมด (' + count.total + ')');
+                    $('#on').text('เปิดการใช้งาน (' + count.on + ')');
+                    $('#off').text('ปิดการใช้งาน (' + count.off + ')');
+                },
+                error: function() {
+                    alert('บางอย่างมีปัญหา');
+                }
+            })
+        }
+        countData();
+    </script>
+    {{-- end ตัวนับจำนวน --}}
 
 
     <script>
@@ -727,27 +609,101 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [
-                {
-                "width": "40px"
+            ajax: {
+                url: "/tourist-attractions/tourist-attraction-all-datatable",
+                type: "POST",
+                datatype: "json",
+                data: function(data) {
+                    data._token = "{{ csrf_token() }}";
+                    // data.keyword = $('#cod-prepared-tab #search').val();
+                    // data.account = $('#cod-prepared-tab #account-filter').val();
+                    // data.date_filter = $('#cod-prepared-tab input[name="datefilter"]').val();
+                    // data.class = $('.switchstatus').attr('class');
+                }
+            },
+            columns: [{
+                width: "80px",
+                className: "text-left",
+                render: function(data, type, row) {
+                    // console.log(row)
+                    return `<td style="text-align: left;"><a href="/tourist-attractions/edit/${row.id}" class="text-idSpecailDeal">${row.attraction_no}</a></td>`
+                }
             }, {
-                "width": "150px",
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.name_th }</td>`
+                }
             }, {
-                "width": "250px",
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.detail_th ?? 'ไม่ได้ระบุรายละเอียดโดยย่อ' }</td>`
+                }
             }, {
-                "width": "80px"
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td>${row.tourist_attraction_category ?row.tourist_attraction_category.name_th : 'ไม่ได้กำหนดหมวดหมู่'}</td>`
+                }
             }, {
-                "width": "180px"
+                width: "120px",
+                render: function(data, type, row) {
+                    return `<td>${row.province ?? 'ไม่ได้ระบุ'}</td>`
+                }
             }, {
-                "width": "250px"
+                width: "250px",
+                render: function(data, type, row) {
+                    return `<td>${ row.creator ?? 'ผู้สร้างไม่มีชื่อทำให้ระบบไม่ได้บันทึก' }<br>
+                        <label style="color:#696565;">${ row.created_at ? moment(row.created_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
             }, {
-                "width": "250px"
+                width: "250px",
+                render: function(data, type, row) {
+                    return `<td>${ row.editor ?? 'ยังไม่เคยมีการแก้ไข' }<br>
+                        <label style="color:#696565;">${ row.editor ? moment(row.updated_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
             }, {
-                "width": "80px"
+                width: "80px",
+                render: function(data, type, row) {
+                    return `<td><label class="switch"><input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" data-toggle="toggle" data-size="xs"
+                    class="switchstatus" id="${row.id}" ${ row.is_status == 1 ? 'checked' : '' }><span class="slider round"></span></label></td>`
+                }
             }, {
-                "width": "150px"
+                width: "70px",
+                render: function(data, type, row) {
+                    return `<td><button class="btn-trash" data-toggle="modal" data-target="#delete" id="sendIdDelete" data-id="${row.id}">
+                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path
+                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg>
+                            </button>
+                            </td>`
+                }
             }],
+            "createdRow": function(row, data, dataIndex) {
+                $(row).addClass('switchstatus');
+                $(row).find('.switchstatus').bootstrapToggle();
+                $(row).on('change', function() {
+                    var id = $(this).attr('id', data.id);
+                    $.ajax({
+                        url: '/tourist-attractions/switch-status',
+                        type: "POST",
+                        datatype: 'json',
+                        data: {
+                            _token: '{!! csrf_token() !!}',
+                            id: data.id,
 
+                        },
+                    }).done(function(response) {
+                        // console.log(response);
+                        $('#allTouristAttraction-table').DataTable().ajax.reload();
+                        $('#onTouristAttraction-table').DataTable().ajax.reload();
+                        $('#offTouristAttraction-table').DataTable().ajax.reload();
+                        countData();
+                    });
+                    // console.log(id);
+                });
+            },
         });
     </script>
 
@@ -773,25 +729,75 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [
-                {
-                "width": "40px"
+            ajax: {
+                url: "/tourist-attractions/tourist-attraction-on-datatable",
+                type: "POST",
+                datatype: "json",
+                data: function(data) {
+                    data._token = "{{ csrf_token() }}";
+                    // data.keyword = $('#cod-prepared-tab #search').val();
+                    // data.account = $('#cod-prepared-tab #account-filter').val();
+                    // data.date_filter = $('#cod-prepared-tab input[name="datefilter"]').val();
+                    // data.class = $('.switchstatus').attr('class');
+                }
+            },
+            columns: [{
+                width: "80px",
+                className: "text-left",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;"><a href="/tourist-attractions/edit/${row.id}" class="text-idSpecailDeal">${row.attraction_no}</a></td>`
+                }
             }, {
-                "width": "150px",
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.name_th }</td>`
+                }
             }, {
-                "width": "250px",
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.detail_th ?? 'ไม่ได้ระบุรายละเอียดโดยย่อ' }</td>`
+                }
             }, {
-                "width": "80px"
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td>${row.tourist_attraction_category ?row.tourist_attraction_category.name_th : 'ไม่ได้กำหนดหมวดหมู่'}</td>`
+                }
             }, {
-                "width": "180px"
+                width: "120px",
+                render: function(data, type, row) {
+                    return `<td>${row.province ?? 'ไม่ได้ระบุ'}</td>`
+                }
             }, {
-                "width": "250px"
+                width: "250px",
+                render: function(data, type, row) {
+                    return `<td>${ row.creator ?? 'ผู้สร้างไม่มีชื่อทำให้ระบบไม่ได้บันทึก' }<br>
+                        <label style="color:#696565;">${ row.created_at ? moment(row.created_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
             }, {
-                "width": "250px"
+                width: "250px",
+                render: function(data, type, row) {
+                    return `<td>${ row.editor ?? 'ยังไม่เคยมีการแก้ไข' }<br>
+                        <label style="color:#696565;">${ row.editor ? moment(row.updated_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
             }, {
-                "width": "80px"
+                width: "80px",
+                className: "switchstatus",
+                render: function(data, type, row) {
+                    return ` <div class="${ row.is_status === 1 ? 'statusOn' : 'statusOff' }">${row.is_status === 1 ? 'เปิดใช้งาน' : 'ปิดใช้งาน' }</div>`
+                }
             }, {
-                "width": "150px"
+                width: "70px",
+                render: function(data, type, row) {
+                    return `<td><button class="btn-trash" data-toggle="modal" data-target="#delete" id="sendIdDelete" data-id="${row.id}">
+                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path
+                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg>
+                            </button>
+                            </td>`
+                }
             }],
 
 
@@ -821,25 +827,75 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [
-                {
-                "width": "40px"
+            ajax: {
+                url: "/tourist-attractions/tourist-attraction-off-datatable",
+                type: "POST",
+                datatype: "json",
+                data: function(data) {
+                    data._token = "{{ csrf_token() }}";
+                    // data.keyword = $('#cod-prepared-tab #search').val();
+                    // data.account = $('#cod-prepared-tab #account-filter').val();
+                    // data.date_filter = $('#cod-prepared-tab input[name="datefilter"]').val();
+                    // data.class = $('.switchstatus').attr('class');
+                }
+            },
+            columns: [{
+                width: "80px",
+                className: "text-left",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;"><a href="/tourist-attractions/edit/${row.id}" class="text-idSpecailDeal">${row.attraction_no}</a></td>`
+                }
             }, {
-                "width": "150px",
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.name_th }</td>`
+                }
             }, {
-                "width": "250px",
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.detail_th ??'ไม่ได้ระบุรายละเอียดโดยย่อ' }</td>`
+                }
             }, {
-                "width": "80px"
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td>${row.tourist_attraction_category ?row.tourist_attraction_category.name_th : 'ไม่ได้กำหนดหมวดหมู่'}</td>`
+                }
             }, {
-                "width": "180px"
+                width: "120px",
+                render: function(data, type, row) {
+                    return `<td>${row.province ?? 'ไม่ได้ระบุ'}</td>`
+                }
             }, {
-                "width": "250px"
+                width: "250px",
+                render: function(data, type, row) {
+                    return `<td>${ row.creator ?? 'ผู้สร้างไม่มีชื่อทำให้ระบบไม่ได้บันทึก' }<br>
+                        <label style="color:#696565;">${ row.created_at ? moment(row.created_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
             }, {
-                "width": "250px"
+                width: "250px",
+                render: function(data, type, row) {
+                    return `<td>${ row.editor ?? 'ยังไม่เคยมีการแก้ไข' }<br>
+                        <label style="color:#696565;">${ row.editor ? moment(row.updated_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
             }, {
-                "width": "80px"
+                width: "80px",
+                className: "switchstatus",
+                render: function(data, type, row) {
+                    return ` <div class="${ row.is_status === 1 ? 'statusOn' : 'statusOff' }">${row.is_status === 1 ? 'เปิดใช้งาน' : 'ปิดใช้งาน' }</div>`
+                }
             }, {
-                "width": "150px"
+                width: "70px",
+                render: function(data, type, row) {
+                    return `<td><button class="btn-trash" data-toggle="modal" data-target="#delete" id="sendIdDelete" data-id="${row.id}">
+                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path
+                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg>
+                            </button>
+                            </td>`
+                }
             }],
 
         });

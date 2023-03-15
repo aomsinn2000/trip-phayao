@@ -14,7 +14,7 @@
 
     {{-- pagination --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.4/simplePagination.css" integrity="sha512-emkhkASXU1wKqnSDVZiYpSKjYEPP8RRG2lgIxDFVI4f/twjijBnDItdaRh7j+VRKFs4YzrAcV17JeFqX+3NVig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    {{--end  pagination --}}
+    {{-- end  pagination --}}
     {{-- เกี่ยวกับฟิคค่าตัวหนังสือ read more --}}
     {{-- <style>
         .readMore .moretext {
@@ -51,7 +51,7 @@
                                 <div class="list-item">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -77,7 +77,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/25/dc3e97a0-7dcd-11ec-b364-bbe4a59e546c_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -102,7 +102,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/25/eba33ca0-7de1-11ec-b7fd-27235976b4bb_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -127,7 +127,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/25/ec550070-7de1-11ec-b7fd-27235976b4bb_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -152,7 +152,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/descriptionn') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/26/ce0ff3a0-7e53-11ec-809f-1f424036454f_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -282,7 +282,8 @@
                                             </a>
                                             <div class="card-body">
                                                 <h4 class="card-title">กว๊านพะเยา</h4>
-                                                <span class="readMore" style="color: #868383;">  อนุสาวรีย์พ่อขุนงำเมือง เป็นสถานที่ศักดิ์สิทธิ์ที่นักท่องเที่ยว และชาวพะเยานิยมมากราบไหว้เป็นอย่างมาก พระองค์เป็นกษัตริย์ลำดับที่ 9 แห่งเมืองภูกามยาว (พะเยาในปัจจุบัน) ซึ่งในสมัยที่พระองค์ทรงครองราชอยู่นั้น อาณาจักรพะเยามีความเจริญรุ่งเรืองเป็นอย่างมาก และยังคงเป็นที่เคารพนับถือมาจนถึงปัจจุบันค่ะ
+                                                <span class="readMore" style="color: #868383;"> อนุสาวรีย์พ่อขุนงำเมือง เป็นสถานที่ศักดิ์สิทธิ์ที่นักท่องเที่ยว และชาวพะเยานิยมมากราบไหว้เป็นอย่างมาก พระองค์เป็นกษัตริย์ลำดับที่ 9 แห่งเมืองภูกามยาว (พะเยาในปัจจุบัน)
+                                                    ซึ่งในสมัยที่พระองค์ทรงครองราชอยู่นั้น อาณาจักรพะเยามีความเจริญรุ่งเรืองเป็นอย่างมาก และยังคงเป็นที่เคารพนับถือมาจนถึงปัจจุบันค่ะ
                                                 </span>
                                                 <br>
                                                 <br>
@@ -307,7 +308,8 @@
                                             </a>
                                             <div class="card-body">
                                                 <h4 class="card-title">กว๊านพะเยา</h4>
-                                                <span class="readMore" style="color: #868383;">  อนุสาวรีย์พ่อขุนงำเมือง เป็นสถานที่ศักดิ์สิทธิ์ที่นักท่องเที่ยว และชาวพะเยานิยมมากราบไหว้เป็นอย่างมาก พระองค์เป็นกษัตริย์ลำดับที่ 9 แห่งเมืองภูกามยาว (พะเยาในปัจจุบัน) ซึ่งในสมัยที่พระองค์ทรงครองราชอยู่นั้น อาณาจักรพะเยามีความเจริญรุ่งเรืองเป็นอย่างมาก และยังคงเป็นที่เคารพนับถือมาจนถึงปัจจุบันค่ะ
+                                                <span class="readMore" style="color: #868383;"> อนุสาวรีย์พ่อขุนงำเมือง เป็นสถานที่ศักดิ์สิทธิ์ที่นักท่องเที่ยว และชาวพะเยานิยมมากราบไหว้เป็นอย่างมาก พระองค์เป็นกษัตริย์ลำดับที่ 9 แห่งเมืองภูกามยาว (พะเยาในปัจจุบัน)
+                                                    ซึ่งในสมัยที่พระองค์ทรงครองราชอยู่นั้น อาณาจักรพะเยามีความเจริญรุ่งเรืองเป็นอย่างมาก และยังคงเป็นที่เคารพนับถือมาจนถึงปัจจุบันค่ะ
                                                 </span>
 
                                                 <br>
@@ -334,7 +336,7 @@
 
 
 
-                        <div   class="padding-pagination pagination3 pagination "></div>
+                        <div class="padding-pagination pagination3 pagination "></div>
 
 
 
@@ -508,7 +510,7 @@
 
 
                                 <div class="row justify-content-center">
-                                    <div id="pagination1"class="padding-pagination1" ></div>
+                                    <div id="pagination1"class="padding-pagination1"></div>
                                 </div>
 
 
@@ -690,7 +692,7 @@
                     var nstr = str.substring(0, maxLength);
                     var rmstr = str.substring(maxLength, $.trim(str).length);
                     $(this).empty().html(nstr);
-                    $(this).append(' <a href = "{{ url('showArticleDescription') }}"> read more... </a>');
+                    $(this).append(' <a href = "{{ url('/articles/description') }}"> read more... </a>');
                 }
             });
         });
@@ -726,42 +728,40 @@
     <!-- end script slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.4/jquery.simplePagination.min.js" integrity="sha512-J4OD+6Nca5l8HwpKlxiZZ5iF79e9sgRGSf0GxLsL1W55HHdg48AEiKCXqvQCNtA1NOMOVrw15DXnVuPpBm2mPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-     var items = $(".list-wrapper .list-item");
-     var numItems = items.length;
-     var perPage = 9;
+        var items = $(".list-wrapper .list-item");
+        var numItems = items.length;
+        var perPage = 9;
 
-     items.slice(perPage).hide();
+        items.slice(perPage).hide();
 
-     $('.pagination').pagination({
-         items: numItems,
-         itemsOnPage: perPage,
-         prevText: "&laquo;",
-         nextText: "&raquo;",
-         onPageClick: function(pageNumber) {
-             var showFrom = perPage * (pageNumber - 1);
-             var showTo = showFrom + perPage;
-             items.hide().slice(showFrom, showTo).show();
-         }
-     });
+        $('.pagination').pagination({
+            items: numItems,
+            itemsOnPage: perPage,
+            prevText: "&laquo;",
+            nextText: "&raquo;",
+            onPageClick: function(pageNumber) {
+                var showFrom = perPage * (pageNumber - 1);
+                var showTo = showFrom + perPage;
+                items.hide().slice(showFrom, showTo).show();
+            }
+        });
 
-     var items1 = $(".list-wrapper1 .list-item1");
-     var numItems1 = items1.length;
-     var perPage1 = 4;
-     items1.slice(perPage1).hide();
-     $('#pagination1').pagination({
-         items: numItems1,
-         itemsOnPage: perPage1,
-         prevText: "&laquo;",
-         nextText: "&raquo;",
-         onPageClick: function(pageNumber) {
-             var showFrom1 = perPage1 * (pageNumber - 1);
-             var showTo1 = showFrom1 + perPage1;
-             items1.hide().slice(showFrom1, showTo1).show();
-         }
-     });
-
-
- </script>
+        var items1 = $(".list-wrapper1 .list-item1");
+        var numItems1 = items1.length;
+        var perPage1 = 4;
+        items1.slice(perPage1).hide();
+        $('#pagination1').pagination({
+            items: numItems1,
+            itemsOnPage: perPage1,
+            prevText: "&laquo;",
+            nextText: "&raquo;",
+            onPageClick: function(pageNumber) {
+                var showFrom1 = perPage1 * (pageNumber - 1);
+                var showTo1 = showFrom1 + perPage1;
+                items1.hide().slice(showFrom1, showTo1).show();
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -11,6 +11,6 @@ class ArticleController extends Controller
         return view('article.show-article');
     }
     public function showArticleDescription(){
-        return view('article.show-articleDescription');
+        return view('article.show-article-description');
     }
 }

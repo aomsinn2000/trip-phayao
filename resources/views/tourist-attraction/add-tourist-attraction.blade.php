@@ -275,13 +275,14 @@
 
 
 
-                <form action="">
+                <form action="{{ url('/tourist-attractions/create') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="col-xl-7">
                         <div class="card card-body">
                             <div class="form-group row py-2">
                                 <label for="idUser" class="col-sm-3 col-form-label">รหัสสถานที่ท่องเที่ยว</label>
                                 <div class="col-sm-3">
-                                    <input type="text" readonly class="form-control" id="idUser" value="AE21120001">
+                                    <input type="text" readonly class="form-control" id="idUser" value="{{ $attraction_no }}" name="attraction_no">
                                 </div>
 
                             </div>
@@ -296,31 +297,38 @@
                                 </div>
                                 <div class="row-6 ">
                                     <label for="">สถานะ</label>
-                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" data-toggle="toggle" data-size="xs" value="1" checked name="is_status">
                                 </div>
                             </div>
-
 
                             <div class="">
                                 <label>ชื่อสถานที่ท่องเที่ยว (TH)</label>
                                 <span id="showNumTh" style="float: right;">0/100</span>
-                                <input type="text" class="form-control nameDealTh mb-2" id="" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อสถานที่ภาษาไทย">
+                                @error('name_th')
+                                    <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="text" class="form-control nameDealTh mb-2" id="" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อสถานที่ภาษาไทย" value="{{ old('name_th') }}" name="name_th" required>
                                 <label>ชื่อสถานที่ท่องเที่ยว (EN)</label>
                                 <span id="showNumEn" style="float: right;">0/100</span>
-                                <input type="text" class="form-control mb-2" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อสถานที่ภาษาอังกฤษ">
-                                <label>รายละเอียด</label>
+                                @error('name_en')
+                                    <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="text" class="form-control test" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อสถานที่ภาษาอังกฤษ" value="{{ old('name_en') }}" name="name_en">
+                                <label>รายละเอียดโดยย่อ (รายละเอียดใต้บล็อก)</label>
                                 <span id="showDescription" style="float: right;">0/150</span>
-                                <textarea type="text" class="form-control" id="" onkeyup="inputDescription(this)" maxlength="150" placeholder="กรุณากรอกรายละเอียด"></textarea>
+                                <textarea type="text" class="form-control" id="" onkeyup="inputDescription(this)" maxlength="150" placeholder="กรุณากรอกรายละเอียด" value="{{ old('datail_th') }}" name="detail_th"></textarea>
                             </div>
                             <div class="row my-2">
                                 <div class="form-group col-6">
                                     <label for="category">หมวดหมู่</label>
-                                    <select class="form-control" id="category" aria-placeholder="">
-                                        <option selected disabled>กรุณาเลือกหมวดหมู่</option>
-                                        <option>ที่พัก</option>
-                                        <option>ธรรมชาติ</option>
-                                        <option>สถานที่ศักดิ์สิทธิ์</option>
-                                        <option>วัด</option>
+                                    @error('tourist_attraction_category_id')
+                                        <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                    @enderror
+                                    <select class="form-control" id="category" aria-placeholder="" name="tourist_attraction_category_id">
+                                        <option disabled {{ old('tourist_attraction_category_id') ? '' : 'selected' }}>กรุณาเลือกหมวดหมู่</option>
+                                        @foreach ($touristAttractionCategory as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name_th }}{{ $item->is_popular == 0 ? ' : ' . 'ยอดนิยมถูกปิดใช้งานอยู่' : '' }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -338,31 +346,31 @@
                             <div class="row my-2">
                                 <div class="form-group col-6">
                                     <label>ตำบล</label>
-                                    <input type="text" id="sub_district" class="form-control" placeholder="กรุณากรอกตำบล">
+                                    <input type="text" id="sub_district" class="form-control" placeholder="กรุณากรอกตำบล" name="sub_district">
                                 </div>
                                 <div class="form-group col-6">
                                     <label>อำเภอ</label>
-                                    <input type="text" id="district" class="form-control" placeholder="กรุณากรอกอำเภอ">
+                                    <input type="text" id="district" class="form-control" placeholder="กรุณากรอกอำเภอ" name="district">
                                 </div>
                                 <div class="form-group col-6">
                                     <label>จังหวัด</label>
-                                    <input type="text" id="province" class="form-control" placeholder="กรุณากรอกจังหวัด">
+                                    <input type="text" id="province" class="form-control" placeholder="กรุณากรอกจังหวัด" name="province">
                                 </div>
                                 <div class="form-group col-6">
                                     <label>รหัสไปรษณีย์</label>
-                                    <input type="text" id="postcode" class="form-control" placeholder="กรุณากรอกรหัสไปรษณีย์">
+                                    <input type="text" id="postcode" class="form-control" placeholder="กรุณากรอกรหัสไปรษณีย์" name="postcode">
                                 </div>
                                 <div class="form-group col-12">
                                     <label>พิกัด (Google Maps)</label>
-                                    <input type="text" class="form-control" placeholder="กรุณากรอกลิงก์ google maps">
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกลิงก์ google maps" name="map_link">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label>ละติจูด (Lat)</label>
-                                    <input type="text" class="form-control" placeholder="กรุณากรอกละติจูด(Lat) ">
+                                    <label>ละติจูด (Latitude)</label>
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกละติจูด(Lat)" name="latitude">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label>ลองติจูด (Long) </label>
-                                    <input type="text" class="form-control" placeholder="กรุณากรอกลองติจูด(Long)">
+                                    <label>ลองติจูด (Longitude) </label>
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกลองติจูด(Long)" name="longitude">
                                 </div>
                             </div>
                         </div>
@@ -381,33 +389,26 @@
                                 <div class="form-group col-12">
                                     <label>การเดินทาง</label>
                                     <span id="showNumTravel" style="float: right;">0/300</span>
-                                    <textarea name="" id="" cols="30" rows="10" class="form-control  mb-2" id="" onkeyup="inputNameTravel(this)" placeholder="ใส่ข้อความที่นี" style="height: 60px;"></textarea>
-
+                                    <textarea id="" cols="30" rows="10" class="form-control  mb-2" id="" onkeyup="inputNameTravel(this)" placeholder="ใส่ข้อความที่นี" style="height: 60px;" name="travel_th"></textarea>
                                 </div>
                                 <div class="form-group col-12">
                                     <label>ช่วงฤดูท่องเที่ยว</label>
                                     <span id="showNumSeason" style="float: right;">0/300</span>
-                                    <textarea name="" id="" cols="30" rows="10"class="form-control  mb-2" id="" onkeyup="inputNameSeason(this)" placeholder="ใส่ข้อความที่นี" style="height: 60px;"></textarea>
+                                    <textarea id="" cols="30" rows="10"class="form-control  mb-2" id="" onkeyup="inputNameSeason(this)" placeholder="ใส่ข้อความที่นี" style="height: 60px;" name="season_recommend_th"></textarea>
                                 </div>
-
                             </div>
                         </div>
 
 
                         <div class="card card-body">
                             <div class="row mb-3">
-                                <div class="col-6">รายละเอียดย่อยสถานที่ท่องเที่ยว</div>
+                                <div class="col-6">รายละเอียด</div>
                                 <div class="col-6">
                                     <span id="maxContentPost"style="float: right;">0/800</span>
                                 </div>
                             </div>
-                            <textarea class="summernote1"></textarea>
+                            <textarea class="summernote1" name="description_th"></textarea>
                         </div>
-
-
-
-
-
 
 
                         <div class="card card-body" style="height:auto !important;">
@@ -419,8 +420,12 @@
                                 <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div><br>
                             <div class="mb-4" style="width: 315px;">
-                                <input type="file" class="input-upload-image" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
+                                @error('cover_image')
+                                    <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="file" class="input-upload-image" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" name="cover_image" />
                             </div>
+
                             <br><br>
 
                             <div>
@@ -428,7 +433,7 @@
                                     <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
                                 </svg>
                                 ภาพสถานที่ท่องเที่ยว
-                                <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
+                                <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB ไม่เกิน 10 รูป</span>
                             </div>
                             <div class="py-3">
                                 <div class="">
@@ -436,19 +441,20 @@
                                         <div class="box-add-image text-center d-flex justify-content-center">
                                             <div class="align-self-center">
                                                 <button type="button" class="btn btn-upload mb-3">
-
                                                     click to upload
                                                 </button>
                                                 <div class="text-center tx-5">Drag & drop files to upload <br>
                                                     <label style="color:#C4C4C4; font-size:10px;">ขนาดภาพที่แนะนำ 853 x 526</label>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <input type="file" name="files" id="gallery" multiple="" class="hideinput">
+                                <input type="file" id="gallery" name="images[]" class="hideinput" multiple>
                             </div>
+                            @error('images[]')
+                                <div class="alert alert-danger text-danger">{{ $message }}</div>
+                            @enderror
                             <div class=" py-2">
                                 <div style="border: none;">
                                     <label class="px-2"><b>Tags :</b></label><label style="color: red; font-size:12px;">*กรุณากด Spacebar ต่อหนึ่งคำเพื่อเพิ่ม Tags</label>
@@ -473,59 +479,29 @@
 
                                 <br>
 
-                                    <section id='section-manual-suggestions' style="width:100%;">
-                                        <aside class='rightSide'>
-                                            <input name='tags-manual-suggestions' placeholder='เลือกแท็ก'>
-                                        </aside>
-                                    </section>
+                                <section id='section-manual-suggestions' style="width:100%;">
+                                    <aside class='rightSide'>
+                                        {{-- <input name='select-folders' placeholder='เลือกแท็ก'> --}}
+                                        <input type="text" name="select_folders" placeholder="เลือกFolder" value="{{ old('select_folders') }}" class="tagify" />
+                                    </aside>
+                                </section>
 
                             </div>
-
                         </div>
-
-
-
 
                         <div class="card card-body">
                             <div class="row justify-content-end">
                                 <a href="{{ url('/tourist-attractions/') }}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
                                 <span class="px-2">
-                                    <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
+                                    <button type="submit" class="btn btn-info" style="width:150px;">บันทึก</button>
                                 </span>
                             </div>
                         </div>
-
-
-
-
-
                     </div>
                 </form>
-
-
-
-
-
-
-
             </div>
-
-
-
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!-- JQuery min js -->
@@ -694,11 +670,6 @@
 
 
 
-
-
-
-
-
     {{-- ลิมิตพิมพ์ได้กี่ตัว  เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
     <script type="text/javascript">
         function registerSummernote(element, placeholder, max, callbackMax) {
@@ -746,15 +717,28 @@
 
 
 
-    {{-- script อัพโหลดรูปภาพแกลลอรี รูปเล็ก --}}
+    {{-- script อัพโหลดรูปภาพแกลลอรีหลายรูป รูปเล็ก --}}
     <script type="text/javascript">
         $('.box-add-image').on('click', function() {
-            $('#gallery').click()
-        })
+            var input = $('<input type="file" id="gallery" name="images[]" multiple class="hideinput" />');
+            console.log(input)
+            input.on('change', function() {
+                var files = $(this).prop('files');
+                for (var i = 0; i < files.length; ++i) {
+                    names.push(files[i]);
+                    preview(files[i]);
+                }
+                console.log(names);
+            });
+            $(this).after(input);
+            input.click();
+        });
+        var names = [];
+        console.log(names)
         $('#gallery').on('change', function() {
-            var names = [];
             for (var i = 0; i < $(this).get(0).files.length; ++i) {
-                preview($(this).get(0).files[i])
+                names.push($(this).get(0).files[i]);
+                preview($(this).get(0).files[i]);
             }
         })
 
@@ -782,37 +766,94 @@
 
 
 
+    {{-- script checkbox ปิดเปิดแท็กว่าจะใช้งานหรือไม่ --}}
+    {{-- <script>
+        const selectOn = document.getElementById("select-on");
+        const selectOff = document.getElementById("select-off");
+        const selectTags = document.querySelector(".select-tags");
 
 
 
 
-    {{--  script เลือกแท็กโฟลเดอร์--}}
-    <script data-name="manualSuggestions">
+    {{--  script เลือกแท็กโฟลเดอร์ --}}
+    {{-- <script data-name="manualSuggestions">
         (function() {
+            $.ajax({
+                url: '/tourist-attractions/folder',
+                type: 'GET',
+                success: function(data) {
+                    // use the data to populate the suggestions array
+                    // var folders = data.map(function(item) {
+                    //     return item.name_th;
+                    // });
+                    console.log(data)
+                    var folders = data.map(function(item) {
+                        return item.name_th;
+                    });
+                    // initialize Tagify with the suggestions array
+                    // var input = document.querySelector('input[name=select-folders]');
+                    var input = document.querySelector('[name=select-folders]');
+                    console.log(input)
+                    // var input = ('<input name="select-folders[]" placeholder="เลือกแท็ก">');
+                    var tagify = new Tagify(input, {
+                        whitelist: folders,
+                        dropdown: {
+                            position: "manual",
+                            maxItems: Infinity,
+                            enabled: 0,
+                            classname: "customSuggestionsList"
+                        },
+                        templates: {
+                            dropdownItemNoMatch() {
+                                return `<div class='empty'>Nothing Found</div>`;
+                            }
+                        },
+                        enforceWhitelist: true,
+                        // valueField: 'value', // specify the name of the value field
+                        // textField: 'label' // specify the name of the label field
+                    });
+                    tagify.on("dropdown:show", onSuggestionsListUpdate)
+                        .on("dropdown:hide", onSuggestionsListHide)
+                        .on('dropdown:scroll', onDropdownScroll)
+                    renderSuggestionsList(tagify); // defined down below
+                },
 
-            var input = document.querySelector('input[name=tags-manual-suggestions]'),
-                // init Tagify script on the above inputs
-                tagify = new Tagify(input, {
-                    whitelist: ["กว๊านพะเยา", "วัด", "ธรรมชาติ", "ภูเขา", "ชมวิว", "กว๊านพdะเยา", "วัdด", "ธรdรมชาติ", "ภูdเขา", "ชมdวิว"],
-                    dropdown: {
-                        position: "manual",
-                        maxItems: Infinity,
-                        enabled: 0,
-                        classname: "customSuggestionsList"
-                    },
-                    templates: {
-                        dropdownItemNoMatch() {
-                            return `<div class='empty'>Nothing Found</div>`;
-                        }
-                    },
-                    enforceWhitelist: true
-                })
+                // success: function(data) {
+                //     var folders = data.map(function(item) {
+                //         return {
+                //             value: item.id,
+                //             label: item.name_th
+                //         };
+                //     });
+                //     var input = document.querySelector('input[name=select-folders]');
+                //     var tagify = new Tagify(input, {
+                //         whitelist: folders,
+                //         dropdown: {
+                //             position: "manual",
+                //             maxItems: Infinity,
+                //             enabled: 0,
+                //             classname: "customSuggestionsList"
+                //         },
+                //         templates: {
+                //             dropdownItemNoMatch() {
+                //                 return `<div class='empty'>Nothing Found</div>`;
+                //             }
+                //         },
+                //         enforceWhitelist: true,
+                //         valueField: 'value', // specify the name of the value field
+                //         textField: 'label' // specify the name of the label field
+                //     });
+                //     // ...
+                // },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                }
+            });
 
-            tagify.on("dropdown:show", onSuggestionsListUpdate)
-                .on("dropdown:hide", onSuggestionsListHide)
-                .on('dropdown:scroll', onDropdownScroll)
-
-            renderSuggestionsList() // defined down below
+            function renderSuggestionsList(tagify) {
+                tagify.dropdown.show() // load the list
+                tagify.DOM.scope.parentNode.appendChild(tagify.DOM.dropdown)
+            }
 
             // ES2015 argument destructuring
             function onSuggestionsListUpdate({
@@ -828,14 +869,74 @@
             function onDropdownScroll(e) {
                 console.log(e.detail)
             }
+        })();
+    </script> --}}
+    {{-- end script เลือกแท็กโฟลเดอร์ --}}
+    <script>
+        (function() {
+            $.ajax({
+                url: '/tourist-attractions/folder',
+                type: 'GET',
+                success: function(data) {
+                    // use the data to populate the suggestions array
+                    var folders = data.map(function(item) {
+                        return {
+                            id: item.id,
+                            value: item.name_th
+                        };
+                    });
+                    // initialize Tagify with the suggestions array
+                    var input = document.querySelector('input[name="select_folders"]');
 
-            function renderSuggestionsList() {
+                    var tagify = new Tagify(input, {
+                        whitelist: folders,
+                        dropdown: {
+                            position: "manual",
+                            maxItems: Infinity,
+                            enabled: 0,
+                            classname: "customSuggestionsList"
+                        },
+                        templates: {
+                            dropdownItemNoMatch() {
+                                return `<div class='empty'>Nothing Found</div>`;
+                            }
+                        },
+                        enforceWhitelist: true,
+                        valueField: 'value', // specify the name of the value field
+                        textField: 'name' // specify the name of the label field
+                    });console.log(tagify)
+                    tagify.on("dropdown:show", onSuggestionsListUpdate)
+                        .on("dropdown:hide", onSuggestionsListHide)
+                        .on('dropdown:scroll', onDropdownScroll)
+                    renderSuggestionsList(tagify); // defined down below
+                },
+                error: function(xhr, status, error) {
+                    console.log(error);
+                }
+            });
+
+
+            function renderSuggestionsList(tagify) {
                 tagify.dropdown.show() // load the list
                 tagify.DOM.scope.parentNode.appendChild(tagify.DOM.dropdown)
             }
-        })()
+
+            // ES2015 argument destructuring
+            function onSuggestionsListUpdate({
+                detail: suggestionsElm
+            }) {
+                console.log(suggestionsElm)
+            }
+
+            function onSuggestionsListHide() {
+                console.log("hide dropdown")
+            }
+
+            function onDropdownScroll(e) {
+                console.log(e.detail)
+            }
+        })();
     </script>
-    {{-- end script เลือกแท็กโฟลเดอร์--}}
 
 </body>
 
