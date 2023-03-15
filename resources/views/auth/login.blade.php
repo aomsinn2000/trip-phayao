@@ -54,7 +54,7 @@
                     </div>
 
                     <!-- Submit button -->
-                    <button type="button" class="btn btn-info btn-signIn ">เข้าสู่ระบบ</button>
+                    <a href="{{url('/special-deals/')}}" type="button" class="btn btn-info btn-signIn ">เข้าสู่ระบบ</a>
                     <a href="{{url('/')}}" style="font-size: 12px;">กลับไปหน้าหลัก</a>
                 </form>
 

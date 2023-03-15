@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
     <meta charset="UTF-8">
@@ -23,14 +23,14 @@
         <div class="nav-background-article">
             <p>
                 <a href="{{ url('/') }}" class="text-nav-article"> หน้าหลัก /</a>
-                <span><a href="{{ url('showArticle') }}" class="text-nav-article">  บทความ /</a></span>
+                <span><a href="{{ url('/articles/') }}" class="text-nav-article">  บทความ /</a></span>
                 <span><a href="" class="text-nav-article" style="color: #27AAE1"> <b>The Golden Sands of Florida and clifornia</b></a></span>
             </p>
         </div>
 
         <div class="container ">
             <div class="row justify-content-center">
-                <div class=" col-lg-11">
+                <div class=" col-lg-10 col-md-12">
                     <div class="container ">
                         <br><br>
                         <div class="row">
@@ -60,10 +60,91 @@
 
                         <br><br><br>
 
+                        <div id="page" class="py-4">
+                            <div class="row">
+                                <div class="column small-11 small-centered">
+                                    <div class="slider slider-single">
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6debdcb0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ec832f0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://www.lavieenroad.com/wp-content/uploads/2017/12/got6339.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0d1f000001gmc84F7DF_C_900_600.png_.webp?proc=source%2ftrip" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0h1f000001gpe575EB2_C_900_600.png_.webp?proc=source%2ftrip" alt="">
+                                        </div>
+                                        <div>
+                                            <img class="image-large-touristAttraction" src="https://youimg1.tripcdn.com/target/ww081f000001go0id8860_C_760_506.png" alt="">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="slider slider-nav">
 
 
-                        <div class="row">
-                            <div class="col-lg-9 col-md-12 col-sm-9 ">
+                                        <div class="px-1">
+                                            <span>
+                                                <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
+                                            </span>
+
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                 <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6debdcb0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                    <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ec832f0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="Nature" >
+                                            </span>
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                <img class="image-small-touristAttraction" src="https://www.lavieenroad.com/wp-content/uploads/2017/12/got6339.jpg" alt="">
+                                            </span>
+
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                 <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0d1f000001gmc84F7DF_C_900_600.png_.webp?proc=source%2ftrip" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0h1f000001gpe575EB2_C_900_600.png_.webp?proc=source%2ftrip" alt="">
+                                            </span>
+                                        </div>
+                                        <div class="px-1">
+                                            <span>
+                                                <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww081f000001go0id8860_C_760_506.png" alt="Nature" >
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row py-4">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
                                 <p class="text-description">กว๊านพะเยาเป็นแหล่งน้ำที่สำคัญ เพราะเป็นแหล่งน้ำที่หล่อเลี้ยงชีวิตชาวพะเยา การนำน้ำมาใช้ทั้งการอุปโภค การประมง และมีความสำคัญต่อชีวิตสัตว์น้ำที่อยู่ในกว๊านพะเยาอย่างมาก</p>
                                 <img class="img-description" width="100%" src="https://www.expique.com/wp-content/uploads/2021/02/kwab-phayao-1024x683.jpg" alt="">
                                 <p class="text-description">
@@ -76,12 +157,17 @@
                                     บริเวณรอบๆกว๊านมีความร่มรื่น ผู้คนจากทั้งในจังหวัดและต่างจังหวัดต่างพากันมาพักผ่อนหย่อนใจ เดินเล่นกินลมชมวิว ปั่นจักรยาน วิ่งออกกำลังกาย ชมบรรยากาศยามพระอาทิตย์อัสดงในยามเย็น สีสันของท้องฟ้าที่สวยงาม
                                     ทิวเขาเรียงรายสลับซับซ้อนและผืนน้ำอันเงียบสงบที่สะท้อนเงาของทิวเขาและพระอาทิตย์ตกดินช่างงดงามดังภาพวาด เป็นภาพบรรยากาศอันแสนประทับใจ
                                 </p>
+
+
+
+
+
                                 {{-- ที่ตั้ง --}}
                                 <div class="text-address">
                                     <br><br>
-                                    <label>ที่ตั้ง <b>ตำบลผาช้างน้อย อำเภอเชียงคำ จังหวัดพะเยา</b></label><br>
-                                    <p>ช่วงเวลาท่องเที่ยว : <b>ฤดูหนาว</b></p>
-                                    <p>แหล่งที่มา : <b>จังหวัดพะเยา</b></p>
+                                    <label><b>ที่ตั้ง : </b> ตำบลผาช้างน้อย อำเภอเชียงคำ จังหวัดพะเยา</label><br>
+                                    <p><b>ช่วงเวลาท่องเที่ยว : </b> ฤดูหนาว</p>
+                                    <p><b>แหล่งที่มา : </b> จังหวัดพะเยา</p>
                                 </div>
                                 {{-- end ที่ตั้ง --}}
 
@@ -104,139 +190,122 @@
                                 <div class="mb-2">
                                     <span class="text-tags"><b>Tags : </b></span>
                                     <span>
-                                        <button type="button" class="btn btn-outline-secondary">ธรรมชาติ</button>
-                                        <button type="button" class="btn btn-outline-secondary">ภูเขา</button>
-                                        <button type="button" class="btn btn-info">ดอย</button>
-                                        <button type="button" class="btn btn-outline-secondary">กางเต้นท์</button>
-                                        <button type="button" class="btn btn-outline-secondary">ชมวิว</button>
-                                        <button type="button" class="btn btn-outline-secondary">พะเยา</button>
-                                        <button type="button" class="btn btn-outline-secondary">ทะเลหมอก</button>
-                                        <button type="button" class="btn btn-outline-secondary">กิจกรรมกลางแจ้ง</button>
-                                        <button type="button" class="btn btn-outline-secondary">เดินป่า</button>
+                                        <a href="" type="button" class="btn btn-outline-info">ธรรมชาติ</a>
+                                        <a type="button" class="btn btn-outline-info">ภูเขา</a>
+                                        <a type="button" class="btn btn-outline-info">ดอย</a>
+                                        <a type="button" class="btn btn-outline-info">กางเต้นท์</a>
+                                        <a type="button" class="btn btn-outline-info active">ชมวิว</a>
+                                        <a type="button" class="btn btn-outline-info">พะเยา</a>
+                                        <a type="button" class="btn btn-outline-info">ทะเลหมอก</a>
+                                        <a type="button" class="btn btn-outline-info">กิจกรรมกลางแจ้ง</a>
+                                        <a type="button" class="btn btn-outline-info">เดินป่า</a>
                                     </span>
                                 </div>
 
 
                             </div>
-                            <div class=" col-lg-3 col-md-12  col-sm-3 col-12">
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-4 col-sm-6 mb-2">
-                                        <div class="card card-shadow mb-3">
-                                            <a href="{{url('showArticleDescription')}}">
-                                                <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h4 class="card-title"><b>กว๊านพะเยา</b></h4>
-                                                <span class="readMore card-content-article" style="color: #868383;">กว๊านพะเยา อยู่ในเขตอำเภอเมืองพะเยา จังหวัดพะเยา เป็นทะเลสาบน้ำจืดใหญ่ที่สุดในภาคเหนือ คำว่า "กว๊าน" ตามภาษาพื้นเมืองหมายถึง "บึง" เกิด
-                                                </span>
-                                                <div class="text-place-card-story"><a href=""><b><u>สถานที่ท่องเที่ยว</u> </b></a>
-                                                    <span>By <span style="color: black;">Adam Smith</span></span>
-                                                    <div class="d-flex bd-highlight text-date">
-                                                        <div class="p-1 bd-highlight">10 Nov, 2020</div>
-                                                        <div class="p-1 bd-highlight" style="color: #FCB930;">50 comment</div>
-                                                        <div class="ms-auto p-1 bd-highlight" style="color: black;">Views <span style="color: #0b36c4;"> 258k</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-4  col-sm-6 mb-2">
-                                        <div class="card card-shadow mb-3">
-                                            <a href="{{url('showArticleDescription')}}">
-                                                <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h4 class="card-title"><b>กว๊านพะเยา</b></h4>
-                                                <span class="readMore card-content-article" style="color: #868383;">กว๊านพะเยา อยู่ในเขตอำเภอเมืองพะเยา จังหวัดพะเยา เป็นทะเลสาบน้ำจืดใหญ่ที่สุดในภาคเหนือ คำว่า "กว๊าน" ตามภาษาพื้นเมืองหมายถึง "บึง" เกิด
-                                                </span>
-                                                <div class="text-place-card-story"><a href=""><b><u>สถานที่ท่องเที่ยว</u> </b></a>
-                                                    <span>By <span style="color: black;">Adam Smith</span></span>
-                                                    <div class="d-flex bd-highlight text-date">
-                                                        <div class="p-1 bd-highlight">10 Nov, 2020</div>
-                                                        <div class="p-1 bd-highlight" style="color: #FCB930;">50 comment</div>
-                                                        <div class="ms-auto p-1 bd-highlight" style="color: black;">Views <span style="color: #0b36c4;"> 258k</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-4  col-sm-6 mb-2">
-                                        <div class="card card-shadow mb-3">
-                                            <a href="{{url('showArticleDescription')}}">
-                                                <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h4 class="card-title"><b>กว๊านพะเยา</b></h4>
-                                                <span class="readMore card-content-article" style="color: #868383;">กว๊านพะเยา อยู่ในเขตอำเภอเมืองพะเยา จังหวัดพะเยา เป็นทะเลสาบน้ำจืดใหญ่ที่สุดในภาคเหนือ คำว่า "กว๊าน" ตามภาษาพื้นเมืองหมายถึง "บึง" เกิด
-                                                </span>
-                                                <div class="text-place-card-story"><a href=""><b><u>สถานที่ท่องเที่ยว</u> </b></a>
-                                                    <span>By <span style="color: black;">Adam Smith</span></span>
-                                                    <div class="d-flex bd-highlight text-date">
-                                                        <div class="p-1 bd-highlight">10 Nov, 2020</div>
-                                                        <div class="p-1 bd-highlight" style="color: #FCB930;">50 comment</div>
-                                                        <div class="ms-auto p-1 bd-highlight" style="color: black;">Views <span style="color: #0b36c4;"> 258k</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-4  col-sm-6 mb-2">
-                                        <div class="card card-shadow mb-3">
-                                            <a href="{{url('showArticleDescription')}}">
-                                                <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h4 class="card-title"><b>กว๊านพะเยา</b></h4>
-                                                <span class="readMore card-content-article" style="color: #868383;">กว๊านพะเยา อยู่ในเขตอำเภอเมืองพะเยา จังหวัดพะเยา เป็นทะเลสาบน้ำจืดใหญ่ที่สุดในภาคเหนือ คำว่า "กว๊าน" ตามภาษาพื้นเมืองหมายถึง "บึง" เกิด
-                                                </span>
-                                                <div class="text-place-card-story"><a href=""><b><u>สถานที่ท่องเที่ยว</u> </b></a>
-                                                    <span>By <span style="color: black;">Adam Smith</span></span>
-                                                    <div class="d-flex bd-highlight text-date">
-                                                        <div class="p-1 bd-highlight">10 Nov, 2020</div>
-                                                        <div class="p-1 bd-highlight" style="color: #FCB930;">50 comment</div>
-                                                        <div class="ms-auto p-1 bd-highlight" style="color: black;">Views <span style="color: #0b36c4;"> 258k</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-4  col-sm-6 mb-2">
-                                        <div class="card card-shadow mb-3">
-                                            <a href="{{url('showArticleDescription')}}">
-                                                <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h4 class="card-title"><b>กว๊านพะเยา</b></h4>
-                                                <span class="readMore card-content-article" style="color: #868383;">กว๊านพะเยา อยู่ในเขตอำเภอเมืองพะเยา จังหวัดพะเยา เป็นทะเลสาบน้ำจืดใหญ่ที่สุดในภาคเหนือ คำว่า "กว๊าน" ตามภาษาพื้นเมืองหมายถึง "บึง" เกิด
-                                                </span>
-                                                <div class="text-place-card-story"><a href=""><b><u>สถานที่ท่องเที่ยว</u> </b></a>
-                                                    <span>By <span style="color: black;">Adam Smith</span></span>
-                                                    <div class="d-flex bd-highlight text-date">
-                                                        <div class="p-1 bd-highlight">10 Nov, 2020</div>
-                                                        <div class="p-1 bd-highlight" style="color: #FCB930;">50 comment</div>
-                                                        <div class="ms-auto p-1 bd-highlight" style="color: black;">Views <span style="color: #0b36c4;"> 258k</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-4  col-sm-6 mb-2">
-                                        <a href="">
-                                         <img class="img-ask-dataMore2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREukFaee_t_EaHc8OWdM-uagdC3I7sa2fyCQ&usqp=CAU" alt="">
-                                        </a>
-                                     </div>
-                                    <div class="col-lg-12 col-md-4  col-sm-6 mb-2">
-                                       <a href="">
-                                        <img class="img-ask-dataMore1" src="https://www.chillpainai.com/img/linewebfooter.jpg" alt="">
-                                       </a>
-                                    </div>
-
-                                </div>
-                            </div>
                         </div>
 
 
 
+
+
+
+                        <div class="row" >
+                            <h3 style="font-family: 'Kanit', sans-serif;"><b>บทความที่เกี่ยวข้อง</b></h3>
+                            <div class="col-lg-3">
+                                <div class="card card-shadow">
+                                    <a href="{{ url('/articles/description') }}">
+                                        <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
+                                    </a>
+                                    <div class="card-body">
+                                        <h4 class="card-title" style="font-family: 'Kanit', sans-serif;">กว๊านพะเยา</h4>
+                                        <span class="readMore" style="color: #868383;font-size:10px">กว๊านพะเยา อยู่ในเขตอำเภอเมืองพะเยา จังหวัดพะเยา เป็นทะเลสาบน้ำจืดใหญ่ที่สุดในภาคเหนือ คำว่า "กว๊าน" ตามภาษาพื้นเมืองหมายถึง "บึง" เกิด
+                                        </span>
+
+                                        <br>
+                                        <br>
+                                        <div class="text-place-card-story" style="font-size: 9px;"><a href=""><b><u>สถานที่ท่องเที่ยว</u> </b></a>
+                                            <span>By <span style="color: black;">Adam Smith</span></span>
+                                            <div class="d-flex bd-highlight mb-3">
+                                                <div class="p-2 bd-highlight">10 Nov, 2020</div>
+                                                <div class="p-2 bd-highlight" style="color: #FCB930;">50 comment</div>
+                                                <div class="ms-auto p-2 bd-highlight" style="color: black;">Views <span style="color: #0b36c4;"> 258k</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card card-shadow">
+                                    <a href="{{ url('/articles/description') }}">
+                                        <img src="https://cms.dmpcdn.com/travel/2022/01/25/dc3e97a0-7dcd-11ec-b364-bbe4a59e546c_webp_original.jpg" class="img-card-story" alt="...">
+                                    </a>
+                                    <div class="card-body">
+                                        <h4 class="card-title" style="font-family: 'Kanit', sans-serif;">กว๊านพะเยา</h4>
+                                        <span class="readMore" style="color: #868383;font-size:10px">กว๊านพะเยา อยู่ในเขตอำเภอเมืองพะเยา จังหวัดพะเยา เป็นทะเลสาบน้ำจืดใหญ่ที่สุดในภาคเหนือ คำว่า "กว๊าน" ตามภาษาพื้นเมืองหมายถึง "บึง" เกิด
+                                        </span>
+
+                                        <br>
+                                        <br>
+                                        <div class="text-place-card-story" style="font-size: 9px;"><a href=""><b><u>สถานที่ท่องเที่ยว</u> </b></a>
+                                            <span>By <span style="color: black;">Adam Smith</span></span>
+                                            <div class="d-flex bd-highlight mb-3">
+                                                <div class="p-2 bd-highlight">10 Nov, 2020</div>
+                                                <div class="p-2 bd-highlight" style="color: #FCB930;">50 comment</div>
+                                                <div class="ms-auto p-2 bd-highlight" style="color: black;">Views <span style="color: #0b36c4;"> 258k</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card card-shadow">
+                                    <a href="{{ url('/articles/description') }}">
+                                        <img src="https://cms.dmpcdn.com/travel/2022/01/25/eba33ca0-7de1-11ec-b7fd-27235976b4bb_webp_original.jpg" class="img-card-story" alt="...">
+                                    </a>
+                                    <div class="card-body">
+                                        <h4 class="card-title"style="font-family: 'Kanit', sans-serif;">กว๊านพะเยา</h4>
+                                        <span class="readMore" style="color: #868383;font-size:10px">กว๊านพะเยา อยู่ในเขตอำเภอเมืองพะเยา จังหวัดพะเยา เป็นทะเลสาบน้ำจืดใหญ่ที่สุดในภาคเหนือ คำว่า "กว๊าน" ตามภาษาพื้นเมืองหมายถึง "บึง" เกิด
+                                        </span>
+
+                                        <br>
+                                        <br>
+                                        <div class="text-place-card-story" style="font-size: 9px;"><a href=""><b><u>สถานที่ท่องเที่ยว</u> </b></a>
+                                            <span>By <span style="color: black;">Adam Smith</span></span>
+                                            <div class="d-flex bd-highlight mb-3">
+                                                <div class="p-2 bd-highlight">10 Nov, 2020</div>
+                                                <div class="p-2 bd-highlight" style="color: #FCB930;">50 comment</div>
+                                                <div class="ms-auto p-2 bd-highlight" style="color: black;">Views <span style="color: #0b36c4;"> 258k</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card card-shadow">
+                                    <a href="{{ url('/articles/description') }}">
+                                        <img src="https://cms.dmpcdn.com/travel/2022/01/25/ec550070-7de1-11ec-b7fd-27235976b4bb_webp_original.jpg" class="img-card-story" alt="...">
+                                    </a>
+                                    <div class="card-body">
+                                        <h4 class="card-title"style="font-family: 'Kanit', sans-serif;">กว๊านพะเยา</h4>
+                                        <span class="readMore" style="color: #868383;font-size:10px">กว๊านพะเยา อยู่ในเขตอำเภอเมืองพะเยา จังหวัดพะเยา เป็นทะเลสาบน้ำจืดใหญ่ที่สุดในภาคเหนือ คำว่า "กว๊าน" ตามภาษาพื้นเมืองหมายถึง "บึง" เกิด
+                                        </span>
+
+                                        <br>
+                                        <br>
+                                        <div class="text-place-card-story" style="font-size: 9px;"><a href=""><b><u>สถานที่ท่องเที่ยว</u> </b></a>
+                                            <span>By <span style="color: black;">Adam Smith</span></span>
+                                            <div class="d-flex bd-highlight mb-3">
+                                                <div class="p-2 bd-highlight">10 Nov, 2020</div>
+                                                <div class="p-2 bd-highlight" style="color: #FCB930;">50 comment</div>
+                                                <div class="ms-auto p-2 bd-highlight" style="color: black;">Views <span style="color: #0b36c4;"> 258k</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
 
@@ -247,21 +316,6 @@
         </div>
 
         <br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
 
@@ -279,7 +333,7 @@
                     var nstr = str.substring(0, maxLength);
                     var rmstr = str.substring(maxLength, $.trim(str).length);
                     $(this).empty().html(nstr);
-                    $(this).append(' <a href = "{{ url('descriptionArticle') }}"> read more... </a>');
+                    $(this).append(' <a href = "{{ url('/articles/description') }}"> read more... </a>');
                 }
             });
         });
@@ -294,6 +348,67 @@
     <!-- end script slider -->
 
 
+    <script>
+        $('.slider-single').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: false,
+            adaptiveHeight: true,
+            infinite: false,
+            useTransform: true,
+            speed: 400,
+            cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
+        });
+
+        $('.slider-nav')
+            .on('init', function(event, slick) {
+                $('.slider-nav .slick-slide.slick-current').addClass('is-active');
+            })
+            .slick({
+                arrows: true,
+                slidesToShow: 4,
+                slidesToScroll: 2,
+                dots: false,
+                focusOnSelect: false,
+                infinite: false,
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        arrows: true,
+                        slidesToShow: 5,
+                        slidesToScroll: 5,
+                        centerPadding: '2px',
+                    }
+                }, {
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                        centerPadding: '250px',
+                    }
+                }, {
+                    breakpoint: 420,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                }]
+            });
+
+        $('.slider-single').on('afterChange', function(event, slick, currentSlide) {
+            $('.slider-nav').slick('slickGoTo', currentSlide);
+            var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+            $('.slider-nav .slick-slide.is-active').removeClass('is-active');
+            $(currrentNavSlideElem).addClass('is-active');
+        });
+
+        $('.slider-nav').on('click', '.slick-slide', function(event) {
+            event.preventDefault();
+            var goToSingleSlide = $(this).data('slick-index');
+
+            $('.slider-single').slick('slickGoTo', goToSingleSlide);
+        });
     </script>
 
 

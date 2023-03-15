@@ -1,230 +1,26 @@
-body{
-    overflow-x: hidden;
-}
-.padding-footer {
-    padding-bottom: 150px;
-}
-.background-head-activity{
 
-    width: 100%;
-    height: 180px;
-    background-color: #58BEE3;
-    color: #ffff;
-}
-.price-pagkage{
-    width: 170px;
-    height: 45px;
-    text-align: center;
-    background-color: #ffff;
-    border-style: solid;
-    border-radius: 20px;
-    border-color: red;
-    border-width: 2px;
-    padding-top: 2px;
-    color: red;
-    float: right;
-    font-size: 24px;
-}
-.price-head-pagkage{
-    font-size: 24px;
-    float: right;
-}
-.margin-head-activity{
-    margin-top: -50px !important;
-}
-.icon-head-activity{
-    color: #FFC73C;
-}
-.name-activity{
-    font-size: 24px;
-}
-.address-activity{
-    font-size: 20px;
-}
-.total-activity-head{
-    font-size: 20px;
-}
-
-
-
-.js .slider-single>div:nth-child(1n+2) {
-    display: none
-}
-
-.js .slider-single.slick-initialized>div:nth-child(1n+2) {
-    display: block
-}
-
-
-
-.slider-single img {
-    line-height: 10rem;
-}
-
-.slider-nav img::before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-}
-
-.slider-nav img span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.slider-nav .slick-slide {
-    cursor: pointer;
-}
-
-.slick-slide.is-active img {
-    color: #c00;
-    background-color: #fff
-}
-
-.slick-prev:before {
-    color: rgb(52, 178, 232) !important;
-
-}
-
-.slick-next:before {
-    color:  rgb(52, 178, 232) !important;
-}
-
-
-.image-large-deal {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
-.image-small-deal {
-    width: 240px;
-    height: 140px;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-
-.background-overview{
-    width: 100%;
-    height: auto;
-    background-color:rgba(0, 174, 239, 0.08);
-}
-.detail-overview{
-    font-size: 18px;
-}
-.detail-highlight{
-    font-size: 18px;
-}
-ul.timeline {
-    list-style-type: none;
-    position: relative;
-}
-ul.timeline:before {
-    content: ' ';
-    background: #d4d9df;
-    display: inline-block;
-    position: absolute;
-    left: 29px;
-    width: 2px;
-    height: 100%;
-    z-index: 400;
-}
-ul.timeline > li {
-    margin: 30px 0;
-    padding-left: 20px;
-}
-ul.timeline > li:before {
-    content: ' ';
-    background: white;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
-    border: 3px solid #22c0e8;
-    left: 20px;
-    width: 20px;
-    height: 20px;
-    z-index: 400;
-}
-.background-timeline{
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    border-style: solid;
-    border-color: #22c0e8;
-    border-width: 1px;
-    background-color: #fff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #ffffff !important;
-    background-color: #00aeef !important;
-    border-color: #dee2e6 #dee2e6 #fff !important;
-    width: 170px;
-    height: 60px;
-    font-size: 16px;
-
-
-}
-.nav-tabs .nav-link {
-    color:  #B0B0B0 !important;
-    margin-bottom: -1px;
-    background-color: #E5E5E5 !important;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
-    border: 1px solid transparent;
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
-    width: 170px;
-    height: 60px;
-}
-.bi-check2-all{
-    color: green;
-    font-size: 20px;
-}
-.bi-x-lg{
-    color: #AE2E2E;
-    font-size: 15px;
-}
-.img-story {
-    background: linear-gradient(0deg, rgba(0, 175, 239, 0.663), rgba(0, 174, 239, 0.45)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url("https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg")no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    ;
-}
-.text-activity-location{
-    font-size: 14px;
-}
-.background-activityAttraction{
-    width: 100%;
-    height: 500px;
-    background-color: #FCF5E1;
-}
-.img-special-deal {
-    width: 90%;
-    margin: 0 auto;
-
-}
+/*กิจกรรมยอดฮิต Trending Activitiesr */
 .img-trending {
     position: relative;
     max-width: 400px;
     margin: 0 auto;
-
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 20px;
 }
 
+.img-trending:hover {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: rgba(0, 115, 255, 0.35) 0px 5px 15px;
+
+}
 
 
 .img-trending img {
     vertical-align: middle;
     object-fit: cover;
-}
-.img-trending img:hover {
-    vertical-align: middle;
-    object-fit: cover;
-    box-shadow: 1px 10px 16px 0 rgba(0, 0, 0, 0.3);
+
 }
 
 .img-trending .content {
@@ -235,7 +31,7 @@ ul.timeline > li:before {
     background: rgba(0, 0, 0, 0.5);
     /* Black background with 0.5 opacity */
     color: #f1f1f1;
-    width: 210px;
+    width: 100%;
     height: 120px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -247,240 +43,28 @@ ul.timeline > li:before {
     /* Fallback color */
     background: rgba(0, 0, 0, 0.5);
     /* Black background with 0.5 opacity */
-    color: #cce7f5;
-    width: 210px;
+
+    width: 100%;
     height: 160px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+
 .card-trending {
-    width: 210px;
-    height: 270px;
+    width: 100%;
+    height: 340px;
     border-radius: 5px;
 }
+
 .text-map-trending {
     padding-top: 10px;
     font-size: 10px;
 }
+
 .text-content-trending {
-    font-size: 8px;
+    font-size: 12px;
 }
 
-@media only screen and (max-width: 1400px) {
-    .image-small-deal {
-        width: 200px;
-        height: 140px;
-        border-radius: 5px;
-        object-fit: cover;
-    }
 
-}
-@media only screen and (max-width: 1200px) {
-    .image-small-deal {
-        width: 160px;
-        height: 110px;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-}
-@media only screen and (max-width: 1024px) {
-    .image-small-deal {
-        width: 160px;
-        height: 110px;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-    .margin-head-activity{
-        margin-top: -10px !important;
-    }
-    .total-activity-head {
-        font-size: 18px;
-    }
-    .background-head-activity {
-        width: 100%;
-        height: 220px;
-        background-color: #58BEE3;
-        color: #ffff;
-    }
-
-}
-@media only screen and (max-width: 850px) {
-    .image-small-deal {
-        width: 190px;
-        height: 110px;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-    .image-large-deal {
-        width: 100%;
-        height: 415px;
-        object-fit: cover;
-    }
-    .margin-head-activity{
-        margin-top: -30px !important;
-    }
-    .background-head-activity {
-        width: 100%;
-        height: 190px;
-        background-color: #58BEE3;
-        color: #ffff;
-    }
-    .padding-footer {
-        padding-bottom: 300px;
-    }
-
-}
-
-@media only screen and (max-width: 430px) {
-
-    .name-activity{
-        font-size: 16px;
-    }
-    .address-activity{
-        font-size: 16px;
-    }
-    .price-head-pagkage{
-        font-size: 16px;
-        float: right;
-    }
-    .price-pagkage{
-        width: 130px;
-        height: 35px;
-        text-align: center;
-        background-color: #ffff;
-        border-style: solid;
-        border-radius: 20px;
-        border-color: red;
-        border-width: 2px;
-        padding-top: 2px;
-        color: red;
-        float: right;
-        font-size: 18px;
-    }
-    .price-br{
-        display: none;
-    }
-    .margin-head-activity{
-        margin-top: 0px !important;
-    }
-    .font-size-activity{
-        font-size: 9px;
-    }
-    .image-large-deal {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-    }
-    .image-small-deal {
-        width: 100px;
-        height: 70px;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-    .background-head-activity {
-        width: 100%;
-        height: 175px;
-        background-color: #58BEE3;
-        color: #ffff;
-    }
-    .total-activity-head {
-        font-size: 12px;
-    }
-    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-        color: #ffffff !important;
-        background-color: #00aeef !important;
-        border-color: #dee2e6 #dee2e6 #fff !important;
-        width: 150px;
-        height: 40px;
-        /* font-size: 10px; */
-    }
-    .nav-tabs .nav-link {
-        color: #B0B0B0 !important;
-        margin-bottom: -1px;
-        background-color: #E5E5E5 !important;
-        box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%) !important;
-        border: 1px solid transparent;
-        border-top-left-radius: .25rem;
-        border-top-right-radius: .25rem;
-        width: 150px;
-        height: 40px;
-    }
-    .padding-footer {
-        padding-bottom: 750px;
-    }
-  }
-
-
-  @media only screen and (max-width: 391px) {
-    .image-large-deal {
-        width: 100%;
-        height: 165px;
-        object-fit: cover;
-    }
-    .image-small-deal {
-        width: 90px;
-        height: 60px;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-    .img-trending .content {
-        position: absolute;
-        bottom: 0;
-        background: rgb(0, 0, 0);
-        /* Fallback color */
-        background: rgba(0, 0, 0, 0.5);
-        /* Black background with 0.5 opacity */
-        color: #f1f1f1;
-        width: 190px;
-        height: 120px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-    .img-trending .content:hover {
-        position: absolute;
-        bottom: 0;
-        background: rgb(0, 0, 0);
-        /* Fallback color */
-        background: rgba(0, 0, 0, 0.5);
-        /* Black background with 0.5 opacity */
-        color: #cce7f5;
-        width: 190px;
-        height: 160px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-    .card-trending {
-        width: 190px;
-        height: 260px;
-        border-radius: 5px;
-    }
-    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-        color: #ffffff !important;
-        background-color: #00aeef !important;
-        border-color: #dee2e6 #dee2e6 #fff !important;
-        width: 120px;
-        height: 40px;
-        font-size: 10px;
-    }
-    .nav-tabs .nav-link {
-        color: #B0B0B0 !important;
-        margin-bottom: -1px;
-        background-color: #E5E5E5 !important;
-        box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%) !important;
-        border: 1px solid transparent;
-        border-top-left-radius: .25rem;
-        border-top-right-radius: .25rem;
-        width: 120px;
-        height: 40px;
-        font-size: 10px;
-    }
-  }
-
-  @media only screen and (max-width: 361px) {
-    .image-small-deal {
-        width: 80px;
-        height: 55px;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-  }
+/*end กิจกรรมยอดฮิต Trending Activitiesr */

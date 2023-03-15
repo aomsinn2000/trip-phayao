@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="overflow-x: hidden">
+<html lang="en" >
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@
     {{-- end เกี่ยวกับฟิคค่าตัวหนังสือ read more --}}
 </head>
 
-<body>
+<body >
 
 
 
@@ -51,7 +51,7 @@
                                 <div class="list-item">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -77,7 +77,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/25/dc3e97a0-7dcd-11ec-b364-bbe4a59e546c_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -102,7 +102,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/25/eba33ca0-7de1-11ec-b7fd-27235976b4bb_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -127,7 +127,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/25/ec550070-7de1-11ec-b7fd-27235976b4bb_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -152,7 +152,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/26/ce0ff3a0-7e53-11ec-809f-1f424036454f_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -177,7 +177,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/26/62f80710-7e53-11ec-809f-1f424036454f_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -202,7 +202,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/25/eaced5a0-7de1-11ec-b7fd-27235976b4bb_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -227,7 +227,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/26/6220e0f0-7e53-11ec-a887-811810290a51_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -252,7 +252,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/26/62265f30-7e53-11ec-809f-1f424036454f_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -277,7 +277,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/25/e981bc30-7de1-11ec-bb7c-f9243d66c0d7_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -302,7 +302,7 @@
                                 <div class="list-item ">
                                     <div class="col">
                                         <div class="card card-shadow">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img src="https://cms.dmpcdn.com/travel/2022/01/25/ec0ab100-7de1-11ec-b7fd-27235976b4bb_webp_original.jpg" class="img-card-story" alt="...">
                                             </a>
                                             <div class="card-body">
@@ -369,25 +369,25 @@
                                     <div class="card mb-3 card-padding" style="background-color:#F5F5F5; max-width: 100%; border:none;">
                                         <div class="row g-0">
                                             <div class="col-md-5">
-                                                <a href="{{ url('showArticleDescription') }}">
+                                                <a href="{{ url('/articles/description') }}">
                                                     <img class=" img-blog" src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" alt="...">
                                                 </a>
                                             </div>
                                             <div class="col-md-7 px-3 padding-blog">
                                                 <h6>
-                                                    <a href="{{ url('showArticleDescription') }}" class="text-title-blog "><b>13 things i’d Tell Any New Travler </b></a>
+                                                    <a href="{{ url('/articles/description') }}" class="text-title-blog "><b>13 things i’d Tell Any New Travler </b></a>
                                                 </h6>
                                                 <p class="text-postBy-blog">
                                                     <span style="color: #00AEEF;text-decoration:none;">Post</span>
                                                     <span>By</span>
-                                                    <a href="{{ url('showArticleDescription') }}" style="text-decoration: none; color:black;">Adam Smith</a>
+                                                    <a href="{{ url('/articles/description') }}" style="text-decoration: none; color:black;">Adam Smith</a>
                                                 </p>
                                                 <p class="text-date-post">10 Nov, 2020
                                                     <span>------</span>
-                                                    <span><a href="{{ url('showArticleDescription') }}" style="color: #00AEEF;text-decoration:none;">50 Comments</a></span>
+                                                    <span><a href="{{ url('/articles/description') }}" style="color: #00AEEF;text-decoration:none;">50 Comments</a></span>
                                                 </p>
                                                 <p class="text-content-blog readMoreBlog">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <a href="{{ url('showArticleDescription') }}" class="text-readMore-blog">Read More...</a>
+                                                <a href="{{ url('/articles/description') }}" class="text-readMore-blog">Read More...</a>
 
                                             </div>
                                         </div>
@@ -397,25 +397,25 @@
                                     <div class="card mb-3 card-padding" style="background-color:#F5F5F5; max-width: 100%; border:none;">
                                         <div class="row g-0">
                                             <div class="col-md-5">
-                                                <a href="{{ url('showArticleDescription') }}">
+                                                <a href="{{ url('/articles/description') }}">
                                                     <img class=" img-blog" src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" alt="...">
                                                 </a>
                                             </div>
                                             <div class="col-md-7 px-3 padding-blog">
                                                 <h6>
-                                                    <a href="{{ url('showArticleDescription') }}" class="text-title-blog "><b>13 things i’d Tell Any New Travler </b></a>
+                                                    <a href="{{ url('/articles/description') }}" class="text-title-blog "><b>13 things i’d Tell Any New Travler </b></a>
                                                 </h6>
                                                 <p class="text-postBy-blog">
                                                     <span style="color: #00AEEF;text-decoration:none;">Post</span>
                                                     <span>By</span>
-                                                    <a href="{{ url('showArticleDescription') }}" style="text-decoration: none; color:black;">Adam Smith</a>
+                                                    <a href="{{ url('/articles/description') }}" style="text-decoration: none; color:black;">Adam Smith</a>
                                                 </p>
                                                 <p class="text-date-post">10 Nov, 2020
                                                     <span>------</span>
-                                                    <span><a href="{{ url('showArticleDescription') }}" style="color: #00AEEF;text-decoration:none;">50 Comments</a></span>
+                                                    <span><a href="{{ url('/articles/description') }}" style="color: #00AEEF;text-decoration:none;">50 Comments</a></span>
                                                 </p>
                                                 <p class="text-content-blog readMoreBlog">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <a href="{{ url('showArticleDescription') }}" class="text-readMore-blog">Read More...</a>
+                                                <a href="{{ url('/articles/description') }}" class="text-readMore-blog">Read More...</a>
 
                                             </div>
                                         </div>
@@ -425,25 +425,25 @@
                                     <div class="card mb-3 card-padding" style="background-color:#F5F5F5; max-width: 100%; border:none;">
                                         <div class="row g-0">
                                             <div class="col-md-5">
-                                                <a href="{{ url('showArticleDescription') }}">
+                                                <a href="{{ url('/articles/description') }}">
                                                     <img class=" img-blog" src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" alt="...">
                                                 </a>
                                             </div>
                                             <div class="col-md-7 px-3 padding-blog">
                                                 <h6>
-                                                    <a href="{{ url('showArticleDescription') }}" class="text-title-blog "><b>13 things i’d Tell Any New Travler </b></a>
+                                                    <a href="{{ url('/articles/description') }}" class="text-title-blog "><b>13 things i’d Tell Any New Travler </b></a>
                                                 </h6>
                                                 <p class="text-postBy-blog">
                                                     <span style="color: #00AEEF;text-decoration:none;">Post</span>
                                                     <span>By</span>
-                                                    <a href="{{ url('showArticleDescription') }}" style="text-decoration: none; color:black;">Adam Smith</a>
+                                                    <a href="{{ url('/articles/description') }}" style="text-decoration: none; color:black;">Adam Smith</a>
                                                 </p>
                                                 <p class="text-date-post">10 Nov, 2020
                                                     <span>------</span>
-                                                    <span><a href="{{ url('showArticleDescription') }}" style="color: #00AEEF;text-decoration:none;">50 Comments</a></span>
+                                                    <span><a href="{{ url('/articles/description') }}" style="color: #00AEEF;text-decoration:none;">50 Comments</a></span>
                                                 </p>
                                                 <p class="text-content-blog readMoreBlog">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <a href="{{ url('showArticleDescription') }}" class="text-readMore-blog">Read More...</a>
+                                                <a href="{{ url('/articles/description') }}" class="text-readMore-blog">Read More...</a>
 
                                             </div>
                                         </div>
@@ -453,25 +453,25 @@
                                     <div class="card mb-3 card-padding" style="background-color:#F5F5F5; max-width: 100%; border:none;">
                                         <div class="row g-0">
                                             <div class="col-md-5">
-                                                <a href="{{ url('showArticleDescription') }}">
+                                                <a href="{{ url('/articles/description') }}">
                                                     <img class=" img-blog" src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" alt="...">
                                                 </a>
                                             </div>
                                             <div class="col-md-7 px-3 padding-blog">
                                                 <h6>
-                                                    <a href="{{ url('showArticleDescription') }}" class="text-title-blog "><b>13 things i’d Tell Any New Travler </b></a>
+                                                    <a href="{{ url('/articles/description') }}" class="text-title-blog "><b>13 things i’d Tell Any New Travler </b></a>
                                                 </h6>
                                                 <p class="text-postBy-blog">
                                                     <span style="color: #00AEEF;text-decoration:none;">Post</span>
                                                     <span>By</span>
-                                                    <a href="{{ url('showArticleDescription') }}" style="text-decoration: none; color:black;">Adam Smith</a>
+                                                    <a href="{{ url('/articles/description') }}" style="text-decoration: none; color:black;">Adam Smith</a>
                                                 </p>
                                                 <p class="text-date-post">10 Nov, 2020
                                                     <span>------</span>
-                                                    <span><a href="{{ url('showArticleDescription') }}" style="color: #00AEEF;text-decoration:none;">50 Comments</a></span>
+                                                    <span><a href="{{ url('/articles/description') }}" style="color: #00AEEF;text-decoration:none;">50 Comments</a></span>
                                                 </p>
                                                 <p class="text-content-blog readMoreBlog">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <a href="{{ url('showArticleDescription') }}" class="text-readMore-blog">Read More...</a>
+                                                <a href="{{ url('/articles/description') }}" class="text-readMore-blog">Read More...</a>
 
                                             </div>
                                         </div>
@@ -481,25 +481,25 @@
                                     <div class="card mb-3 card-padding" style="background-color:#F5F5F5; max-width: 100%; border:none;">
                                         <div class="row g-0">
                                             <div class="col-md-5">
-                                                <a href="{{ url('showArticleDescription') }}">
+                                                <a href="{{ url('/articles/description') }}">
                                                     <img class=" img-blog" src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" alt="...">
                                                 </a>
                                             </div>
                                             <div class="col-md-7 px-3 padding-blog">
                                                 <h6>
-                                                    <a href="{{ url('showArticleDescription') }}" class="text-title-blog "><b>13 things i’d Tell Any New Travler </b></a>
+                                                    <a href="{{ url('/articles/description') }}" class="text-title-blog "><b>13 things i’d Tell Any New Travler </b></a>
                                                 </h6>
                                                 <p class="text-postBy-blog">
                                                     <span style="color: #00AEEF;text-decoration:none;">Post</span>
                                                     <span>By</span>
-                                                    <a href="{{ url('showArticleDescription') }}" style="text-decoration: none; color:black;">Adam Smith</a>
+                                                    <a href="{{ url('/articles/description') }}" style="text-decoration: none; color:black;">Adam Smith</a>
                                                 </p>
                                                 <p class="text-date-post">10 Nov, 2020
                                                     <span>------</span>
-                                                    <span><a href="{{ url('showArticleDescription') }}" style="color: #00AEEF;text-decoration:none;">50 Comments</a></span>
+                                                    <span><a href="{{ url('/articles/description') }}" style="color: #00AEEF;text-decoration:none;">50 Comments</a></span>
                                                 </p>
                                                 <p class="text-content-blog readMoreBlog">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <a href="{{ url('showArticleDescription') }}" class="text-readMore-blog">Read More...</a>
+                                                <a href="{{ url('/articles/description') }}" class="text-readMore-blog">Read More...</a>
 
                                             </div>
                                         </div>
@@ -526,12 +526,12 @@
                                     <h3><b>Post Popular</b></h3><br>
                                     <div class="row">
                                         <div class="col-4 col-lg-4 col-md-3">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img class="img-popular-post" src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" alt="...">
                                             </a>
                                         </div>
                                         <div class="col-8 col-lg-8 col-md-9">
-                                            <h6><a href="{{ url('showArticleDescription') }}" class="text-title-popular"><b>กว๊านพะเยา ทะเลสาบน้ำจืดอันดับ 1 ของประเทศไทย</b></a></h6>
+                                            <h6><a href="{{ url('/articles/description') }}" class="text-title-popular"><b>กว๊านพะเยา ทะเลสาบน้ำจืดอันดับ 1 ของประเทศไทย</b></a></h6>
                                             <div class="text-postBy-popular-post">
                                                 <span style="color: #00AEEF;text-decoration:none;">Post</span> <a href=""></a>
                                                 <span>By</span>
@@ -545,12 +545,12 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-4 col-lg-4 col-md-3">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img class="img-popular-post" src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" alt="...">
                                             </a>
                                         </div>
                                         <div class="col-8 col-lg-8 col-md-9">
-                                            <h6><a href="{{ url('showArticleDescription') }}" class="text-title-popular"><b>กว๊านพะเยา ทะเลสาบน้ำจืดอันดับ 1 ของประเทศไทย</b></a></h6>
+                                            <h6><a href="{{ url('/articles/description') }}" class="text-title-popular"><b>กว๊านพะเยา ทะเลสาบน้ำจืดอันดับ 1 ของประเทศไทย</b></a></h6>
                                             <div class="text-postBy-popular-post">
                                                 <span style="color: #00AEEF;text-decoration:none;">Post</span> <a href=""></a>
                                                 <span>By</span>
@@ -564,12 +564,12 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-4 col-lg-4 col-md-3">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img class="img-popular-post" src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" alt="...">
                                             </a>
                                         </div>
                                         <div class="col-8 col-lg-8 col-md-9">
-                                            <h6><a href="{{ url('showArticleDescription') }}" class="text-title-popular"><b>กว๊านพะเยา ทะเลสาบน้ำจืดอันดับ 1 ของประเทศไทย</b></a></h6>
+                                            <h6><a href="{{ url('/articles/description') }}" class="text-title-popular"><b>กว๊านพะเยา ทะเลสาบน้ำจืดอันดับ 1 ของประเทศไทย</b></a></h6>
                                             <div class="text-postBy-popular-post">
                                                 <span style="color: #00AEEF;text-decoration:none;">Post</span> <a href=""></a>
                                                 <span>By</span>
@@ -583,12 +583,12 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-4 col-lg-4 col-md-3">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img class="img-popular-post" src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" alt="...">
                                             </a>
                                         </div>
                                         <div class="col-8 col-lg-8 col-md-9">
-                                            <h6><a href="{{ url('showArticleDescription') }}" class="text-title-popular"><b>กว๊านพะเยา ทะเลสาบน้ำจืดอันดับ 1 ของประเทศไทย</b></a></h6>
+                                            <h6><a href="{{ url('/articles/description') }}" class="text-title-popular"><b>กว๊านพะเยา ทะเลสาบน้ำจืดอันดับ 1 ของประเทศไทย</b></a></h6>
                                             <div class="text-postBy-popular-post">
                                                 <span style="color: #00AEEF;text-decoration:none;">Post</span> <a href=""></a>
                                                 <span>By</span>
@@ -602,12 +602,12 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-4 col-lg-4 col-md-3">
-                                            <a href="{{ url('showArticleDescription') }}">
+                                            <a href="{{ url('/articles/description') }}">
                                                 <img class="img-popular-post" src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" alt="...">
                                             </a>
                                         </div>
                                         <div class="col-8 col-lg-8 col-md-9">
-                                            <h6><a href="{{ url('showArticleDescription') }}" class="text-title-popular"><b>กว๊านพะเยา ทะเลสาบน้ำจืดอันดับ 1 ของประเทศไทย</b></a></h6>
+                                            <h6><a href="{{ url('/articles/description') }}" class="text-title-popular"><b>กว๊านพะเยา ทะเลสาบน้ำจืดอันดับ 1 ของประเทศไทย</b></a></h6>
                                             <div class="text-postBy-popular-post">
                                                 <span style="color: #00AEEF;text-decoration:none;">Post</span> <a href=""></a>
                                                 <span>By</span>
@@ -690,7 +690,7 @@
                     var nstr = str.substring(0, maxLength);
                     var rmstr = str.substring(maxLength, $.trim(str).length);
                     $(this).empty().html(nstr);
-                    $(this).append(' <a href = "{{ url('showArticleDescription') }}"> read more... </a>');
+                    $(this).append(' <a href = "{{ url('/articles/description') }}"> read more... </a>');
                 }
             });
         });
@@ -728,7 +728,7 @@
     <script>
      var items = $(".list-wrapper .list-item");
      var numItems = items.length;
-     var perPage = 9;
+     var perPage = 12;
 
      items.slice(perPage).hide();
 

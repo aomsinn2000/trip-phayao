@@ -8,14 +8,20 @@ use Illuminate\Http\Request;
 class TouristAttractionCategoryController extends Controller
 {
     //
+
+    public function showTouristAttractionCategoryHome(){
+        return view('tourist-attraction-category.show-tourist-attraction-category-home');
+    }
+
     public function viewTouristAttractionCategory(){
-        return view('TouristAttractionCategory.view-TouristAttractionCategory');
+        return view('tourist-attraction-category.view-tourist-attraction-category');
     }
 
     public function addTouristAttractionCategory(){
-        return view('TouristAttractionCategory.add-TouristAttractionCategory');
+        return view('tourist-attraction-category.add-tourist-attraction-category');
     }
     public function editTouristAttractionCategory(){
-        return view('TouristAttractionCategory.edit-TouristAttractionCategory');
+        return view('tourist-attraction-category.edit-tourist-attraction-category');
     }
+
 }

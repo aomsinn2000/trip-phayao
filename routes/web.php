@@ -9,7 +9,7 @@ use App\Http\Controllers\HomeController\HomeController;
 use App\Http\Controllers\ServiceController\ServiceController;
 use App\Http\Controllers\ActivityController\ActivityController;
 use App\Http\Controllers\ArticleController\ArticleController;
-use App\Http\Controllers\PakageTourController\PakageTourController;
+use App\Http\Controllers\PackageTourController\PackageTourController;
 use App\Http\Controllers\TouristAttractionController\TouristAttractionController;
 use App\Http\Controllers\ContactUsController\ContactUsController;
 use App\Http\Controllers\DestinationFolderController\DestinationFolderController;
@@ -207,16 +207,28 @@ Route::prefix('activities')->group(function () {
     Route::get('/description', [ActivityController::class, 'showActivityDescription']);
 });
 //******************end หน้าบ้าน หน้ารวมกิจกรรม******************
-
+//******************หลังบ้าน หน้ารวมกิจกรรม******************
+Route::prefix('activity-manages')->group(function () {
+    Route::get('/', [ActivityController::class, 'viewActivity']);
+    Route::get('/add', [ActivityController::class, 'addActivity']);
+    Route::get('/edit/{id}', [ActivityController::class, 'editActivity']);
+});
+//******************end หลังบ้าน หน้ารวมกิจกรรม******************
 
 
 //******************หน้าบ้าน แพ็คเกจทัวร์******************
-Route::prefix('pakagetours')->group(function () {
-    Route::get('/', [PakageTourController::class, 'showPakageTour']);
-    Route::get('/description', [PakageTourController::class, 'showPakageTourDescription']);
+Route::prefix('packagetours')->group(function () {
+    Route::get('/', [PackageTourController::class, 'showPackageTour']);
+    Route::get('/description', [PackageTourController::class, 'showPackageTourDescription']);
 });
 //******************หน้าบ้าน แพ็คเกจทัวร์******************
-
+//******************หลังบ้าน แพ็คเกจทัวร์******************
+Route::prefix('package-tours')->group(function () {
+    Route::get('/', [PackageTourController::class, 'viewPackageTour']);
+    Route::get('/add', [PackageTourController::class, 'addPackageTour']);
+    Route::get('/edit/{id}', [PackageTourController::class, 'editPackageTour']);
+});
+//******************หลังบ้าน แพ็คเกจทัวร์******************
 
 
 

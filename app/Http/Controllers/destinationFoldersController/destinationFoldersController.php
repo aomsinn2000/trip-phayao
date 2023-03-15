@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 class destinationFoldersController extends Controller
 {
     //
-    public function viewDestinationFolders(){
-        return view('destinationFolders.view-destinationFolders');
+    public function viewDestinationFolder(){
+        return view('destinationFolder.view-destinationFolder');
     }
-    public function addDestinationFolders(){
-        return view('destinationFolders.add-destinationFolders');
+    public function addDestinationFolder(){
+        return view('destinationFolder.add-destinationFolder');
     }
-    public function editDestinationFolders(){
-        return view('destinationFolders.edit-destinationFolders');
+    public function editDestinationFolder(){
+        return view('destinationFolder.edit-destinationFolder');
     }
 }

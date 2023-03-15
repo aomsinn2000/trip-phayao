@@ -35,7 +35,7 @@
                                 <div class="col-lg-3 col-sm-6 col-md-6  py-1">
                                     <div class="card-other-service">
                                         <div class="card-body">
-                                            <a href="" class="card-text">
+                                            <a href="{{url('/services/category')}}" class="card-text">
                                                 <div class="card-image">
                                                     <img class="img-other-service" src="https://cdn.pixabay.com/photo/2022/06/02/18/17/car-7238650_1280.png">
                                                 </div>
@@ -47,7 +47,7 @@
                                 <div class="col-lg-3 col-sm-6 col-md-6 py-1">
                                     <div class="card-other-service">
                                         <div class="card-body">
-                                            <a href="" class="card-text">
+                                            <a href="{{url('/services/category')}}" class="card-text">
                                                 <div class="card-image">
                                                     <img class="img-other-service" src="https://cdn.pixabay.com/photo/2022/06/02/18/17/car-7238650_1280.png">
                                                 </div>
@@ -59,7 +59,7 @@
                                 <div class="col-lg-3 col-sm-6 col-md-6 py-1">
                                     <div class="card-other-service">
                                         <div class="card-body">
-                                            <a href="" class="card-text">
+                                            <a href="{{url('/services/category')}}" class="card-text">
                                                 <div class="card-image">
                                                     <img class="img-other-service" src="https://www.pngitem.com/pimgs/m/4-41456_clipart-freeuse-bike-transparent-animated-riding-bicycle-gif.png">
                                                 </div>
@@ -71,7 +71,7 @@
                                 <div class="col-lg-3 col-sm-6 col-md-6 py-1">
                                     <div class="card-other-service">
                                         <div class="card-body">
-                                            <a href="" class="card-text">
+                                            <a href="{{url('/services/category')}}" class="card-text">
                                                 <div class="card-image">
                                                     <img class="img-other-service" src="https://www.pngall.com/wp-content/uploads/11/Guide-PNG-Image-HD.png">
                                                 </div>
