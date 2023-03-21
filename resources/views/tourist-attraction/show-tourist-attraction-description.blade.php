@@ -105,7 +105,7 @@
                                         </div>
                                         <div class="px-1">
                                             <span>
-                                                 <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
+                                                <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
                                             </span>
                                         </div>
                                         <div class="px-1">
@@ -115,7 +115,7 @@
                                         </div>
                                         <div class="px-1">
                                             <span>
-                                                    <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ec832f0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="Nature" >
+                                                <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ec832f0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="Nature">
                                             </span>
                                         </div>
                                         <div class="px-1">
@@ -126,7 +126,7 @@
                                         </div>
                                         <div class="px-1">
                                             <span>
-                                                 <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0d1f000001gmc84F7DF_C_900_600.png_.webp?proc=source%2ftrip" alt="">
+                                                <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0d1f000001gmc84F7DF_C_900_600.png_.webp?proc=source%2ftrip" alt="">
                                             </span>
                                         </div>
                                         <div class="px-1">
@@ -136,7 +136,7 @@
                                         </div>
                                         <div class="px-1">
                                             <span>
-                                                <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww081f000001go0id8860_C_760_506.png" alt="Nature" >
+                                                <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww081f000001go0id8860_C_760_506.png" alt="Nature">
                                             </span>
                                         </div>
 
@@ -144,7 +144,7 @@
                                 </div>
                             </div>
                         </div>
-{{--
+                        {{--
                         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
                             <div class="carousel-inner">
@@ -175,12 +175,13 @@
                         <p class="text-content">วัดอนาลโยทิพยาราม หรือที่เรียกสั้นๆ ว่า วัดอนาลโย ตั้งอยู่บริเวณดอยบุษราคัม และม่อนพระนอน เป็นวัดที่เต็มไปด้วยพระพุทธรูปต่างๆ มากมาย ทั้ง ศิลปะแบบสุโขทัย พระพุทธไสยาสน์ พระพุทธรูปปางลีลา พระพุทธรูปปางนาคปรก เป็นต้น ซึ่งทั้งหมดก็สร้างด้วยความประณีต
                             สวยงามอย่างมาก
                             รวมถึงมีไฮไลท์อย่าง รัตนเจดีย์ ที่สร้างในรูปแบบของศิลปะอินเดียพุทธคยา และยังมีเก๋งจีน ไว้ประดิษฐาน เจ้าแม่กวนอิม มีหอพระแก้วมรกตจำลอง ซึ่งถ้ามองวิวจากยอดเขาก็
-                            สามารถชมทัศนียภาพสวยๆ ของกว๊านพะเยาได้ด้วย                     </p>
+                            สามารถชมทัศนียภาพสวยๆ ของกว๊านพะเยาได้ด้วย </p>
                         <img class="image-content py-3" src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
 
                         <img class="image-content" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
                         <br><br>
-                        <p class="text-content">วัดอนาลโยทิพยาราม แห่งนี้ คือสถานที่ปฏิบัติธรรมรายล้อมไปด้วยธรรมชาติ สร้างขึ้นด้วยแรงศรัทธาของผู้เลื่อมใสในพระพุทธศาสนาและวัตรปฏิบัติของ พระปัญญาพิศาลเถร หรือ หลวงพ่อไพบูลย์ สุมังคโล พระสายวิปัสนาที่มีลูกศิษย์ให้ความเคารพศรัทธาอย่างมาก จนทำให้เกิดสถานที่ปฏิบัติธรรมบนดอยบุษราคัมแห่งนี้นั่นเอง  </p>
+                        <p class="text-content">วัดอนาลโยทิพยาราม แห่งนี้ คือสถานที่ปฏิบัติธรรมรายล้อมไปด้วยธรรมชาติ สร้างขึ้นด้วยแรงศรัทธาของผู้เลื่อมใสในพระพุทธศาสนาและวัตรปฏิบัติของ พระปัญญาพิศาลเถร หรือ หลวงพ่อไพบูลย์ สุมังคโล พระสายวิปัสนาที่มีลูกศิษย์ให้ความเคารพศรัทธาอย่างมาก
+                            จนทำให้เกิดสถานที่ปฏิบัติธรรมบนดอยบุษราคัมแห่งนี้นั่นเอง </p>
                         {{-- end เนื้อหา --}}
 
 
@@ -200,16 +201,16 @@
                         <p>
                         <h3><b>Tage : </b></h3>
                         <span>
-                            <a href="{{url('/touristattractions/tags')}}" type="button" class="btn btn-outline-info">ธรรมชาติ</a>
-                            <a href="{{url('/touristattractions/tags')}}" type="button" class="btn btn-outline-info">วัด</a>
-                            <a href="{{url('/touristattractions/tags')}}" type="button" class="btn btn-outline-info">ภูเขา</a>
-                            <a href="{{url('/touristattractions/tags')}}" type="button" class="btn btn-outline-info">ดอย</a>
-                            <a href="{{url('/touristattractions/tags')}}" type="button" class="btn btn-outline-info">กางเต้นท์</a>
-                            <a href="{{url('/touristattractions/tags')}}" type="button" class="btn btn-outline-info">ชมวิว</a>
-                            <a href="{{url('/touristattractions/tags')}}" type="button" class="btn btn-outline-info">พะเยา</a>
-                            <a href="{{url('/touristattractions/tags')}}" type="button" class="btn btn-outline-info">ทะเลหมอก</a>
-                            <a href="{{url('/touristattractions/tags')}}" type="button" class="btn btn-outline-info">กิจกรรมกลางแจ้ง</a>
-                            <a href="{{url('/touristattractions/tags')}}" type="button" class="btn btn-outline-info">เดินป่า</a>
+                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">ธรรมชาติ</a>
+                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">วัด</a>
+                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">ภูเขา</a>
+                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">ดอย</a>
+                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">กางเต้นท์</a>
+                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">ชมวิว</a>
+                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">พะเยา</a>
+                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">ทะเลหมอก</a>
+                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">กิจกรรมกลางแจ้ง</a>
+                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">เดินป่า</a>
                         </span>
                         </p>
 
@@ -442,109 +443,108 @@
     <!-- end script slider -->
 
 
-<script>
-    $('#responsive').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 2,
-  arrows:false,
-  slidesToScroll: 2,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
-</script>
-
-
-
-
-<script>
-    $('.slider-single').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: false,
-        adaptiveHeight: true,
-        infinite: false,
-        useTransform: true,
-        speed: 400,
-        cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
-    });
-
-    $('.slider-nav')
-        .on('init', function(event, slick) {
-            $('.slider-nav .slick-slide.slick-current').addClass('is-active');
-        })
-        .slick({
-            arrows: true,
-            slidesToShow: 4,
+    <script>
+        $('#responsive').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 2,
+            arrows: false,
             slidesToScroll: 2,
-            dots: false,
-            focusOnSelect: false,
-            infinite: false,
             responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    arrows: true,
-                    slidesToShow: 5,
-                    slidesToScroll: 5,
-                    centerPadding: '2px',
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            }, {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                    centerPadding: '250px',
-                }
-            }, {
-                breakpoint: 420,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                }
-            }]
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+    </script>
+
+
+
+
+    <script>
+        $('.slider-single').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: false,
+            adaptiveHeight: true,
+            infinite: false,
+            useTransform: true,
+            speed: 400,
+            cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
         });
 
-    $('.slider-single').on('afterChange', function(event, slick, currentSlide) {
-        $('.slider-nav').slick('slickGoTo', currentSlide);
-        var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
-        $('.slider-nav .slick-slide.is-active').removeClass('is-active');
-        $(currrentNavSlideElem).addClass('is-active');
-    });
+        $('.slider-nav')
+            .on('init', function(event, slick) {
+                $('.slider-nav .slick-slide.slick-current').addClass('is-active');
+            })
+            .slick({
+                arrows: true,
+                slidesToShow: 4,
+                slidesToScroll: 2,
+                dots: false,
+                focusOnSelect: false,
+                infinite: false,
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        arrows: true,
+                        slidesToShow: 5,
+                        slidesToScroll: 5,
+                        centerPadding: '2px',
+                    }
+                }, {
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                        centerPadding: '250px',
+                    }
+                }, {
+                    breakpoint: 420,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                }]
+            });
 
-    $('.slider-nav').on('click', '.slick-slide', function(event) {
-        event.preventDefault();
-        var goToSingleSlide = $(this).data('slick-index');
+        $('.slider-single').on('afterChange', function(event, slick, currentSlide) {
+            $('.slider-nav').slick('slickGoTo', currentSlide);
+            var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+            $('.slider-nav .slick-slide.is-active').removeClass('is-active');
+            $(currrentNavSlideElem).addClass('is-active');
+        });
 
-        $('.slider-single').slick('slickGoTo', goToSingleSlide);
-    });
-</script>
+        $('.slider-nav').on('click', '.slick-slide', function(event) {
+            event.preventDefault();
+            var goToSingleSlide = $(this).data('slick-index');
+
+            $('.slider-single').slick('slickGoTo', goToSingleSlide);
+        });
+    </script>
 
 </body>
 

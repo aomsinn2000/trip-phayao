@@ -64,7 +64,7 @@
     <link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="{{asset ('assets/plugins/summernote/summernote-bs4.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css') }}" rel="stylesheet">
 
     {{-- script datatogle เปิด/ปิด --}}
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
@@ -197,6 +197,7 @@
         .bootstrap-tagsinput {
             width: 80%;
         }
+
         .dropify-wrapper {
             display: block;
             position: relative;
@@ -242,35 +243,37 @@
         <div class="main-content app-content px-5">
             <div class="container-fluid">
 
-             {{-- header บอกว่าอยู่หน้าไหน --}}
-             <div class="breadcrumb-header justify-content-between">
-                <div class="my-auto">
-                    <div class="d-flex">
-                        <h5 class="content-title mb-0 my-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg"style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
-                                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-                              </svg>
-                            ตั้งค่า >
-                        </h5>
-                        <a href="{{ url('/destination-folders/') }}">
-                            <h5 class="content-title mb-0 my-auto px-2" style="padding-top: 1px;">ตั้งค่าโฟลเดอร์สถานที่ยอดฮิต ></h5>
-                        </a>
-                        <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;">แก้ไขโฟลเดอร์</h5>
+                {{-- header บอกว่าอยู่หน้าไหน --}}
+                <div class="breadcrumb-header justify-content-between">
+                    <div class="my-auto">
+                        <div class="d-flex">
+                            <h5 class="content-title mb-0 my-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg"style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                </svg>
+                                ตั้งค่า >
+                            </h5>
+                            <a href="{{ url('/destination-folders/') }}">
+                                <h5 class="content-title mb-0 my-auto px-2" style="padding-top: 1px;">ตั้งค่าโฟลเดอร์สถานที่ยอดฮิต ></h5>
+                            </a>
+                            <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;">แก้ไขโฟลเดอร์</h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {{-- end header บอกว่าอยู่หน้าไหน --}}
+                {{-- end header บอกว่าอยู่หน้าไหน --}}
 
 
 
 
-                <form action="">
+                <form action="{{ url('/destination-folders/save-update/' . $destinationFolder->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="col-xl-7">
                         <div class="card card-body">
                             <div class="form-group row py-2">
                                 <label for="" class="col-sm-3 col-form-label">รหัสโฟลเดอร์</label>
                                 <div class="col-sm-3">
-                                    <input type="text" readonly class="form-control" id="" value="AE21120001">
+                                    <input type="text" readonly class="form-control" id="" value="{{ $destinationFolder->folder_no }}">
                                 </div>
 
                             </div>
@@ -285,7 +288,7 @@
                                 </div>
                                 <div class="row-6 ">
                                     <label for="">สถานะ</label>
-                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" data-toggle="toggle" data-size="xs" name="is_status" {{ $destinationFolder->is_status == 1 ? 'checked' : '' }}>
                                 </div>
                             </div>
 
@@ -293,17 +296,16 @@
                             <div class="">
                                 <label>ชื่อโฟลเดอร์สถานที่ (TH)</label>
                                 <span id="showNumTh" style="float: right;">0/100</span>
-                                <input type="text" class="form-control nameDealTh mb-2" id="" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อสถานที่ภาษาไทย">
+                                <input type="text" class="form-control nameDealTh mb-2" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อสถานที่ภาษาไทย" name="name_th" value="{{ $destinationFolder->name_th }}">
                                 <label>ชื่อโฟลเดอร์สถานที่ (EN)</label>
                                 <span id="showNumEn" style="float: right;">0/100</span>
-                                <input type="text" class="form-control  mb-2" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อสถานที่ภาษาอังกฤษ">
+                                <input type="text" class="form-control  mb-2" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อสถานที่ภาษาอังกฤษ" name="name_en" value="{{ $destinationFolder->name_en }}">
                                 <label>คำโปรย (TH)</label>
-                                <input type="text" class="form-control  mb-2" id=""  placeholder="กรุณากรอกคำโปรยภาษาไทย">
+                                <textarea id="textFit" type="text" class="form-control  mb-2" placeholder="กรุณากรอกคำโปรยภาษาไทย" name="slogan_th">{{ $destinationFolder->slogan_th }}</textarea>
                                 <label>คำโปรย (EN)</label>
-                                <input type="text" class="form-control  mb-2" id="" placeholder="กรุณากรอกคำโปรยภาษาอังกฤษ">
+                                <textarea id="textFit" type="text" class="form-control  mb-2" placeholder="กรุณากรอกคำโปรยภาษาอังกฤษ" name="slogan_en">{{ $destinationFolder->slogan_en }}</textarea>
                             </div>
                         </div>
-
                         <div class="card card-body">
                             <div class="row py-3">
                                 <svg style="margin-top: 3px; margin-left:10px; color:#00AEEF;"class="bi bi-exclamation-circle-fill " xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -314,19 +316,19 @@
                             <div class="row my-2">
                                 <div class="form-group col-6">
                                     <label>ตำบล</label>
-                                    <input type="text" id="sub_district" class="form-control" placeholder="กรุณากรอกตำบล">
+                                    <input type="text" id="sub_district" class="form-control" placeholder="กรุณากรอกตำบล" name="sub_district" value="{{ $destinationFolder->sub_district }}">
                                 </div>
                                 <div class="form-group col-6">
                                     <label>อำเภอ</label>
-                                    <input type="text" id="district" class="form-control" placeholder="กรุณากรอกอำเภอ">
+                                    <input type="text" id="district" class="form-control" placeholder="กรุณากรอกอำเภอ" name="district" value="{{ $destinationFolder->district }}">
                                 </div>
                                 <div class="form-group col-6">
                                     <label>จังหวัด</label>
-                                    <input type="text" id="province" class="form-control" placeholder="กรุณากรอกจังหวัด">
+                                    <input type="text" id="province" class="form-control" placeholder="กรุณากรอกจังหวัด" name="province" value="{{ $destinationFolder->province }}">
                                 </div>
                                 <div class="form-group col-6">
                                     <label>รหัสไปรษณีย์</label>
-                                    <input type="text" id="postcode" class="form-control" placeholder="กรุณากรอกรหัสไปรษณีย์">
+                                    <input type="text" id="postcode" class="form-control" placeholder="กรุณากรอกรหัสไปรษณีย์" name="postcode" value="{{ $destinationFolder->postcode }}">
                                 </div>
                             </div>
 
@@ -336,19 +338,8 @@
                                     <span id="maxContentPost"style="float: right;">0/800</span>
                                 </div>
                             </div>
-                            <textarea class="summernote1"></textarea>
+                            <textarea id="textFit" class="summernote1" name="detail_th">{{ $destinationFolder->detail_th }}</textarea>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -361,7 +352,9 @@
                                 <span id=""style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div><br>
                             <div class="mb-4" style="width: 415px;">
-                                <input type="file" class="input-upload-imageBanner"data-default-file="{{asset('/assets/images/banner1.jpg')}}" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
+                                <input type="file" class="input-upload-imageBanner" data-default-file="{{ $destinationFolder->banner_image ? asset('/storage/' . $destinationFolder->banner_image) : '' }}" data-height="198" data-max-file-size="10M"
+                                    data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" name="banner_image" />
+                                <input type="hidden" value="0" name="banner_delete">
                             </div>
                             <br><br>
 
@@ -373,61 +366,60 @@
                                 <span id=""style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div>
                             <div class="py-2" style="width: 210px;">
-                                <input type="file" class="input-upload-image" data-default-file="{{asset('/assets/images/hotel2.jpg')}}" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
+                                <input type="file" class="input-upload-image" data-default-file="{{ $destinationFolder->cover_image ? asset('/storage/' . $destinationFolder->cover_image) : '' }}" data-height="198" data-max-file-size="10M"
+                                    data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" name="cover_image" />
+                                <input type="hidden" value="0" name="cover_delete">
                             </div><br><br>
 
 
 
                             <div class="">
                                 <svg style="color:#00AEEF;"xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16">
-                                    <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                    <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                                    <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
-                                  </svg>
+                                    <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                    <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                                    <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z" />
+                                </svg>
                                 วิดีโอ
                                 <span id=""style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div>
                             <div class="py-0">
                                 <div class="form-group row py-2">
-                                    <label for="link-video" style="text-align:center"class="col-sm-2 col-form-label"><b><h5>Link*</h5></b></label>
+                                    <label for="link-video" style="text-align:center"class="col-sm-2 col-form-label"><b>
+                                            <h5>Link*</h5>
+                                        </b></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="link" value="{{ $destinationFolder->link }}">
                                     </div>
-
                                 </div>
-
-
                             </div>
                         </div>
-
-
-
-
-
                         <div class="card card-body">
                             <div class="form-group row">
                                 <label for="user" class="col-sm-2 col-form-label">ผู้สร้าง</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" readonly id="user" value="นางสาวเบญจวรรณ บัวพิทักษ์">
+                                    <input type="text" class="form-control" readonly id="user" value="{{ $destinationFolder->creator }}">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2" style="float: left;">
-                                    <button type="button"  data-toggle="modal" data-target="#trashAll" style="border-radius:50%; height:40px;border-color:#ffff;" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="25"></button>
+                                    <button type="button" data-toggle="modal" data-target="#trashAll" style="border-radius:50%; height:40px;border-color:#ffff;" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="25"></button>
                                 </div>
                                 <div class="col-9">
-                                    <a href="{{url('/destination-folders/')}}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
+                                    <a href="{{ url('/destination-folders/') }}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
                                     <span class="px-2">
-                                        <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
+                                        <button type="submit" class="btn btn-info" style="width:150px;">บันทึก</button>
                                     </span>
                                 </div>
 
                             </div>
                         </div>
 
+                </form>
 
-                          <!-- Modal ถังขยะ -->
-                      <div class="modal fade" id="trashAll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <!-- Modal ถังขยะ -->
+                <div class="modal fade" id="trashAll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <form action="{{ url('/destination-folders/delete/' . $destinationFolder->id) }}" method="POST">
+                        @csrf
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-body text-center">
@@ -436,56 +428,21 @@
                                     <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                         <path
                                             d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                    </svg>
+                                    </svg><br><br>
+                                    <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะหายไปตลอดกาล ไม่สามารถกู้คืนได้</div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                    <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
+                                    <button type="submit" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!--end Modal ถังขยะ -->
-
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-                </form>
-
-
-
-
-
-
-
+                    </form>
+                </div>
+                <!--end Modal ถังขยะ -->
             </div>
-
-
-
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- JQuery min js -->
     <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
@@ -539,9 +496,9 @@
 
 
     {{-- script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea ฟังก์ชันเสริม --}}
-    <script src="{{asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.autotab.min.js')}}"></script>
-    {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea ฟังก์ชันเสริม--}}
+    <script src="{{ asset('assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.autotab.min.js') }}"></script>
+    {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea ฟังก์ชันเสริม --}}
 
 
     {{-- query ตำบล อำเภอจังหวัด --}}
@@ -561,12 +518,16 @@
     </script>
     {{-- end query ตำบล อำเภอจังหวัด --}}
 
-
-
-
-
-
-
+    {{-- ทำให้textarea ขยายตามข้อมูลทันทีที่รีหน้าเข้ามา --}}
+    <script>
+        $(function() {
+            $('#textFit').on('input', function() {
+                this.style.height = 'auto';
+                this.style.height = this.scrollHeight + 'px';
+            }).trigger('input');
+        });
+    </script>
+    {{-- end ทำให้textarea ขยายตามข้อมูลทันทีที่รีหน้าเข้ามา --}}
 
     {{-- script อัพโหลดรูปภาพ banner ใหญ่ --}}
     <script type="text/javascript">
@@ -581,6 +542,8 @@
                 errorLine: '<p class="dropify-error"></p>',
                 errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
             }
+        }).on('dropify.afterClear', function(event, element) {
+            $('input[name="banner_delete"]').val('1');
         });
     </script>
     {{-- end script อัพโหลดรูปภาพ banner ใหญ่ --}}
@@ -598,6 +561,8 @@
                 errorLine: '<p class="dropify-error"></p>',
                 errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
             }
+        }).on('dropify.afterClear', function(event, element) {
+            $('input[name="cover_delete"]').val('1');
         });
     </script>
     {{-- end script อัพโหลดรูปภาพปกโฟลเดอร์}
@@ -649,12 +614,6 @@
     {{-- script นับจำนวนตัวอักษรที่พิมพ์ไม่เกิน 300ตัว การเดินทาง ฤดูกาลท่องเที่ยว --}}
 
 
-
-
-
-
-
-
     {{-- ลิมิตพิมพ์ได้กี่ตัว  เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
     <script type="text/javascript">
         function registerSummernote(element, placeholder, max, callbackMax) {
@@ -697,13 +656,6 @@
         });
     </script>
     {{-- end เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
-
-
-
-
-
-
-
 
 </body>
 

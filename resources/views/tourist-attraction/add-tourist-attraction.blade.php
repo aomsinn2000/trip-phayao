@@ -867,8 +867,6 @@
         })();
     </script> --}}
     {{-- end script เลือกแท็กโฟลเดอร์ --}}
-
-
     <script>
         (function() {
             $.ajax({
@@ -901,7 +899,8 @@
                         enforceWhitelist: true,
                         valueField: 'value', // specify the name of the value field
                         textField: 'name' // specify the name of the label field
-                    });console.log(tagify)
+                    });
+                    console.log(tagify)
                     tagify.on("dropdown:show", onSuggestionsListUpdate)
                         .on("dropdown:hide", onSuggestionsListHide)
                         .on('dropdown:scroll', onDropdownScroll)
@@ -935,22 +934,19 @@
         })();
     </script>
 
+    <script data-name="outside-of-the-box">
+        (function() {
 
-
-
-<script data-name="outside-of-the-box">
-    (function(){
-
-    var input = document.querySelector('input[name=tags-outside]')
-    // init Tagify script on the above inputs
-    var tagify = new Tagify(input, {
-      whitelist: ["ชมวิว", "แคมป์ปิ้ง", "เดินป่า"],
-      dropdown: {
-        position: "input",
-        enabled : 0 // always opens dropdown when input gets focus
-      }
-    })
-    })()
+            var input = document.querySelector('input[name=tags-outside]')
+            // init Tagify script on the above inputs
+            var tagify = new Tagify(input, {
+                whitelist: ["ชมวิว", "แคมป์ปิ้ง", "เดินป่า"],
+                dropdown: {
+                    position: "input",
+                    enabled: 0 // always opens dropdown when input gets focus
+                }
+            })
+        })()
     </script>
 </body>
 

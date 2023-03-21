@@ -29,7 +29,8 @@ class ResetPasswordController extends Controller
     protected $redirectTo = RouteServiceProvider::HOME;
 
 
-    public function showResetPassword(){
+    public function showResetPassword()
+    {
         return view('auth.passwords.reset');
     }
 }

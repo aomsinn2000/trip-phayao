@@ -15,7 +15,6 @@
     <!--end font style -->
 
 
-
     <link href="{{ asset('assets/css/layouts/navbar.css') }}" rel="stylesheet">
 
 
@@ -52,8 +51,8 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link " aria-current="page" href="{{ url('/') }}">หน้าหลัก</a>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ url('/') }}">หน้าหลัก</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/specialdeals/') }}">ดีลสุดพิเศษ</a>
@@ -65,7 +64,7 @@
                         <a class="nav-link" href="{{ url('/activities/') }}">กิจกรรม</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/pakagetours/') }}">แพ็คเกจทัวร์</a>
+                        <a class="nav-link" href="{{ url('/packagetours/') }}">แพ็คเกจทัวร์</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/articles/') }}">บทความ</a>
@@ -73,17 +72,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/services/') }}">บริการต่างๆ</a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('/contactus/') }}">ติดต่อเรา</a>
                     </li>
                 </ul>
             </div>
 
-
-
             <!-- <div style="padding-left: 250px;"></div> -->
             <form class="d-flex px-1">
-                <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2 search" type="search" placeholder="ค้นหา สถานที่ท่องเที่ยว/ดีลพิเศษ/กิจกรรม" aria-label="Search">
                 <button class="btn btn-outline-warning" type="submit"><i class="bi bi-search"></i></button>
             </form>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,8 +102,6 @@
             </div>
         </div>
     </nav>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 

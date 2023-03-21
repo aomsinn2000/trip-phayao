@@ -609,6 +609,16 @@
     </script>
     {{-- end select เอาไว้เลือกแท็ก --}}
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputField = document.querySelector('#searchText');
+            const tagArray = inputField.value.split(',');
+            pureScriptSelect('#multiSelect', tagArray);
+            console.log(inputField);
+            console.log(pureScriptSelect);
+            console.log(multiSelect);
+        });
+    </script>
 
 
     {{-- query ตำบล อำเภอจังหวัด --}}
@@ -992,7 +1002,6 @@
         })();
     </script>
 
-
     <script data-name="outside-of-the-box">
         (function() {
 
@@ -1007,12 +1016,6 @@
             })
         })()
     </script>
-
-
-
-
-
-
 
 
 </body>
