@@ -11,7 +11,7 @@
     <meta name="Keywords" content="" />
 
     <!-- Title -->
-    <title>Phayao Trip</title>
+    <title>จัดการดีลสุดพิเศษ</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -64,7 +64,9 @@
     <style>
         .btn-color {
             background-color: #ffff;
-        } .main-nav-line .nav-link {
+        }
+
+        .main-nav-line .nav-link {
             padding: 0;
             color: #4d5875;
             position: relative;
@@ -129,6 +131,28 @@
             padding: 3px;
         }
 
+        .popularOff {
+            background-color: #ff0000;
+            width: 90px;
+            height: 30px;
+            color: #ffff;
+            border-radius: 20px;
+            padding: 3px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .popularOn {
+            background-color: #ffbe00;
+            width: 90px;
+            height: 30px;
+            color: #ffff;
+            border-radius: 20px;
+            padding: 3px;
+            text-align: center;
+            margin: auto;
+        }
+
         .selectStyle {
             font-size: 0.875rem;
             font-weight: 400;
@@ -157,6 +181,27 @@
             min-width: 90px !important;
             min-height: 30px !important;
             border-radius: 50px;
+        }
+
+        .toggle.btn-sm {
+            min-width: 75px !important;
+            min-height: 28px !important;
+            border-radius: 50px;
+        }
+
+        .toggle-on.btn-sm {
+            padding-right: 1rem;
+            background-color: #ffbe00;
+            padding-top: 4px;
+            font-size: 12px;
+        }
+
+        .toggle-off.btn-sm {
+            padding-right: 1rem;
+            background-color: #ff0000;
+            color: #fff;
+            padding-top: 4px;
+            font-size: 12px;
         }
     </style>
 
@@ -189,7 +234,8 @@
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path
+                                        d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
                                 </svg>
                                 ดีลพิเศษ >
                             </h5>
@@ -197,8 +243,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
                 <div class="row row-sm">
                     <div class="col-xl-12">
@@ -216,10 +260,9 @@
                                 <div style="padding-top:60px;"></div>
                                 <nav>
                                     <div class="nav main-nav-line" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-specialDeal" role="tab" aria-selected="true"><b>ทั้งหมด (100)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-specialDeal" role="tab" aria-selected="false"><b>เปิดการใช้งาน (50)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-specialDeal" role="tab" aria-selected="false"><b>ปิดการใช้งาน (50)</b></a>
-
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-specialDeal" role="tab" aria-selected="true"><b id="total">ทั้งหมด ()</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-specialDeal" role="tab" aria-selected="false"><b id="on">เปิดการใช้งาน () </b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-specialDeal" role="tab" aria-selected="false"><b id="off">ปิดการใช้งาน ()</b></a>
                                     </div>
                                 </nav>
                                 <div class="tab-content" id="nav-tabContent">
@@ -241,7 +284,7 @@
                                             <div class="col-4 py-3">
                                                 <div class="row">
                                                     <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                    <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
@@ -252,8 +295,9 @@
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
                                                     <th style="text-align: left;">รหัสดีล</th>
-                                                    <th style="text-align: left;">ชื่อดีล</th>
-                                                    <th style="text-align: center;">หมวดหมู่
+                                                    <th>ชื่อดีล</th>
+                                                    <th>ยอดนิยม</th>
+                                                    <th>หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
                                                             <option selected>ทั้งหมด</option>
                                                             <option style="padding-top: 10px;">ที่พัก</option>
@@ -262,8 +306,8 @@
                                                     </th>
                                                     <th>ระยะเวลา</th>
                                                     <th>ผู้สร้าง</th>
-                                                    <th>แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
+                                                    <th>ผู้แก้ไขล่าสุด</th>
+                                                    <th>สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
                                                             <option>เปิดใช้งาน</option>
@@ -274,50 +318,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/special-deals/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>ไม่กำหนด</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/special-deals/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -340,7 +340,7 @@
                                             <div class="col-4 py-3">
                                                 <div class="row">
                                                     <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                    <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
@@ -351,8 +351,9 @@
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
                                                     <th style="text-align: left;">รหัสดีล</th>
-                                                    <th style="text-align: left;">ชื่อดีล</th>
-                                                    <th style="text-align: center;">หมวดหมู่
+                                                    <th>ชื่อดีล</th>
+                                                    <th>ยอดนิยม</th>
+                                                    <th>หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
                                                             <option selected>ทั้งหมด</option>
                                                             <option style="padding-top: 10px;">ที่พัก</option>
@@ -361,56 +362,12 @@
                                                     </th>
                                                     <th>ระยะเวลา</th>
                                                     <th>ผู้สร้าง</th>
-                                                    <th>แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ </th>
+                                                    <th>ผู้แก้ไขล่าสุด</th>
+                                                    <th>สถานะ </th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/special-deals/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>ไม่กำหนด</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statusOn">เปิดใช้งาน</div>
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/special-deals/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statusOn">เปิดใช้งาน</div>
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -433,7 +390,7 @@
                                             <div class="col-4 py-3">
                                                 <div class="row">
                                                     <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                    <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
@@ -441,11 +398,12 @@
                                             </div>
                                         </div>
                                         <table class="table table-striped position-relative my-3 " id="offSpecialDeal-table">
-                                            <thead class="thead-dark" >
+                                            <thead class="thead-dark">
                                                 <tr style="text-align: center; height:60px !important;">
                                                     <th style="text-align: left;">รหัสดีล</th>
-                                                    <th style="text-align: left;">ชื่อดีล</th>
-                                                    <th style="text-align: center;">หมวดหมู่
+                                                    <th>ชื่อดีล</th>
+                                                    <th>ยอดนิยม</th>
+                                                    <th>หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
                                                             <option selected>ทั้งหมด</option>
                                                             <option style="padding-top: 10px;">ที่พัก</option>
@@ -454,76 +412,29 @@
                                                     </th>
                                                     <th>ระยะเวลา</th>
                                                     <th>ผู้สร้าง</th>
-                                                    <th>แก้ไข</th>
+                                                    <th>ผู้แก้ไขล่าสุด</th>
                                                     <th style="text-align: center;">สถานะ </th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/special-deals/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>ไม่กำหนด</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statusOff">ปิดใช้งาน</div>
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/special-deals/edit/{id}') }}" class="text-idSpecailDeal">DEAL64001</a></td>
-                                                    <td style="text-align: left;">ดีลสุดพิเศษ ทุกสายการบิน ทุกโรงแรม</td>
-                                                    <td>ที่พัก</td>
-                                                    <td>01/01/2565 - 01/01/2565 </td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statusOff">ปิดใช้งาน</div>
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                     {{-- end ปิดการใช้งาน --}}
-
-
-
                                 </div>
 
-
-
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
 
-                <!-- Modal ถึงขยะ -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- Modal ถึงขยะ -->
+            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <form action="{{ url('/special-deals/delete/') }}" method="POST">
+                    @csrf
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-body text-center">
@@ -535,16 +446,16 @@
                                 </svg><br><br>
                                 <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ ไม่สามารถกู้คืนได้</div>
                             </div>
-                            <div class="modal-footer ">
+                            <input type="hidden" id="deleteId" name="id">
+                            <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
+                                <button type="submit" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                 <!--end Modal ถึงขยะ -->
+                </form>
             </div>
-            <!-- Container closed -->
+            <!--end Modal ถึงขยะ -->
         </div>
         <!-- main-content closed -->
 
@@ -616,59 +527,60 @@
 
 
 
-     {{-- Script ปฏิทิน --}}
-     <link type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" />
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-     {{-- End Script ปฏิทิน --}}
+
+    {{-- Script ปฏิทิน --}}
+    <link type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    {{-- End Script ปฏิทิน --}}
 
 
-   {{-- Script ปฏิทิน --}}
-     <script>
-         $('input[name="datefilter"]').daterangepicker({
-             autoUpdateInput: false,
-             locale: {
-                 cancelLabel: 'Clear'
-             }
-         });
+    {{-- Script ปฏิทิน --}}
+    <script>
+        $('input[name="datefilter"]').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
 
-         $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-             $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
-         });
+        $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+        });
 
-         $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-             $(this).val('');
-         });
+        $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+            $(this).val('');
+        });
 
-         var start = moment().subtract(1, 'month');
-         var end = moment();
+        var start = moment().subtract(1, 'month');
+        var end = moment();
 
-         function cb(start, end) {
-             start = moment(start);
-             end = moment(end);
-             $('.daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-         }
+        function cb(start, end) {
+            start = moment(start);
+            end = moment(end);
+            $('.daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
 
-         $('.daterange').daterangepicker({
-             startDate: start,
-             endDate: end,
-             autoUpdateInput: true,
-             alwaysShowCalendars: true,
-             locale: {
-                 format: 'DD/MM/YYYY',
-             },
-             ranges: {
-                 'Today': [moment(), moment()],
-                 'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                 'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                 'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                 'This Month': [moment().startOf('month'), moment().endOf('month')],
-                 'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-             }
-         }, cb);
+        $('.daterange').daterangepicker({
+            startDate: start,
+            endDate: end,
+            autoUpdateInput: true,
+            alwaysShowCalendars: true,
+            locale: {
+                format: 'DD/MM/YYYY',
+            },
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
 
-         cb(start, end);
-     </script>
- {{-- End Script ปฏิทิน --}}
+        cb(start, end);
+    </script>
+    {{-- End Script ปฏิทิน --}}
 
     {{-- script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
     <script>
@@ -681,13 +593,44 @@
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
             $('#offSpecialDeal-table').DataTable().columns.adjust();
         });
-
     </script>
     {{-- End script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
 
 
 
+    {{-- script ส่งid record จากปุ่มลบไปยังmodal --}}
+    <script>
+        $(document).on("click", "#sendIdDelete", function() {
+            var specialDealId = $(this).data('id');
+            $("#deleteId").val(specialDealId);
+            console.log(specialDealId);
+        });
+    </script>
+    {{-- end script --}}
 
+    {{-- ตัวนับจำนวน --}}
+    <script>
+        function countData() {
+            $.ajax({
+                url: "/special-deals/count",
+                type: "GET",
+                dataType: "json",
+                success: function(count) {
+                    // console.log(count.total);
+                    // console.log(count.on);
+                    // console.log(count.off);
+                    $('#total').text('ทั้งหมด (' + count.total + ')');
+                    $('#on').text('เปิดการใช้งาน (' + count.on + ')');
+                    $('#off').text('ปิดการใช้งาน (' + count.off + ')');
+                },
+                error: function() {
+                    alert('dfsdf');
+                }
+            })
+        }
+        countData();
+    </script>
+    {{-- end ตัวนับจำนวน --}}
 
     <script>
         $('#allSpecialDeal-table').DataTable({
@@ -709,25 +652,134 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [
-                {
-                "width": "40px"
+            ajax: {
+                url: "/special-deals/special-deal-all-datatable",
+                type: "POST",
+                datatype: "json",
+                data: function(data) {
+                    data._token = "{{ csrf_token() }}";
+                    // data.keyword = $('#cod-prepared-tab #search').val();
+                    // data.account = $('#cod-prepared-tab #account-filter').val();
+                    // data.date_filter = $('#cod-prepared-tab input[name="datefilter"]').val();
+                }
+            },
+            columns: [{
+                data: 'รหัสดีล',
+                width: "80px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;"><a href="/special-deals/edit/${row.id}" class="text-idSpecailDeal">${row.deal_no}</a></td>`
+                }
             }, {
-                "width": "250px",
+                data: 'ชื่อดีล',
+                width: "250px",
+                render: function(data, type, row) {
+                    // console.log(row)
+                    return `<td>${row.name_th ?? 'ไม่ได้ตั้งชื่อ'}</td>`
+                }
             }, {
-                "width": "80px"
+                data: 'ยอดนิยม',
+                width: "80px",
+                render: function(data, type, row) {
+                    return `<td>
+                        <input type="checkbox" data-on="เปิด" data-off="ปิด" data-toggle="toggle" data-size="sm"
+                        class="switchpopular" id="${row.id}" ${ row.is_popular === 1 ? 'checked' : '' }></td>`
+                }
             }, {
-                "width": "180px"
+                data: 'หมวดหมู่',
+                width: "120px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.special_deal_category ? row.special_deal_category.name_th:'ไม่ได้กำหนดหมวดหมู่'}</td>`
+                }
             }, {
-                "width": "250px"
+                data: 'ระยะเวลา',
+                width: "180px",
+                render: function(data, type, row) {
+                    if (row.end_date == "") {
+                        var date = "ไม่มีกำหนด";
+                    } else {
+                        var date = `${row.start_date} - ${row.end_date}`;
+                    }
+                    return `${date}`
+                }
             }, {
-                "width": "250px"
+                data: 'ผู้สร้าง',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.creator ?? 'ผู้สร้างไม่มีชื่อทำให้ระบบไม่ได้บันทึก' }<br>
+                            <label style="color:#696565;">${ row.created_at ? moment(row.created_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                            </td>`
+                }
             }, {
-                "width": "80px"
+                data: 'ผู้แก้ไขล่าสุด',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.editor ?? 'ยังไม่เคยมีการแก้ไข' }<br>
+                            <label style="color:#696565;">${ row.editor ? moment(row.updated_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                            </td>`
+                }
             }, {
-                "width": "150px"
-            }],
+                data: 'สถานะ',
+                width: "80px",
+                // className: "switchstatus",
+                render: function(data, type, row) {
+                    return `<td><label class="switch"><input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" data-toggle="toggle" data-size="xs"
+                    class="switchstatus" id="${row.id}" ${ row.is_status == 1 ? 'checked' : '' }><span class="slider round"></span></label></td>`
+                }
 
+            }, {
+                data: 'ถังขยะ',
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td><button class="btn-trash" data-toggle="modal" data-target="#delete" id="sendIdDelete" data-id="${row.id}">
+                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path
+                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg>
+                            </button>
+                            </td>`
+                }
+            }],
+            "createdRow": function(row, data, dataIndex) {
+                $(row).addClass('switchstatus switchpopular');
+                $(row).find('.switchstatus').bootstrapToggle();
+                $(row).find('.switchpopular').bootstrapToggle();
+                $(row).on('change', '.switchstatus', function() {
+                    var id = $(this).attr('id', data.id);
+                    $.ajax({
+                        url: '/special-deals/switch-status',
+                        type: "POST",
+                        datatype: 'json',
+                        data: {
+                            _token: '{!! csrf_token() !!}',
+                            id: data.id,
+                        },
+                    }).done(function(response) {
+                        // console.log(response);
+                        $('#allSpecialDeal-table').DataTable().ajax.reload();
+                        $('#onSpecialDeal-table').DataTable().ajax.reload();
+                        $('#offSpecialDeal-table').DataTable().ajax.reload();
+                        countData();
+                    });
+                    // console.log(id);
+                });
+                $(row).on('change', '.switchpopular', function() {
+                    var id = $(this).attr('id', data.id);
+                    $.ajax({
+                        url: '/special-deals/switch-popular',
+                        type: "POST",
+                        datatype: 'json',
+                        data: {
+                            _token: '{!! csrf_token() !!}',
+                            id: data.id,
+                        },
+                    }).done(function(response) {
+                        $('#allSpecialDeal-table').DataTable().ajax.reload();
+                        $('#onSpecialDeal-table').DataTable().ajax.reload();
+                        $('#offSpecialDeal-table').DataTable().ajax.reload();
+                    });
+                    // console.log(id);
+                });
+            },
         });
     </script>
 
@@ -753,24 +805,90 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [ {
-                "width": "40px"
+            ajax: {
+                url: "/special-deals/special-deal-on-datatable",
+                type: "POST",
+                datatype: "json",
+                data: function(data) {
+                    data._token = "{{ csrf_token() }}";
+                    // data.keyword = $('#cod-prepared-tab #search').val();
+                    // data.account = $('#cod-prepared-tab #account-filter').val();
+                    // data.date_filter = $('#cod-prepared-tab input[name="datefilter"]').val();
+                    // data.class = $('.switchstatus').attr('class');
+                }
+            },
+            columns: [{
+                data: 'รหัสดีล',
+                width: "80px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;"><a href="/special-deals/edit/${row.id}" class="text-idSpecailDeal">${row.deal_no}</a></td>`
+                }
             }, {
-                "width": "250px",
+                data: 'ชื่อดีล',
+                width: "250px",
+                render: function(data, type, row) {
+                    return `<td>${row.name_th ?? 'ไม่ได้ตั้งชื่อ'}</td>`
+                }
             }, {
-                "width": "80px"
+                data: 'ยอดนิยม',
+                width: "80px",
+                render: function(data, type, row) {
+                    return ` <div class="${ row.is_popular === 1 ? 'popularOn' : 'popularOff' }">${row.is_popular === 1 ? 'เปิด' : 'ปิด' }</div>`
+                }
             }, {
-                "width": "180px"
+                data: 'หมวดหมู่',
+                width: "120px",
+                render: function(data, type, row) {
+                    return `<td>${row.special_deal_category ? row.special_deal_category.name_th:'ไม่ได้กำหนดหมวดหมู่'}</td>`
+                }
             }, {
-                "width": "250px"
+                data: 'ระยะเวลา',
+                width: "180px",
+                render: function(data, type, row) {
+                    if (row.end_date == "") {
+                        var date = "ไม่มีกำหนด";
+                    } else {
+                        var date = `${row.start_date} - ${row.end_date}`;
+                    }
+                    return `${date}`
+                }
             }, {
-                "width": "250px"
+                data: 'ผู้สร้าง',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.creator ?? 'ผู้สร้างไม่มีชื่อทำให้ระบบไม่ได้บันทึก' }<br>
+                        <label style="color:#696565;">${ row.created_at ? moment(row.created_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
             }, {
-                "width": "80px"
+                data: 'ผู้แก้ไขล่าสุด',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.editor ?? 'ยังไม่เคยมีการแก้ไข' }<br>
+                        <label style="color:#696565;">${ row.editor ? moment(row.updated_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
             }, {
-                "width": "150px"
-            }],
+                data: 'สถานะ',
+                width: "80px",
+                className: "switchstatus",
+                render: function(data, type, row) {
+                    return ` <div class="${ row.is_status === 1 ? 'statusOn' : 'statusOff' }">${row.is_status === 1 ? 'เปิดใช้งาน' : 'ปิดใช้งาน' }</div>`
+                }
 
+            }, {
+                data: 'ถังขยะ',
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td><button class="btn-trash" data-toggle="modal" data-target="#delete" id="sendIdDelete" data-id="${row.id}">
+                        <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                        <path
+                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                        </svg>
+                        </button>
+                        </td>`
+                }
+            }],
         });
     </script>
 
@@ -797,31 +915,96 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
+            ajax: {
+                url: "/special-deals/special-deal-off-datatable",
+                type: "POST",
+                datatype: "json",
+                data: function(data) {
+                    data._token = "{{ csrf_token() }}";
+                    // data.keyword = $('#cod-prepared-tab #search').val();
+                    // data.account = $('#cod-prepared-tab #account-filter').val();
+                    // data.date_filter = $('#cod-prepared-tab input[name="datefilter"]').val();
+                    // data.class = $('.switchstatus').attr('class');
+                }
+            },
             columns: [{
-                "width": "40px"
+                data: 'รหัสดีล',
+                width: "80px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;"><a href="/special-deals/edit/${row.id}" class="text-idSpecailDeal">${row.deal_no}</a></td>`
+                }
             }, {
-                "width": "250px",
+                data: 'ชื่อดีล',
+                width: "250px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.name_th?? 'ไม่ได้ตั้งชื่อ' }</td>`
+                }
             }, {
-                "width": "80px"
+                data: 'ยอดนิยม',
+                width: "80px",
+                render: function(data, type, row) {
+                    return ` <div class="${ row.is_popular === 1 ? 'popularOn' : 'popularOff' }">${row.is_popular === 1 ? 'เปิด' : 'ปิด' }</div>`
+                }
             }, {
-                "width": "180px"
+                data: 'หมวดหมู่',
+                width: "120px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.special_deal_category ? row.special_deal_category.name_th:'ไม่ได้กำหนดหมวดหมู่'}</td>`
+                }
             }, {
-                "width": "250px"
+                data: 'ระยะเวลา',
+                width: "180px",
+                render: function(data, type, row) {
+                    if (row.end_date == "") {
+                        var date = "ไม่มีกำหนด";
+                    } else {
+                        var date = `${row.start_date} - ${row.end_date}`;
+                    }
+                    return `${date}`
+                }
             }, {
-                "width": "250px"
+                data: 'ผู้สร้าง',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.creator ?? 'ผู้สร้างไม่มีชื่อทำให้ระบบไม่ได้บันทึก' }<br>
+                        <label style="color:#696565;">${ row.created_at ? moment(row.created_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
             }, {
-                "width": "80px"
+                data: 'ผู้แก้ไขล่าสุด',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.editor ?? 'ยังไม่เคยมีการแก้ไข' }<br>
+                        <label style="color:#696565;">${ row.editor ? moment(row.updated_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
             }, {
-                "width": "150px"
+                data: 'สถานะ',
+                width: "80px",
+                className: "switchstatus",
+                render: function(data, type, row) {
+                    return ` <div class="${ row.is_status === 1 ? 'statusOn' : 'statusOff' }">${row.is_status === 1 ? 'เปิดใช้งาน' : 'ปิดใช้งาน' }</div>`
+                }
+
+            }, {
+                data: 'ถังขยะ',
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td><button class="btn-trash" data-toggle="modal" data-target="#delete" id="sendIdDelete" data-id="${row.id}">
+                        <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                        <path
+                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                        </svg>
+                        </button>
+                        </td>`
+                }
             }],
         });
     </script>
 
-
-
-
-
-
+    <!-- End Page -->
+    <!-- Container closed -->
+    {{-- </div> --}}
 </body>
 
 </html>

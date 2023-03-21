@@ -64,7 +64,7 @@
 
     <link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="{{asset('assets/plugins/summernote/summernote-bs4.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css') }}" rel="stylesheet">
 
     {{-- script datatogle เปิด/ปิด --}}
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
@@ -167,6 +167,23 @@
             min-height: 1.375rem;
             border-radius: 50px;
         }
+
+        .toggle.btn-sm {
+            min-width: 2.19rem;
+            min-height: 1.375rem;
+            border-radius: 50px;
+        }
+
+        .toggle-on.btn-sm {
+            padding-right: 1rem;
+            background-color: #ffbe00;
+        }
+
+        .toggle-off.btn-sm {
+            padding-right: 1rem;
+            background-color: #ff0000;
+            color: #fff;
+        }
     </style>
 
 
@@ -216,23 +233,28 @@
 
 
 
-                <form action="">
+                <form action="{{ url('/special-deals/create') }}" id="calculate" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="col-xl-7">
                         <div class="card card-body">
                             <div class="form-group row py-2">
                                 <label for="idUser" class="col-sm-2 col-form-label">รหัสผู้ใช้งาน</label>
                                 <div class="col-sm-3">
-                                    <input type="text" readonly class="form-control" id="idUser" value="AE21120001">
+                                    <input type="text" readonly class="form-control" id="idUser" value="{{ $deal_no }}" name="deal_no">
                                 </div>
-
+                                {{-- <div class="col-sm-4"><button type="button" class="btn btn-link">ใช้รหัสอัตโนมัติ</button></div> --}}
                             </div>
                             <div class="row d-flex justify-content-between py-2">
                                 <div class="col-6">
                                     <h5><b>เพิ่มข้อมูล</b></h5>
                                 </div>
+                                <div class="col-3">
+                                    <label for="">ยอดนิยม</label>
+                                    <input type="checkbox" data-on="เปิด" data-off="ปิด" data-toggle="toggle" data-size="sm" checked name="is_popular">
+                                </div>
                                 <div class="row-6 ">
                                     <label for="">สถานะ</label>
-                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" data-toggle="toggle" data-size="xs" checked name="is_status">
                                 </div>
                             </div>
 
@@ -240,26 +262,33 @@
                             <div class="">
                                 <label for="nameDealTh">ชื่อดีล(TH)</label>
                                 <span id="showNumTh" style="float: right;">0/100</span>
-                                <input type="text" class="form-control nameDealTh mb-2" id="" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อดีลภาษาไทย">
+                                @error('name_th')
+                                    <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="text" class="form-control nameDealTh mb-2" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อดีลภาษาไทย" value="{{ old('name_th') }}" name="name_th" {{-- required --}}>
                                 <label for="nameDealEn">ชื่อดีล(EN)</label>
                                 <span id="showNumEn" style="float: right;">0/100</span>
-                                <input type="text" class="form-control test" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อดีลภาษาอังกฤษ">
+                                @error('name_en')
+                                    <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="text" class="form-control test" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อดีลภาษาอังกฤษ" value="{{ old('name_en') }}" name="name_en">
                             </div>
                             <div class="row my-2">
                                 <div class="form-group col-6">
                                     <label for="category">หมวดหมู่</label>
-                                    <select class="form-control" id="category" aria-placeholder="">
-                                        <option selected disabled>กรุณาเลือกหมวดหมู่</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    @error('special_deal_category_id')
+                                        <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                    @enderror
+                                    <select class="form-control" id="category" aria-placeholder="" name="special_deal_category_id">
+                                        <option disabled {{ old('special_deal_category_id') ? '' : 'selected' }}>กรุณาเลือกหมวดหมู่</option>
+                                        @foreach ($specialDealCategory as $item)
+                                            <option value="{{ $item->id }}" {{ $item->id == old('special_deal_category_id') ? 'selected' : '' }}>{{ $item->name_th }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-6">
                                     <label for="rights">จำนวนสิทธิ์</label><br>
-                                    <input type="number" class="form-control" id="rights" placeholder="กรุณาระบุจำนวนสิทธิ์">
+                                    <input type="number" class="form-control" id="rights" placeholder="หากไม่ระบุจำนวนสิทธิ์จะแสดงผลเป็นไม่จำกัด" value="{{ old('quantity') }}" name="quantity">
                                 </div>
                             </div>
                         </div>
@@ -269,49 +298,46 @@
                             <div class="row">
                                 <div class="col-4 py-2">
                                     <label for="price">ราคาปกติ</label><br>
-                                    <input type="number" class="form-control" id="price" placeholder="0">
+                                    @error('price')
+                                        <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                    @enderror
+                                    <input type="number" class="form-control" placeholder="0" id="price" value="{{ old('price') }}" name="price">
                                 </div>
                                 <div class="col-4 py-2">
-                                    <label for="price">ราคาปกติ</label><br>
+                                    <label for="discount">ส่วนลด</label><br>
+                                    @error('discount')
+                                        <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                    @enderror
                                     <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="0" aria-label="" aria-describedby="basic-addon2">
+                                        <input type="number" class="form-control" placeholder="0" aria-label="" aria-describedby="basic-addon2" id="discount" value="{{ old('discount') }}" name="discount">
                                         <div class="input-group-append ">
                                             <span class="" id="basic-addon2">
-                                                <select class="form-control" style="background-color: #e8e8e9;">
-                                                    <option selected><b>%</b></option>
-                                                    <option><b>บาท</b></option>
+                                                <select class="form-control" style="background-color: #e8e8e9;" id="discount_type" name="discount_type">
+                                                    <option {{-- {{ old('discount_type') === '%' ? 'selected' : 'selected' }} --}}selected><b>%</b></option>
+                                                    <option {{ old('discount_type') === 'บาท' ? 'selected' : '' }}><b>บาท</b></option>
                                                 </select>
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-4 py-2">
-                                    <label for="priceSpecial">ราคาปกติพิเศษ</label><br>
-                                    <input type="text" class="form-control" id="priceSpecial" placeholder="0" readonly>
+                                    <label for="priceSpecial">ราคาพิเศษ</label><br>
+                                    <input type="text" class="form-control" id="discountprice" placeholder="0" value="{{ old('discount_price') }}" name="discount_price" readonly>
                                 </div>
                                 <div class="col-4 py-2">
-                                    <label for="firstDay">วันที่เริ่มต้น</label><br>
-                                    <input type="date" id="firstDay" name="" style="display:inline; height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;">
+                                    <label for="start_date">วันที่เริ่มต้น</label><br>
+                                    <input type="date" id="start_date" style="height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;" name="start_date">
                                 </div>
                                 <div class="col-4 py-2">
-                                    <label for="endDay">วันที่สิ้นสุด</label><br>
-                                    <input type="date" id="endDay" name=""  style="display:inline; height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;">
+                                    <label for="end_date">วันที่สิ้นสุด</label><br>
+                                    <input type="date" id="end_date" style="height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;" value="{{ old('end_date') }}" name="end_date">
                                 </div>
                                 <div class="col-4 py-2">
                                     <label for="indefinitelyDay">ไม่มีกำหนด</label><br>
-                                    <input class="form-check-input position-static " id="myCheck"  type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                                    <input class="form-check-input position-static " type="checkbox" id="nullBox" {{-- value="option1" --}} aria-label="...">
                                 </div>
-
-
-
-
-
-
-
                             </div>
                         </div>
-
-
                         <div class="card card-body">
                             <div class="row mb-3">
                                 <div class="col-6">รายละเอียด</div>
@@ -319,11 +345,8 @@
                                     <span id="maxContentPost"style="float: right;">0/800</span>
                                 </div>
                             </div>
-                            <textarea class="summernote1"></textarea>
+                            <textarea class="summernote1" name="description_th">{{ old('description_th') }}</textarea>
                         </div>
-
-
-
                         <div class="card card-body">
                             <div class="row mb-3">
                                 <div class="col-6">เงื่อนไขการใช้งาน</div>
@@ -331,79 +354,60 @@
                                     <span id="maxContentPost2"style="float: right;">0/800</span>
                                 </div>
                             </div>
-                            <textarea class="summernote2"></textarea>
+                            <textarea class="summernote2" name="condition_th">{{ old('condition_th') }}</textarea>
                         </div>
 
 
                         <div class="card card-body">
                             <div>ภาพปก <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span></div>
                             <div class="mb-4" style="width: 415px;">
-                                <input type="file" class="input-upload-image" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
+                                @error('cover_image')
+                                    <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="file" class="input-upload-image" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" name="cover_image" />
                             </div>
-
-                            <div>แกลลอรี <span id="maxContentPost "style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span></div>
-                            <div class="card-body">
+                            {{-- <div class="mb-4" style="width: 150px;">
+                                <input type="file" class="input-upload-image" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" name="image" />
+                            </div> --}}
+                            <br><br>
+                            <div>แกลลอรี <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB ไม่เกิน 10 รูปภาพ</span></div>
+                            <div class="card-body" id="gal">
+                                @if (session('error'))
+                                    <div class="alert alert-danger">
+                                        {{ session('error') }}<br />
+                                    </div>
+                                @endif
                                 <div class="">
                                     <div class="d-flex flex-wrap gallery">
                                         <div class="box-add-image text-center d-flex justify-content-center">
                                             <div class="align-self-center">
-                                                <button type="button" class="btn btn-upload mb-3">
-
+                                                <button type="button" class="btn btn-upload mb-3" id="bt">
                                                     click to upload
                                                 </button>
                                                 <div class="text-center tx-5">Drag & drop files to upload <br>
                                                     {{-- <label style="color: #5f6062; font-size:10px;">ขนาดภาพที่แนะนำ  853 x 526</label> --}}
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <input type="file" name="files" id="gallery" multiple="" class="hideinput">
+                                <input type="file" id="gallery" name="images[]" class="hideinput" multiple>
                             </div>
                         </div>
-
 
                         <div class="card card-body">
                             <div class="row justify-content-end">
-                                <a href="{{ url('/special-deals/') }}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
+                                <a href="{{ url('viewSpecialDeal') }}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
                                 <span class="px-2">
-                                    <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
+                                    <button type="submit" class="btn btn-info" style="width:150px;">บันทึก</button>
                                 </span>
                             </div>
                         </div>
-
-
-
-
-
                     </div>
                 </form>
-
-
-
-
-
-
-
             </div>
-
-
-
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!-- JQuery min js -->
@@ -458,8 +462,8 @@
 
 
     {{-- script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
-    <script src="{{asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.autotab.min.js')}}"></script>
+    <script src="{{ asset('assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.autotab.min.js') }}"></script>
     {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
 
 
@@ -482,7 +486,56 @@
     </script>
     {{-- end script อัพโหลดรูปภาพ banner ใหญ่ --}}
 
+    {{-- script คำนวนราคาพิเศษจากราคาปกติและส่วนลดที่กรอกมาโดยอัตโนมัติ --}}
+    <script>
+        $(document).ready(function() {
+            $('#calculate').on("change", function() {
+                var price = $('#price').val();
+                var discount = $('#discount').val();
+                var discount_type = $('#discount_type').val();
+                $.ajax({
+                    url: "/special-deals/calculate",
+                    type: "POST",
+                    datatype: 'json',
+                    data: {
+                        _token: '{!! csrf_token() !!}',
+                        'price': price,
+                        'discount': discount,
+                        'discount_type': discount_type,
 
+                    },
+                    success: function(discountprice) {
+                        // console.log(discountprice);
+                        $('#discountprice').val(discountprice);
+                    },
+                    error: function() {
+                        alert("อะไรสักอย่างผิดพลาด");
+                        console.log(error)
+                    }
+
+                })
+            })
+        })
+    </script>
+    {{-- end script คำนวนราคาพิเศษจากราคาปกติและส่วนลดที่กรอกมาโดยอัตโนมัติ --}}
+
+    {{-- scriptปฎิทิน defaultวันที่เริ่ม และไม่กำหนดเพื่อปิดวันที่สิ้นสุด --}}
+    <script>
+        $(document).ready(function() {
+            var today = new Date();
+            $("#start_date").val(today.toISOString().substr(0, 10));
+            // console.log(today);
+            // end วันที่เริ่มdefualt
+            $('#nullBox').change(function() {
+                if (this.checked == true) {
+                    $("#end_date").prop("disabled", true).val();
+                } else if (this.checked == false) {
+                    $("#end_date").prop("disabled", false).val();
+                }
+            })
+        })
+    </script>
+    {{-- end scriptปฎิทิน defaultวันที่เริ่ม และไม่กำหนดเพื่อปิดวันที่สิ้นสุด --}}
 
     {{-- script นับจำนวนตัวอักษรที่พิมพ์ไม่เกิน 100ตัว ชื่ออังกฤษ ชื่อไทย --}}
     <script>
@@ -556,18 +609,37 @@
     {{-- end เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
 
 
+    {{-- <script>
+        $(document).click("#bt", function() {
+            // $('#gal').append("<input type='file' id='gallery' name='images[]' class='hideinput' multiple>")
+            $('#gal').append($('#gallery'))
+            console.log(bt);
+        })
+    </script> --}}
 
 
-
-    {{-- script อัพโหลดรูปภาพแกลลอรี รูปเล็ก --}}
+    {{-- script อัพโหลดรูปภาพแกลลอรีหลายรูป รูปเล็ก --}}
     <script type="text/javascript">
         $('.box-add-image').on('click', function() {
-            $('#gallery').click()
-        })
+            var input = $('<input type="file" id="gallery" name="images[]" multiple class="hideinput" />');
+            console.log(input)
+            input.on('change', function() {
+                var files = $(this).prop('files');
+                for (var i = 0; i < files.length; ++i) {
+                    names.push(files[i]);
+                    preview(files[i]);
+                }
+                console.log(names);
+            });
+            $(this).after(input);
+            input.click();
+        });
+        var names = [];
+        console.log(names)
         $('#gallery').on('change', function() {
-            var names = [];
             for (var i = 0; i < $(this).get(0).files.length; ++i) {
-                preview($(this).get(0).files[i])
+                names.push($(this).get(0).files[i]);
+                preview($(this).get(0).files[i]);
             }
         })
 
@@ -592,17 +664,6 @@
         })
     </script>
     {{-- end script อัพโหลดรูปภาพแกลลอรี รูปเล็ก --}}
-
-
-
-    {{-- script checkbox disabled --}}
-    <script>
-        document.getElementById('myCheck').onchange = function() {
-            document.getElementById('firstDay').disabled = this.checked;
-            document.getElementById('endDay').disabled = this.checked;
-        };
-    </script>
- {{--end script checkbox disabled --}}
 
 </body>
 

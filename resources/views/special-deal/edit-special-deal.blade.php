@@ -64,13 +64,12 @@
 
     <link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="{{asset('assets/plugins/summernote/summernote-bs4.min.css')}}" rel="stylesheet">
+    <link href="/assets/plugins/summernote/summernote-bs4.min.css" rel="stylesheet">
 
     {{-- script datatogle เปิด/ปิด --}}
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     {{-- script datatogle เปิด/ปิด --}}
-
     <style>
         input[type=checkbox] {
             transform: scale(2.5);
@@ -167,6 +166,22 @@
             border-radius: 50px;
         }
 
+        .toggle.btn-sm {
+            min-width: 2.19rem;
+            min-height: 1.375rem;
+            border-radius: 50px;
+        }
+
+        .toggle-on.btn-sm {
+            padding-right: 1rem;
+            background-color: #ffbe00;
+        }
+
+        .toggle-off.btn-sm {
+            padding-right: 1rem;
+            background-color: #ff0000;
+            color: #fff;
+        }
     </style>
 
 
@@ -178,6 +193,7 @@
 
     <!-- Loader -->
     <div id="global-loader">
+        {{-- <img src="assets/images/loader.svg" class="loader-img" alt="Loader"> --}}
         <img src="/assets/images/loader.svg" class="loader-img" alt="Loader">
     </div>
     <!-- /Loader -->
@@ -199,11 +215,14 @@
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path
+                                        d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
                                 </svg>
                                 ดีลพิเศษ >
                             </h5>
-                            <a href="{{url('/special-deals/')}}"><h5 class="content-title mb-0 my-auto px-2">จัดการดีลพิเศษ ></h5></a>
+                            <a href="{{ url('/special-deals/') }}">
+                                <h5 class="content-title mb-0 my-auto px-2">จัดการดีลพิเศษ ></h5>
+                            </a>
                             <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;">แก้ไขดีลพิเศษ</h5>
                         </div>
                     </div>
@@ -213,73 +232,74 @@
 
 
 
-                <form action="">
+                <form action="{{ url('/special-deals/save-update/' . $specialDeal->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="col-xl-7">
                         <div class="card card-body">
 
                             <div class="form-group row py-2">
                                 <label for="idUser" class="col-sm-2 col-form-label">รหัสผู้ใช้งาน</label>
                                 <div class="col-sm-3">
-                                  <input type="text" readonly class="form-control" id="idUser"  value="AE21120001">
+                                    <input type="text" readonly class="form-control" id="idUser" value="{{ $specialDeal->deal_no }}">
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-between py-2">
-                                <div class="col-6"> <h5><b>แก้ไขข้อมูล</b></h5></div>
+                                <div class="col-6">
+                                    <h5><b>แก้ไขข้อมูล</b></h5>
+                                </div>
+                                <div class="col-3">
+                                    <label for="">ยอดนิยม</label>
+                                    <input type="checkbox" data-on="เปิด" data-off="ปิด" data-toggle="toggle" data-size="sm" {{ $specialDeal->is_popular === 1 ? 'checked' : '' }} name="is_popular">
+                                </div>
                                 <div class="row-6 ">
                                     <label for="">สถานะ</label>
-                                    <input type="checkbox" style="border-radius:50px;" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                    <input type="checkbox" style="border-radius:50px;" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" data-toggle="toggle" data-size="xs" {{ $specialDeal->is_status === 1 ? 'checked' : '' }} name="is_status">
                                 </div>
                             </div>
                             <div class="">
                                 <label for="nameDealTh">ชื่อดีล(TH)</label>
                                 <span id="showNumTh" style="float: right;">0/100</span>
-                                <input type="text" class="form-control nameDealTh mb-2" id="" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อดีลภาษาไทย">
+                                <input type="text" class="form-control nameDealTh mb-2" id="" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อดีลภาษาไทย" value="{{ $specialDeal->name_th }}" name="name_th">
                                 <label for="nameDealEn">ชื่อดีล(EN)</label>
                                 <span id="showNumEn" style="float: right;">0/100</span>
-                                <input type="text" class="form-control test" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อดีลภาษาอังกฤษ">
+                                <input type="text" class="form-control test" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อดีลภาษาอังกฤษ" value="{{ $specialDeal->name_en }}" name="name_en">
                             </div>
-
-
-
-
-
-
 
                             <div class="row my-2">
                                 <div class="form-group col-6">
                                     <label for="category">หมวดหมู่</label>
-                                    <select class="form-control" id="category" aria-placeholder="">
-                                        <option selected disabled>กรุณาเลือกหมวดหมู่</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select class="form-control" id="category" aria-placeholder="" name="special_deal_category_id">
+                                        <option selected disabled {{ $specialDeal->special_deal_category_id != null ? 'hidden' : '' }}>กรุณาเลือกหมวดหมู่</option>
+                                        @foreach ($specialDealCategory as $item)
+                                            <option value="{{ $item->id }}" {{ $item->id === $specialDeal->special_deal_category_id ? 'selected' : '' }}>{{ $item->name_th }}</option>
+                                        @endforeach
+
                                     </select>
                                 </div>
                                 <div class="col-6">
                                     <label for="rights">จำนวนสิทธิ์</label><br>
-                                    <input type="number" class="form-control" id="rights" placeholder="กรุณาระบุจำนวนสิทธิ์">
+                                    <input type="text" class="form-control" id="rights" placeholder="กรุณาระบุจำนวนสิทธิ์" value="{{ $specialDeal->quantity }}" name="quantity">
                                 </div>
                             </div>
                         </div>
 
                         <div class="card card-body">
                             <p>ราคาและระยะเวลาโปรโมชั่น</p>
-                            <div class="row">
+                            <div class="row" id="calculate" method="POST">
+                                @csrf
                                 <div class="col-4 py-2">
                                     <label for="price">ราคาปกติ</label><br>
-                                    <input type="number" class="form-control" id="price" placeholder="0">
+                                    <input type="number" class="form-control" placeholder="0" value="{{ $specialDeal->price }}" id="price" name="price">
                                 </div>
                                 <div class="col-4 py-2">
-                                    <label for="price">ราคาปกติ</label><br>
+                                    <label for="price">ส่วนลด</label><br>
                                     <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="0" aria-label="" aria-describedby="basic-addon2">
+                                        <input type="number" class="form-control" placeholder="0" aria-label="" aria-describedby="basic-addon2" value="{{ $specialDeal->discount }}" id="discount" name="discount">
                                         <div class="input-group-append ">
                                             <span class="" id="basic-addon2">
-                                                <select class="form-control" style="background-color: #e8e8e9;">
-                                                    <option selected><b>%</b></option>
-                                                    <option><b>บาท</b></option>
+                                                <select class="form-control" style="background-color: #e8e8e9;" id="discount_type" name="discount_type">
+                                                    <option {{ $specialDeal->discount_type === '%' ? 'selected' : '' }}<b>%</b></option>
+                                                    <option {{ $specialDeal->discount_type === 'บาท' ? 'selected' : '' }}><b>บาท</b></option>
                                                 </select>
                                             </span>
                                         </div>
@@ -287,19 +307,19 @@
                                 </div>
                                 <div class="col-4 py-2">
                                     <label for="priceSpecial">ราคาปกติพิเศษ</label><br>
-                                    <input type="text" class="form-control" id="priceSpecial" placeholder="0" readonly>
+                                    <input type="text" class="form-control" placeholder="0" value="{{ $specialDeal->discount_price }}" id="discountprice" name="discount_price" readonly>
                                 </div>
                                 <div class="col-4 py-2">
                                     <label for="firstDay">วันที่เริ่มต้น</label><br>
-                                    <input type="date" id="firstDay" name="" style="height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;">
+                                    <input type="date" id="start_date" style="height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;" name="start_date" {{ $specialDeal->start_date ? 'value' . '=' . $specialDeal->start_date : '' }}>
                                 </div>
                                 <div class="col-4 py-2">
                                     <label for="endDay">วันที่สิ้นสุด</label><br>
-                                    <input type="date" id="endDay" name="" style="height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;">
+                                    <input type="date" id="end_date" style="height: 40px; width:100%;    border-color: #e9e9e9; border-radius:5px;" name="end_date" {{ $specialDeal->end_date ? 'value' . '=' . $specialDeal->end_date : '' }}>
                                 </div>
                                 <div class="col-4 py-2">
                                     <label for="indefinitelyDay">ไม่มีกำหนด</label><br>
-                                    <input class="form-check-input position-static " type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                                    <input class="form-check-input position-static " type="checkbox" aria-label="..." id="nullBox">
                                 </div>
                             </div>
                         </div>
@@ -312,7 +332,7 @@
                                     <span id="maxContentPost"style="float: right;">0/800</span>
                                 </div>
                             </div>
-                            <textarea class="summernote1"></textarea>
+                            <textarea class="summernote1"name="description_th">{{ $specialDeal->description_th }}</textarea>
                         </div>
 
 
@@ -324,28 +344,36 @@
                                     <span id="maxContentPost2"style="float: right;">0/800</span>
                                 </div>
                             </div>
-                            <textarea class="summernote2"></textarea>
+                            <textarea class="summernote2"name="condition_th">{{ $specialDeal->condition_th }}</textarea>
                         </div>
 
 
                         <div class="card card-body">
                             <div>ภาพปก <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span></div>
                             <div class="mb-4" style="width: 415px;">
-                                <input type="file" class="input-upload-image" data-default-file="{{asset('/assets/images/deal.png')}}"  data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
-
+                                <input type="file" class="input-upload-image" data-default-file="{{ $specialDeal->cover_image ? asset('/storage/' . $specialDeal->cover_image) : '' }}" name="cover_image" data-height="198" data-max-file-size="10M"
+                                    data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
+                                <input type="hidden" value="0" name="image_delete">
                             </div>
                             <br><br>
 
 
-                            <div>แกลลอรี <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span></div>
+                            <div>แกลลอรี <span id="maxContentPost2"style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB ไม่เกิน 10 รูปภาพ</span></div>
                             <div class="card-body">
+                                @if (session('error'))
+                                    <div class="alert alert-danger">
+                                        {{ session('error') }}<br />
+                                    </div>
+                                @endif
                                 <div class="">
                                     <div class="d-flex flex-wrap gallery">
 
-                                        <div class="box-gallery-image">
-                                            <img src="{{ asset('/assets/images/deal.jpg') }}" alt="">
-                                            <button class="btn btn-link btn-delete p-0"><img src="/assets/images/icon/btn-delete.png" class="w-100"></button>
-                                        </div>
+                                        @foreach ($specialDeal->specialDealImages as $img)
+                                            <div class="box-gallery-image">
+                                                <img src="{{ asset('/storage/' . $img->image) ?? '' }}" alt="">
+                                                <button class="btn btn-link btn-delete p-0" data-id="{{ $img->id }}"><img src="/assets/images/icon/btn-delete.png" class="w-100"></button>
+                                            </div>
+                                        @endforeach
 
                                         <div class="box-add-image text-center d-flex justify-content-center">
                                             <div class="align-self-center">
@@ -360,7 +388,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input type="file" name="files" id="gallery" multiple="" class="hideinput">
+                                <input type="file" id="gallery" class="hideinput" name="images[]" multiple>
                             </div>
                         </div>
 
@@ -369,71 +397,53 @@
                             <div class="form-group row">
                                 <label for="user" class="col-sm-2 col-form-label">ผู้สร้าง</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="user" value="นางสาวเบญจวรรณ บัวพิทักษ์">
+                                    <input type="text" class="form-control" id="user" value="{{ $specialDeal->creator }}" disabled>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-2" style="float: left;">
-                                    <button type="button"  data-toggle="modal" data-target="#trashAll" style="border-radius:50%; height:40px;border-color:#ffff;" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="25"></button>
+                                    <button type="button" data-toggle="modal" data-target="#delete" style="border-radius:50%; height:40px;border-color:#ffff;" class="dropify-clear"><img
+                                            src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}"
+                                            width="25"></button>
                                 </div>
                                 <div class="col-9">
-                                    <a href="{{url('/special-deals/')}}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
+                                    <a href="{{ url('/special-deals/') }}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
                                     <span class="px-2">
-                                        <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
+                                        <button href="" type="submit" class="btn btn-info" style="width:150px;">บันทึก</button>
                                     </span>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                               <!-- Modal ถังขยะ -->
-                               <div class="modal fade" id="trashAll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-body text-center">
-                                            <br>
-                                            <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
-                                            <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                            </svg>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                            <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
-                                        </div>
-                                    </div>
+                </form>
+                <!-- Modal ถังขยะ -->
+                <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <form action="{{ url('/special-deals/delete/' . $specialDeal->id) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body text-center">
+                                    <br>
+                                    <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
+                                    <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                    </svg><br><br>
+                                    <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะหายไปตลอดกาล ไม่สามารถกู้คืนได้</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                                    <button type="submit" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
                                 </div>
                             </div>
-                            <!--end Modal ถังขยะ -->
-
-                </form>
-
-
-
-
-
-
-
+                        </div>
+                    </form>
+                </div>
+                <!--end Modal ถังขยะ -->
             </div>
-
-
-
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- JQuery min js -->
     <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
@@ -487,8 +497,8 @@
 
 
     {{-- script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
-    <script src="{{asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.autotab.min.js')}}"></script>
+    <script src="/assets/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="/assets/js/jquery.autotab.min.js"></script>
     {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน --}}
 
 
@@ -507,11 +517,62 @@
                 errorLine: '<p class="dropify-error"></p>',
                 errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
             }
+        }).on('dropify.afterClear', function(event, element) {
+            $('input[name="image_delete"]').val('1');
         });
     </script>
     {{-- end script อัพโหลดรูปภาพ banner ใหญ่ --}}
 
+    {{-- script คำนวนราคาพิเศษจากราคาปกติและส่วนลดที่กรอกมาโดยอัตโนมัติ --}}
+    <script>
+        $(document).ready(function() {
+            $('#calculate').on("change", function() {
+                var price = $('#price').val();
+                var discount = $('#discount').val();
+                var discount_type = $('#discount_type').val();
+                $.ajax({
+                    url: "/special-deals/calculate",
+                    type: "POST",
+                    datatype: 'json',
+                    data: {
+                        _token: '{!! csrf_token() !!}',
+                        'price': price,
+                        'discount': discount,
+                        'discount_type': discount_type,
 
+                    },
+                    success: function(discountprice) {
+                        /* console.log(discountprice); */
+                        $('#discountprice').val(discountprice);
+                    },
+                    error: function() {
+                        alert("อะไรสักอย่างผิดพลาด");
+                        /* console.log(error) */
+                    }
+
+                })
+            })
+        })
+    </script>
+    {{-- end script คำนวนราคาพิเศษจากราคาปกติและส่วนลดที่กรอกมาโดยอัตโนมัติ --}}
+
+    {{-- scriptปฎิทิน defaultวันที่เริ่ม และไม่กำหนดเพื่อปิดวันที่สิ้นสุด --}}
+    <script>
+        $(document).ready(function() {
+            // var today = new Date();
+            // $("#start_date").val(today.toISOString().substr(0, 10));
+            // console.log(today);
+            // end วันที่เริ่มdefualt
+            $('#nullBox').change(function() {
+                if (this.checked == true) {
+                    $("#end_date").prop("disabled", true).val();
+                } else if (this.checked == false) {
+                    $("#end_date").prop("disabled", false).val();
+                }
+            })
+        })
+    </script>
+    {{-- end scriptปฎิทิน defaultวันที่เริ่ม และไม่กำหนดเพื่อปิดวันที่สิ้นสุด --}}
 
     {{-- script นับจำนวนตัวอักษรที่พิมพ์ไม่เกิน 100ตัว ชื่ออังกฤษ ชื่อไทย --}}
     <script>
@@ -588,15 +649,28 @@
 
 
 
-    {{-- script อัพโหลดรูปภาพแกลลอรี รูปเล็ก --}}
+    {{-- script อัพโหลดรูปภาพแกลลอรีหลายรูป รูปเล็ก --}}
     <script type="text/javascript">
         $('.box-add-image').on('click', function() {
-            $('#gallery').click()
-        })
+            var input = $('<input type="file" id="gallery" name="images[]" multiple class="hideinput" />');
+            console.log(input)
+            input.on('change', function() {
+                var files = $(this).prop('files');
+                for (var i = 0; i < files.length; ++i) {
+                    names.push(files[i]);
+                    preview(files[i]);
+                }
+                console.log(names);
+            });
+            $(this).after(input);
+            input.click();
+        });
+        var names = [];
+        console.log(names)
         $('#gallery').on('change', function() {
-            var names = [];
             for (var i = 0; i < $(this).get(0).files.length; ++i) {
-                preview($(this).get(0).files[i])
+                names.push($(this).get(0).files[i]);
+                preview($(this).get(0).files[i]);
             }
         })
 
@@ -617,6 +691,23 @@
             $('.box-add-image').before(html);
         }
         $(document).on('click', '.btn-delete', function() {
+            var id = $(this).data('id');
+            console.log(id)
+            $.ajax({
+                url: "/delete-image",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    _token: '{!! csrf_token() !!}',
+                    'id': id
+                },
+                // success: function() {
+                //     alert('ลบรุปละนะ')
+                // },
+                // error: function() {
+                //     alert('ลบรูปไม่สำเร็จ');
+                // }
+            })
             $(this).closest('.box-gallery-image').remove();
         })
     </script>

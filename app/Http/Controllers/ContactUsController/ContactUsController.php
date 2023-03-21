@@ -9,6 +9,6 @@ class ContactUsController extends Controller
 {
     //
     public function showContactUs(){
-        return view('contactUs.show-contactUs');
+        return view('contact-us.show-contact-us');
     }
 }

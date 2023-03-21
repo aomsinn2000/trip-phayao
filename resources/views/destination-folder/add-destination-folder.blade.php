@@ -64,7 +64,7 @@
     <link href="{{ asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="{{asset('assets/plugins/summernote/summernote-bs4.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css') }}" rel="stylesheet">
 
     {{-- script datatogle เปิด/ปิด --}}
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
@@ -197,6 +197,7 @@
         .bootstrap-tagsinput {
             width: 80%;
         }
+
         .dropify-wrapper {
             display: block;
             position: relative;
@@ -248,8 +249,9 @@
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg"style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
-                                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-                                  </svg>
+                                    <path
+                                        d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                </svg>
                                 ตั้งค่า >
                             </h5>
                             <a href="{{ url('/destination-folders/') }}">
@@ -264,13 +266,14 @@
 
 
 
-                <form action="">
+                <form action="{{ url('/destination-folders/create') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="col-xl-7">
                         <div class="card card-body">
                             <div class="form-group row py-2">
                                 <label for="" class="col-sm-3 col-form-label">รหัสโฟลเดอร์</label>
                                 <div class="col-sm-3">
-                                    <input type="text" readonly class="form-control" id="" value="AE21120001">
+                                    <input type="text" readonly class="form-control"value="{{ $folder_no }}" name="folder_no">
                                 </div>
 
                             </div>
@@ -285,7 +288,7 @@
                                 </div>
                                 <div class="row-6 ">
                                     <label for="">สถานะ</label>
-                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
+                                    <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" data-toggle="toggle" data-size="xs"value="1" name="is_status" checked>
                                 </div>
                             </div>
 
@@ -293,19 +296,19 @@
                             <div class="">
                                 <label>ชื่อโฟลเดอร์สถานที่ (TH)</label>
                                 <span id="showNumTh" style="float: right;">0/100</span>
-                                <input type="text" class="form-control nameDealTh mb-2" id="" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อสถานที่ภาษาไทย">
+                                @error('name_th')
+                                    <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="text" class="form-control nameDealTh mb-2" onkeyup="inputNameTh(this)" placeholder="กรุณากรอกชื่อสถานที่ภาษาไทย" value="{{ old('name_th') }}" name="name_th">
                                 <label>ชื่อโฟลเดอร์สถานที่ (EN)</label>
                                 <span id="showNumEn" style="float: right;">0/100</span>
-                                <input type="text" class="form-control mb-2" id="" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อสถานที่ภาษาอังกฤษ">
+
+                                <input type="text" class="form-control mb-2" onkeyup="inputNameEn(this)" maxlength="100" placeholder="กรุณากรอกชื่อสถานที่ภาษาอังกฤษ" value="{{ old('name_eb') }}" name="name_en">
                                 <label>คำโปรย (TH)</label>
-                                <input type="text" class="form-control mb-2" id=""  placeholder="กรุณากรอกคำโปรยภาษาไทย">
+                                <textarea id="textFit" type="text" class="form-control mb-2" placeholder="กรุณากรอกคำโปรยภาษาไทย" name="slogan_th">{{ old('slogan_th') }}</textarea>
                                 <label>คำโปรย (EN)</label>
-                                <input type="text" class="form-control mb-2" id="" placeholder="กรุณากรอกคำโปรยภาษาอังกฤษ">
+                                <textarea id="textFit" type="text" class="form-control mb-2" placeholder="กรุณากรอกคำโปรยภาษาอังกฤษ" name="slogan_en">{{ old('slogan_en') }}</textarea>
                             </div>
-
-
-
-                           
                         </div>
 
 
@@ -319,19 +322,28 @@
                             <div class="row my-2">
                                 <div class="form-group col-6">
                                     <label>ตำบล</label>
-                                    <input type="text" id="sub_district" class="form-control" placeholder="กรุณากรอกตำบล">
+                                    @error('sub_district')
+                                        <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                    @enderror
+                                    <input type="text" id="sub_district" class="form-control" placeholder="กรุณากรอกตำบล" value="{{ old('sub_district') }}" name="sub_district">
                                 </div>
                                 <div class="form-group col-6">
                                     <label>อำเภอ</label>
-                                    <input type="text" id="district" class="form-control" placeholder="กรุณากรอกอำเภอ">
+                                    @error('district')
+                                        <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                    @enderror
+                                    <input type="text" id="district" class="form-control" placeholder="กรุณากรอกอำเภอ" value="{{ old('district') }}" name="district">
                                 </div>
                                 <div class="form-group col-6">
                                     <label>จังหวัด</label>
-                                    <input type="text" id="province" class="form-control" placeholder="กรุณากรอกจังหวัด">
+                                    @error('province')
+                                        <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                    @enderror
+                                    <input type="text" id="province" class="form-control" placeholder="กรุณากรอกจังหวัด" value="{{ old('province') }}" name="province">
                                 </div>
                                 <div class="form-group col-6">
                                     <label>รหัสไปรษณีย์</label>
-                                    <input type="text" id="postcode" class="form-control" placeholder="กรุณากรอกรหัสไปรษณีย์">
+                                    <input type="text" id="postcode" class="form-control" placeholder="กรุณากรอกรหัสไปรษณีย์" value="{{ old('postcode') }}" name="postcode">
                                 </div>
                             </div>
 
@@ -341,20 +353,8 @@
                                     <span id="maxContentPost"style="float: right;">0/800</span>
                                 </div>
                             </div>
-                            <textarea class="summernote1"></textarea>
+                            <textarea id="textFit" class="summernote1" name="detail_th">{{ old('detail_th') }}</textarea>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
                         <div class="card card-body" style="height:auto !important;">
                             <div>
@@ -365,7 +365,10 @@
                                 <span id=""style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div><br>
                             <div class="mb-4" style="width: 415px;">
-                                <input type="file" class="input-upload-imageBanner" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
+                                @error('banner_image')
+                                    <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="file" class="input-upload-imageBanner" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" name="banner_image" />
                             </div>
                             <br><br>
 
@@ -377,25 +380,30 @@
                                 <span id=""style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div>
                             <div class="py-2" style="width: 210px;">
-                                <input type="file" class="input-upload-image" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" />
+                                @error('cover_image')
+                                    <div class="alert alert-danger text-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="file" class="input-upload-image" data-height="198" data-max-file-size="10M" data-allowed-file-extensions="JPG JPEG PNG jpg png jpeg" name="cover_image" />
                             </div><br><br>
 
 
 
                             <div class="">
                                 <svg style="color:#00AEEF;"xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16">
-                                    <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                    <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                                    <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
-                                  </svg>
+                                    <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                    <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                                    <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z" />
+                                </svg>
                                 วิดีโอ
                                 <span id=""style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
                             </div>
                             <div class="py-0">
                                 <div class="form-group row py-2">
-                                    <label for="link-video" style="text-align:center"class="col-sm-2 col-form-label"><b><h5>Link*</h5></b></label>
+                                    <label for="link-video" style="text-align:center"class="col-sm-2 col-form-label"><b>
+                                            <h5>Link*</h5>
+                                        </b></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="{{ old('link') }}" name="link">
                                     </div>
 
                                 </div>
@@ -404,53 +412,19 @@
                             </div>
                         </div>
 
-
-
-
                         <div class="card card-body">
                             <div class="row justify-content-end">
                                 <a href="{{ url('/destination-folders/') }}" type="button" class="btn btn-secondary" style="width:150px; ">ยกเลิก</a>
                                 <span class="px-2">
-                                    <a href="" type="button" class="btn btn-info" style="width:150px;">บันทึก</a>
+                                    <button type="submit" class="btn btn-info" style="width:150px;">บันทึก</button>
                                 </span>
                             </div>
                         </div>
-
-
-
-
-
-
-
-
                     </div>
                 </form>
-
-
-
-
-
-
-
             </div>
-
-
-
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- JQuery min js -->
     <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
@@ -504,15 +478,15 @@
 
 
     {{-- script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea ฟังก์ชันเสริม --}}
-    <script src="{{asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.autotab.min.js')}}"></script>
-    {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea ฟังก์ชันเสริม--}}
+    <script src="{{ asset('assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.autotab.min.js') }}"></script>
+    {{-- end script เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea ฟังก์ชันเสริม --}}
 
-     {{-- query ตำบล อำเภอจังหวัด --}}
-     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/JQL.min.js"></script>
-     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
-     <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
-     {{-- end query ตำบล อำเภอจังหวัด --}}
+    {{-- query ตำบล อำเภอจังหวัด --}}
+    <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/JQL.min.js"></script>
+    <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
+    <script type="text/javascript" src="https://earthchie.github.io/jquery.Thailand.js/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+    {{-- end query ตำบล อำเภอจังหวัด --}}
 
 
 
@@ -529,10 +503,16 @@
     </script>
     {{-- end query ตำบล อำเภอจังหวัด --}}
 
-
-
-
-
+    {{-- ทำให้textarea ขยายตามข้อมูล --}}
+    <script>
+        $(function() {
+            $('#textFit').on('input', function() {
+                this.style.height = 'auto';
+                this.style.height = this.scrollHeight + 'px';
+            });
+        });
+    </script>
+    {{-- endทำให้textarea ขยายตามข้อมูล --}}
 
     {{-- script อัพโหลดรูปภาพ banner ใหญ่ --}}
     <script type="text/javascript">

@@ -13,15 +13,14 @@
 
 <body>
 
-
     <div style="font-family: 'Kanit', sans-serif;">
         @include('layouts.navbar')
         <div class="naval-background-deal">
             <p>
-                <a href="{{url('/')}}" class="text-nav-deal"> หน้าหลัก /</a>
+                <a href="{{ url('/') }}" class="text-nav-deal"> หน้าหลัก /</a>
 
-                <span><a href="{{url('/specialdeals/')}}" class="text-nav-deal"> ดีลสุดพิเศษ /</a></span>
-                <span><a href="" class="text-nav-deal" style="color: #27AAE1"> <b> ดีลสุดพิเศษทุกสายการบิน ทุกโรงแรม</b></a></span>
+                <span><a href="{{ url('/specialdeals/') }}" class="text-nav-deal"> ดีลสุดพิเศษ /</a></span>
+                <span><a href="" class="text-nav-deal" style="color: #27AAE1"> <b>{{ $deal->name_th }}</b></a></span>
             </p>
         </div>
         <br>
@@ -29,117 +28,52 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="container ">
-                        <h2><b> ดีลสุดพิเศษ | <span style="color:#00AEEF;"> ทุกสายการบินทุกโรงแรม</span></b></h2>
+                        <h2><b> ดีลสุดพิเศษ | <span style="color:#00AEEF;"> {{ $deal->name_th }}</span></b></h2>
                         <div class="row" style="font-size: 24px;">
                             <div class="col-sm-6">
                                 <p class="float-start">หมวดหมู่
-                                    <span style="color:#00AEEF;"><b>: ที่พัก </b></span>
+                                    <span style="color:#00AEEF;"><b>: {{ $deal->specialDealCategory->name_th ?? 'ไม่ได้ระบุ' }} </b></span>
                                 </p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="total-deal">จำนวนสิทธิคงเหลือ <b> : 100 สิทธิ์</b></p>
+                                <p class="total-deal">จำนวนสิทธิคงเหลือ <b> : {{ $deal->quantity ?? 'ไม่จำกัด' }}</b></p>
                             </div>
                         </div>
 
-
-
-                        <p style="color: #868383; " class="text-content-top-dessination">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
-
-
+                        {{-- <p style="color: #868383; " class="text-content-top-dessination">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p> --}}
 
                         <div id="page">
                             <div class="row">
                                 <div class="column small-11 small-centered">
                                     <div class="slider slider-single">
-                                        <div>
-                                            <img class="image-large-deal" src="https://promotions.co.th/wp-content/uploads/png-31.png" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-deal" src="https://www.gourmetandcuisine.com/Images/editor_upload/_editor20211108095304_original.jpg" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-deal" src="https://positioningmag.com/wp-content/uploads/2016/05/pruksaNew.png" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-deal" src="http://2baht.com/wp-content/uploads/2016/06/Traveloka-Coupon-Code-20160613.jpg" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-deal" src="https://promotions.co.th/wp-content/uploads/png-31.png" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-deal" src="https://www.gourmetandcuisine.com/Images/editor_upload/_editor20211108095304_original.jpg" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-deal" src="https://positioningmag.com/wp-content/uploads/2016/05/pruksaNew.png" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-deal" src="http://2baht.com/wp-content/uploads/2016/06/Traveloka-Coupon-Code-20160613.jpg" alt="">
-                                        </div>
+                                        @foreach ($deal->specialDealImages as $images)
+                                            <div>
+                                                <img class="image-large-deal" src="{{ $images->image ? asset('/storage/' . $images->image) : '' }}" alt="">
+                                            </div>
+                                        @endforeach
                                     </div>
                                     <br>
                                     <div class="slider slider-nav">
-
-
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-deal" src="https://promotions.co.th/wp-content/uploads/png-31.png" alt="">
-                                            </span>
-
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-deal" src="https://www.gourmetandcuisine.com/Images/editor_upload/_editor20211108095304_original.jpg" alt="">
-                                            </span>
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-deal" src="https://positioningmag.com/wp-content/uploads/2016/05/pruksaNew.png" alt="">
-                                            </span>
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-deal" src="https://positioningmag.com/wp-content/uploads/2016/05/pruksaNew.png" alt="Nature">
-                                            </span>
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-deal" src="https://promotions.co.th/wp-content/uploads/png-31.png" alt="">
-                                            </span>
-
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-deal" src="https://www.gourmetandcuisine.com/Images/editor_upload/_editor20211108095304_original.jpg" alt="">
-                                            </span>
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-deal" src="https://positioningmag.com/wp-content/uploads/2016/05/pruksaNew.png" alt="">
-                                            </span>
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-deal" src="https://positioningmag.com/wp-content/uploads/2016/05/pruksaNew.png" alt="Nature">
-                                            </span>
-                                        </div>
-
+                                        @foreach ($deal->specialDealImages as $images)
+                                            <div class="px-1">
+                                                <span>
+                                                    <img class="image-small-deal" src="{{ $images->image ? asset('/storage/' . $images->image) : '' }}" alt="">
+                                                </span>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
                         <br>
-
-
                         <p>
                             <span class="price-special">
-                                <b> ราคาพิเศษ 3,999฿</b>
+                                <b> ราคาพิเศษ ฿{{ number_format($deal->discount_price) }} </b>
                             </span>
                             <span style="color:rgb(118, 118, 120); font-size:20px;">
-                                <strike>ราคา ฿6999</strike>
+                                <strike>ราคา ฿{{ number_format($deal->price) }}</strike>
                             </span>
-                            <span class="discout-deal">10 % </span>
+                            <span class="discout-deal">{{ $deal->discount }} {{ $deal->discount_type }} </span>
                         </p>
 
 
@@ -150,43 +84,34 @@
                             <span class="text-deal">
                                 <b>ระยะเวลาใช้สิทธิ์</b>
                             </span><br><br>
-                            <span class="text-time-detail-deal"> 8 พฤศจิกายน ถึง 31 ธันวาคม 2565 </span>
+                            {{-- <span class="text-time-detail-deal"> 8 พฤศจิกายน ถึง 31 ธันวาคม 2565 </span> --}}
+                            <span class="text-time-detail-deal">{{ $end_date ? '' : 'ตั้งแต่ ' }} {{ $start_date }} {{ $end_date ? 'ถึง  ' . $end_date : 'จนกว่าจะหมดโปรโมชั่น' }} </span>
                         </p>
                         <br>
                         <hr>
 
                         <div>
                             <p class="text-deal"><b>รายละเอียดเพิ่มเติม</b></p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus recusandae pariatur voluptates sunt? Quis explicabo facere sapiente vel molestiae debitis, incidunt necessitatibus voluptatibus. Totam nostrum repellat nesciunt ipsam et praesentium?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis perferendis, velit at sed saepe exercitationem animi porro libero atque aliquid natus impedit. Natus temporibus, molestias neque perferendis odit doloremque voluptates.
-                            </p>
+                            <?php echo $deal->description_th; ?>
+                            {{-- <?php echo html_entity_decode($deal->description_th); ?> --}}
                         </div>
 
                         <div>
                             <p class="text-deal"><b>เงื่อนไขการใช้งาน</b></p>
                             <ul>
-                                <li>Lorem ipsum, dolor sit amet cons </li>
-                                <li>Tea</li>
-                                <li>Milk</li>
+                                <?php echo $deal->condition_th; ?>
                             </ul>
                         </div>
                         <br><br>
 
                         <div class="add-line-deal">
                             <a href="" class="text-add-line-deal">คลิก! แอดไลน์</a>
-
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <div class="padding-footer"></div>
     @include('layouts.footer')

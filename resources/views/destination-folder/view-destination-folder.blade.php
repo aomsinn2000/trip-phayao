@@ -64,7 +64,9 @@
     <style>
         .btn-color {
             background-color: #ffff;
-        } .main-nav-line .nav-link {
+        }
+
+        .main-nav-line .nav-link {
             padding: 0;
             color: #4d5875;
             position: relative;
@@ -158,13 +160,13 @@
             min-height: 30px !important;
             border-radius: 50px;
         }
-        .img-fix{
+
+        .img-fix {
             width: 50px;
             height: 40px;
             object-fit: cover;
             border-radius: 3px;
         }
-
     </style>
 
 </head>
@@ -195,10 +197,11 @@
                     <div class="my-auto">
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg"style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
-                                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-                                  </svg>
-                                ตั้งค่า >
+                                <svg xmlns="http://www.w3.org/2000/svg" style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z" />
+                                </svg>
+                                จัดการหมวดหมู่ >
                             </h5>
                             <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;">ตั้งค่าโฟลเดอร์สถานที่ยอดฮิต</h5>
                         </div>
@@ -223,10 +226,10 @@
                                 <div style="padding-top:60px;"></div>
                                 <nav>
                                     <div class="nav main-nav-line" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-destinationFolder" role="tab" aria-selected="true"><b>ทั้งหมด (100)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-destinationFolder" role="tab" aria-selected="false"><b>เปิดการใช้งาน (50)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-destinationFolder" role="tab" aria-selected="false"><b>ปิดการใช้งาน (50)</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#trash-destinationFolder" role="tab" aria-selected="false"><b>ถังขยะ (50)</b></a>
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-destinationFolder" role="tab" aria-selected="true"><b id="total">ทั้งหมด ()</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-destinationFolder" role="tab" aria-selected="false"><b id="on">เปิดการใช้งาน ()</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-destinationFolder" role="tab" aria-selected="false"><b id="off">ปิดการใช้งาน ()</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#trash-destinationFolder" role="tab" aria-selected="false"><b id="trash">ถังขยะ ()</b></a>
                                     </div>
                                 </nav>
                                 <div class="tab-content" id="nav-tabContent">
@@ -261,10 +264,10 @@
                                                     <th style="text-align: left;">รหัสหมวดหมู่</th>
                                                     <th>ภาพปกโฟลเดอร์</th>
                                                     <th>ชื่อโฟลเดอร์สถานที่(TH) </th>
-                                                    <th style="text-align: center;">ชื่อโฟลเดอร์สถานที่(EN) </th>
+                                                    <th>ชื่อโฟลเดอร์สถานที่(EN) </th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
+                                                    <th>สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
                                                             <option>เปิดใช้งาน</option>
@@ -275,50 +278,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('/destination-folders/edit/{id}') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolder') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" checked data-toggle="toggle" data-size="xs">
-                                                    </td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -354,7 +313,7 @@
                                                     <th style="text-align: left;">รหัสหมวดหมู่</th>
                                                     <th>ภาพปกโฟลเดอร์</th>
                                                     <th>ชื่อโฟลเดอร์สถานที่(TH) </th>
-                                                    <th style="text-align: center;">ชื่อโฟลเดอร์สถานที่(EN) </th>
+                                                    <th>ชื่อโฟลเดอร์สถานที่(EN) </th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
                                                     <th>สถานะ</th>
@@ -362,46 +321,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolder') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td><div class="statusOn">เปิดใช้งาน</div></td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolder') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td><div class="statusOn">เปิดใช้งาน</div></td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -433,11 +352,11 @@
                                         </div>
                                         <table class="table table-striped position-relative my-3 " id="offDestinationFolder-table">
                                             <thead class="thead-dark">
-                                                <tr style="text-align: center; ">
-                                                    <th style="text-align: left; height:40px !important;">รหัสหมวดหมู่</th>
+                                                <tr style="text-align: center; height:40px !important;">
+                                                    <th style="text-align: left;">รหัสหมวดหมู่</th>
                                                     <th>ภาพปกโฟลเดอร์</th>
                                                     <th>ชื่อโฟลเดอร์สถานที่(TH) </th>
-                                                    <th style="text-align: center;">ชื่อโฟลเดอร์สถานที่(EN) </th>
+                                                    <th>ชื่อโฟลเดอร์สถานที่(EN) </th>
                                                     <th>ผู้สร้าง</th>
                                                     <th>ผู้แก้ไข</th>
                                                     <th>สถานะ</th>
@@ -445,56 +364,14 @@
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolder') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td><div class="statusOff">ปิดใช้งาน</div></td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolder') }}" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td><div class="statusOff">ปิดใช้งาน</div></td>
-                                                    <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
-                                                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path
-                                                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                     {{-- end ปิดการใช้งาน --}}
 
 
-
-
-                                     {{--  ถังขยะ --}}
-                                     <div class="tab-pane fade show" id="trash-destinationFolder" role="tabpanel" aria-labelledby="all-specialDeal-tab">
+                                    {{--  ถังขยะ --}}
+                                    <div class="tab-pane fade show" id="trash-destinationFolder" role="tabpanel" aria-labelledby="all-specialDeal-tab">
                                         <div class="row justify-content-between px-2 " style="background-color: #ECF0FA; height:70px;">
                                             <div class="col-6 py-3 px-5">
                                                 <button type="button" class="btn btn-info text-dark btn-color">
@@ -520,12 +397,11 @@
                                             <thead class="thead-dark">
                                                 <tr style="text-align: center;">
                                                     <th style="text-align: left;">รหัสหมวดหมู่</th>
-                                                    <th>ภาพปกโฟลเดอร์</th>
                                                     <th>ชื่อโฟลเดอร์สถานที่(TH) </th>
-                                                    <th style="text-align: center;">ชื่อโฟลเดอร์สถานที่(EN) </th>
+                                                    <th>ชื่อโฟลเดอร์สถานที่(EN) </th>
                                                     <th>ผู้สร้าง</th>
-                                                    <th>ผู้แก้ไข</th>
-                                                    <th style="text-align: center;">สถานะ
+                                                    <th>ผู้ลบ</th>
+                                                    <th>สถานะ
                                                         <select class="form-control selectStyle" id="selectStatus">
                                                             <option>ทั้งหมด</option>
                                                             <option>เปิดใช้งาน</option>
@@ -535,81 +411,50 @@
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center">
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolder') }}" style="pointer-events: none;color:#fc2525;" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="statusOff">ปิดใช้งาน</div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;"><a href="{{ url('editDestinationFolder') }}" style="pointer-events: none;color:#fc2525;" class="text-idSpecailDeal">CBC001</a></td>
-                                                    <td> <img class="img-fix" src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" alt=""></td>
-                                                    <td>กว๊านพะเยา</td>
-                                                    <td>Kwan Phayao</td>
-                                                    <td>นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td>
-                                                        นางสาวเบญจวรรณ บัวพิทักษ์<br>
-                                                        <label for=""> 01/01/2566 12:12</label>
-                                                    </td>
-                                                    <td><div class="statusOn">เปิดใช้งาน</div> </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                     {{-- end ถังขยะ --}}
-
-
-                                </div>
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-                <!-- Modal ถึงขยะ -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body text-center">
-                                <br>
-                                <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
-                                <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                </svg><br><br>
-                                <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ ไม่สามารถกู้คืนได้</div>
-                            </div>
-                            <div class="modal-footer ">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <!--end Modal ถึงขยะ -->
             </div>
             <!-- Container closed -->
         </div>
         <!-- main-content closed -->
 
+        <!-- Modal ถึงขยะ -->
+        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <form action="{{ url('/destination-folders/delete') }}" method="POST">
+                @csrf
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <br>
+                            <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
+                            <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg><br><br>
+
+                            <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ ไม่สามารถกู้คืนได้</div>
+                        </div>
+                        <input type="hidden" id="deleteId" name="id">
+                        <div class="modal-footer ">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                            <button type="submit" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--end Modal ถึงขยะ -->
     </div>
     <!-- End Page -->
+
+
 
 
 
@@ -743,14 +588,41 @@
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
             $('#trashDestinationFolder-table').DataTable().columns.adjust();
         });
-
-
     </script>
     {{-- End script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
 
 
+    {{-- script ส่งid record จากปุ่มลบไปยังmodal --}}
+    <script>
+        $(document).on("click", "#sendIdDelete", function() {
+            var destinationFolderId = $(this).data('id');
+            $("#deleteId").val(destinationFolderId);
+            console.log(destinationFolderId);
+        });
+    </script>
+    {{-- end script --}}
 
-
+    {{-- ตัวนับจำนวน --}}
+    <script>
+        function countData() {
+            $.ajax({
+                url: "/destination-folders/count",
+                type: "GET",
+                dataType: "json",
+                success: function(count) {
+                    $('#total').text('ทั้งหมด (' + count.total + ')');
+                    $('#on').text('เปิดการใช้งาน (' + count.on + ')');
+                    $('#off').text('ปิดการใช้งาน (' + count.off + ')');
+                    $('#trash').text('ถังขยะ (' + count.trash + ')');
+                },
+                error: function() {
+                    alert('dfsdf');
+                }
+            })
+        }
+        countData();
+    </script>
+    {{-- end ตัวนับจำนวน --}}
 
     <script>
         $('#allDestinationFolder-table').DataTable({
@@ -772,25 +644,107 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [
-                {
-                "width": "100px"
-            }, {
-                "width": "120px",
-            }, {
-                "width": "150px"
-            },  {
-                "width": "250px"
-            },  {
-                "width": "180px"
-            }, {
-                "width": "250px"
-            }, {
-                "width": "80px"
-            },{
-                "width": "150px"
-            }],
+            ajax: {
+                url: "/destination-folders/destination-folder-all-datatable",
+                type: "POST",
+                datatype: "json",
+                data: function(data) {
+                    data._token = "{{ csrf_token() }}";
 
+                }
+            },
+            columns: [{
+                data: 'รหัสโฟลเดอร์',
+                width: "120px",
+                className: "dt-body-left",
+                render: function(data, type, row) {
+                    return `<td><a href="/destination-folders/edit/${row.id}" class="text-idSpecailDeal">${row.folder_no}</a></td>`
+                }
+            }, {
+                data: 'ภาพปกโฟลเดอร์',
+                width: "180px",
+                render: function(data, type, row) {
+                    console.log(row)
+                    if (row.cover_image == null) {
+                        return `<td>ไม่ได้ใส่รูปปก</td>`
+                    } else {
+                        return `<td><img class="img-fix" src="${row.cover_image ? /storage/+ row.cover_image : '/assets/images/ud.png'}" /></td>`
+                    }
+                }
+            }, {
+                data: 'ชื่อโฟลเดอร์สถานที่(TH)',
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.name_th ?? 'ไม่ได้ตั้งชื่อ'}</td>`
+                }
+            }, {
+                data: 'ชื่อโฟลเดอร์สถานที่(EN)',
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style>${row.name_en ?? 'ไม่ได้ตั้งชื่อ'}</td>`
+                }
+            }, {
+                data: 'ผู้สร้าง',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.creator ?? 'ผู้สร้างไม่มีชื่อทำให้ระบบไม่ได้บันทึก' }<br>
+                            <label style="color:#696565;">${ row.created_at ? moment(row.created_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                            </td>`
+                }
+            }, {
+                data: 'ผู้แก้ไขล่าสุด',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.editor ?? 'ยังไม่เคยมีการแก้ไข' }<br>
+                            <label style="color:#696565;">${ row.editor ? moment(row.updated_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                            </td>`
+                }
+            }, {
+                data: 'สถานะ',
+                width: "80px",
+                // className: "switchstatus",
+                render: function(data, type, row) {
+                    return `<td><label class="switch"><input type="checkbox" data-on="เปิดใช้งาน" data-off="ปิดใช้งาน" data-toggle="toggle" data-size="xs"
+                    class="switchstatus" id="${row.id}" ${ row.is_status == 1 ? 'checked' : '' }><span class="slider round"></span></label></td>`
+                }
+
+            }, {
+                data: 'ถังขยะ',
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td><button class="btn-trash" data-toggle="modal" data-target="#delete" id="sendIdDelete" data-id="${row.id}">
+                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path
+                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg>
+                            </button>
+                            </td>`
+                }
+            }],
+            "createdRow": function(row, data, dataIndex) {
+                $(row).addClass('switchstatus');
+                $(row).find('.switchstatus').bootstrapToggle();
+                $(row).on('change', function() {
+                    var id = $(this).attr('id', data.id);
+                    $.ajax({
+                        url: '/destination-folders/switch-status',
+                        type: "POST",
+                        datatype: 'json',
+                        data: {
+                            _token: '{!! csrf_token() !!}',
+                            id: data.id,
+                        },
+                    }).done(function(response) {
+                        // console.log(response);
+                        $('#allDestinationFolder-table').DataTable().ajax.reload();
+                        $('#onDestinationFolder-table').DataTable().ajax.reload();
+                        $('#offDestinationFolder-table').DataTable().ajax.reload();
+                        $('#trashDestinationFolder-table').DataTable().ajax.reload();
+                        countData();
+                    });
+                    // console.log(id);
+                });
+            },
         });
     </script>
 
@@ -816,23 +770,81 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [
-                {
-                "width": "100px"
+            ajax: {
+                url: "/destination-folders/destination-folder-on-datatable",
+                type: "POST",
+                datatype: "json",
+                data: function(data) {
+                    data._token = "{{ csrf_token() }}";
+
+                }
+            },
+            columns: [{
+                data: 'รหัสโฟลเดอร์',
+                width: "120px",
+                className: "dt-body-left",
+                render: function(data, type, row) {
+                    return `<td><a href="/destination-folders/edit/${row.id}" class="text-idSpecailDeal">${row.folder_no}</a></td>`
+                }
             }, {
-                "width": "120px",
+                data: 'ภาพปกโฟลเดอร์',
+                width: "180px",
+                render: function(data, type, row) {
+                    console.log(row)
+                    if (row.cover_image == null) {
+                        return `<td>ไม่ได้ใส่รูปปก</td>`
+                    } else {
+                        return `<td><img class="img-fix" src="${row.cover_image ? /storage/+ row.cover_image : '/assets/images/ud.png'}" /></td>`
+                    }
+                }
             }, {
-                "width": "150px"
-            },  {
-                "width": "250px"
-            },  {
-                "width": "180px"
+                data: 'ชื่อโฟลเดอร์สถานที่(TH)',
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.name_th ?? 'ไม่ได้ตั้งชื่อ'}</td>`
+                }
             }, {
-                "width": "250px"
+                data: 'ชื่อโฟลเดอร์สถานที่(EN)',
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style>${row.name_en ?? 'ไม่ได้ตั้งชื่อ'}</td>`
+                }
             }, {
-                "width": "80px"
-            },{
-                "width": "150px"
+                data: 'ผู้สร้าง',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.creator ?? 'ผู้สร้างไม่มีชื่อทำให้ระบบไม่ได้บันทึก' }<br>
+                            <label style="color:#696565;">${ row.created_at ? moment(row.created_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                            </td>`
+                }
+            }, {
+                data: 'ผู้แก้ไขล่าสุด',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.editor ?? 'ยังไม่เคยมีการแก้ไข' }<br>
+                            <label style="color:#696565;">${ row.editor ? moment(row.updated_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                            </td>`
+                }
+            }, {
+                data: 'สถานะ',
+                width: "80px",
+                // className: "switchstatus",
+                render: function(data, type, row) {
+                    return `<div class="${ row.is_status === 1 ? 'statusOn' : 'statusOff' }">${row.is_status === 1 ? 'เปิดใช้งาน' : 'ปิดใช้งาน' }</div>`
+                }
+
+            }, {
+                data: 'ถังขยะ',
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td><button class="btn-trash" data-toggle="modal" data-target="#delete" id="sendIdDelete" data-id="${row.id}">
+                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path
+                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg>
+                            </button>
+                            </td>`
+                }
             }],
 
         });
@@ -861,71 +873,159 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [
-                {
-                "width": "100px"
+            ajax: {
+                url: "/destination-folders/destination-folder-off-datatable",
+                type: "POST",
+                datatype: "json",
+                data: function(data) {
+                    data._token = "{{ csrf_token() }}";
+
+                }
+            },
+            columns: [{
+                data: 'รหัสโฟลเดอร์',
+                width: "120px",
+                className: "dt-body-left",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;"><a href="/destination-folders/edit/${row.id}" class="text-idSpecailDeal">${row.folder_no}</a></td>`
+                }
             }, {
-                "width": "120px",
+                data: 'ภาพปกโฟลเดอร์',
+                width: "180px",
+                render: function(data, type, row) {
+                    console.log(row)
+                    if (row.cover_image == null) {
+                        return `<td>ไม่ได้ใส่รูปปก</td>`
+                    } else {
+                        return `<td><img class="img-fix" src="${row.cover_image ? /storage/+ row.cover_image : '/assets/images/ud.png'}" /></td>`
+                    }
+                }
             }, {
-                "width": "150px"
-            },  {
-                "width": "250px"
-            },  {
-                "width": "180px"
+                data: 'ชื่อโฟลเดอร์สถานที่(TH)',
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.name_th ?? 'ไม่ได้ตั้งชื่อ'}</td>`
+                }
             }, {
-                "width": "250px"
+                data: 'ชื่อโฟลเดอร์สถานที่(EN)',
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style>${row.name_en ?? 'ไม่ได้ตั้งชื่อ'}</td>`
+                }
             }, {
-                "width": "80px"
-            },{
-                "width": "150px"
+                data: 'ผู้สร้าง',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.creator ?? 'ผู้สร้างไม่มีชื่อทำให้ระบบไม่ได้บันทึก' }<br>
+                            <label style="color:#696565;">${ row.created_at ? moment(row.created_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                            </td>`
+                }
+            }, {
+                data: 'ผู้แก้ไขล่าสุด',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.editor ?? 'ยังไม่เคยมีการแก้ไข' }<br>
+                            <label style="color:#696565;">${ row.editor ? moment(row.updated_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                            </td>`
+                }
+            }, {
+                data: 'สถานะ',
+                width: "80px",
+                // className: "switchstatus",
+                render: function(data, type, row) {
+                    return `<div class="${ row.is_status === 1 ? 'statusOn' : 'statusOff' }">${row.is_status === 1 ? 'เปิดใช้งาน' : 'ปิดใช้งาน' }</div>`
+                }
+
+            }, {
+                data: 'ถังขยะ',
+                width: "150px",
+                render: function(data, type, row) {
+                    return `<td><button class="btn-trash" data-toggle="modal" data-target="#delete" id="sendIdDelete" data-id="${row.id}">
+                            <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <path
+                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg>
+                            </button>
+                            </td>`
+                }
             }],
         });
     </script>
 
-<script>
-    $('#trashDestinationFolder-table').DataTable({
-        aLengthMenu: [
-            [10, 25, 50, 100, 200, -1],
-            [10, 25, 50, 100, 200, "All"]
-        ],
-        iDisplayLength: -1,
-        "ordering": false,
-        "dom": '<<t>ilp>',
-        rowReorder: {
-            selector: '.move-selector'
-        },
-        scrollX: true,
-        paging: true,
-        searching: false,
-        ordering: false,
-        info: true,
-        language: {
-            emptyTable: "ไม่พบข้อมูล"
-        },
-        columns: [
-            {
-                "width": "100px"
+    <script>
+        $('#trashDestinationFolder-table').DataTable({
+            aLengthMenu: [
+                [10, 25, 50, 100, 200, -1],
+                [10, 25, 50, 100, 200, "All"]
+            ],
+            iDisplayLength: -1,
+            "ordering": false,
+            "dom": '<<t>ilp>',
+            rowReorder: {
+                selector: '.move-selector'
+            },
+            scrollX: true,
+            paging: true,
+            searching: false,
+            ordering: false,
+            info: true,
+            language: {
+                emptyTable: "ไม่พบข้อมูล"
+            },
+            ajax: {
+                url: "/destination-folders/destination-folder-trash-datatable",
+                type: "POST",
+                datatype: "json",
+                data: function(data) {
+                    data._token = "{{ csrf_token() }}";
+
+                }
+            },
+            columns: [{
+                data: 'รหัสโฟลเดอร์',
+                width: "120px",
+                className: "dt-body-left",
+                render: function(data, type, row) {
+                    return `<td><a style="pointer-events: none;color:#fc2525;">${ row.folder_no }</a></td>`
+                }
             }, {
-                "width": "120px",
+                data: 'ชื่อโฟลเดอร์สถานที่(TH)',
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style="text-align: left;">${row.name_th ?? 'ไม่ได้ตั้งชื่อ'}</td>`
+                }
             }, {
-                "width": "150px"
-            },  {
-                "width": "250px"
-            },  {
-                "width": "180px"
+                data: 'ชื่อโฟลเดอร์สถานที่(EN)',
+                width: "180px",
+                render: function(data, type, row) {
+                    return `<td style>${row.name_en ?? 'ไม่ได้ตั้งชื่อ'}</td>`
+                }
             }, {
-                "width": "250px"
+                data: 'ผู้สร้าง',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.creator ?? 'ผู้สร้างไม่มีชื่อทำให้ระบบไม่ได้บันทึก' }<br>
+                            <label style="color:#696565;">${ row.created_at ? moment(row.created_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                            </td>`
+                }
             }, {
-                "width": "80px"
+                data: 'ผู้ลบ',
+                width: "200px",
+                render: function(data, type, row) {
+                    return `<td>${ row.editor ?? 'ยังไม่เคยมีการแก้ไข' }<br>
+                        <label style="color:#696565;">${ row.editor ? moment(row.deleted_at).format('DD/MM/YYYY HH:mm') : '' }</label>
+                        </td>`
+                }
+            }, {
+                data: 'สถานะก่อนโดนลบ',
+                width: "80px",
+                // className: "switchstatus",
+                render: function(data, type, row) {
+                    return `<div class="${ row.is_status === 1 ? 'statusOn' : 'statusOff' }">${row.is_status === 1 ? 'เปิดใช้งาน' : 'ปิดใช้งาน' }</div>`
+                }
             }],
-    });
-</script>
-
-
-
-
-
-
+        });
+    </script>
 </body>
 
 </html>
