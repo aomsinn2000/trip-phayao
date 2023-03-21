@@ -9,14 +9,14 @@ class SpecialDealCategoryController extends Controller
 {
     //
     public function viewSpecialDealCategory(){
-        return view('special-deal-category.view-special-deal-category');
+        return view('specialDealCategory.view-specialDealCategory');
     }
 
     public function addSpecialDealCategory(){
-        return view('special-deal-category.add-special-deal-category');
+        return view('specialDealCategory.add-specialDealCategory');
     }
 
     public function editSpecialDealCategory(){
-        return view('special-deal-category.edit-special-deal-category');
+        return view('specialDealCategory.edit-specialDealCategory');
     }
 }

@@ -109,10 +109,10 @@
 				<div class="main-sidebar-header active">
                     <a class="desktop-logo logo-light active  mb-3 px-2" href="">
 						<div class="d-flex align-items-center">
-							<img src="/assets/image/logo-phayao.png" class="main-logo text-nowrap" alt="logo" >
+							<img src="assets/image/logo-phayao.png" class="main-logo text-nowrap" alt="logo" >
 						</div>
 					</a>
-					<a class="logo-icon mobile-logo icon-light active" href=""><img src="/assets/image/logo-phayao.png" class="logo-icon" alt="logo"></a>
+					<a class="logo-icon mobile-logo icon-light active" href=""><img src="assets/image/logo-phayao.png" class="logo-icon" alt="logo"></a>
 
                 </div>
 				<div class="main-sidemenu">
@@ -127,7 +127,7 @@
 							</a>
 						</li>
                         <li class="slide">
-							<a class="side-menu__item" href="{{url('/home-banners/')}}">
+							<a class="side-menu__item" href="{{url('viewBanner')}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
                                     <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                                     <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"/>
@@ -136,16 +136,7 @@
 							</a>
 						</li>
                         <li class="slide">
-							<a class="side-menu__item" href="   {{url('/article-manages/')}}">
-                                  <svg xmlns="http://www.w3.org/2000/svg"  style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-layout-text-sidebar-reverse" viewBox="0 0 16 16">
-                                    <path d="M12.5 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm0 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm.5 3.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z"/>
-                                    <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2zM4 1v14H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h2zm1 0h9a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5V1z"/>
-                                  </svg>
-								<span class="side-menu__label px-2">จัดการบทความ</span>
-							</a>
-						</li>
-                        <li class="slide">
-							<a class="side-menu__item" href="{{url('/special-deals/')}}">
+							<a class="side-menu__item" href="{{url('viewSpecialDeal')}}">
 								<svg xmlns="http://www.w3.org/2000/svg" style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
                                   </svg>
@@ -153,16 +144,7 @@
 							</a>
 						</li>
                         <li class="slide">
-							<a class="side-menu__item" href="{{url('/activity-manages/')}}">
-                                  <svg xmlns="http://www.w3.org/2000/svg"style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
-                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
-                                    <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
-                                  </svg>
-								<span class="side-menu__label px-2">กิจกรรม</span>
-							</a>
-						</li>
-                        <li class="slide">
-							<a class="side-menu__item" href="{{url('/tourist-attractions/')}}">
+							<a class="side-menu__item" href="{{url('viewTouristAttraction')}}">
                                   <svg xmlns="http://www.w3.org/2000/svg" style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-signpost-2" viewBox="0 0 16 16">
                                     <path d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z"/>
                                   </svg>
@@ -170,33 +152,16 @@
 							</a>
 						</li>
                         <li class="slide">
-							<a class="side-menu__item" href="{{url('/package-tours/')}}">
-                                  <svg xmlns="http://www.w3.org/2000/svg" style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-ticket-perforated" viewBox="0 0 16 16">
-                                    <path d="M4 4.85v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Z"/>
-                                    <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3h-13ZM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9V4.5Z"/>
-                                  </svg>
-								<span class="side-menu__label px-2">แพ็คเกจทัวร์</span>
-							</a>
-						</li>
-                        <li class="slide">
-							<a class="side-menu__item" href="{{url('/service-manages/')}}">
-                                <svg xmlns="http://www.w3.org/2000/svg" style="color: black;" width="24" height="24"  fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
-                                    <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17 1.247 0 3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z"/>
-                                  </svg>
-								<span class="side-menu__label px-2">จัดการบริการเสริม</span>
-							</a>
-						</li>
-                        <li class="slide">
 							<a class="side-menu__item" data-toggle="slide" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" style="color: black;" width="24" height="24"  fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
-                                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg"  style="color: black;" width="24" height="24" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
+                                    <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
                                   </svg>
-								<span class="side-menu__label px-2">ตั้งค่า</span><i class="angle fe fe-chevron-down"></i>
+								<span class="side-menu__label px-2">จัดการหมวดหมู่</span><i class="angle fe fe-chevron-down"></i>
 							</a>
 							<ul class="slide-menu">
-								<li><a class="slide-item" href="{{url('/special-deal-categories/')}}">จัดการหมวดหมู่ดีลสุดพิเศษ</a></li>
-								<li><a class="slide-item" href="{{url('/tourist-attraction-categories/')}}">จัดการหมวดหมู่สถานที่ยอดฮิต</a></li>
-                                <li><a class="slide-item" href="{{url('/destination-folders/')}}">ตั้งค่าโฟลเดอร์สถานที่ยอดฮิต</a></li>
+								<li><a class="slide-item" href="{{url('viewSpecialDealCategory')}}">จัดการหมวดหมู่ดีลสุดพิเศษ</a></li>
+								<li><a class="slide-item" href="{{url('viewTouristAttractionCategory')}}">จัดการหมวดหมู่สถานที่ยอดฮิต</a></li>
+                                <li><a class="slide-item" href="{{url('viewDestinationFolders')}}">ตั้งค่าโฟลเดอร์สถานที่ยอดฮิต</a></li>
 							</ul>
 						</li>
 

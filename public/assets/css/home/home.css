@@ -300,13 +300,26 @@ p {
 
 
 /*กิจกรรมยอดฮิต Trending Activitiesr */
-.img-trending:hover,
-.img-trending:hover .content {
+.img-trending {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+
+}
+
+.img-trending:hover {
     position: relative;
     max-width: 400px;
     margin: 0 auto;
     box-shadow: 1px 10px 16px 0 rgba(0, 0, 0, 0.3);
 }
+
+
+.img-trending img {
+    vertical-align: middle;
+    object-fit: cover;
+}
+
 .img-trending .content {
     position: absolute;
     bottom: 0;
@@ -319,10 +332,8 @@ p {
     height: 120px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
 }
-
-.img-trending:hover .content {
+.img-trending .content:hover {
     position: absolute;
     bottom: 0;
     background: rgb(0, 0, 0);
@@ -336,11 +347,11 @@ p {
     border-bottom-right-radius: 10px;
 }
 
+
 .card-trending {
     width: 260px;
     height: 310px;
     border-radius: 5px;
-    object-fit: cover;
 }
 
 .text-map-trending {
@@ -369,6 +380,8 @@ p {
     position: relative;
     text-align: center;
     color: white;
+
+
 }
 
 .img-hotel {
@@ -379,7 +392,6 @@ p {
     /* box-shadow: 5px 10px 8px #888888; */
     box-shadow: 0 0 5px 5px rgb(224, 224, 224);
 }
-
 
 .text-right-hotel {
     position: absolute;
@@ -536,6 +548,14 @@ p {
         border-radius: 10px;
         object-fit: cover;
     }
+    .img-hotel {
+        border-radius: 20px;
+        height: 100px;
+        width: 70%;
+        object-fit: cover;
+        /* box-shadow: 5px 10px 8px #888888; */
+        box-shadow: 0 0 5px 5px rgb(224 224 224);
+    }
     .text-left-hotel {
         position: absolute;
         top: 50%;
@@ -684,11 +704,6 @@ p {
     }
 }
 @media (max-width: 1200px) {
-    .text-place-card-story {
-        font-size: 10px;
-        color: #868383;
-    }
-
 .specialDeal {
     width: 450px;
     height: 225px;
@@ -1128,14 +1143,6 @@ p {
         height: 150px;
         object-fit: cover;
     }
-    .img-hotel {
-        border-radius: 20px;
-        height: 55px;
-        width: 75%;
-        object-fit: cover;
-        /* box-shadow: 5px 10px 8px #888888; */
-        box-shadow: 0 0 5px 5px rgb(224, 224, 224);
-    }
 
     .specialDeal {
         width: 240px;
@@ -1282,6 +1289,14 @@ p {
         font-size: 10px;
     }
 
+    .img-hotel {
+        border-radius: 20px;
+        height: 50px;
+        width: 75%;
+        object-fit: cover;
+        /* box-shadow: 5px 10px 8px #888888; */
+        box-shadow: 0 0 5px 5px rgb(224, 224, 224);
+    }
 
     .text-right-hotel {
         position: absolute;
@@ -1386,14 +1401,7 @@ p {
         border-radius: 10px;
         object-fit: cover;
     }
-    .img-hotel {
-        border-radius: 20px;
-        height: 50px;
-        width: 75%;
-        object-fit: cover;
-        /* box-shadow: 5px 10px 8px #888888; */
-        box-shadow: 0 0 5px 5px rgb(224, 224, 224);
-    }
+
 
     .img-trending .content {
         position: absolute;

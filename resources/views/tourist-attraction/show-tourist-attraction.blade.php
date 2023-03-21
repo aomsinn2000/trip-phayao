@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>สถานที่ท่องเที่ยว</title>
+    <title>สถานที่ยอดฮิต</title>
 
 
     @include('layouts.head-LinkScript')
@@ -28,7 +28,7 @@
 
     <div style="font-family: 'Kanit', sans-serif;">
         @include('layouts.navbar')
-
+        
         <img class="banner-placeHit" src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5yCh11ByQ6JOCN7q5YK2tqdwCGDp418UmCC3dnYRye3AbaaqHoz.jpg" alt="">
 
         <div class="container ">
@@ -79,7 +79,7 @@
                 <div class="col-lg-12">
                     <div class="container ">
                         <br><br>
-                        <h3 style="text-align: center"><b>สถานที่ท่องเที่ยวจังหวัดพะเยา</b> </h3>
+                        <h3 style="text-align: center"><b>สถานที่ยอดฮิต Top Destination </b> </h3>
                         <p class="line-header"></p>
                         <p style="color: #535151;" class="text-head-content-placeHit">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
 

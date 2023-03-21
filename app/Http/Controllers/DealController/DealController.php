@@ -11,13 +11,7 @@ class DealController extends Controller
 {
     //
 
-    public function showDeal(){
+    public function deal(){
         return view('deal.deal');
-    }
-    public function viewDeal(){
-        return view('deal.view-deal');
-    }
-    public function testdeal(){
-        return view('deal.testeal');
     }
 }

@@ -13,13 +13,4 @@ class ArticleController extends Controller
     public function showArticleDescription(){
         return view('article.show-articleDescription');
     }
-    public function viewArticle(){
-        return view('article.view-article');
-    }
-    public function addArticle(){
-        return view('article.add-article');
-    }
-    public function editArticle(){
-        return view('article.edit-article');
-    }
 }
