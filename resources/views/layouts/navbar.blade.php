@@ -47,7 +47,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('assets/images/logo-phayao.png') }}" alt="" class="logo-phayao"></a>
+            <a class="navbar-brand" href="#"><img src="{{ asset('assets/image/logo-phayao.png') }}" alt="" class="logo-phayao"></a>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -58,7 +58,7 @@
                         <a class="nav-link" href="{{ url('/specialdeals/') }}">ดีลสุดพิเศษ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/touristattractions/') }}">สถานที่ท่องเที่ยว</a>
+                        <a class="nav-link" href="{{ url('/touristattractions/') }}">สถานที่ยอดฮิต</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/activities/') }}">กิจกรรม</a>
@@ -125,6 +125,9 @@
 
 
 
+
+
+    
 
 
 </body>
