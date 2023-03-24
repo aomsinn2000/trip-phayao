@@ -47,7 +47,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{url('/')}}"><img src="{{ asset('assets/images/logo-phayao.png') }}" alt="" class="logo-phayao"></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('assets/images/logo-phayao.png') }}" alt="" class="logo-phayao"></a>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -78,9 +78,23 @@
                 </ul>
             </div>
 
-            <!-- <div style="padding-left: 250px;"></div> -->
             <form class="d-flex px-1">
-                <input class="form-control me-2 search" type="search" placeholder="ค้นหา สถานที่ท่องเที่ยว/ดีลพิเศษ/กิจกรรม" aria-label="Search">
+                <input class="form-control me-2 search" list="GFGOptions" id="GFGDataList" type="search" placeholder="ค้นหา สถานที่ท่องเที่ยว/ดีลพิเศษ/กิจกรรม" aria-label="Search">
+                <datalist id="GFGOptions">
+                    <option value="HTML">
+                    <option value="CSS">
+                    <option value="JavaScript">
+                    <option value="Bootstrap">
+                    <option value="Chrome"></option>
+                    <option value="Firefox"></option>
+                    <option value="Opera"></option>
+                    <option value="Safari"></option>
+                    <option value="Microsoft Edge"></option>
+                    <option value="กว๊านพะเยา">
+                    <option value="วัด">
+                    <option value="วัดศรีโคมคำ">
+                    <option value="ภูลังกา">
+                </datalist>
                 <button class="btn btn-outline-warning" type="submit"><i class="bi bi-search"></i></button>
             </form>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,6 +118,11 @@
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+
+
+
+
+
 
 
 
