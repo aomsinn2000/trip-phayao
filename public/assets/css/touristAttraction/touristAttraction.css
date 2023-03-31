@@ -1,7 +1,11 @@
 body {
     overflow-x: hidden;
 }
-
+.banner-slider {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
 .padding-footer {
     padding-top: 280px;
 }
@@ -262,6 +266,11 @@ body {
 
 }
 @media only screen and (max-width: 830px) {
+    .banner-slider {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
     .banner-placeHit {
         width: 100%;
         height: 210px;
@@ -308,9 +317,21 @@ body {
 }
 
 
+@media (max-width: 780px) {
+    .banner-slider {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+}
 
 
 @media only screen and (max-width: 430px) {
+    .banner-slider {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
     .banner-placeHit {
         width: 100%;
         height: 150px;

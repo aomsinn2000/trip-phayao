@@ -28,8 +28,34 @@
 
     <div style="font-family: 'Kanit', sans-serif;">
         @include('layouts.navbar')
+        <!-- image slider -->
 
-        <img class="banner-placeHit" src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5yCh11ByQ6JOCN7q5YK2tqdwCGDp418UmCC3dnYRye3AbaaqHoz.jpg" alt="">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="https://www.museumofknowledge.com/wp-content/uploads/2017/02/Museum-of-Knowledge-About-Us-3-1600-x-500.jpg" class="d-block w-100 banner-slider" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" class="d-block w-100 banner-slider" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://paikondieow.com/wp-content/uploads/2020/09/0-2-8.jpg" class="d-block w-100 banner-slider" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!--end image slider -->
+
 
         <div class="container ">
             <div class="row justify-content-center">
@@ -79,7 +105,7 @@
                 <div class="col-lg-12">
                     <div class="container ">
                         <br><br>
-                        <h3 style="text-align: center"><b>สถานที่ท่องเที่ยวจังหวัดพะเยา</b> </h3>
+                        <h3 style="text-align: center"><b>สถานที่ท่องเที่ยว </b> </h3>
                         <p class="line-header"></p>
                         <p style="color: #535151;" class="text-head-content-placeHit">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
 

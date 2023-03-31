@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow:hidden">
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 
     <div class="row" style="font-family: 'Sarabun', sans-serif;">
         <div class="col-xl-6">
-            <img class="img-login text-center" src="https://bo.al-hamidiyah.sch.id/assets/file/article/1588224123.jpg" alt="">
+            <img class="img-login text-center" src="{{ asset('assets/images/login.png') }}" alt="">
             <br>
 
         </div>
