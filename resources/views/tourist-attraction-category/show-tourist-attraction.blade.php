@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>สถานที่ยอดฮิต</title>
+    <title>สถานที่ท่องเที่ยว</title>
 
 
     @include('layouts.head-LinkScript')
@@ -49,9 +49,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4  ">
+                                {{-- <div class="col-lg-4  ">
                                     <input type="text" class="form-control search-tags" placeholder="ค้นหา...">
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="row list-wrapper">
                                 {{-- @foreach ($category->touristAttractions as $ta) --}}
@@ -75,7 +75,7 @@
                                                 </div>
                                             </div>
                                             <div class="padding-card-placeHit">
-                                                <a href="{{ url('/touristattractions/description') }}" type="button" class="btn btn-info text-white btn-map">ดูรายละเอียด</a>
+                                                <a href="{{ url('/touristattractions/'.$ta->name_th) }}" type="button" class="btn btn-info text-white btn-map">ดูรายละเอียด</a>
                                             </div>
                                         </div>
                                     @endif

@@ -463,7 +463,7 @@
                                     <label class="px-2"><b>Tags :</b></label><label style="color: red; font-size:12px;">*กรุณากด Enter ต่อหนึ่งคำเพื่อเพิ่ม Tags</label>
                                     <section id='outside-of-the-box'>
                                         <aside>
-                                            <input name='tags-outside' class='tagify--outside' value='tag1, tag2, tag3' placeholder='เพิ่มแท็ก'>
+                                            <input value="" name='tags' class='tagify--outside' placeholder='เพิ่มแท็ก'>
                                         </aside>
                                     </section>
                                 </div>
@@ -763,7 +763,7 @@
             input.click();
         });
         var names = [];
-        console.log(names)
+        // console.log(names)
         $('#gallery').on('change', function() {
             for (var i = 0; i < $(this).get(0).files.length; ++i) {
                 names.push($(this).get(0).files[i]);
@@ -789,7 +789,7 @@
         }
         $(document).on('click', '.btn-delete', function() {
             var id = $(this).data('id');
-            console.log(id)
+            // console.log(id)
             $.ajax({
                 url: "/tourist-attractions/delete-image",
                 type: "POST",
@@ -805,122 +805,52 @@
     {{-- end script อัพโหลดรูปภาพแกลลอรี รูปเล็ก --}}
 
 
-    {{--  script เลือกแท็กโฟลเดอร์ --}}
-    {{-- <script data-name="manualSuggestions">
+
+
+    <script data-name="outside-of-the-box">
         (function() {
-
-            var input = document.querySelector('input[name=tags-manual-suggestions]'),
-                // init Tagify script on the above inputs
-                tagify = new Tagify(input, {
-                    whitelist: ["กว๊านพะเยา", "วัด", "ธรรมชาติ", "ภูเขา", "ชมวิว", "กว๊านพdะเยา", "วัdด", "ธรdรมชาติ", "ภูdเขา", "ชมdวิว"],
-                    dropdown: {
-                        position: "manual",
-                        maxItems: Infinity,
-                        enabled: 0,
-                        classname: "customSuggestionsList"
-                    },
-                    templates: {
-                        dropdownItemNoMatch() {
-                            return `<div class='empty'>Nothing Found</div>`;
-                        }
-                    },
-                    enforceWhitelist: true
-                })
-
-            tagify.on("dropdown:show", onSuggestionsListUpdate)
-                .on("dropdown:hide", onSuggestionsListHide)
-                .on('dropdown:scroll', onDropdownScroll)
-
-            renderSuggestionsList() // defined down below
-
-            // ES2015 argument destructuring
-            function onSuggestionsListUpdate({
-                detail: suggestionsElm
-            }) {
-                console.log(suggestionsElm)
-            }
-
-            function onSuggestionsListHide() {
-                console.log("hide dropdown")
-            }
-
-            function onDropdownScroll(e) {
-                console.log(e.detail)
-            }
-
-            function renderSuggestionsList() {
-                tagify.dropdown.show() // load the list
-                tagify.DOM.scope.parentNode.appendChild(tagify.DOM.dropdown)
-            }
-        })()
-    </script> --}}
-    {{-- end script เลือกแท็กโฟลเดอร์ --}}
-
-    {{-- <script>
-        (function() {
+            var input = document.querySelector('input[name=tags]')
+            var tagify = new Tagify(input, {
+                enforceWhitelist: false,
+                whitelist: [],
+                originalInputValue: input.value,
+                dropdown: {
+                    position: "input",
+                    enabled: 0 // always opens dropdown when input gets focus
+                }
+            });
             $.ajax({
-                url: '/tourist-attractions/editFolder',
+                url: '/tourist-attractions/selectTag',
                 type: 'GET',
-                success: function(data) {
-                    // use the data to populate the suggestions array
-                    var folders = data.map(function(item) {
-                        return {
-                            id: item.id,
-                            value: item.name_th
-                        };
+                success: function(output) {
+                    // var tags = data.map(function(item) {
+                    //     return item.name_th;
+                    // });
+                    var tags = output;
+                    tagify.settings.whitelist = tags.map(function(item) {
+                        return item.name_th;
                     });
-                    console.log(folders)
-                    // initialize Tagify with the suggestions array
-                    var input = document.querySelector('input[name="select_folders"]');
-                    var tagify = new Tagify(input, {
-                        whitelist: folders,
-                        dropdown: {
-                            position: "manual",
-                            maxItems: Infinity,
-                            enabled: 0,
-                            classname: "customSuggestionsList"
-                        },
-                        templates: {
-                            dropdownItemNoMatch() {
-                                return `<div class='empty'>Nothing Found</div>`;
-                            }
-                        },
-                        enforceWhitelist: true,
-                        valueField: 'value', // specify the name of the value field
-                        textField: 'name' // specify the name of the label field
-                    });
-                    tagify.on("dropdown:show", onSuggestionsListUpdate)
-                        .on("dropdown:hide", onSuggestionsListHide)
-                        .on('dropdown:scroll', onDropdownScroll)
-                    renderSuggestionsList(tagify); // defined down below
+                    tagify.whitelist = tagify.settings.whitelist;
+
+                    var touristAttractionTag = @json($touristAttractionTag);
+                    if (touristAttractionTag.length > 0) {
+                        var values = touristAttractionTag.map(function(item) {
+                            return item;
+                        });
+                        tagify.addTags(values);
+
+                    }
+                    console.log(touristAttractionTag);
                 },
                 error: function(xhr, status, error) {
                     console.log(error);
+                    console.log(touristAttractionTag);
                 }
             });
 
-            function renderSuggestionsList(tagify) {
-                tagify.dropdown.show() // load the list
-                tagify.DOM.scope.parentNode.appendChild(tagify.DOM.dropdown)
-            }
-
-            // ES2015 argument destructuring
-            function onSuggestionsListUpdate({
-                detail: suggestionsElm
-            }) {
-                console.log(suggestionsElm)
-            }
-
-            function onSuggestionsListHide() {
-                console.log("hide dropdown")
-            }
-
-            function onDropdownScroll(e) {
-                console.log(e.detail)
-            }
-        })();
-    </script> --}}
-
+        })()
+    </script>
+{{--  script เลือกแท็กโฟลเดอร์ --}}
     <script>
         (function() {
             var input = document.querySelector('input[name="select_folders"]');
@@ -928,11 +858,14 @@
                 enforceWhitelist: false,
                 whitelist: [],
                 originalInputValue: input.value,
-                // rest of the options...
+                dropdown: {
+                    position: "input",
+                    enabled: 0 // always opens dropdown when input gets focus
+                }
             });
 
             $.ajax({
-                url: '/tourist-attractions/editFolder',
+                url: '/tourist-attractions/selectFolder',
                 type: 'GET',
                 success: function(output) {
                     var folders = output;
@@ -943,11 +876,10 @@
                         };
                     });
                     tagify.whitelist = tagify.settings.whitelist;
-                    tagify.dropdown.show();
 
-                    var destinationFolder = @json($destinationFolder);
-                    if (destinationFolder.length > 0) {
-                        var values = destinationFolder.map(function(item) {
+                    var folderTouristAttraction = @json($folderTouristAttraction);
+                    if (folderTouristAttraction.length > 0) {
+                        var values = folderTouristAttraction.map(function(item) {
                             return {
                                 id: item.id,
                                 value: item.name_th
@@ -993,20 +925,6 @@
     </script>
 
 
-    <script data-name="outside-of-the-box">
-        (function() {
-
-            var input = document.querySelector('input[name=tags-outside]')
-            // init Tagify script on the above inputs
-            var tagify = new Tagify(input, {
-                whitelist: ["ชมวิว", "แคมป์ปิ้ง", "เดินป่า"],
-                dropdown: {
-                    position: "input",
-                    enabled: 0 // always opens dropdown when input gets focus
-                }
-            })
-        })()
-    </script>
 
 
 

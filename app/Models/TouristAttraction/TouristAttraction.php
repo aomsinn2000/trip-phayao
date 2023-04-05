@@ -19,7 +19,7 @@ class TouristAttraction extends Model
         'attraction_no',
         'is_popular',
         'is_status',
-        'destination_folder_id',
+        'is_folder',
         'tourist_attraction_category_id',
         'name_th',
         'name_en',

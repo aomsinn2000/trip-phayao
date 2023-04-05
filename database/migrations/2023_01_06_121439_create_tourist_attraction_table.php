@@ -16,10 +16,11 @@ class CreateTouristAttractionTable extends Migration
         Schema::create('tourist_attractions', function (Blueprint $table) {
             $table->id();
             $table->string('attraction_no', 20)->unique()->nullable();
+            $table->foreignId('tourist_attraction_category_id')->nullable()->constrained('tourist_attraction_categories')->onDelete('set null');
+            // $table->foreignId('destination_folder_id')->nullable()->constrained('destination_folders')->onDelete('set null');
             $table->boolean('is_popular')->nullable();
             $table->boolean('is_status')->nullable();
-            $table->foreignId('destination_folder_id')->nullable()->constrained('destination_folders')->onDelete('set null');
-            $table->foreignId('tourist_attraction_category_id')->nullable()->constrained('tourist_attraction_categories')->onDelete('set null');
+            $table->boolean('is_folder')->nullable();
             $table->string('name_th', 100)->nullable();
             $table->string('name_en', 100)->nullable();
             $table->string('detail_th')->nullable();

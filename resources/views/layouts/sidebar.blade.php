@@ -242,7 +242,7 @@
                 </a>
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ url('/special-deal-categories/') }}">จัดการหมวดหมู่ดีลสุดพิเศษ</a></li>
-                    <li><a class="slide-item" href="{{ url('/tourist-attraction-categories/') }}">จัดการหมวดหมู่สถานที่ยอดฮิต</a></li>
+                    <li><a class="slide-item" href="{{ url('/tourist-attraction-categories/') }}">จัดการหมวดหมู่สถานที่ท่องเที่ยว</a></li>
                     <li><a class="slide-item" href="{{ url('/destination-folders/') }}">ตั้งค่าโฟลเดอร์สถานที่ยอดฮิต</a></li>
                 </ul>
             </li>

@@ -24,8 +24,8 @@ class TouristAttractionCategoryController extends Controller
         $touristAttractions = TouristAttraction::where('tourist_attraction_category_id', $category->id)
             ->where('is_status', 1)
             ->paginate(12);
-        // dd($touristAttractions);
-        return view('tourist-attraction-category.show-tourist-attraction', compact('category', 'total', 'touristAttractions','totalPages'));
+        // dd($touristAttractions,$totalPages);
+        return view('tourist-attraction-category.show-tourist-attraction', compact('category', 'total', 'touristAttractions', 'totalPages'));
     }
 
     public function viewTouristAttractionCategory()
@@ -138,7 +138,13 @@ class TouristAttractionCategoryController extends Controller
     {
         // dd($request->toArray());
         $request->validate([
-            'name_th' => 'required|unique:tourist_attraction_categories',
+            // 'name_th' => 'required|unique:tourist_attraction_categories',
+            'name_th' => [
+                'required',
+                Rule::unique('tourist_attraction_categories')->where(function ($query) {
+                    return $query->whereNull('deleted_at');
+                }),
+            ],
             // 'name_en' => 'required|unique:tourist_attraction_categories',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:5120'
         ], [

@@ -46,8 +46,8 @@
                                             <div class="card-body">
                                                 <b class="text-head-category">{{ $deal->name_th }}</b>
                                                 <div class="row text-detail-category">
-                                                    <div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">{{ $deal->specialDealCategory->name_th ?? '' }}</b></span></div>
-                                                    <div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>
+                                                    <div class="text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">{{ $deal->specialDealCategory->name_th ?? '' }}</b></span></div>
+                                                    {{-- <div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div> --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -103,7 +103,6 @@
                             html += '<div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>';
                             html += '</div></div></div></a></div>';
                         }
-                        // console.log(deals);
                         $('#search-results-container').html(html);
                     },
                     error: function(xhr, status, error) {

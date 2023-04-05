@@ -13,8 +13,8 @@ class DestinationFolderController extends Controller
 {
     public function showDestinationFolder($name)
     {
-        $destinations = DestinationFolder::where('name_th', $name)->first();
-        // dd($destinations);
+        $destinations = DestinationFolder::where('is_status',1)->where('name_th', $name)->with(['touristAttractions'])->first();
+        // dd($destinations->toArray());
         return view('destination-folder.show-destination-folder', compact('destinations'));
     }
 

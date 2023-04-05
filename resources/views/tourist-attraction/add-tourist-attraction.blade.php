@@ -460,13 +460,11 @@
                                     <label class="px-2"><b>Tags :</b></label><label style="color: red; font-size:12px;">*กรุณากด Enter ต่อหนึ่งคำเพื่อเพิ่ม Tags</label>
                                     <section id='outside-of-the-box'>
                                         <aside>
-                                            <input name='tags-outside' class='tagify--outside' value='tag1, tag2, tag3' placeholder='เพิ่มแท็ก'>
+                                            <input value="{{ old('tags') }}" name='tags' class='tagify--outside'placeholder='เพิ่มแท็ก'>
                                         </aside>
                                     </section>
                                 </div>
                             </div>
-
-
 
                             <div class="row px-2 py-2">
                                 <label class="px-2"><b>จัดกลุ่มสถานที่ยอดฮิต* :</b></label>
@@ -476,8 +474,7 @@
 
                                 <section id='section-manual-suggestions' style="width:100%;">
                                     <aside class='rightSide'>
-                                        {{-- <input name='select-folders' placeholder='เลือกแท็ก'> --}}
-                                        <input type="text" name="select_folders" placeholder="เลือกFolder" value="{{ old('select_folders') }}" class="tagify" />
+                                        <input value="{{ old('select_folders') }}" type="text" name="select_folders" placeholder="เลือกFolder" class="tagify" />
                                     </aside>
                                 </section>
 
@@ -766,152 +763,82 @@
         const selectOn = document.getElementById("select-on");
         const selectOff = document.getElementById("select-off");
         const selectTags = document.querySelector(".select-tags");
+    </script> --}}
 
-
-
-
-    {{--  script เลือกแท็กโฟลเดอร์ --}}
-    {{-- <script data-name="manualSuggestions">
+    {{-- script เลือกแท็ก --}}
+    <script data-name="outside-of-the-box">
         (function() {
             $.ajax({
-                url: '/tourist-attractions/folder',
+                url: '/tourist-attractions/selectTag',
                 type: 'GET',
                 success: function(data) {
-                    // use the data to populate the suggestions array
-                    // var folders = data.map(function(item) {
-                    //     return item.name_th;
-                    // });
-                    console.log(data)
-                    var folders = data.map(function(item) {
+                    var tags = data.map(function(item) {
                         return item.name_th;
                     });
-                    // initialize Tagify with the suggestions array
-                    // var input = document.querySelector('input[name=select-folders]');
-                    var input = document.querySelector('[name=select-folders]');
-                    console.log(input)
-                    // var input = ('<input name="select-folders[]" placeholder="เลือกแท็ก">');
-                    var tagify = new Tagify(input, {
-                        whitelist: folders,
-                        dropdown: {
-                            position: "manual",
-                            maxItems: Infinity,
-                            enabled: 0,
-                            classname: "customSuggestionsList"
-                        },
-                        templates: {
-                            dropdownItemNoMatch() {
-                                return `<div class='empty'>Nothing Found</div>`;
-                            }
-                        },
-                        enforceWhitelist: true,
-                        // valueField: 'value', // specify the name of the value field
-                        // textField: 'label' // specify the name of the label field
-                    });
-                    tagify.on("dropdown:show", onSuggestionsListUpdate)
-                        .on("dropdown:hide", onSuggestionsListHide)
-                        .on('dropdown:scroll', onDropdownScroll)
-                    renderSuggestionsList(tagify); // defined down below
-                },
+                    var input = document.querySelector('input[name=tags]')
 
-                // success: function(data) {
-                //     var folders = data.map(function(item) {
-                //         return {
-                //             value: item.id,
-                //             label: item.name_th
-                //         };
-                //     });
-                //     var input = document.querySelector('input[name=select-folders]');
-                //     var tagify = new Tagify(input, {
-                //         whitelist: folders,
-                //         dropdown: {
-                //             position: "manual",
-                //             maxItems: Infinity,
-                //             enabled: 0,
-                //             classname: "customSuggestionsList"
-                //         },
-                //         templates: {
-                //             dropdownItemNoMatch() {
-                //                 return `<div class='empty'>Nothing Found</div>`;
-                //             }
-                //         },
-                //         enforceWhitelist: true,
-                //         valueField: 'value', // specify the name of the value field
-                //         textField: 'label' // specify the name of the label field
-                //     });
-                //     // ...
-                // },
+                    var tagify = new Tagify(input, {
+                        whitelist: tags,
+                        dropdown: {
+                            position: "input",
+                            enabled: 0
+                        }
+                    })
+                },
                 error: function(xhr, status, error) {
                     console.log(error);
                 }
-            });
+            })
 
-            function renderSuggestionsList(tagify) {
-                tagify.dropdown.show() // load the list
-                tagify.DOM.scope.parentNode.appendChild(tagify.DOM.dropdown)
-            }
-
-            // ES2015 argument destructuring
-            function onSuggestionsListUpdate({
-                detail: suggestionsElm
-            }) {
-                console.log(suggestionsElm)
-            }
-
-            function onSuggestionsListHide() {
-                console.log("hide dropdown")
-            }
-
-            function onDropdownScroll(e) {
-                console.log(e.detail)
-            }
         })();
-    </script> --}}
-    {{-- end script เลือกแท็กโฟลเดอร์ --}}
+    </script>
+    {{-- end script เลือกแท็ก --}}
 
-
-    <script>
+    {{--  script เลือกแท็กโฟลเดอร์ --}}
+    <script data-name="section-manual-suggestions">
         (function() {
+            var input = document.querySelector('input[name="select_folders"]');
             $.ajax({
-                url: '/tourist-attractions/folder',
+                url: '/tourist-attractions/selectFolder',
                 type: 'GET',
                 success: function(data) {
-                    // use the data to populate the suggestions array
                     var folders = data.map(function(item) {
                         return {
                             id: item.id,
                             value: item.name_th
                         };
                     });
-                    // initialize Tagify with the suggestions array
-                    var input = document.querySelector('input[name="select_folders"]');
-
                     var tagify = new Tagify(input, {
                         whitelist: folders,
                         dropdown: {
-                            position: "manual",
+                            position: "input",
                             maxItems: Infinity,
                             enabled: 0,
                             classname: "customSuggestionsList"
                         },
+                        // dropdown: {
+                        //     position: "input",
+                        //     enabled: 0 // always opens dropdown when input gets focus
+                        // },
                         templates: {
                             dropdownItemNoMatch() {
                                 return `<div class='empty'>Nothing Found</div>`;
                             }
                         },
                         enforceWhitelist: true,
-                        valueField: 'value', // specify the name of the value field
-                        textField: 'name' // specify the name of the label field
-                    });console.log(tagify)
-                    tagify.on("dropdown:show", onSuggestionsListUpdate)
-                        .on("dropdown:hide", onSuggestionsListHide)
-                        .on('dropdown:scroll', onDropdownScroll)
-                    renderSuggestionsList(tagify); // defined down below
+                        valueField: 'value',
+                        textField: 'name'
+                    });
+                    // console.log(tagify)
+                    // tagify.on("dropdown:show", onSuggestionsListUpdate)
+                    //     .on("dropdown:hide", onSuggestionsListHide)
+                    //     .on('dropdown:scroll', onDropdownScroll)
+                    // renderSuggestionsList(tagify);
                 },
                 error: function(xhr, status, error) {
                     console.log(error);
                 }
             });
-
 
             function renderSuggestionsList(tagify) {
                 tagify.dropdown.show() // load the list
@@ -934,24 +861,8 @@
             }
         })();
     </script>
+    {{-- end script เลือกแท็กโฟลเดอร์ --}}
 
-
-
-
-<script data-name="outside-of-the-box">
-    (function(){
-
-    var input = document.querySelector('input[name=tags-outside]')
-    // init Tagify script on the above inputs
-    var tagify = new Tagify(input, {
-      whitelist: ["ชมวิว", "แคมป์ปิ้ง", "เดินป่า"],
-      dropdown: {
-        position: "input",
-        enabled : 0 // always opens dropdown when input gets focus
-      }
-    })
-    })()
-    </script>
 </body>
 
 </html>

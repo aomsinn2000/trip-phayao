@@ -22,8 +22,8 @@
         <div class="nav-background-placeHit">
             <p>
                 <a href="{{ url('/') }}" class="text-nav-placeHit"> หน้าหลัก /</a>
-                <span><a href="{{ url('/touristattractions/') }}" class="text-nav-placeHit"> สถานที่ยอดฮิต /</a></span>
-                <span><a href="" class="text-nav-placeHit" style="color: #27AAE1"> <b>วนอุทยานแห่งชาติภูลังกา</b></a></span>
+                <span><a href="{{ url('/touristattractions/') }}" class="text-nav-placeHit"> สถานที่ท่องเที่ยว /</a></span>
+                <span><a href="" class="text-nav-placeHit" style="color: #27AAE1"> <b>{{ $attraction->name_th }}</b></a></span>
             </p>
         </div>
 
@@ -34,9 +34,9 @@
                         <br><br>
                         <div class="row">
                             <div class="col-sm-6">
-                                <h2 style="font-family: 'Kanit', sans-serif;"><b>วนอุทยานภูลังกา</b></h2>
+                                <h2 style="font-family: 'Kanit', sans-serif;"><b>{{ $attraction->name_th }}</b></h2>
                             </div>
-                            <div class="col-sm-6">
+                            {{-- <div class="col-sm-6">
                                 <p class=" share-news">แชร์ข่าว
                                     <a href=""> <span class="px-1"><i class="bi bi-facebook"></i></span></a>
                                     <a href=""> <span class="px-1"><i class="bi bi-twitter"></i></span></a>
@@ -44,22 +44,21 @@
                                     <a href=""> <span class="px-1"><i class="bi bi-link-45deg"></i></span></a>
                                     <a href=""> <span class="px-1"><i class="bi bi-printer"></i></span></a>
                                 </p>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <p class="text-category">หมวดหมู่
-                            <span style="color:#00AEEF;"><b>: ที่พัก </b></span>
+                            <span style="color:#00AEEF;"><b>: {{ $attraction->touristAttractionCategory->name_th }}</b></span>
                         </p>
-                        <p style="color: #868383">เรทติ้ง : 4.5
+                        {{-- <p style="color: #868383">เรทติ้ง : 4.5
                             <span>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star-half-o"></span>
-
                             </span>
-                        </p>
+                        </p> --}}
 
 
 
@@ -68,84 +67,27 @@
                             <div class="row">
                                 <div class="column small-11 small-centered">
                                     <div class="slider slider-single">
-                                        <div>
-                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6debdcb0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ec832f0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-touristAttraction" src="https://www.lavieenroad.com/wp-content/uploads/2017/12/got6339.jpg" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0d1f000001gmc84F7DF_C_900_600.png_.webp?proc=source%2ftrip" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0h1f000001gpe575EB2_C_900_600.png_.webp?proc=source%2ftrip" alt="">
-                                        </div>
-                                        <div>
-                                            <img class="image-large-touristAttraction" src="https://youimg1.tripcdn.com/target/ww081f000001go0id8860_C_760_506.png" alt="">
-                                        </div>
+                                        @foreach ($attraction->touristAttractionImages as $images)
+                                            <div>
+                                                <img class="image-large-touristAttraction" src="{{ $images->image ? asset('/storage/' . $images->image) : '' }}" alt="">
+                                            </div>
+                                        @endforeach
+
                                     </div>
                                     <br>
                                     <div class="slider slider-nav">
-
-
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
-                                            </span>
-
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
-                                            </span>
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6debdcb0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
-                                            </span>
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-touristAttraction" src="https://cms.dmpcdn.com/travel/2022/05/05/6ec832f0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="Nature">
-                                            </span>
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-touristAttraction" src="https://www.lavieenroad.com/wp-content/uploads/2017/12/got6339.jpg" alt="">
-                                            </span>
-
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0d1f000001gmc84F7DF_C_900_600.png_.webp?proc=source%2ftrip" alt="">
-                                            </span>
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww0h1f000001gpe575EB2_C_900_600.png_.webp?proc=source%2ftrip" alt="">
-                                            </span>
-                                        </div>
-                                        <div class="px-1">
-                                            <span>
-                                                <img class="image-small-touristAttraction" src="https://youimg1.tripcdn.com/target/ww081f000001go0id8860_C_760_506.png" alt="Nature">
-                                            </span>
-                                        </div>
-
+                                        @foreach ($attraction->touristAttractionImages as $images)
+                                            <div class="px-1">
+                                                <span>
+                                                    <img class="image-small-touristAttraction" src="{{ $images->image ? asset('/storage/' . $images->image) : '' }}" alt="">
+                                                </span>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {{--
-                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        {{-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -172,7 +114,7 @@
 
 
                         {{-- เนื้อหา --}}
-                        <p class="text-content">วัดอนาลโยทิพยาราม หรือที่เรียกสั้นๆ ว่า วัดอนาลโย ตั้งอยู่บริเวณดอยบุษราคัม และม่อนพระนอน เป็นวัดที่เต็มไปด้วยพระพุทธรูปต่างๆ มากมาย ทั้ง ศิลปะแบบสุโขทัย พระพุทธไสยาสน์ พระพุทธรูปปางลีลา พระพุทธรูปปางนาคปรก เป็นต้น ซึ่งทั้งหมดก็สร้างด้วยความประณีต
+                        {{-- <p class="text-content">วัดอนาลโยทิพยาราม หรือที่เรียกสั้นๆ ว่า วัดอนาลโย ตั้งอยู่บริเวณดอยบุษราคัม และม่อนพระนอน เป็นวัดที่เต็มไปด้วยพระพุทธรูปต่างๆ มากมาย ทั้ง ศิลปะแบบสุโขทัย พระพุทธไสยาสน์ พระพุทธรูปปางลีลา พระพุทธรูปปางนาคปรก เป็นต้น ซึ่งทั้งหมดก็สร้างด้วยความประณีต
                             สวยงามอย่างมาก
                             รวมถึงมีไฮไลท์อย่าง รัตนเจดีย์ ที่สร้างในรูปแบบของศิลปะอินเดียพุทธคยา และยังมีเก๋งจีน ไว้ประดิษฐาน เจ้าแม่กวนอิม มีหอพระแก้วมรกตจำลอง ซึ่งถ้ามองวิวจากยอดเขาก็
                             สามารถชมทัศนียภาพสวยๆ ของกว๊านพะเยาได้ด้วย </p>
@@ -181,17 +123,23 @@
                         <img class="image-content" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
                         <br><br>
                         <p class="text-content">วัดอนาลโยทิพยาราม แห่งนี้ คือสถานที่ปฏิบัติธรรมรายล้อมไปด้วยธรรมชาติ สร้างขึ้นด้วยแรงศรัทธาของผู้เลื่อมใสในพระพุทธศาสนาและวัตรปฏิบัติของ พระปัญญาพิศาลเถร หรือ หลวงพ่อไพบูลย์ สุมังคโล พระสายวิปัสนาที่มีลูกศิษย์ให้ความเคารพศรัทธาอย่างมาก
-                            จนทำให้เกิดสถานที่ปฏิบัติธรรมบนดอยบุษราคัมแห่งนี้นั่นเอง </p>
+                            จนทำให้เกิดสถานที่ปฏิบัติธรรมบนดอยบุษราคัมแห่งนี้นั่นเอง </p> --}}
+                        <div>
+                            <p class="text-deal">
+                            <h3 style="font-family: 'Kanit', sans-serif;"><b>รายละเอียดเพิ่มเติม</b></h3>
+                            </p>
+                            <?php echo $attraction->description_th; ?>
+                            {{-- <?php echo html_entity_decode($attraction->description_th); ?> --}}
+                        </div>
                         {{-- end เนื้อหา --}}
-
 
 
                         {{-- ที่ตั้ง --}}
                         <div class="text-address">
                             <hr>
-                            <p>ที่ตั้ง <b>ตำบลผาช้างน้อย อำเภอเชียงคำ จังหวัดพะเยา</b></p>
-                            <p>การเดินทาง : จากตัวเมืองพะเยาใช้ทางหลวงหมายเลข 1092 ถนนสายพะเยา-ปง ระยะทาง 104 กม. เมื่อ ถึงอำเภอเชียงคำเดินทางต่อไปอีกระยะทางประมาณ 3 กิโลเมตร ตามทางหลวงหมายเลข 1148 แล้วเลี้ยวซ้ายไปทางทิศเหนืออีก 12 กิโลเมตร จะถึงวนอุทยานฯ</p>
-                            <p>ช่วงเวลาท่องเที่ยว : <b>ฤดูหนาว</b></p>
+                            <p>ที่ตั้ง <b>ตำบล{{ $attraction->sub_district }} อำเภอ{{ $attraction->district }} จังหวัด{{ $attraction->province }}</b></p>
+                            <p>การเดินทาง : {{ $attraction->travel_th }}</p>
+                            <p>ช่วงเวลาท่องเที่ยว : <b>{{ $attraction->season_recommend_th }}</b></p>
                         </div>
 
                         {{-- end ที่ตั้ง --}}
@@ -199,19 +147,14 @@
 
                         {{-- tags --}}
                         <p>
-                        <h3><b>Tage : </b></h3>
-                        <span>
-                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">ธรรมชาติ</a>
-                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">วัด</a>
-                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">ภูเขา</a>
-                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">ดอย</a>
-                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">กางเต้นท์</a>
-                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">ชมวิว</a>
-                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">พะเยา</a>
-                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">ทะเลหมอก</a>
-                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">กิจกรรมกลางแจ้ง</a>
-                            <a href="{{ url('/touristattractions/tags') }}" type="button" class="btn btn-outline-info">เดินป่า</a>
-                        </span>
+                        <h3 style="font-family: 'Kanit', sans-serif;">
+                            <b>Tags :<span>
+                                    @foreach ($attraction->touristAttractionTags as $tags)
+                                        <a href="{{ url('/touristattractions/' . $attraction->name_th . '/' . $tags->name_th) }}" type="button" class="btn btn-outline-info">{{ $tags->name_th }}</a>
+                                    @endforeach
+                                </span>
+                            </b>
+                        </h3>
                         </p>
 
                         {{-- end tags --}}

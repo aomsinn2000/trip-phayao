@@ -171,9 +171,9 @@
                                 จัดการหมวดหมู่ >
                             </h5>
                             <a href="{{ url('/tourist-attraction-categories/') }}">
-                                <h5 class="content-title mb-0 my-auto px-2">จัดการหมวดหมู่สถานที่ยอดฮิต ></h5>
+                                <h5 class="content-title mb-0 my-auto px-2">จัดการหมวดหมู่สถานที่ท่องเที่ยว ></h5>
                             </a>
-                            <h5 class="content-title mb-0 my-auto" style="padding-bottom: 5px;">เพิ่มหมวดหมู่สถานที่ยอดฮิต</h5>
+                            <h5 class="content-title mb-0 my-auto" style="padding-bottom: 5px;">เพิ่มหมวดหมู่สถานที่ท่องเที่ยว</h5>
                         </div>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                     <div class="col-xl-7">
                         <div class="card card-body">
                             <div class="row py-3">
-                                <label for="" style="padding-top: 10px;" class="px-3">รหัสหมวดหมู่สถานที่ยอดฮิต</label>
+                                <label for="" style="padding-top: 10px;" class="px-3">รหัสหมวดหมู่สถานที่ท่องเที่ยว</label>
                                 <input type="text" readonly class="form-control" id=""style="width:25%" value="{{ $category_no }}" name="category_no">
                             </div>
                             <div class="row d-flex justify-content-between py-2">

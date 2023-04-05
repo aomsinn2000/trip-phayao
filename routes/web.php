@@ -75,7 +75,7 @@ Route::prefix('/home-banners')->group(function () {
 //*********หน้าบ้านโฟลเดอร์**********
 Route::prefix('/destinations')->group(function () {
     // Route::get('/', [DestinationFolderController::class, 'showDestinationFolder']);
-    Route::get('/{name}',[DestinationFolderController::class,'showDestinationFolder']);
+    Route::get('/{name}', [DestinationFolderController::class, 'showDestinationFolder']);
     Route::get('/description', [DestinationFolderController::class, 'showDestinationFolderDescription']);
 });
 //*********end หน้าบ้านโฟลเดอร์**********
@@ -153,8 +153,9 @@ Route::prefix('/special-deal-categories')->group(function () {
 //******************หน้าบ้าน สถานที่ยอดฮิต******************
 Route::prefix('/touristattractions')->group(function () {
     Route::get('/', [TouristAttractionController::class, 'showTouristAttraction']); //navbar view สถานที่ยอดฮิต
-    Route::get('/description', [TouristAttractionController::class, 'showTouristAttractionDescription']); //view รายละเอียดสถานที่ยอดฮิตเมื่อคลิก
-    Route::get('/tags', [TouristAttractionController::class, 'showTouristAttractionTags']);
+    Route::get('/select-by-category', [TouristAttractionController::class, 'showTouristAttractionByCategory']);
+    Route::get('/{name}', [TouristAttractionController::class, 'showTouristAttractionDescription']); //view รายละเอียดสถานที่ยอดฮิตเมื่อคลิก
+    Route::get('/{name_ta}/{name}', [TouristAttractionController::class, 'showTouristAttractionTags']);
 });
 //******************end หน้าบ้าน สถานที่ยอดฮิต**************
 
@@ -169,8 +170,9 @@ Route::prefix('/tourist-attractions')->group(function () {
     Route::post('/delete-image', [TouristAttractionController::class, 'deleteTouristAttractionImage']);
     Route::post("/save-update/{id}", [TouristAttractionController::class, 'saveUpdateTouristAttraction']);
 
-    Route::get('/folder',[TouristAttractionController::class,'selectFolder']);
-    Route::get('/editFolder',[TouristAttractionController::class,'editFolder']);
+    Route::get('/selectTag', [TouristAttractionController::class, 'selectTag']);
+    Route::get('/selectFolder', [TouristAttractionController::class, 'selectFolder']);
+    // Route::get('/editFolder',[TouristAttractionController::class,'editFolder']);
 
     Route::get('/count', [TouristAttractionController::class, 'countTouristAttraction']);
     Route::post('/switch-status', [TouristAttractionController::class, 'switchTouristAttraction']);

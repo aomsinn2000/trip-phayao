@@ -32,6 +32,7 @@ class DestinationFolder extends Model
     ];
     public function touristAttractions()
     {
-        return $this->hasMany(TouristAttraction::class);
+        // return $this->hasMany(TouristAttraction::class,);
+        return $this->belongsToMany(TouristAttraction::class,'folder_tourist_attractions');
     }
 }

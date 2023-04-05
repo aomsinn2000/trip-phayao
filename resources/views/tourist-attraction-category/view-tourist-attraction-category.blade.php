@@ -252,7 +252,7 @@
                                 </svg>
                                 จัดการข้อมูลหมวดหมู่ >
                             </h5>
-                            <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;">จัดการหมวดหมู่สถานที่ยอดฮิต</h5>
+                            <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;">จัดการหมวดหมู่สถานที่ท่องเที่ยว</h5>
                         </div>
                     </div>
                 </div>
@@ -266,10 +266,10 @@
 
                                 <div class="row">
                                     <div class="col-6">
-                                        <h5><b>จัดการหมวดหมู่สถานที่ยอดฮิต</b></h5>
+                                        <h5><b>จัดการหมวดหมู่สถานที่ท่องเที่ยว</b></h5>
                                     </div>
                                     <div class="col-6">
-                                        <a style="float: right; margin-right:35px;" href="{{ url('/tourist-attraction-categories/add') }}" type="button" class="btn btn-info">เพิ่มหมวดหมู่สถานที่ยอดฮิต</a>
+                                        <a style="float: right; margin-right:35px;" href="{{ url('/tourist-attraction-categories/add') }}" type="button" class="btn btn-info">เพิ่มหมวดหมู่สถานที่ท่องเที่ยว</a>
                                     </div>
                                 </div>
                                 <div style="padding-top:60px;"></div>

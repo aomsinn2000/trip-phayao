@@ -58,7 +58,7 @@
                         <a class="nav-link" href="{{ url('/specialdeals/') }}">ดีลสุดพิเศษ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/touristattractions/') }}">สถานที่ยอดฮิต</a>
+                        <a class="nav-link" href="{{ url('/touristattractions/') }}">สถานที่ท่องเที่ยว</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/activities/') }}">กิจกรรม</a>

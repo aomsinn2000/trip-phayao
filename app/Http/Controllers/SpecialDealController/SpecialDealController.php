@@ -32,7 +32,6 @@ class SpecialDealController extends Controller
         $deal = SpecialDeal::where('name_th', $name)->with(['specialDealCategory', 'specialDealImages'])->first();
         $start_date = $deal->start_date ? Carbon::parse($deal->start_date)->addYear(543)->locale('th')->isoFormat('D MMMM ') : '';
         $end_date = $deal->end_date ? Carbon::parse($deal->end_date)->addYear(543)->locale('th')->isoFormat('D MMMM Y') : '';
-
         return view('special-deal.show-special-deal-description', compact('deal', 'start_date', 'end_date'));
     }
 
@@ -203,7 +202,8 @@ class SpecialDealController extends Controller
             'special_deal_category_id' => 'required',
             'price' => 'required',
             'discount' => 'required',
-            'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'cover_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            // 'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
             'images[]' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240|max:10'
         ], [
             'name_th.required' => 'โปรดตั้งชื่อดีลพิเศษ.',
@@ -213,7 +213,7 @@ class SpecialDealController extends Controller
             'special_deal_category_id.required' => 'โปรดเลือกหมวดหมู่',
             'price.required' => 'โปรดใส่ราคาของดีล',
             'discount.required' => 'โปรดใส่ส่วนลด',
-            'cover_image.required' => 'โปรด Upload ภาพปกด้วย',
+            // 'cover_image.required' => 'โปรด Upload ภาพปกด้วย',
             'cover_image.image' => 'โปรดเลือกไฟล์รูปภาพ.',
             'cover_image.mimes' => 'ไฟล์ภาพต้องนามสกุล jpeg, png, jpg, gif, svg เท่านั้น',
             'cover_image.max' => 'รูปภาพต้องขนาดไม่เกิน 5 mb.',

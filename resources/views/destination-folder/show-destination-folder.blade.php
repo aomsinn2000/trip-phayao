@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>สถานที่ยอดฮิต</title>
+    <title>{{ $destinations->name_th }}</title>
 
 
     @include('layouts.head-LinkScript')
@@ -80,7 +80,7 @@
 
                         <!-- Nav tabs -->
 
-                        <ul class="nav nav-pills  px-1 py-2" id="pills-tab" role="tablist">
+                        {{-- <ul class="nav nav-pills  px-1 py-2" id="pills-tab" role="tablist">
                             <h3>หมวดหมู่ : </h3>
                             <li class="nav-item px-1" role="presentation">
                                 <button type="button" class="btn btn-outline-info active " id="pills-temple-tab" data-bs-toggle="pill" data-bs-target="#pills-temple" type="button" role="tab" aria-selected="true">ทั้งหมด</button>
@@ -88,343 +88,38 @@
                             <li class="nav-item px-1" role="presentation">
                                 <button type="button" class="btn btn-outline-info "id="pills-restaurant-tab" data-bs-toggle="pill" data-bs-target="#pills-restaurant" type="button" role="tab" aria-selected="false">วัด</button>
                             </li>
-                        </ul>
+                        </ul> --}}
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-temple" role="tabpanel">
                                 <div class="wrapper">
                                     <div class="row list-wrapper">
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
+                                        @foreach ($destinations->touristAttractions as $attractions)
+                                            <div class="list-item col-lg-3 col-md-6 mb-lg-3">
+                                                <div class="card  text-white" style="border: none;">
+                                                    <img src="{{ '/storage/' . $attractions->cover_image }}" class="img-card-placeHit" alt="...">
+                                                    <div class="card-body text-black">
+                                                        <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>{{ $attractions->province }},ประเทศไทย</p>
+                                                        <h4>{{ $attractions->name_th }}</h4>
+                                                        <p class="text-card-content-placeHit">{{ $attractions->detail_th }}</p>
+                                                        {{-- <p>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <span> <i class="bi bi-star-fill"></i></span>
+                                                            <span> <i class="bi bi-star-fill"></i></span>
+                                                            <span> <i class="bi bi-star-fill"></i></span>
+                                                            <span> <i class="bi bi-star-fill"></i></span>
+                                                            <span class="text-review-placeHit">10+ รีวิว</span>
+                                                        </p> --}}
 
+                                                    </div>
+                                                </div>
+                                                <div class="padding-card-placeHit">
+                                                    <a href="{{ url('/touristattractions/description') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
                                                 </div>
                                             </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('/touristattractions/description') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
+                                        @endforeach
 
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('/touristattractions/description') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
 
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('/touristattractions/description') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('/touristattraction/description') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="https://www.museumthailand.com/upload/evidence/1500956664_99367.jpg" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                    <h4>กว๊านพะเยา</h4>
-                                                    <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                    <p>
-                                                        <i class="bi bi-star-fill"></i>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span> <i class="bi bi-star-fill"></i></span>
-                                                        <span class="text-review-placeHit">10+ รีวิว</span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                            </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
+                                        {{-- <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                             <div class="card  text-white" style="border: none;">
                                                 <img src="https://thailandtourismdirectory.go.th/assets/upload/2021/11/1//be10d8aa-10d6-4906-a139-0309df29406e.jpg" class="img-card-placeHit" alt="...">
                                                 <div class="card-body text-black">
@@ -445,8 +140,8 @@
                                             <div class="padding-card-placeHit">
                                                 <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
                                             </div>
-                                        </div>
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
+                                        </div> --}}
+                                        {{-- <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                             <div class="card  text-white" style="border: none;">
                                                 <img src="https://pyo.onab.go.th/th/file/get/file/2022082427d73a953e10be34f0077b4bae6e0c42100202.jpg" class="img-card-placeHit" alt="...">
                                                 <div class="card-body text-black">
@@ -577,7 +272,7 @@
                                             <div class="padding-card-placeHit">
                                                 <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
 
                                     <div class="row justify-content-center">

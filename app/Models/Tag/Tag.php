@@ -19,6 +19,7 @@ class Tag extends Model
     ];
 
     public function touristAttractions(){
-        return $this->belongsToMany(TouristAttraction::class);
+        // return $this->hasMany(TouristAttraction::class);
+        return $this->belongsToMany(TouristAttraction::class,'tourist_attraction_tags');
     }
 }
