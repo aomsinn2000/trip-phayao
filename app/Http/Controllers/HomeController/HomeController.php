@@ -17,9 +17,17 @@ class HomeController extends Controller
     public function home()
     {
         $touristAttractionCategories = TouristAttractionCategory::where('is_status', 1)->where('is_popular', 1)->get();
-        $homeBanners = HomeBanner::where('is_status', 1)->get();
+        $homeBanners = HomeBanner::where('is_status', 1)
+            ->whereDate('start_date', '<=', Carbon::today())
+            ->where(function ($query) {
+                $query->whereDate('end_date', '>=', Carbon::today())
+                    ->orWhereNull('end_date');
+            })->orderBy('start_date')
+            ->get();
+        // dd($homeBanners->toArray());
         $specialDeals = SpecialDeal::where('is_status', 1)->where('is_popular', 1)->get();
-        $destinationFolders = DestinationFolder::where('is_status', 1)->get();
+        $destinationFolders = DestinationFolder::with(['touristAttractions'])->where('is_status', 1)->get();
+        // dd($destinationFolders);
         return view('home.home', compact('touristAttractionCategories', 'homeBanners', 'specialDeals', 'destinationFolders'));
     }
 

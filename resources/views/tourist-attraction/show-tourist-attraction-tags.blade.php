@@ -32,7 +32,7 @@
             <p>
                 <a href="{{ url('/') }}" class="text-nav-placeHit"> หน้าหลัก /</a>
                 <span><a href="{{ url('/touristattractions/') }}" class="text-nav-placeHit"> สถานที่ท่องเที่ยว /</a></span>
-                <span><a href="{{ url('/touristattractions/' . $ta) }}" class="text-nav-placeHit"> {{$ta}} /</a></span>
+                <span><a href="{{ url('/touristattractions/' . $ta) }}" class="text-nav-placeHit"> {{ $ta }} /</a></span>
                 <span><a href="" class="text-nav-placeHit" style="color: #27AAE1"> <b>Tag {{ $tag->name_th }}</b></a></span>
             </p>
         </div>
@@ -68,7 +68,7 @@
                                 @foreach ($tag->touristAttractions as $attractions)
                                     <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                         <div class="card  text-white" style="border: none;">
-                                            <img src="{{ '/storage/' . $attractions->cover_image }}" class="img-card-placeHit" alt="...">
+                                            <img src="{{ $attractions->cover_image ? '/storage/' . $attractions->cover_image : asset('assets/image/unfound-image-b.jpg') }}" class="img-card-placeHit" alt="...">
                                             <div class="card-body text-black">
                                                 <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>{{ $attractions->province }},ประเทศไทย</p>
                                                 <h4>{{ $attractions->name_th }}</h4>

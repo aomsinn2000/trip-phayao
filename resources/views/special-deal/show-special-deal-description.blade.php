@@ -85,7 +85,7 @@
                                 <b>ระยะเวลาใช้สิทธิ์</b>
                             </span><br><br>
                             {{-- <span class="text-time-detail-deal"> 8 พฤศจิกายน ถึง 31 ธันวาคม 2565 </span> --}}
-                            <span class="text-time-detail-deal">{{ $end_date ? '' : 'ตั้งแต่ ' }} {{ $start_date }} {{ $end_date ? 'ถึง  ' . $end_date : 'จนกว่าจะหมดโปรโมชั่น' }} </span>
+                            <span class="text-time-detail-deal">{{ $end_date ? '' : 'ตั้งแต่ ' }} {{ $start_date }} {{ $end_date ? 'ถึง  ' . $end_date : 'เป็นต้นไปหรือจนกว่าจะหมดโปรโมชั่น' }} </span>
                         </p>
                         <br>
                         <hr>

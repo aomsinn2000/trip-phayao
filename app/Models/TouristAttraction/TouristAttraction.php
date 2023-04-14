@@ -39,17 +39,25 @@ class TouristAttraction extends Model
         'description_th',
         'description_en',
         'cover_image',
+        'view',
         'creator',
         'editor'
     ];
     public function destinationFolders()
     {
-        return $this->belongsToMany(DestinationFolder::class,'folder_tourist_attractions');
+        return $this->belongsToMany(DestinationFolder::class, 'folder_tourist_attractions');
     }
 
-    // public function folderTouristAttractions()
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'tourist_attraction_tags')
+            ->withPivot('order')
+            ->orderBy('order');
+    }
+
+    // public function touristAttractionTags()
     // {
-    //     return $this->belongsToMany(FolderTouristAttraction::class, 'folder_tourist_attractions');
+    //     return $this->belongsToMany(Tag::class, 'tourist_attraction_tags');
     // }
 
     public function touristAttractionCategory()
@@ -60,10 +68,5 @@ class TouristAttraction extends Model
     public function touristAttractionImages()
     {
         return $this->hasMany(TouristAttractionImage::class);
-    }
-
-    public function tag()
-    {
-        return $this->belongsToMany(Tag::class);
     }
 }

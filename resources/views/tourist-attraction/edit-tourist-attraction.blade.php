@@ -601,8 +601,6 @@
     {{-- select เอาไว้เลือกแท็ก --}}
 
 
-
-
     {{-- select เอาไว้เลือกแท็ก --}}
     <script>
         pureScriptSelect('#multiSelect');
@@ -850,7 +848,7 @@
 
         })()
     </script>
-{{--  script เลือกแท็กโฟลเดอร์ --}}
+    {{--  script เลือกแท็กโฟลเดอร์ --}}
     <script>
         (function() {
             var input = document.querySelector('input[name="select_folders"]');

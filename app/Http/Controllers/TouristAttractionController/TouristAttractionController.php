@@ -21,7 +21,7 @@ class TouristAttractionController extends Controller
 {
     public function showTouristAttraction()
     {
-        $homeBanners = HomeBanner::where('is_status',1)->get();
+        $homeBanners = HomeBanner::where('is_status', 1)->get();
         $ta = TouristAttraction::/* with(['touristAttractionCategory', 'destinationFolders'])-> */where('is_status', 1)->get();
         $category = TouristAttractionCategory::where('is_status', 1)->get();
 
@@ -29,7 +29,7 @@ class TouristAttractionController extends Controller
         $totalPages = ceil($total / 12);
         $touristAttractions = TouristAttraction::with(['touristAttractionCategory', 'destinationFolders'])->where('is_status', 1)->paginate(12);
         // dd($touristAttraction, $category, $total, $totalPages, $touristAttractions);
-        return view('tourist-attraction.show-tourist-attraction', compact('homeBanners','ta', 'category', 'totalPages', 'touristAttractions'));
+        return view('tourist-attraction.show-tourist-attraction', compact('homeBanners', 'ta', 'category', 'totalPages', 'touristAttractions'));
     }
 
     public function showTouristAttractionByCategory(Request $request)
@@ -61,6 +61,9 @@ class TouristAttractionController extends Controller
     public function showTouristAttractionDescription($name)
     {
         $attraction = TouristAttraction::with(['touristAttractionCategory', 'touristAttractionImages', 'destinationFolders'])->where('name_th', $name)->first();
+        // $attraction->increment('view');
+        // $attraction->save();
+        // dd($attraction);
         return view('tourist-attraction.show-tourist-attraction-description', compact('attraction'));
     }
 
@@ -140,19 +143,7 @@ class TouristAttractionController extends Controller
         $destinationFolders = $destinationFolders->map(function ($item) {
             return $item->name_th;
         })->toArray();
-        // $destinationFoldersJson = json_encode($destinationFolders, JSON_UNESCAPED_UNICODE);
-        /* $destinationFolders = [
-            'ภูเขา',
-            'ธรรมชาติ',
-            'วัด',
-            'เดินป่า',
-            'กางเต้นท์',
-            'วัดศรีโคมคำ',
-            'กว๊านพะเยา',
-        ]; */
         // dd($destinationFolders);
-
-
 
         $month = Carbon::now('Asia/Bangkok')->isoFormat('MM');
         $year = Carbon::now('Asia/Bangkok')->isoFormat('YY');
@@ -181,6 +172,7 @@ class TouristAttractionController extends Controller
     public function selectTag()
     {
         $tag = Tag::get();
+        // dd($tag->toArray());
         return response()->json($tag);
     }
 
@@ -203,7 +195,8 @@ class TouristAttractionController extends Controller
             'name_th' => 'required|unique:tourist_attractions',
             // 'name_en' => 'required|unique:tourist_attraction_categories',
             'tourist_attraction_category_id' => 'required',
-            'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            // 'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'cover_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:5120',
             'images[]' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240|max:10'
         ], [
             'name_th.required' => 'โปรดตั้งชื่อสถานที่ท่องเที่ยว.',
@@ -211,7 +204,7 @@ class TouristAttractionController extends Controller
             // 'name_en.required' => 'โปรดตั้งชื่อหมวดหมู่ภาษาอังกฤษ.',
             // 'name_en.unique' => 'มีชื่อหมวดหมู่  ' . $request->name_en . '  อยู่แล้วกรุณาตั้งชื่อใหม่',
             'tourist_attraction_category_id.required' => 'โปรดเลือกหมวดหมู่',
-            'cover_image.required' => 'โปรด Upload ภาพปกด้วย',
+            // 'cover_image.required' => 'โปรด Upload ภาพปกด้วย',
             'cover_image.image' => 'โปรดเลือกไฟล์รูปภาพ.',
             'cover_image.mimes' => 'ไฟล์ภาพต้องนามสกุล jpeg, png, jpg, gif, svg เท่านั้น',
             'cover_image.max' => 'รูปภาพต้องขนาดไม่เกิน 5 mb.',
@@ -224,11 +217,6 @@ class TouristAttractionController extends Controller
         if ($total_image > 10) {
             return redirect()->back()->with('error', 'รูปเกิน10แล้ว โปรดเพิ่มรูปใหม่อย่าให้เกิน10');
         }
-        /*  $request->validate([
-            // 'name_th' => 'required',
-            'cover_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'images[]' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|max:10'
-        ]); */
 
         if ($request->hasFile('cover_image')) {
             $cover_image = $request->cover_image->storeAs('images/TouristAttractions/' . $request->attraction_no,  strtolower($request->attraction_no) . '-' . 'cover-' . uniqid() . '.' . $request->cover_image->extension());
@@ -274,11 +262,26 @@ class TouristAttractionController extends Controller
             }
         }
 
+        // if ($request->tags) {
+        //     $tags = json_decode($request->tags, true);
+        //     foreach ($tags as $t) {
+        //         // $id = $t['id'];
+        //         $name = $t['value'];
+        //         $tag = Tag::where('name_th', $name)->first();
+        //         if (!$tag) {
+        //             $tag = Tag::create([
+        //                 'name_th' => $name,
+        //                 'creator' => Auth::user()->account_name
+        //             ]);
+        //         }
+        //         // $ta->touristAttractionTags()->attach($tag);
+        //         $ta->tags()->attach($tag);
+        //     }
+        // }
         if ($request->tags) {
             $tags = json_decode($request->tags, true);
-            foreach ($tags as $t) {
-                // $id = $t['id'];
-                $name = $t['value'];
+            foreach ($tags as $index => $tag_data) {
+                $name = $tag_data['value'];
                 $tag = Tag::where('name_th', $name)->first();
                 if (!$tag) {
                     $tag = Tag::create([
@@ -286,7 +289,8 @@ class TouristAttractionController extends Controller
                         'creator' => Auth::user()->account_name
                     ]);
                 }
-                $ta->touristAttractionTags()->attach($tag);
+                $order = $index + 1;
+                $ta->tags()->attach($tag, ['order' => $order]);
             }
         }
 
@@ -357,9 +361,20 @@ class TouristAttractionController extends Controller
         $touristAttraction =  TouristAttraction::with(['touristAttractionImages', 'destinationFolders'])->find($id);
         $touristAttractionCategory = TouristAttractionCategory::where('is_status', 1)->get();
 
-        $touristAttractionTag = $touristAttraction->touristAttractionTags->map(function ($item) {
+        // $touristAttractionTag = $touristAttraction->touristAttractionTags ? $touristAttraction->touristAttractionTags->map(function ($item) {
+        //     return $item->name_th;
+        // }) : null;
+
+        $touristAttractionTag = $touristAttraction->tags ? $touristAttraction->tags->map(function ($item) {
             return $item->name_th;
-        });
+        }) : null;
+
+        // $touristAttractionTag = $touristAttraction->tags()
+        //     ->orderBy('tourist_attraction_tags.order')
+        //     ->get()
+        //     ->map(function ($item) {
+        //         return $item->name_th;
+        //     });
 
         // dd($touristAttractionTag,$touristAttraction);
         $folderTouristAttraction = $touristAttraction->destinationFolders->map(function ($item) {
@@ -393,9 +408,9 @@ class TouristAttractionController extends Controller
             ],
             // other validation rules...
         ];
-        if (is_null($updateTA->cover_image)) {
-            $validationRules['cover_image'][] = 'required';
-        }
+        // if (is_null($updateTA->cover_image)) {
+        //     $validationRules['cover_image'][] = 'required';
+        // }
         $request->validate(array_merge([
             'name_th' => ['required', Rule::unique('tourist_attractions')->ignore($id)],
             // 'name_en' => 'required|unique:tourist_attraction_categories',
@@ -408,7 +423,7 @@ class TouristAttractionController extends Controller
             // 'name_en.required' => 'โปรดตั้งชื่อหมวดหมู่ภาษาอังกฤษ.',
             // 'name_en.unique' => 'มีชื่อหมวดหมู่  ' . $request->name_en . '  อยู่แล้วกรุณาตั้งชื่อใหม่',
             'tourist_attraction_category_id.required' => 'โปรดเลือกหมวดหมู่',
-            'cover_image.required' => 'โปรด Upload ภาพปกด้วย',
+            // 'cover_image.required' => 'โปรด Upload ภาพปกด้วย',
             'cover_image.image' => 'โปรดเลือกไฟล์รูปภาพ.',
             'cover_image.mimes' => 'ไฟล์ภาพต้องนามสกุล jpeg, png, jpg, gif, svg เท่านั้น',
             'cover_image.max' => 'รูปภาพต้องขนาดไม่เกิน 5 mb.',
@@ -467,8 +482,7 @@ class TouristAttractionController extends Controller
                 ]);
             }
         }
-
-        if ($request->tags) {
+        /* if ($request->tags) {
             $tags = json_decode($request->tags, true);
             $tagID = [];
             foreach ($tags as $t) {
@@ -479,12 +493,36 @@ class TouristAttractionController extends Controller
                         'name_th' => $name,
                         'creator' => Auth::user()->account_name
                     ]);
+                    // dd($tag, $name);
                 }
+
                 $tagID[] = $tag->id;
-                $updateTA->touristAttractionTags()->sync($tagID);
+
+                // $updateTA->touristAttractionTags()->sync($tagID);
+                $updateTA->tags()->sync($tagID);
             }
+        } */
+
+        if ($request->tags) {
+            $tags = json_decode($request->tags, true);
+            $tagsData = [];
+
+            foreach ($tags as $index => $tag_data) {
+                $name = $tag_data['value'];
+                $tag = Tag::where('name_th', $name)->first();
+                if (!$tag) {
+                    $tag = Tag::create([
+                        'name_th' => $name,
+                        'creator' => Auth::user()->account_name
+                    ]);
+                }
+                $tagsData[$tag->id] = ['order' => $index + 1];
+            }
+
+            $updateTA->tags()->sync($tagsData);
         } else if (($request->tags) == null) {
-            $updateTA->touristAttractionTags()->detach();
+            // $updateTA->touristAttractionTags()->detach();
+            $updateTA->tags()->detach();
         }
 
         if ($request->select_folders) {

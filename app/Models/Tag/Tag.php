@@ -9,17 +9,21 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Tag extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
     protected $table = 'tags';
     protected $fillable = [
-        'name',
+        'name_th',
+        'name_en',
         'is_status',
         'creator',
         'editor'
     ];
 
-    public function touristAttractions(){
+    public function touristAttractions()
+    {
         // return $this->hasMany(TouristAttraction::class);
-        return $this->belongsToMany(TouristAttraction::class,'tourist_attraction_tags');
+        return $this->belongsToMany(TouristAttraction::class, 'tourist_attraction_tags')
+            ->withPivot('order')
+            ->orderBy('order');
     }
 }

@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
+
 //  Login
 Route::get('login', [LoginController::class, 'showLogin']);
 Route::post('handle', [LoginController::class, 'handle']);
@@ -76,7 +77,8 @@ Route::prefix('/home-banners')->group(function () {
 Route::prefix('/destinations')->group(function () {
     // Route::get('/', [DestinationFolderController::class, 'showDestinationFolder']);
     Route::get('/{name}', [DestinationFolderController::class, 'showDestinationFolder']);
-    Route::get('/description', [DestinationFolderController::class, 'showDestinationFolderDescription']);
+    Route::get('/{name}/{name_ta}', [DestinationFolderController::class, 'showDestinationFolderDescription']);
+    Route::get('/{name}/{name_ta}/{name_tag}',[DestinationFolderController::class,'showDestinationFolderDescriptionTag']);
 });
 //*********end หน้าบ้านโฟลเดอร์**********
 //*********หลังบ้านโฟลเดอร์**********
@@ -278,5 +280,5 @@ Route::prefix('/contactus')->group(function () {
 });
 //******************end หน้าบ้าน หน้าติดต่อ******************
 
-
+// app('debugbar')->disable();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

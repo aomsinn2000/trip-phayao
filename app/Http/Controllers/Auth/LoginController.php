@@ -29,17 +29,17 @@ class LoginController extends Controller
      * @var string
      */
 
-    /*  protected $redirectTo = RouteServiceProvider::HOME;  อย่าลืมเปิดตอนทำloginเสร็จ*/
-    protected $redirectTo;
+    protected $redirectTo = RouteServiceProvider::HOME;  /* อย่าลืมเปิดตอนทำloginเสร็จ */
+    /* protected $redirectTo; */
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    /*  public function __construct()
+     public function __construct()
     {
-        $this->middleware('guest')->except('logout'); อย่าลืมเปิดตอนทำloginเสร็จ
-    } */
+        $this->middleware('guest')->except('logout'); /* อย่าลืมเปิดตอนทำloginเสร็จ */
+    }
 
     public function showLogin()
     {

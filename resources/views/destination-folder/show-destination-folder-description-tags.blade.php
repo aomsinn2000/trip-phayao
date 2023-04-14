@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>สถานที่ท่องเที่ยว</title>
+    <title>{{ $tag->name_th }}</title>
 
 
     @include('layouts.head-LinkScript')
@@ -28,12 +28,20 @@
 
     <div style="font-family: 'Kanit', sans-serif;">
         @include('layouts.navbar')
+        <div class="nav-background-placeHit">
+            <p>
+                <a href="{{ url('/') }}" class="text-nav-placeHit"> หน้าหลัก /</a>
+                <span><a href="{{ url('/destinations/') . $destination }}" class="text-nav-placeHit"> {{ $destination }} /</a></span>
+                <span><a href="{{ url('/destinations/' . $destination . '/' . $attraction) }}" class="text-nav-placeHit"> {{ $attraction }} /</a></span>
+                <span><a href="" class="text-nav-placeHit" style="color: #27AAE1"> <b>Tag {{ $tag->name_th }}</b></a></span>
+            </p>
+        </div>
         <div class="container ">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="container ">
                         <br><br>
-                        <h3 style="text-align: center; color:#00AEEF;"><b>{{ $category->name_th }}</b> </h3>
+                        <h3 style="text-align: center; color:#00AEEF;"><b>Tag : {{ $tag->name_th }}</b> </h3>
                         <p style="margin: auto;background-color: #00AEEF; width: 120px;padding-top: 2px;"></p>
                         <div class="wrapper">
                             <div class="row">
@@ -49,51 +57,47 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <div class="col-lg-4  ">
+                                <div class="col-lg-4  ">
                                     <input type="text" class="form-control search-tags" placeholder="ค้นหา...">
-                                </div> --}}
-                            </div>
-                            <div class="row list-wrapper">
-                                {{-- @foreach ($category->touristAttractions as $ta) --}}
-                                @foreach ($touristAttractions as $ta)
-                                    @if ($ta->is_status == 1)
-                                        <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                            <div class="card  text-white" style="border: none;">
-                                                <img src="{{ $ta->cover_image  ? asset('/storage/' . $ta->cover_image) : asset('assets/image/unfound-image-b.jpg' )  }}" class="img-card-placeHit" alt="...">
-                                                <div class="card-body text-black">
-                                                    <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>{{ $ta->province }},ประเทศไทย</p>
-                                                    <h4>{{ $ta->name_th }}</h4>
-                                                    <p class="text-card-content-placeHit">{{ $ta->detail_th ?? '' }}</p>
+                                </div>
 
-                                                </div>
-                                            </div>
-                                            <div class="padding-card-placeHit">
-                                                <a href="{{ url('/touristattractions/' . $ta->name_th) }}" type="button" class="btn btn-info text-white btn-map">ดูรายละเอียด</a>
+                            </div>
+
+
+                            <div class="row list-wrapper">
+                                @foreach ($tag->touristAttractions as $attractions)
+                                    <div class="list-item col-lg-3 col-md-6 mb-lg-3">
+                                        <div class="card  text-white" style="border: none;">
+                                            <img src="{{ $attractions->cover_image ? '/storage/' . $attractions->cover_image : asset('assets/image/unfound-image-b.jpg') }}" class="img-card-placeHit" alt="...">
+                                            <div class="card-body text-black">
+                                                <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>{{ $attractions->province }},ประเทศไทย</p>
+                                                <h4>{{ $attractions->name_th }}</h4>
+                                                <p class="text-card-content-placeHit">{{ $attractions->detail_th }}</p>
+                                                {{-- <p>
+                                                    <i class="bi bi-star-fill"></i>
+                                                    <span> <i class="bi bi-star-fill"></i></span>
+                                                    <span> <i class="bi bi-star-fill"></i></span>
+                                                    <span> <i class="bi bi-star-fill"></i></span>
+                                                    <span> <i class="bi bi-star-fill"></i></span>
+                                                    <span class="text-review-placeHit">10+ รีวิว</span>
+                                                </p> --}}
                                             </div>
                                         </div>
-                                    @endif
+                                        <div class="padding-card-placeHit">
+                                            <a href="{{ url('/destinations/' . $destination . '/' . $attractions->name_th) }}" type="button" class="btn btn-info text-white btn-map">ดูรายละเอียด</a>
+                                        </div>
+                                    </div>
                                 @endforeach
                             </div>
-                            {{-- <div class="row justify-content-center">
-                                <div id="pagination"class="padding-pagination1"></div>
-                            </div> --}}
 
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center">
-                                    {{-- <li class="page-item {{ $touristAttractions->currentPage() == 1 ? 'disabled' : '' }}">
-                                        <a class="page-link" href="{{ $touristAttractions->previousPageUrl() }}" tabindex="-1">Previous</a>
-                                    </li> --}}
-                                    @for ($i = 1; $i <= $totalPages; $i++)
-                                        <li class="page-item {{ $touristAttractions->currentPage() == $i ? 'active' : '' }}">
-                                            <a class="page-link" href="{{ $touristAttractions->url($i) }}">{{ $i }}</a>
-                                        </li>
-                                    @endfor
-                                    {{-- <li class="page-item {{ $touristAttractions->currentPage() == $touristAttractions->lastPage() ? 'disabled' : '' }}">
-                                        <a class="page-link" href="{{ $touristAttractions->nextPageUrl() }}">Next</a>
-                                    </li> --}}
-                                </ul>
-                            </nav>
+                            <div class="row justify-content-center">
+                                <div id="pagination"class="padding-pagination1"></div>
+                            </div>
                         </div>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -106,6 +110,47 @@
 
     <div class="padding-footer"></div>
     @include('layouts.footer')
+
+
+
+
+    <script>
+        let map;
+
+        function initMap() {
+            const mapOptions = {
+                zoom: 9,
+                center: {
+                    lat: 19.1492373,
+                    lng: 100.2868165
+                },
+            };
+
+            map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            const marker = new google.maps.Marker({
+                // The below line is equivalent to writing:
+                // position: new google.maps.LatLng(-34.397, 150.644)
+
+                position: {
+                    lat: 19.18,
+                    lng: 100.19
+                },
+                map: map,
+            });
+            const infowindow = new google.maps.InfoWindow({
+                content: "<p>Marker Location:" + marker.getPosition() + "</p>",
+                content: "<p>Marker Location:" + marker.getPosition() + "</p>",
+            });
+            google.maps.event.addListener(marker, "click", () => {
+                infowindow.open(map, marker);
+            });
+        }
+        window.initMap = initMap;
+    </script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnuNFCpxLkWORNZymL1Tvr7cBa-d1TjD0&callback=initMap&v=weekly"></script>
+
 
     <!-- script slider -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>

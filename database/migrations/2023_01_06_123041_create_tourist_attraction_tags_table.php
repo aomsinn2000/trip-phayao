@@ -14,6 +14,7 @@ class CreateTouristAttractionTagsTable extends Migration
     public function up()
     {
         Schema::create('tourist_attraction_tags', function (Blueprint $table) {
+            $table->unsignedInteger('order')->default(0);
             $table->foreignId('tourist_attraction_id')->nullable()->constrained('tourist_attractions')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('tag_id')->nullable()->constrained('tags')->onDelete('cascade')->onUpdate('cascade');
             $table->primary(['tourist_attraction_id','tag_id']);

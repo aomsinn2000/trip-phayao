@@ -33,7 +33,7 @@
                                 <h3 style="color: #27AAE1"><b>ดีลสุดพิเศษ</b></h3>
                             </div>
                             <div class="col-lg-4">
-                                <input type="text" id="search-input" class="form-control" placeholder="ค้นหาดีลพิเศษด้วย ชื่อดีล/ประเภทดีล">
+                                <input type="text" id="search-input" class="form-control" placeholder="ค้นหาดีลพิเศษด้วย ชื่อดีล">
                             </div>
                         </div>
 
@@ -42,7 +42,7 @@
                                 <div id="" class="col-lg-4 col-md-6">
                                     <a href="{{ url('/specialdeals/' . $deal->name_th) }}" style="text-decoration: none;">
                                         <div class="card">
-                                            <img src="{{ asset('/storage/' . $deal->cover_image) }}" class="card-img-top img-category" alt="...">
+                                            <img src="{{ $deal->cover_image != null ? asset('/storage/' . $deal->cover_image) : asset('assets/image/unfound-image-b.jpg') }}" class="card-img-top img-category" alt="...">
                                             <div class="card-body">
                                                 <b class="text-head-category">{{ $deal->name_th }}</b>
                                                 <div class="row text-detail-category">
@@ -94,13 +94,13 @@
                             html += '<div class="col-lg-4 col-md-6">';
                             html += '<a href="/specialdeals/' + data[i].name_th + '" style="text-decoration: none;">';
                             html += '<div class="card">';
-                            html += '<img src="/storage/' + data[i].cover_image + '" class="card-img-top img-category" alt="...">';
+                            html += '<img src="' + (data[i].cover_image ? '/storage/' + data[i].cover_image : '{{ asset('assets/image/unfound-image-b.jpg') }}') + '"class="card-img-top img-category" alt="...">';
                             html += '<div class="card-body">';
                             html += '<b class="text-head-category">' + data[i].name_th + '</b>';
                             html += '<div class="row text-detail-category">';
                             // html += '<div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">' + (data[i].specialDealCategory ? data[i].specialDealCategory.name_th : '') + '</b></span></div>';
-                            html += '<div class="col-6 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">' + (data[i].special_deal_category ? data[i].special_deal_category.name_th : '') + '</b></span></div>';
-                            html += '<div class="col-6" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>';
+                            html += '<div class="col-9 text-left text-black">หมวดหมู่ : <span><b style="color: #27AAE1">' + (data[i].special_deal_category ? data[i].special_deal_category.name_th : '') + '</b></span></div>';
+                            html += '<div class="col-3" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> 1,265 </span></div>';
                             html += '</div></div></div></a></div>';
                         }
                         $('#search-results-container').html(html);

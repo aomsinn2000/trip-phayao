@@ -258,7 +258,7 @@
                                                 <tr style="text-align: center;">
                                                     <th style="text-align: left;">รหัสสถานที่</th>
                                                     <th>ชื่อสถานที่ท่องเที่ยว</th>
-                                                    <th>รายละเอียด</th>
+                                                    {{-- <th>รายละเอียด</th> --}}
                                                     <th style="text-align: center;">หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
                                                             <option selected>ทั้งหมด</option>
@@ -314,7 +314,7 @@
                                                 <tr style="text-align: center;">
                                                     <th style="text-align: left;">รหัสสถานที่</th>
                                                     <th>ชื่อสถานที่ท่องเที่ยว</th>
-                                                    <th>รายละเอียด</th>
+                                                    {{-- <th>รายละเอียด</th> --}}
                                                     <th style="text-align: center;">หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
                                                             <option selected>ทั้งหมด</option>
@@ -364,7 +364,7 @@
                                                 <tr style="text-align: center;">
                                                     <th style="text-align: left;">รหัสสถานที่</th>
                                                     <th>ชื่อสถานที่ท่องเที่ยว</th>
-                                                    <th>รายละเอียด</th>
+                                                    {{-- <th>รายละเอียด</th> --}}
                                                     <th style="text-align: center;">หมวดหมู่
                                                         <select class="form-control selectStyle" id="selectCategory">
                                                             <option selected>ทั้งหมด</option>
@@ -633,12 +633,12 @@
                 render: function(data, type, row) {
                     return `<td style="text-align: left;">${row.name_th }</td>`
                 }
-            }, {
+            }, /* {
                 width: "180px",
                 render: function(data, type, row) {
                     return `<td style="text-align: left;">${row.detail_th ?? 'ไม่ได้ระบุรายละเอียดโดยย่อ' }</td>`
                 }
-            }, {
+            }, */ {
                 width: "150px",
                 render: function(data, type, row) {
                     return `<td>${row.tourist_attraction_category ?row.tourist_attraction_category.name_th : 'ไม่ได้กำหนดหมวดหมู่'}</td>`
@@ -752,12 +752,12 @@
                 render: function(data, type, row) {
                     return `<td style="text-align: left;">${row.name_th }</td>`
                 }
-            }, {
+            }, /* {
                 width: "180px",
                 render: function(data, type, row) {
                     return `<td style="text-align: left;">${row.detail_th ?? 'ไม่ได้ระบุรายละเอียดโดยย่อ' }</td>`
                 }
-            }, {
+            }, */ {
                 width: "150px",
                 render: function(data, type, row) {
                     return `<td>${row.tourist_attraction_category ?row.tourist_attraction_category.name_th : 'ไม่ได้กำหนดหมวดหมู่'}</td>`
@@ -850,12 +850,12 @@
                 render: function(data, type, row) {
                     return `<td style="text-align: left;">${row.name_th }</td>`
                 }
-            }, {
+            }, /* {
                 width: "180px",
                 render: function(data, type, row) {
                     return `<td style="text-align: left;">${row.detail_th ??'ไม่ได้ระบุรายละเอียดโดยย่อ' }</td>`
                 }
-            }, {
+            }, */ {
                 width: "150px",
                 render: function(data, type, row) {
                     return `<td>${row.tourist_attraction_category ?row.tourist_attraction_category.name_th : 'ไม่ได้กำหนดหมวดหมู่'}</td>`

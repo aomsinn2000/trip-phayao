@@ -39,6 +39,7 @@ body {
 
 .text-content-placeHit {
     font-size: 18px;
+    word-wrap: break-word;
 }
 
 .video-placeHit {

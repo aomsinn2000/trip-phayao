@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use GuzzleHttp\Psr7\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
@@ -156,12 +157,14 @@ class TouristAttractionCategoryController extends Controller
             'image.mimes' => 'ไฟล์ภาพต้องนามสกุล jpeg, png, jpg, gif, svg เท่านั้น',
             'image.max' => 'รูปภาพต้องขนาดไม่เกิน 5 mb.'
         ]);
+        // Log::error($request);
         if ($request->hasFile('image')) {
             $image = $request->image->storeAs('images/TouristAttractionCategories', strtolower($request->category_no) . '-' . uniqid() . '.' . $request->image->extension());
         } else {
             $image = null;
         }
-        // dd($image_path);
+        // dd($request, $request->image, $image);
+        Log::info($request);
         $creator = Auth::user()->account_name;
         TouristAttractionCategory::create([
             'category_no' => $request->category_no,
@@ -178,25 +181,35 @@ class TouristAttractionCategoryController extends Controller
 
     public function deleteTouristAttractionCategory(Request $request)
     {
-        $deleter = Auth::user()->account_name;
         $delete = TouristAttractionCategory::find($request->id);
-        $delete->update([
-            'editor' => $deleter
-        ]);
-        Storage::delete($delete->image);
-        $delete->delete();
-        return redirect()->back();
+        if ($delete->touristAttractions->isEmpty()) {
+            $delete->update([
+                'editor' => Auth::user()->account_name
+            ]);
+            Storage::delete($delete->image);
+            $delete->delete();
+            return redirect()->back();
+        } else {
+            return redirect()->back()->with('error', 'ลบประเภทท่องเที่ยวนี้ไม่ได้เนื่องจากยังมีสถานที่ท่องเที่ยวใช้อยู่');
+        }
+        // return  redirect()->back();
     }
 
     public function deleteTouristAttractionCategoryById($id)
     {
-        $delete = TouristAttractionCategory::find($id);
-        $delete->update([
-            'editor' => Auth::user()->account_name
-        ]);
-        Storage::delete($delete->image);
-        $delete->delete();
-        return redirect('/tourist-attraction-categories/');
+        $delete = TouristAttractionCategory::with('touristAttractions')->find($id);
+        if ($delete->touristAttractions->isEmpty()) {
+            $delete->update([
+                'editor' => Auth::user()->account_name
+            ]);
+            Storage::delete($delete->image);
+            $delete->delete();
+            return redirect('/tourist-attraction-categories/');
+        } else {
+            return redirect()->back()->with('error', 'ลบประเภทท่องเที่ยวนี้ไม่ได้เนื่องจากยังมีสถานที่ท่องเที่ยวใช้อยู่');
+        }
+        // dd($delete->touristAttractions);
+
     }
 
     public function editTouristAttractionCategory($id)
@@ -242,5 +255,4 @@ class TouristAttractionCategoryController extends Controller
         ]);
         return redirect('/tourist-attraction-categories/');
     }
-
 }

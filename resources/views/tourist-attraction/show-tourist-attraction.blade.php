@@ -31,35 +31,6 @@
         <!-- image slider -->
 
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-
-
-            <div class="carousel-inner">
-
-                <div class="carousel-item active">
-                    <img src="https://www.museumofknowledge.com/wp-content/uploads/2017/02/Museum-of-Knowledge-About-Us-3-1600-x-500.jpg" class="d-block w-100 banner-slider" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://roijang.com/wp-content/uploads/2022/05/shutterstock_659886724.jpg" class="d-block w-100 banner-slider" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://paikondieow.com/wp-content/uploads/2020/09/0-2-8.jpg" class="d-block w-100 banner-slider" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <!--end image slider -->
-
-        {{-- <img class="banner-placeHit" src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5yCh11ByQ6JOCN7q5YK2tqdwCGDp418UmCC3dnYRye3AbaaqHoz.jpg" alt=""> --}}
-         <!-- image slider -->
-
-         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
             <div class="carousel-inner">
 
                 @foreach ($homeBanners as $active)
@@ -126,15 +97,16 @@
                                         @foreach ($touristAttractions as $attraction)
                                             <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                                 <div class="card  text-white" style="border: none;">
-                                                    <img src="{{ asset('/storage/' . $attraction->cover_image) }}" class="img-card-placeHit" alt="...">
+                                                    <img src="{{ $attraction->cover_image != null ? asset('/storage/' . $attraction->cover_image) : asset('assets/image/unfound-image-b.jpg') }}" class="img-card-placeHit" alt="...">
                                                     <div class="card-body text-black">
                                                         <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>{{ $attraction->province }},ประเทศไทย</p>
                                                         <h4>{{ $attraction->name_th }}</h4>
                                                         <p class="text-card-content-placeHit">{{ $attraction->detail_th }}</p>
+                                                        {{-- <div class="" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> {{$attraction->view}} </span></div> --}}
                                                     </div>
                                                 </div>
                                                 <div class="padding-card-placeHit">
-                                                    <a href="{{ url('/touristattractions/' . $attraction->name_th) }}" type="button" class="btn btn-info text-white btn-map">ดูข้อมูล{{-- แผนที่เดินทาง --}}</a>
+                                                    <a href="{{ url('/touristattractions/' . $attraction->name_th) }}" type="button" class="btn btn-info text-white btn-map">ดูรายละเอียด</a>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -274,7 +246,8 @@
                         for (var i = 0; i < data.length; i++) {
                             html += '<div class="list-item col-lg-3 col-md-6 mb-lg-3">';
                             html += '<div class="card text-white" style="border: none;">';
-                            html += '<img src="/storage/' + data[i].cover_image + '" class="img-card-placeHit" alt="...">';
+                            // html += '<img src="/storage/' + data[i].cover_image + '" class="img-card-placeHit" alt="...">';
+                            html += '<img src="' + (data[i].cover_image ? '/storage/' + data[i].cover_image : '{{ asset('assets/image/unfound-image-b.jpg') }}') + '" class="img-card-placeHit" alt="...">';
                             html += '<div class="card-body text-black">';
                             html += '<p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>' + data[i].province + ',ประเทศไทย</p>';
                             html += '<h4>' + data[i].name_th + '</h4>';
@@ -298,88 +271,6 @@
             });
         });
     </script>
-
-    {{-- <script>
-        $(document).ready(function() {
-            var currentPage = 1; // initial page number
-            var perPage = 12; // items per page
-
-            // function to render the HTML for a list item
-            function renderItem(item) {
-                var html = '';
-                html += '<div class="list-item col-lg-3 col-md-6 mb-lg-3">';
-                html += '<div class="card text-white" style="border: none;">';
-                html += '<img src="/storage/' + item.cover_image + '" class="img-card-placeHit" alt="...">';
-                html += '<div class="card-body text-black">';
-                html += '<p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>' + item.province + ',ประเทศไทย</p>';
-                html += '<h4>' + item.name_th + '</h4>';
-                html += '<p class="text-card-content-placeHit">' + (item.detail_th ?? '') + '</p>';
-                html += '</div>';
-                html += '</div>';
-                html += '<div class="padding-card-placeHit">';
-                html += '<a href="/touristattractions/' + item.name_th + '" type="button" class="btn btn-info text-white btn-map">ดูข้อมูล</a>';
-                html += '</div>';
-                html += '</div>';
-                return html;
-            }
-
-            // function to render the list of items
-            function renderList(items) {
-                var html = '';
-                $.each(items, function(index, item) {
-                    html += renderItem(item);
-                });
-                $('#category-place ').html(html);
-            }
-
-            // function to load the next page of items
-            function loadMore() {
-                $.ajax({
-                    url: '/touristattractions/select-by-category',
-                    type: 'GET',
-                    data: {
-                        category_id: $('#category-tab ').data('category-id'),
-                        page: currentPage,
-                        per_page: perPage
-                    },
-                    dataType: 'json',
-                    success: function(data) {
-                        var totalItems = data.total;
-                        var totalPages = Math.ceil(totalItems / perPage);
-                        var items = data.data;
-                        renderList(items);
-                        if (currentPage < totalPages) {
-                            $('#load-more').show();
-                        } else {
-                            $('#load-more').hide();
-                        }
-                    },
-                    error: function(data) {
-                        console.log(data);
-                        console.log('Error: ' + error);
-                    }
-                });
-            }
-
-            // load the initial page of items
-            loadMore();
-
-            // handle click event on "Load More" button
-            $('#load-more ').click(function() {
-                currentPage++;
-                loadMore();
-            });
-
-            // handle click event on category tab
-            $('#category-tab ').click(function() {
-                currentPage = 1; // reset page number to 1
-                loadMore();
-            });
-        });
-    </script> --}}
-
-
-
 
 </body>
 

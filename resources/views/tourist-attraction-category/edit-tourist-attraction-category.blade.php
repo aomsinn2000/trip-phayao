@@ -99,6 +99,7 @@
             position: absolute;
             z-index: -1;
         }
+
         .toggle-off.btn-xs {
             padding-right: 1rem;
             padding-top: 8px;
@@ -113,20 +114,24 @@
             font-size: 12px;
             background-color: green;
         }
+
         .toggle.btn-xs {
             min-width: 2.19rem;
             min-height: 1.375rem;
             border-radius: 50px;
         }
+
         .toggle.btn-sm {
             min-width: 2.19rem;
             min-height: 1.375rem;
             border-radius: 50px;
         }
+
         .toggle-on.btn-sm {
             padding-right: 1rem;
             background-color: #ffbe00;
         }
+
         .toggle-off.btn-sm {
             padding-right: 1rem;
             background-color: #ff0000;
@@ -184,6 +189,13 @@
                     @csrf
                     <div class="col-xl-7">
                         <div class="card card-body">
+                            @if (Session::has('error'))
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        <li>{!! \Session::get('error') !!}</li>
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="row py-3">
                                 <label for="" style="padding-top: 10px;" class="px-3">รหัสหมวดหมู่สถานที่ยอดฮิต</label>
                                 <input type="text" readonly class="form-control" id=""style="width:25%" value="{{ $touristAttractionCategory->category_no }}">

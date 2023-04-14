@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>สถานที่ยอดฮิต</title>
+    <title>{{ $attraction->name_th }}</title>
     @include('layouts.head-LinkScript')
     <link href="{{ asset('assets/css/touristAttraction/touristAttractionDescription.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -149,7 +149,7 @@
                         <p>
                         <h3 style="font-family: 'Kanit', sans-serif;">
                             <b>Tags :<span>
-                                    @foreach ($attraction->touristAttractionTags as $tags)
+                                    @foreach ($attraction->tags as $tags)
                                         <a href="{{ url('/touristattractions/' . $attraction->name_th . '/' . $tags->name_th) }}" type="button" class="btn btn-outline-info">{{ $tags->name_th }}</a>
                                     @endforeach
                                 </span>
@@ -359,9 +359,7 @@
         {{-- end reviews --}}
 
 
-
     </div>
-
 
 
 

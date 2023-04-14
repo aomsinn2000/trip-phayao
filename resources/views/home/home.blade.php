@@ -90,7 +90,7 @@
                 @if ($deal->is_status == 1)
                     <div class="px-3">
                         <a href="{{ url('/specialdeals/' . $deal->name_th) }}">
-                            <img class="specialDeal" src="{{ asset('/storage/' . $deal->cover_image) }}" class="d-block w-100" alt="...">
+                            <img class="specialDeal" src="{{ $deal->cover_image ? asset('/storage/' . $deal->cover_image) : asset('assets/image/unfound-image-b.jpg') }}" class="d-block w-100" alt="...">
                         </a>
                     </div>
                 @endif
@@ -108,7 +108,7 @@
                         @if ($category->is_popular === 1)
                             <div class="col-4 col-lg-2 col-xs-4">
                                 <a href="{{ url('/touristattractioncategories/' . $category->name_th) }}" class="text-cate-place-hit" style="text-align: center">
-                                    <img class="img-cate-place-hit" src="{{ asset('/storage/' . $category->image) }}" alt="">
+                                    <img class="img-cate-place-hit" src="{{ $category->image ? asset('/storage/' . $category->image) : asset('assets/image/unfound-image-b.jpg') }}" alt="">
                                     <p style="padding-top: 20px;">{{ $category->name_th }}</p>
                                 </a>
                             </div>
@@ -146,9 +146,10 @@
                                                         <div>
                                                             <p class="text-header-place-hit">{{ $destination->name_th }}</p>
                                                             <p class="address-place-hit"><b style="color: #FCB930">
-                                                                    กิจกรรม 16 | สถานที่ 25 </b>
+                                                                    {{-- กิจกรรม 16 |  --}}สถานที่ {{ count($destination->touristAttractions) }}
+                                                                    {{-- {{ count($destination->touristAttractions) == 0 ? '' : count($destination->touristAttractions) }} --}} </b>
                                                                 <br>
-                                                                ที่ตั้ง : ตำบล{{ $destination->sub_district ?? '' }} อำเภอ{{ $destination->district ?? '' }} จังหวัด{{ $destination->province ?? '' }}
+                                                                ที่ตั้ง : ตำบล{{ $destination->sub_district ?? '' }} อำเภอ{{ $destination->district ?? '' }} จังหวัด{{ $destination->province ?? '' }} {{ $destination->postcode ?? '' }}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -223,7 +224,7 @@
 
         <div id="trendingActive" class="img-special-deal">
             <div>
-                <a href="{{url('/activities/description')}}">
+                <a href="{{ url('/activities/description') }}">
                     <div class="img-trending">
                         <img src="http://topicstock.pantip.com/isolate/topicstock/2011/11/M11286445/M11286445-1.jpg" alt="" class="card-trending">
                         <div class="content container">
@@ -235,7 +236,7 @@
                 </a>
             </div>
             <div>
-                <a href="{{url('/activities/description')}}">
+                <a href="{{ url('/activities/description') }}">
                     <div class="img-trending">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQ8Y3c0lX3t1PGHQcxp37FxgcGlpqfELwTQ&usqp=CAU" alt="" class="card-trending">
                         <div class="content container">
@@ -247,7 +248,7 @@
                 </a>
             </div>
             <div>
-                <a href="{{url('/activities/description')}}">
+                <a href="{{ url('/activities/description') }}">
                     <div class="img-trending">
                         <img src="https://mpics.mgronline.com/pics/Images/558000002399319.JPEG" alt="" class="card-trending">
                         <div class="content container">
@@ -259,7 +260,7 @@
                 </a>
             </div>
             <div>
-                <a href="{{url('/activities/description')}}">
+                <a href="{{ url('/activities/description') }}">
                     <div class="img-trending">
                         <img src="http://topicstock.pantip.com/isolate/topicstock/2011/11/M11286445/M11286445-1.jpg" alt="" class="card-trending">
                         <div class="content container">
@@ -271,7 +272,7 @@
                 </a>
             </div>
             <div>
-                <a href="{{url('/activities/description')}}">
+                <a href="{{ url('/activities/description') }}">
                     <div class="img-trending">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQ8Y3c0lX3t1PGHQcxp37FxgcGlpqfELwTQ&usqp=CAU" alt="" class="card-trending">
                         <div class="content container">
@@ -307,7 +308,10 @@
         <!-- บริการจองโรงแรม -->
 
         <div class="box-hotel">
-            <a href="{{url('/specialdeals/')}}"><img class="img-hotel" src="{{asset('assets/images/banner-book.png')}}" alt=""></a>
+            <a href="{{ url('/specialdeals/') }}">
+                <img class="img-hotel" src="{{ asset('assets/images/banner-book.png') }}" alt="">
+            </a>
+
             {{-- <img class="img-hotel" src="https://png.pngtree.com/thumb_back/fw800/background/20190903/pngtree-pink-sparkling-background-image_313710.jpg" alt="Snow"> --}}
 
             {{-- <div class="text-right-hotel">
@@ -317,7 +321,7 @@
                 <span><b>จองโรงแรมในราคาสุดพิเศษได้ HOT DEAL</b> </span>
             </div> --}}
 
-        </div> 
+        </div>
         <!-- end บริการจองโรงแรม -->
         <br>
         <br>

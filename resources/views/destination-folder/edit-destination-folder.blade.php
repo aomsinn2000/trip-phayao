@@ -380,16 +380,21 @@
                                     <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z" />
                                 </svg>
                                 วิดีโอ
-                                <span id=""style="color: #8F8989; font-size:12px;">รองรับนามสกุล JPG, BMP, GIF, PNG, WEBP ขนาดไม่เกิน 5 MB</span>
+                                <span id=""style="color: #8F8989; font-size:12px;">link Youtube </span>
                             </div>
                             <div class="py-0">
                                 <div class="form-group row py-2">
                                     <label for="link-video" style="text-align:center"class="col-sm-2 col-form-label"><b>
                                             <h5>Link*</h5>
                                         </b></label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-10" >
                                         <input type="text" class="form-control" name="link" value="{{ $destinationFolder->link }}">
                                     </div>
+
+                                    {{-- <body>
+                                        <div id="result"></div>
+                                    </body> --}}
+
                                 </div>
                             </div>
                         </div>

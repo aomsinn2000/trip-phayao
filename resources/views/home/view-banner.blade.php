@@ -700,7 +700,7 @@
                 width: "180px",
                 render: function(data, type, row) {
                     if (row.end_date == "") {
-                        var date = "ไม่มีกำหนด";
+                        var date = `ตั้งแต่ ${row.start_date}`;
                     } else {
                         var date = `${row.start_date} - ${row.end_date}`;
                     }

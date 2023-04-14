@@ -39,6 +39,7 @@ class CreateTouristAttractionTable extends Migration
             $table->longText('description_th')->nullable();
             $table->longText('description_en')->nullable();
             $table->string('cover_image')->nullable();
+            $table->integer('view')->nullable(false)->default(0);
             $table->string('creator', 50)->nullable();
             $table->string('editor', 50)->nullable();
             $table->timestamps();

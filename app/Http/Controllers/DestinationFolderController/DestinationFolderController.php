@@ -4,6 +4,8 @@ namespace App\Http\Controllers\DestinationFolderController;
 
 use App\Http\Controllers\Controller;
 use App\Models\DestinationFolder\DestinationFolder;
+use App\Models\Tag\Tag;
+use App\Models\TouristAttraction\TouristAttraction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,9 +15,28 @@ class DestinationFolderController extends Controller
 {
     public function showDestinationFolder($name)
     {
-        $destinations = DestinationFolder::where('is_status',1)->where('name_th', $name)->with(['touristAttractions'])->first();
+        $destinations = DestinationFolder::where('is_status', 1)->where('name_th', $name)->with(['touristAttractions'])->first();
         // dd($destinations->toArray());
         return view('destination-folder.show-destination-folder', compact('destinations'));
+    }
+
+    public function showDestinationFolderDescription($name, $name_ta)
+    {
+        // dd($name_ta,$name);
+        // dd($name,$name_ta);
+        $destination = $name;
+        $attraction = TouristAttraction::where('name_th', $name_ta)->with('touristAttractionCategory')->first();
+        return view('destination-folder.show-destination-folder-description', compact('attraction', 'destination'));
+    }
+
+    public function showDestinationFolderDescriptionTag($name, $name_ta, $name_tag)
+    {
+        // dd($name_ta,$name);
+        $destination = $name;
+        $attraction = $name_ta;
+        $tag = Tag::where('name_th', $name_tag)->with('touristAttractions')->first();
+        $total = count($tag->touristAttractions);
+        return view('destination-folder.show-destination-folder-description-tags', compact('destination', 'attraction', 'tag', 'total'));
     }
 
     public function viewDestinationFolder()
@@ -249,6 +270,7 @@ class DestinationFolderController extends Controller
         } else {
             $cover_image = $updateDF->cover_image;
         }
+
 
         $updateDF->update([
             'is_status' => $request->is_status ? 1 : 0,

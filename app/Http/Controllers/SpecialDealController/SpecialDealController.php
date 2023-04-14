@@ -30,7 +30,7 @@ class SpecialDealController extends Controller
     public function showSpecialDealDescription($name)
     {
         $deal = SpecialDeal::where('name_th', $name)->with(['specialDealCategory', 'specialDealImages'])->first();
-        $start_date = $deal->start_date ? Carbon::parse($deal->start_date)->addYear(543)->locale('th')->isoFormat('D MMMM ') : '';
+        $start_date = $deal->start_date ? Carbon::parse($deal->start_date)->addYear(543)->locale('th')->isoFormat('D MMMM Y') : '';
         $end_date = $deal->end_date ? Carbon::parse($deal->end_date)->addYear(543)->locale('th')->isoFormat('D MMMM Y') : '';
         return view('special-deal.show-special-deal-description', compact('deal', 'start_date', 'end_date'));
     }
@@ -47,9 +47,9 @@ class SpecialDealController extends Controller
         // $keyword = 'อร่อยเหาะ';
         $deals = SpecialDeal::with('specialDealCategory')
             ->where('name_th', 'like', "%$keyword%")
-            ->orWhereHas('specialDealCategory', function ($query) use ($keyword) {
+            /* ->orWhereHas('specialDealCategory', function ($query) use ($keyword) {
                 $query->where('name_th', 'like', "%$keyword%");
-            })
+            }) */
             ->get()->toArray();
         // dd($deals);
         return response()->json($deals);

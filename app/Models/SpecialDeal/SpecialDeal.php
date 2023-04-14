@@ -32,6 +32,7 @@ class SpecialDeal extends Model
         'condition_th',
         'conditiob_en',
         'cover_image',
+        'view',
         'creator',
         'editor'
     ];
