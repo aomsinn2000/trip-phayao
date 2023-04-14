@@ -42,7 +42,7 @@
                                 <p class="text-head1-placeHit"><b>{{ $destinations->name_th }}</b></p>
                                 {{-- <p class="text-head2-placeHit">สายน้ำแห่งชีวิต</p> --}}
                                 <div class="row">
-                                    <div class="col-lg-4">
+                                    <div>
                                         <p class="text-content-placeHit">
                                             {{ $destinations->slogan_th }}
                                         </p>
@@ -51,7 +51,7 @@
 
                                 <br><br><br>
                             </div>
-                            <div class="col-lg-4 col-xs-12" id="embed-code">
+                            <div class="col-lg-4 col-xs-12 " id="embed-code">
                                 {{-- <br> --}}
                                 {{-- <video class="video-placeHit" controls>
                                     <source src="{{$destinations->link}}" type="video/mp4">
@@ -314,7 +314,7 @@
             if (url.indexOf("youtube.com") > -1) {
                 var splitLink = url.split('watch?v=');
                 var embedLink = splitLink.join('embed/');
-                $('#embed-code').html('<iframe width="560" height="315" src="' + embedLink + '" frameborder="0" allowfullscreen></iframe>');
+                $('#embed-code').html('<iframe width="100%" height="315" src="' + embedLink + '" frameborder="0" allowfullscreen></iframe>');
             } else {
                 $('#embed-code').html('');
             }
@@ -393,6 +393,20 @@
         });
     </script>
 
+
+
+
+<script>
+    $(document).ready(function(){
+        var songsUrl = ["https://www.youtube.com/b?v=7UAtDPvraos&list=RD_P1xND6DjFE&index=6"];
+        $.each(songsUrl, function(index, value){
+
+        var splitLink = value.split('watch?v=')
+        var embedLink1 = splitLink.join("embed/")
+            $("#result").append(index + ": " + embedLink1 + '<br>');
+        });
+    });
+</script>
 
 
 </body>

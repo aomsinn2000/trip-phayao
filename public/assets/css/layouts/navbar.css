@@ -61,6 +61,10 @@ p {
     color: #ffff;
     text-decoration: none;
 }
+.search {
+    width: 100%;
+}
+
 
 @media only screen and (max-width: 1200px) {
     .nav-link {
@@ -73,9 +77,6 @@ p {
         font-size: 10px;
     }
 
-    .search {
-        width: 150px;
-    }
 }
 
 
@@ -83,7 +84,7 @@ p {
 
 
     .search {
-        width: 450px;
+        width: 400px;
     }
 
     .nav-link {
@@ -119,33 +120,17 @@ p {
     }
 
     .search {
-        width: 230px;
+        width: 200px;
     }
 
 
 
 }
 
-
-@media only screen and (max-width: 391px) {
-    .logo-phayao {
-        display: none;
-    }
-
-    .search {
-        width: 190px;
-    }
-}
 
 @media only screen and (max-width: 376px) {
-    .logo-phayao {
-        display: none;
-    }
-
     .search {
         width: 150px;
     }
-
-
 
 }

@@ -478,7 +478,7 @@
     .text-time-detail-deal {
         background-color: #DDF4FC;
         width: 5%;
-        font-size: 12px;
+        font-size: 10px;
         color: #00AEEF;
         text-align: center;
         border-radius: 2px;
@@ -516,7 +516,7 @@
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 377px) {
     .image-small-deal {
         width: 90px;
         height: 50px;
@@ -535,6 +535,20 @@
         height: 50px;
         border-radius: 5px;
 
+    }
+    .text-time-detail-deal {
+        background-color: #DDF4FC;
+        width: 5%;
+        font-size: 9px;
+        color: #00AEEF;
+        text-align: center;
+        border-radius: 2px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: 1px solid #00AEEF;
+        border-radius: 5px;
     }
 }
 

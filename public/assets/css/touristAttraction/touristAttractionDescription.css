@@ -164,7 +164,8 @@ font-family: 'Kanit', sans-serif;
     width: 230px;
     height: 125px;
     border-radius: 5px;
-    object-fit: cover;
+    object-fit: contain;
+    background: #efefef;
 }
 
 
@@ -193,6 +194,8 @@ font-family: 'Kanit', sans-serif;
         width: 200px;
         height: 110px;
         border-radius: 5px;
+        object-fit: contain;
+        background: #efefef;
     }
 }
 @media only screen and (max-width: 1200px) {

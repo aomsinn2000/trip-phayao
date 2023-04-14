@@ -137,9 +137,9 @@
                         {{-- ที่ตั้ง --}}
                         <div class="text-address">
                             <hr>
-                            <p>ที่ตั้ง <b>ตำบล{{ $attraction->sub_district }} อำเภอ{{ $attraction->district }} จังหวัด{{ $attraction->province }}</b></p>
-                            <p>การเดินทาง : {{ $attraction->travel_th }}</p>
-                            <p>ช่วงเวลาท่องเที่ยว : <b>{{ $attraction->season_recommend_th }}</b></p>
+                            <p><b>ที่ตั้ง :</b> ตำบล{{ $attraction->sub_district }} อำเภอ{{ $attraction->district }} จังหวัด{{ $attraction->province }}</p>
+                            <p><b>การเดินทาง :</b>  {{ $attraction->travel_th }}</p>
+                            <p><b>ช่วงเวลาท่องเที่ยว :</b>{{ $attraction->season_recommend_th }}</p>
                         </div>
 
                         {{-- end ที่ตั้ง --}}
