@@ -121,14 +121,18 @@
         .box-gallery-image .btn-delete {
             position: absolute;
             width: 30px;
+            height: 30px;
             bottom: 15px;
             right: 15px;
+            border: 2px solid #ffff;
+            border-radius: 100px;
+            background: #FFEFEF;
         }
 
         .box-gallery-image .btn-delete img {
             object-fit: unset;
-            width: 100%;
-            height: 30px;
+            width: 20px;
+            height: 20px;
         }
 
         .box-add-image {
@@ -213,17 +217,16 @@
                 <div class="breadcrumb-header justify-content-between">
                     <div class="my-auto">
                         <div class="d-flex">
-                            <h5 class="content-title mb-0 my-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-                                    <path
-                                        d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
-                                </svg>
-                                ดีลพิเศษ >
-                            </h5>
                             <a href="{{ url('/special-deals/') }}">
-                                <h5 class="content-title mb-0 my-auto px-2">จัดการดีลพิเศษ ></h5>
+                                <h5 class="content-title mb-0 my-auto">
+                                    <svg style="color: black;margin-bottom:5px;" width="20" height="20"viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.55556 12.0556H4.56444M4.55556 2.27778H2.77778C2.30628 2.27778 1.8541 2.46508 1.5207 2.79848C1.1873 3.13187 1 3.58406 1 4.05556V14.7222C1 15.1937 1.1873 15.6459 1.5207 15.9793C1.8541 16.3127 2.30628 16.5 2.77778 16.5H11.6667C12.1382 16.5 12.5903 16.3127 12.9237 15.9793C13.2571 15.6459 13.4444 15.1937 13.4444 14.7222V4.05556C13.4444 3.58406 13.2571 3.13187 12.9237 2.79848C12.5903 2.46508 12.1382 2.27778 11.6667 2.27778H9.88889H4.55556ZM4.55556 2.27778C4.55556 2.74927 4.74286 3.20146 5.07626 3.53486C5.40965 3.86825 5.86184 4.05556 6.33333 4.05556H8.11111C8.58261 4.05556 9.03479 3.86825 9.36819 3.53486C9.70159 3.20146 9.88889 2.74927 9.88889 2.27778H4.55556ZM4.55556 2.27778C4.55556 1.80628 4.74286 1.3541 5.07626 1.0207C5.40965 0.687301 5.86184 0.5 6.33333 0.5H8.11111C8.58261 0.5 9.03479 0.687301 9.36819 1.0207C9.70159 1.3541 9.88889 1.80628 9.88889 2.27778H4.55556ZM7.22222 8.5H9.88889H7.22222ZM7.22222 12.0556H9.88889H7.22222ZM4.55556 8.5H4.56444H4.55556Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    จัดการดีลพิเศษ >
+                                </h5>
                             </a>
-                            <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;">แก้ไขดีลพิเศษ</h5>
+                            </h5>
+                            <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;"> แก้ไขดีลพิเศษ</h5>
                         </div>
                     </div>
                 </div>
@@ -332,7 +335,7 @@
                                     <span id="maxContentPost"style="float: right;">0/800</span>
                                 </div>
                             </div>
-                            <textarea class="summernote1"name="description_th">{{ $specialDeal->description_th }}</textarea>
+                            <textarea class="summernote"name="description_th">{{ $specialDeal->description_th }}</textarea>
                         </div>
 
 
@@ -344,7 +347,7 @@
                                     <span id="maxContentPost2"style="float: right;">0/800</span>
                                 </div>
                             </div>
-                            <textarea class="summernote2"name="condition_th">{{ $specialDeal->condition_th }}</textarea>
+                            <textarea class="summernote"name="condition_th">{{ $specialDeal->condition_th }}</textarea>
                         </div>
 
 
@@ -371,7 +374,7 @@
                                         @foreach ($specialDeal->specialDealImages as $img)
                                             <div class="box-gallery-image">
                                                 <img src="{{ asset('/storage/' . $img->image) ?? '' }}" alt="">
-                                                <button class="btn btn-link btn-delete p-0" data-id="{{ $img->id }}"><img src="/assets/images/icon/btn-delete.png" class="w-100"></button>
+                                                <button class="btn btn-link btn-delete p-0" data-id="{{ $img->id }}"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}"></button>
                                             </div>
                                         @endforeach
 
@@ -513,7 +516,7 @@
                 message: '<div class="dropify-message"><span class="" /><div class="text-center"><button class="btn  btn-link">เพิ่มรูปภาพ</button></div> <p class=""><div class="text-color-1 font-weight-light fs-14">หรือวางไฟล์เพื่ออัพโหลด</div></p></div>',
                 preview: '<label class="dropify-preview " for="drop-1"><span class="dropify-render"><div class="fildrop"></div></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-infos-message"></p></div></div></label>',
                 filename: '<p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>',
-                clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="35"></button>',
+                clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}"></button>',
                 errorLine: '<p class="dropify-error"></p>',
                 errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
             }
@@ -597,53 +600,16 @@
     {{-- script นับจำนวนตัวอักษรที่พิมพ์ไม่เกิน 100ตัว ชื่ออังกฤษ ชื่อไทย --}}
 
 
-    {{-- ลิมิตพิมพ์ได้กี่ตัว  เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
-    <script type="text/javascript">
-        function registerSummernote(element, placeholder, max, callbackMax) {
-            $(element).summernote({
-                height: 300,
-                placeholder,
-                callbacks: {
-                    onKeydown: function(e) {
-                        var t = e.currentTarget.innerText;
-                        if (t.length >= max) {
-                            //delete key
-                            if (e.keyCode != 8)
-                                e.preventDefault();
-                            // add other keys ...
-                        }
-                    },
-                    onKeyup: function(e) {
-                        var t = e.currentTarget.innerText;
-                        if (typeof callbackMax == 'function') {
-                            callbackMax(max - t.length);
-                        }
-                    },
-                    onPaste: function(e) {
-                        var t = e.currentTarget.innerText;
-                        var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-                        e.preventDefault();
-                        var all = t + bufferText;
-                        document.execCommand('insertText', false, all.trim().substring(0, 800));
-                        if (typeof callbackMax == 'function') {
-                            callbackMax(max - t.length);
-                        }
-                    }
-                }
+        {{--เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+               $('.summernote').summernote({
+                    height: 300,
+               });
             });
-        }
-        $(function() {
-            registerSummernote('.summernote1', 'Leave a comment', 800, function(max) {
-                $('#maxContentPost').text(max + '/800')
-            });
-        });
-        $(function() {
-            registerSummernote('.summernote2', 'Leave a comment', 800, function(max) {
-                $('#maxContentPost2').text(max + '/800')
-            });
-        });
-    </script>
-    {{-- end เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
+        </script>
+        {{-- end เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
 
 
 
@@ -686,7 +652,7 @@
             var html = '';
             html += '<div class="box-gallery-image">';
             html += '<img src="' + image + '" class="w-100">';
-            html += '<button class="btn btn-link btn-delete p-0"><img src="/assets/images/icon/btn-delete.png" class="w-100"></button>';
+            html += '<button class="btn btn-link btn-delete p-0"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}"></button>';
             html += '</div>';
             $('.box-add-image').before(html);
         }

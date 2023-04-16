@@ -107,12 +107,11 @@
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar sidebar-scroll">
     <div class="main-sidebar-header active">
-        <a class="desktop-logo logo-light active  mb-3 px-2" href="">
-            <div class="d-flex align-items-center">
-                <img src="/assets/image/logo-phayao.png" class="main-logo text-nowrap" alt="logo">
+        <a class="logo-light active " href="" >
+            <div class=" align-items-center">
+                <a href="{{url('/')}}"><img src="/assets/image/logo-phayao.png" class="main-logo text-nowrap" alt="logo"></a>
             </div>
         </a>
-        <a class="logo-icon mobile-logo icon-light active" href=""><img src="/assets/image/logo-phayao.png" class="logo-icon" alt="logo"></a>
 
     </div>
     <div class="main-sidemenu">

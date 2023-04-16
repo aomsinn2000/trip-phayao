@@ -28,7 +28,7 @@
             <li><a class="svg-social nav-li nav-a" href=""><i class="bi bi-instagram"></i></a></li>
             <li><a class="svg-social nav-li nav-a" href=""><i class="bi bi-twitter"></i></a></li>
             <li><a class="nav-li nav-a" href="">in</a></li>
-            <li><a class="nav-li nav-a" href="">|Trippayao@gmail.com</a></li>
+            <li><a class="nav-li nav-a" href="">| TripPhayao.com</a></li>
         </div>
         <div class="d-flex">
             <li class="nav-li nav-a" style="margin-left: auto;">

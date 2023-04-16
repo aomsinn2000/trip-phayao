@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-
+    <title>TripPhayao</title>
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -456,7 +455,8 @@
             </div>
             <br>
             <h5 style="text-align: center;">
-                <a href="" type="button" class="d-grid gap-2 col-lg-6 col-md-6 col-sm-12 mx-auto btn btn-info  text-more-pakageTour" style="border-radius:50px; color:#535151;">ดู Pakage Tour เพิ่มเติม </a>
+
+                <a href="" type="button" class=" text-more-pakageTour" style="" >ดู Pakage Tour เพิ่มเติม </a>
             </h5>
         </div>
     </div>
@@ -619,7 +619,7 @@
 
                         </div>
                         <div class="d-flex bd-highlight mb-3">
-                            <div class="ms-auto p-2 bd-highlight" style="padding-right:60px;"><a href="#" type="button" class="btn btn-info" style=" color: black; border-radius:10px; ">บทความเพิ่มเติม ></a></div>
+                            <div class="ms-auto p-2 bd-highlight" style="padding-right:60px;"><a href="{{url('/articles/')}}" type="button" class="btn btn-info" style=" color: #ffff; border-radius:10px; background-color:#00AEEF;">บทความเพิ่มเติม ></a></div>
                         </div>
                     </div>
                 </div>

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $tag->name_th }}</title>
-
+    <title>{{ $tag->name_th }} - TripPhayao</title>
+    <link rel="icon" href="{{ asset('/assets/images/logo-phayao.png') }}" type="image/x-icon" />
 
     @include('layouts.head-LinkScript')
     <link href="{{ asset('assets/css/touristAttraction/touristAttraction.css') }}" rel="stylesheet">

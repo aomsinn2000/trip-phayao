@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $attraction->name_th }}</title>
+    <title>{{ $attraction->name_th }} - TripPhayao</title>
     @include('layouts.head-LinkScript')
     <link href="{{ asset('assets/css/touristAttraction/touristAttractionDescription.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

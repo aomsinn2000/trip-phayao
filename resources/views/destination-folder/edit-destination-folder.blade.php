@@ -132,14 +132,18 @@
         .box-gallery-image .btn-delete {
             position: absolute;
             width: 30px;
+            height: 30px;
             bottom: 15px;
             right: 15px;
+            border: 2px solid #ffff;
+            border-radius: 100px;
+            background: #FFEFEF;
         }
 
         .box-gallery-image .btn-delete img {
             object-fit: unset;
-            width: 100%;
-            height: 30px;
+            width: 20px;
+            height: 20px;
         }
 
         .box-add-image {
@@ -248,16 +252,18 @@
                     <div class="my-auto">
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg"style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
-                                </svg>
-                                ตั้งค่า >
+                                <h5 class="content-title mb-0 my-auto">
+                                    <svg style="color: black; margin-bottom:5px;" width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 11.8125C7.4475 11.8125 6.1875 10.5525 6.1875 9C6.1875 7.4475 7.4475 6.1875 9 6.1875C10.5525 6.1875 11.8125 7.4475 11.8125 9C11.8125 10.5525 10.5525 11.8125 9 11.8125ZM9 7.3125C8.07 7.3125 7.3125 8.07 7.3125 9C7.3125 9.93 8.07 10.6875 9 10.6875C9.93 10.6875 10.6875 9.93 10.6875 9C10.6875 8.07 9.93 7.3125 9 7.3125Z" fill="#292D32"/>
+                                        <path d="M11.4075 16.6427C11.25 16.6427 11.0925 16.6202 10.935 16.5827C10.47 16.4552 10.08 16.1627 9.8325 15.7502L9.7425 15.6002C9.3 14.8352 8.6925 14.8352 8.25 15.6002L8.1675 15.7427C7.92 16.1627 7.53 16.4627 7.065 16.5827C6.5925 16.7102 6.105 16.6427 5.6925 16.3952L4.4025 15.6527C3.945 15.3902 3.615 14.9627 3.4725 14.4452C3.3375 13.9277 3.405 13.3952 3.6675 12.9377C3.885 12.5552 3.945 12.2102 3.8175 11.9927C3.69 11.7752 3.3675 11.6477 2.925 11.6477C1.83 11.6477 0.9375 10.7552 0.9375 9.66021V8.34021C0.9375 7.24521 1.83 6.35272 2.925 6.35272C3.3675 6.35272 3.69 6.22521 3.8175 6.00772C3.945 5.79022 3.8925 5.44521 3.6675 5.06272C3.405 4.60521 3.3375 4.06521 3.4725 3.55521C3.6075 3.03771 3.9375 2.61021 4.4025 2.34771L5.7 1.60521C6.5475 1.10271 7.665 1.39521 8.175 2.25771L8.265 2.40771C8.7075 3.17271 9.315 3.17271 9.7575 2.40771L9.84 2.26521C10.35 1.39521 11.4675 1.10271 12.3225 1.61271L13.6125 2.35521C14.07 2.61771 14.4 3.04521 14.5425 3.56271C14.6775 4.08021 14.61 4.61272 14.3475 5.07022C14.13 5.45271 14.07 5.79772 14.1975 6.01522C14.325 6.23272 14.6475 6.36021 15.09 6.36021C16.185 6.36021 17.0775 7.25271 17.0775 8.34771V9.66772C17.0775 10.7627 16.185 11.6552 15.09 11.6552C14.6475 11.6552 14.325 11.7827 14.1975 12.0002C14.07 12.2177 14.1225 12.5627 14.3475 12.9452C14.61 13.4027 14.685 13.9427 14.5425 14.4527C14.4075 14.9702 14.0775 15.3977 13.6125 15.6602L12.315 16.4027C12.03 16.5602 11.7225 16.6427 11.4075 16.6427ZM9 13.8677C9.6675 13.8677 10.29 14.2877 10.7175 15.0302L10.8 15.1727C10.89 15.3302 11.04 15.4427 11.22 15.4877C11.4 15.5327 11.58 15.5102 11.73 15.4202L13.0275 14.6702C13.2225 14.5577 13.3725 14.3702 13.4325 14.1452C13.4925 13.9202 13.4625 13.6877 13.35 13.4927C12.9225 12.7577 12.87 12.0002 13.2 11.4227C13.53 10.8452 14.2125 10.5152 15.0675 10.5152C15.5475 10.5152 15.93 10.1327 15.93 9.65271V8.33271C15.93 7.86021 15.5475 7.47021 15.0675 7.47021C14.2125 7.47021 13.53 7.14021 13.2 6.56272C12.87 5.98522 12.9225 5.22771 13.35 4.49271C13.4625 4.29771 13.4925 4.06521 13.4325 3.84021C13.3725 3.61521 13.23 3.43521 13.035 3.31521L11.7375 2.57271C11.415 2.37771 10.9875 2.49021 10.7925 2.82021L10.71 2.96271C10.2825 3.70521 9.66 4.12521 8.9925 4.12521C8.325 4.12521 7.7025 3.70521 7.275 2.96271L7.1925 2.81271C7.005 2.49771 6.585 2.38521 6.2625 2.57271L4.965 3.32271C4.77 3.43521 4.62 3.62271 4.56 3.84771C4.5 4.07271 4.53 4.30521 4.6425 4.50022C5.07 5.23521 5.1225 5.99271 4.7925 6.57022C4.4625 7.14772 3.78 7.47771 2.925 7.47771C2.445 7.47771 2.0625 7.86021 2.0625 8.34021V9.66021C2.0625 10.1327 2.445 10.5227 2.925 10.5227C3.78 10.5227 4.4625 10.8527 4.7925 11.4302C5.1225 12.0077 5.07 12.7652 4.6425 13.5002C4.53 13.6952 4.5 13.9277 4.56 14.1527C4.62 14.3777 4.7625 14.5577 4.9575 14.6777L6.255 15.4202C6.4125 15.5177 6.6 15.5402 6.7725 15.4952C6.9525 15.4502 7.1025 15.3302 7.2 15.1727L7.2825 15.0302C7.71 14.2952 8.3325 13.8677 9 13.8677Z" fill="#292D32"/>
+                                        </svg>
+                                    จัดการหมวดหมู่ >
+                                </h5>
                             </h5>
                             <a href="{{ url('/destination-folders/') }}">
-                                <h5 class="content-title mb-0 my-auto px-2" style="padding-top: 1px;">ตั้งค่าโฟลเดอร์สถานที่ยอดฮิต ></h5>
+                                <h5 class="content-title mb-0 my-auto px-2" style="padding-top: 1px;">ตั้งค่าโฟลเดอร์สถานที่ยอดฮิต </h5>
                             </a>
-                            <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;">แก้ไขโฟลเดอร์</h5>
+                            <h5 class="content-title mb-0 my-auto " style="padding-bottom: 5px;"> > แก้ไขโฟลเดอร์สถานที่ยอดฮิต</h5>
                         </div>
                     </div>
                 </div>
@@ -334,11 +340,8 @@
 
                             <div class="row ">
                                 <div class="col-6"><b>รายละเอียดแบบย่อ</b></div>
-                                <div class="col-6">
-                                    <span id="maxContentPost"style="float: right;">0/800</span>
-                                </div>
                             </div>
-                            <textarea id="textFit" class="summernote1" name="detail_th">{{ $destinationFolder->detail_th }}</textarea>
+                            <textarea id="textFit" class="summernote" name="detail_th">{{ $destinationFolder->detail_th }}</textarea>
                         </div>
 
 
@@ -543,7 +546,7 @@
                 message: '<div class="dropify-message"><span class="" /><div class="text-center"><button class="btn  btn-link">เพิ่มรูปภาพ</button></div> <p class=""><div class="text-color-1 font-weight-light fs-14" style="color:#00AEEF"><b>หรือวางไฟล์เพื่ออัพโหลด</b><p style="color:#C4C4C4;font-size:12px;">ขนาดที่แนะนำ 1200*628</p></div></p></div>',
                 preview: '<label class="dropify-preview " for="drop-1"><span class="dropify-render"><div class="fildrop"></div></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-infos-message"></p></div></div></label>',
                 filename: '<p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>',
-                clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="35"></button>',
+                clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}"></button>',
                 errorLine: '<p class="dropify-error"></p>',
                 errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
             }
@@ -562,7 +565,7 @@
                 message: '<div class="dropify-message"><span class="" /><div class="text-center"><button class="btn  btn-link">เพิ่มรูปภาพ</button></div> <p class=""><div class="text-color-1 font-weight-light fs-14" style="color:#00AEEF"><b>หรือวางไฟล์เพื่ออัพโหลด</b><p style="color:#C4C4C4;font-size:12px;"></p></div></p></div>',
                 preview: '<label class="dropify-preview " for="drop-1"><span class="dropify-render"><div class="fildrop"></div></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-infos-message"></p></div></div></label>',
                 filename: '<p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>',
-                clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="35"></button>',
+                clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}"></button>',
                 errorLine: '<p class="dropify-error"></p>',
                 errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
             }
@@ -621,43 +624,11 @@
 
     {{-- ลิมิตพิมพ์ได้กี่ตัว  เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}
     <script type="text/javascript">
-        function registerSummernote(element, placeholder, max, callbackMax) {
-            $(element).summernote({
+        $(document).ready(function() {
+
+           $('.summernote').summernote({
                 height: 300,
-                placeholder,
-                callbacks: {
-                    onKeydown: function(e) {
-                        var t = e.currentTarget.innerText;
-                        if (t.length >= max) {
-                            //delete key
-                            if (e.keyCode != 8)
-                                e.preventDefault();
-                            // add other keys ...
-                        }
-                    },
-                    onKeyup: function(e) {
-                        var t = e.currentTarget.innerText;
-                        if (typeof callbackMax == 'function') {
-                            callbackMax(max - t.length);
-                        }
-                    },
-                    onPaste: function(e) {
-                        var t = e.currentTarget.innerText;
-                        var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-                        e.preventDefault();
-                        var all = t + bufferText;
-                        document.execCommand('insertText', false, all.trim().substring(0, 800));
-                        if (typeof callbackMax == 'function') {
-                            callbackMax(max - t.length);
-                        }
-                    }
-                }
-            });
-        }
-        $(function() {
-            registerSummernote('.summernote1', 'Leave a comment', 800, function(max) {
-                $('#maxContentPost').text(max + '/800')
-            });
+           });
         });
     </script>
     {{-- end เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}

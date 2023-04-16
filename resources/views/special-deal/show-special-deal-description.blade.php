@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ดีลสุดพิเศษ</title>
+    <title>{{ $deal->name_th }}  - TripPhayao </title>
     @include('layouts.head-LinkScript')
     <link href="{{ asset('assets/css/special-deal/special-deal.css') }}" rel="stylesheet">
 
