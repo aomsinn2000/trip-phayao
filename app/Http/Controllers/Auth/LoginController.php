@@ -63,7 +63,7 @@ class LoginController extends Controller
             } else {
                 dd("remem fail");
             } */
-            return redirect("/home-banners/");
+            return redirect("/tourist-attractions/");
         } else {
             return redirect()->back()->with('error','ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
         }

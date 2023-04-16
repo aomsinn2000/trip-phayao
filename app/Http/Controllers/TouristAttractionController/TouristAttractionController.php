@@ -67,14 +67,6 @@ class TouristAttractionController extends Controller
         return view('tourist-attraction.show-tourist-attraction-description', compact('attraction'));
     }
 
-    // public function showTouristAttractionByName($name)
-    // {
-    //     $find = TouristAttractionCategory::where('name_th', $name);
-    //     dd($name, $find);
-
-    //     return view('tourist-attraction.show-tourist-attraction',);
-    // }
-
     public function touristAttractionDescription()
     {
         return view('tourist-attraction.show-tourist-attraction-description');
@@ -160,15 +152,6 @@ class TouristAttractionController extends Controller
         // dd($attraction_no);
         return view('tourist-attraction.add-tourist-attraction', compact('touristAttractionCategory', 'attraction_no', 'destinationFolders',));
     }
-
-
-    // public function selectFolder()
-    // {
-    //     $folder = DestinationFolder::get();
-    //     // $folder->name_th;
-    //     // dd($folder->toArray());
-    //     return view('tourist-attraction.add-tourist-attraction', compact('folder'));
-    // }
     public function selectTag()
     {
         $tag = Tag::get();
@@ -184,12 +167,6 @@ class TouristAttractionController extends Controller
 
     public function createTouristAttraction(Request $request)
     {
-        // $selectFolders = json_decode($request->select_folders, true);
-
-        // foreach ($selectFolders as $folder) {
-        //     $id = $folder['id'];
-        //     $name_th = $folder['value'];
-        // }
         // dd($request->toArray(), /* $selectFolders,$folder,$id,$name_th */);
         $request->validate([
             'name_th' => 'required|unique:tourist_attractions',
@@ -262,22 +239,6 @@ class TouristAttractionController extends Controller
             }
         }
 
-        // if ($request->tags) {
-        //     $tags = json_decode($request->tags, true);
-        //     foreach ($tags as $t) {
-        //         // $id = $t['id'];
-        //         $name = $t['value'];
-        //         $tag = Tag::where('name_th', $name)->first();
-        //         if (!$tag) {
-        //             $tag = Tag::create([
-        //                 'name_th' => $name,
-        //                 'creator' => Auth::user()->account_name
-        //             ]);
-        //         }
-        //         // $ta->touristAttractionTags()->attach($tag);
-        //         $ta->tags()->attach($tag);
-        //     }
-        // }
         if ($request->tags) {
             $tags = json_decode($request->tags, true);
             foreach ($tags as $index => $tag_data) {
@@ -316,9 +277,6 @@ class TouristAttractionController extends Controller
         $parts = explode('/', $path);
         $folder = implode('/', array_slice($parts, 0, 3));
 
-        /* $what = array_slice($parts, 0, 4);
-        $f = implode('-', array_slice($parts, 0, 4)); */
-        // dd($parts, $folder,/*  $what, $f */);
         Storage::deleteDirectory($folder); // ลบfolderที่เก็บรูปของ idนั้นๆไปเลย
         $delete->delete();
         return redirect()->back();
@@ -345,45 +303,22 @@ class TouristAttractionController extends Controller
     public function editFolder()
     {
         $folder = DestinationFolder::get();
-        // $taFolder = TouristAttraction::with('destinationFolders')->find(15);
-        // $taFolder = $taFolder->destinationFolders;
-        // dd($folder->toArray(), $taFolder->toArray());
         return response()->json($folder);
-        /* $output = array(
-            "folder" => $folder,
-            "taFolder" => $taFolder
-        );
-        return json_encode($output); */
     }
 
     public function editTouristAttraction($id)
     {
         $touristAttraction =  TouristAttraction::with(['touristAttractionImages', 'destinationFolders'])->find($id);
         $touristAttractionCategory = TouristAttractionCategory::where('is_status', 1)->get();
-
-        // $touristAttractionTag = $touristAttraction->touristAttractionTags ? $touristAttraction->touristAttractionTags->map(function ($item) {
-        //     return $item->name_th;
-        // }) : null;
-
         $touristAttractionTag = $touristAttraction->tags ? $touristAttraction->tags->map(function ($item) {
             return $item->name_th;
         }) : null;
-
-        // $touristAttractionTag = $touristAttraction->tags()
-        //     ->orderBy('tourist_attraction_tags.order')
-        //     ->get()
-        //     ->map(function ($item) {
-        //         return $item->name_th;
-        //     });
-
-        // dd($touristAttractionTag,$touristAttraction);
         $folderTouristAttraction = $touristAttraction->destinationFolders->map(function ($item) {
             return $item = [
                 'id' => $item->id,
                 'name_th' => $item->name_th,
             ];
         });
-
         // dd($destinationFolder->toArray());
         return view('tourist-attraction.edit-tourist-attraction', compact('touristAttraction', 'touristAttractionCategory', 'touristAttractionTag', 'folderTouristAttraction',));
     }
@@ -406,11 +341,7 @@ class TouristAttractionController extends Controller
                 'mimes:jpeg,png,jpg,gif,svg',
                 'max:5120'
             ],
-            // other validation rules...
         ];
-        // if (is_null($updateTA->cover_image)) {
-        //     $validationRules['cover_image'][] = 'required';
-        // }
         $request->validate(array_merge([
             'name_th' => ['required', Rule::unique('tourist_attractions')->ignore($id)],
             // 'name_en' => 'required|unique:tourist_attraction_categories',
@@ -482,27 +413,6 @@ class TouristAttractionController extends Controller
                 ]);
             }
         }
-        /* if ($request->tags) {
-            $tags = json_decode($request->tags, true);
-            $tagID = [];
-            foreach ($tags as $t) {
-                $name = $t['value'];
-                $tag = Tag::where('name_th', $name)->first();
-                if (!$tag) {
-                    $tag = Tag::create([
-                        'name_th' => $name,
-                        'creator' => Auth::user()->account_name
-                    ]);
-                    // dd($tag, $name);
-                }
-
-                $tagID[] = $tag->id;
-
-                // $updateTA->touristAttractionTags()->sync($tagID);
-                $updateTA->tags()->sync($tagID);
-            }
-        } */
-
         if ($request->tags) {
             $tags = json_decode($request->tags, true);
             $tagsData = [];
@@ -521,7 +431,6 @@ class TouristAttractionController extends Controller
 
             $updateTA->tags()->sync($tagsData);
         } else if (($request->tags) == null) {
-            // $updateTA->touristAttractionTags()->detach();
             $updateTA->tags()->detach();
         }
 

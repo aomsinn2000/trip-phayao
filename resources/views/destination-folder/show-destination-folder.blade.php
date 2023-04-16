@@ -79,7 +79,6 @@
                         <p style="color: #535151;" class="text-head-content-placeHit">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
 
                         <!-- Nav tabs -->
-
                         {{-- <ul class="nav nav-pills  px-1 py-2" id="pills-tab" role="tablist">
                             <h3>หมวดหมู่ : </h3>
                             <li class="nav-item px-1" role="presentation">
@@ -117,173 +116,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="pills-restaurant" role="tabpanel">
-                                <div class="row">
-                                    <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                        <div class="card  text-white" style="border: none;">
-                                            <img src="https://thailandtourismdirectory.go.th/assets/upload/2021/11/1//be10d8aa-10d6-4906-a139-0309df29406e.jpg" class="img-card-placeHit" alt="...">
-                                            <div class="card-body text-black">
-                                                <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                <h4>วัดติโลกอาราม</h4>
-                                                <p class="text-card-content-placeHit">พระธาตุกลางน้ำพระพุทธรูปหินทรายสกุลช่าง พะเยาอายุราว 500 ปี</p>
-                                                <p>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span class="text-review-placeHit">10+ รีวิว</span>
-                                                </p>
-
-                                            </div>
-                                        </div>
-                                        <div class="padding-card-placeHit">
-                                            <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                        </div>
-                                    </div>
-                                    <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                        <div class="card  text-white" style="border: none;">
-                                            <img src="https://pyo.onab.go.th/th/file/get/file/2022082427d73a953e10be34f0077b4bae6e0c42100202.jpg" class="img-card-placeHit" alt="...">
-                                            <div class="card-body text-black">
-                                                <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                <h4>วัดศรีโคมคำ </h4>
-                                                <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                                <p>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span class="text-review-placeHit">10+ รีวิว</span>
-                                                </p>
-
-                                            </div>
-                                        </div>
-                                        <div class="padding-card-placeHit">
-                                            <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                        </div>
-                                    </div>
-                                    <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                        <div class="card  text-white" style="border: none;">
-                                            <img src="https://www.museumthailand.com/upload/evidence/1500976585_57492.jpg" class="img-card-placeHit" alt="...">
-                                            <div class="card-body text-black">
-                                                <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                <h4>วัดศรีอุโมงค์คำ</h4>
-                                                <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                                <p>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span class="text-review-placeHit">10+ รีวิว</span>
-                                                </p>
-
-                                            </div>
-                                        </div>
-                                        <div class="padding-card-placeHit">
-                                            <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                        </div>
-                                    </div>
-                                    <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                        <div class="card  text-white" style="border: none;">
-                                            <img src="https://thailandtourismdirectory.go.th/assets/upload/2021/11/1//be10d8aa-10d6-4906-a139-0309df29406e.jpg" class="img-card-placeHit" alt="...">
-                                            <div class="card-body text-black">
-                                                <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                <h4>วัดติโลกอาราม</h4>
-                                                <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                                <p>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span class="text-review-placeHit">10+ รีวิว</span>
-                                                </p>
-
-                                            </div>
-                                        </div>
-                                        <div class="padding-card-placeHit">
-                                            <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                        </div>
-                                    </div>
-                                    <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                        <div class="card  text-white" style="border: none;">
-                                            <img src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" class="img-card-placeHit" alt="...">
-                                            <div class="card-body text-black">
-                                                <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                <h4>วัดอนาลโย ทิพยาราม</h4>
-                                                <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                                <p>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span class="text-review-placeHit">10+ รีวิว</span>
-                                                </p>
-
-                                            </div>
-                                        </div>
-                                        <div class="padding-card-placeHit">
-                                            <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                        </div>
-                                    </div>
-                                    <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                        <div class="card  text-white" style="border: none;">
-                                            <img src="https://cms.dmpcdn.com/travel/2021/03/16/1d9b2fa0-864f-11eb-a403-33d334b99f04_original.jpg" class="img-card-placeHit" alt="...">
-                                            <div class="card-body text-black">
-                                                <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                <h4>วัดพระธาตุจอมทอง</h4>
-                                                <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                                <p>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span class="text-review-placeHit">10+ รีวิว</span>
-                                                </p>
-
-                                            </div>
-                                        </div>
-                                        <div class="padding-card-placeHit">
-                                            <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                        </div>
-                                    </div>
-                                    <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                        <div class="card  text-white" style="border: none;">
-                                            <img src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" class="img-card-placeHit" alt="...">
-                                            <div class="card-body text-black">
-                                                <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>พะเยา,ประเทศไทย</p>
-                                                <h4> วัดอนาลโยทิพยาราม (หลวงปู่ไพบูลย์)</h4>
-                                                <p class="text-card-content-placeHit">ไฮไลท์หลักของกว๊านพะเยายังอยู่ที่การเวียนเทียนทางน้ำ ในวันสำคัญทางพุทธศาสนาต่างๆ</p>
-                                                <p>
-                                                    <i class="bi bi-star-fill"></i>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span> <i class="bi bi-star-fill"></i></span>
-                                                    <span class="text-review-placeHit">10+ รีวิว</span>
-                                                </p>
-
-                                            </div>
-                                        </div>
-                                        <div class="padding-card-placeHit">
-                                            <a href="{{ url('showTouristAttractionDescription') }}" type="button" class="btn btn-info text-white btn-map">ดูแผนที่เดินทาง</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
                         </div>
-
-
-
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -297,7 +130,7 @@
     <p class="line-header"></p>
     <br>
 
-    <div id="map"></div>
+    {{-- <div id="map"></div> --}}
 
 
 
@@ -324,8 +157,8 @@
         });
     </script>
 
-
-    <script>
+    {{-- map --}}
+    {{-- <script>
         let map;
 
         function initMap() {
@@ -357,7 +190,7 @@
             });
         }
         window.initMap = initMap;
-    </script>
+    </script> --}}
 
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnuNFCpxLkWORNZymL1Tvr7cBa-d1TjD0&callback=initMap&v=weekly"></script>
@@ -396,17 +229,17 @@
 
 
 
-<script>
-    $(document).ready(function(){
-        var songsUrl = ["https://www.youtube.com/b?v=7UAtDPvraos&list=RD_P1xND6DjFE&index=6"];
-        $.each(songsUrl, function(index, value){
+    <script>
+        $(document).ready(function() {
+            var songsUrl = ["https://www.youtube.com/b?v=7UAtDPvraos&list=RD_P1xND6DjFE&index=6"];
+            $.each(songsUrl, function(index, value) {
 
-        var splitLink = value.split('watch?v=')
-        var embedLink1 = splitLink.join("embed/")
-            $("#result").append(index + ": " + embedLink1 + '<br>');
+                var splitLink = value.split('watch?v=')
+                var embedLink1 = splitLink.join("embed/")
+                $("#result").append(index + ": " + embedLink1 + '<br>');
+            });
         });
-    });
-</script>
+    </script>
 
 
 </body>

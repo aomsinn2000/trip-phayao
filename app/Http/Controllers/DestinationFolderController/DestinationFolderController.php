@@ -232,7 +232,6 @@ class DestinationFolderController extends Controller
     public function editDestinationFolder($id)
     {
         $destinationFolder = DestinationFolder::with('touristAttractions')->find($id);
-        // dd($destinationFolder->toArray());
         return view('destination-folder.edit-destination-folder', compact('destinationFolder'));
     }
 
@@ -249,7 +248,7 @@ class DestinationFolderController extends Controller
 
     public function saveUpdateDestinationFolder(Request $request, $id)
     {
-        // dd($request->toArray());
+        dd($request->toArray());
         $updateDF = DestinationFolder::find($id);
         if ($request->hasFile('banner_image')) {
             Storage::delete($updateDF->banner_image);

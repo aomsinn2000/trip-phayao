@@ -474,7 +474,7 @@
 
                             <div class="row px-2 py-2">
                                 <label class="px-2"><b>จัดกลุ่มสถานที่ยอดฮิต* :</b></label>
-                                <input type="checkbox" checked data-on="เปิด" data-off="ปิด" data-toggle="toggle" data-size="sm">
+                                {{-- <input type="checkbox" checked data-on="เปิด" data-off="ปิด" data-toggle="toggle" data-size="sm"> --}}
 
                                 <br>
 

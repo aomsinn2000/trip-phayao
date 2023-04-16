@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TripPhayao</title>
-
+    <link rel="icon" href="{{ asset('/assets/images/logo-phayao.png') }}" type="image/x-icon" />
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -456,7 +456,7 @@
             <br>
             <h5 style="text-align: center;">
 
-                <a href="" type="button" class=" text-more-pakageTour" style="" >ดู Pakage Tour เพิ่มเติม </a>
+                <a href="" type="button" class=" text-more-pakageTour" style="">ดู Pakage Tour เพิ่มเติม </a>
             </h5>
         </div>
     </div>
@@ -619,7 +619,7 @@
 
                         </div>
                         <div class="d-flex bd-highlight mb-3">
-                            <div class="ms-auto p-2 bd-highlight" style="padding-right:60px;"><a href="{{url('/articles/')}}" type="button" class="btn btn-info" style=" color: #ffff; border-radius:10px; background-color:#00AEEF;">บทความเพิ่มเติม ></a></div>
+                            <div class="ms-auto p-2 bd-highlight" style="padding-right:60px;"><a href="{{ url('/articles/') }}" type="button" class="btn btn-info" style=" color: #ffff; border-radius:10px; background-color:#00AEEF;">บทความเพิ่มเติม ></a></div>
                         </div>
                     </div>
                 </div>

@@ -30,7 +30,8 @@
             <li><a class="nav-li nav-a" href="">in</a></li>
             <li><a class="nav-li nav-a" href="">| TripPhayao.com</a></li>
         </div>
-        <div class="d-flex">
+        {{-- ภาษา --}}
+        {{-- <div class="d-flex">
             <li class="nav-li nav-a" style="margin-left: auto;">
                 <img src="{{ asset('assets/image/thai.png') }}" style="width: 10%;" alt="">
                 <span>
@@ -38,7 +39,7 @@
                     <a href="" class="select-language">EN</a>
                 </span>
             </li>
-        </div>
+        </div> --}}
     </ul>
 
 
@@ -111,7 +112,7 @@
                                         {{ Auth::user()->account_name ?? '' }}
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="{{ url('/home-banners/') }}">
+                                        <li><a class="dropdown-item" href="{{ url('/tourist-attractions/') }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
                                                     <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
                                                     <path
