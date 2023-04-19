@@ -108,7 +108,7 @@
                             <!-- Example single danger button -->
                             @if (Auth::check())
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                         {{ Auth::user()->account_name ?? '' }}
                                     </button>
                                     <ul class="dropdown-menu">
@@ -129,7 +129,7 @@
                                     </ul>
                                 </div>
                             @else
-                                <a href="{{ url('login') }}" type="button" class="btn btn-warning signInli">Login</a>
+                                <button href="" type="button" class="btn btn-secondary signInli" style="cursor:context-menu;">Login</button>
                             @endif
 
                         </div>

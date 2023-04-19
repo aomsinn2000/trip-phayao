@@ -904,7 +904,7 @@
             centerPadding: '270px',
             dots: true,
             arrows: true,
-            slidesToShow: 6,
+            slidesToShow: 7,
             slidesToScroll: 2,
 
 

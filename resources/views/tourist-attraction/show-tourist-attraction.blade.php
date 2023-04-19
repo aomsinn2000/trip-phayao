@@ -20,6 +20,8 @@
             height: 400px;
             width: 100%;
         }
+        .p1{display:inline;}
+
     </style>
 </head>
 
@@ -97,11 +99,16 @@
                                         @foreach ($touristAttractions as $attraction)
                                             <div class="list-item col-lg-3 col-md-6 mb-lg-3">
                                                 <div class="card  text-white" style="border: none;">
-                                                    <img src="{{ $attraction->cover_image != null ? asset('/storage/' . $attraction->cover_image) : asset('assets/image/unfound-image-b.jpg') }}" class="img-card-placeHit" alt="...">
+                                                    <a href="{{ url('/touristattractions/' . $attraction->name_th) }}">
+                                                        <img src="{{ $attraction->cover_image != null ? asset('/storage/' . $attraction->cover_image) : asset('assets/image/unfound-image-b.jpg') }}" class="img-card-placeHit" alt="...">
+                                                    </a>
                                                     <div class="card-body text-black">
                                                         <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>{{ $attraction->province }},ประเทศไทย</p>
                                                         <h4>{{ $attraction->name_th }}</h4>
-                                                        <p class="text-card-content-placeHit">{{ $attraction->detail_th }}</p>
+                                                        <div class="text-card-content-placeHit">
+                                                            <span class="p1" >{{ $attraction->detail_th }}</span>
+                                                            <span class="More" style="cursor:pointer;color:blue;">เพิ่มเติม</span>
+                                                        </div>
                                                         {{-- <div class="" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> {{$attraction->view}} </span></div> --}}
                                                     </div>
                                                 </div>
@@ -247,11 +254,16 @@
                             html += '<div class="list-item col-lg-3 col-md-6 mb-lg-3">';
                             html += '<div class="card text-white" style="border: none;">';
                             // html += '<img src="/storage/' + data[i].cover_image + '" class="img-card-placeHit" alt="...">';
+                            html += '<a href="{{ url('/touristattractions/' . $attraction->name_th) }}">';
                             html += '<img src="' + (data[i].cover_image ? '/storage/' + data[i].cover_image : '{{ asset('assets/image/unfound-image-b.jpg') }}') + '" class="img-card-placeHit" alt="...">';
+                            html += '</a>'
                             html += '<div class="card-body text-black">';
                             html += '<p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>' + data[i].province + ',ประเทศไทย</p>';
                             html += '<h4>' + data[i].name_th + '</h4>';
-                            html += '<p class="text-card-content-placeHit">' + (data[i].detail_th ?? '') + '</p>';
+                            html += '<div class="text-card-content-placeHit">';
+                            html += '<span class="p1" >' + (data[i].detail_th ?? '') + '</span>';
+                            html += '<span class="More" style="cursor:pointer;color:blue;">เพิ่มเติม</span>';
+                            html += '</div>';
                             html += '</div>';
                             html += '</div>';
                             html += '<div class="padding-card-placeHit">';
@@ -271,6 +283,33 @@
             });
         });
     </script>
+
+
+
+    <script>
+    document.querySelectorAll('span.More').forEach(bttn=>{
+        bttn.dataset.state=0;
+        bttn.addEventListener('click',function(e){
+          let span=this.previousElementSibling;
+              span.dataset.tmp=span.textContent;
+              span.textContent=span.dataset.content;
+              span.dataset.content=span.dataset.tmp;
+
+              this.innerHTML=this.dataset.state==1 ? 'เพิ่มเติม...' : 'แสดงน้อยลง...';
+              this.dataset.state=1-this.dataset.state;
+        })
+      });
+
+      document.querySelectorAll('span.p1').forEach(span=>{
+        span.dataset.content=span.textContent;
+        span.textContent=span.textContent.substr(0,70) + '';
+      })
+    </script>
+
+
+
+
+
 
 </body>
 
