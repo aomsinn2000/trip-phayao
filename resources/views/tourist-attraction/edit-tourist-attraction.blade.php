@@ -264,15 +264,19 @@
                             <a href="{{ url('/tourist-attractions/') }}">
                                 <h5 class="content-title mb-0 my-auto">
                                     <svg style="color: black;margin-bottom:5px;" width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16.5 17.0625H1.5C1.1925 17.0625 0.9375 16.8075 0.9375 16.5C0.9375 16.1925 1.1925 15.9375 1.5 15.9375H16.5C16.8075 15.9375 17.0625 16.1925 17.0625 16.5C17.0625 16.8075 16.8075 17.0625 16.5 17.0625Z" fill="#292D32"/>
-                                        <path d="M10.875 4.67306C10.17 4.67306 9.465 4.53808 8.79 4.26808C8.58 4.18558 8.4375 3.97557 8.4375 3.74307V1.49307C8.4375 1.30557 8.5275 1.13307 8.685 1.02807C8.8425 0.92307 9.0375 0.900557 9.21 0.968057C10.2825 1.39556 11.4675 1.39556 12.54 0.968057C12.7125 0.900557 12.9075 0.92307 13.065 1.02807C13.2225 1.13307 13.3125 1.30557 13.3125 1.49307V3.74307C13.3125 3.97557 13.17 4.17808 12.96 4.26808C12.285 4.53808 11.58 4.67306 10.875 4.67306ZM9.5625 3.35305C10.4175 3.61555 11.3325 3.61555 12.1875 3.35305V2.26559C11.325 2.47559 10.425 2.47559 9.5625 2.26559V3.35305Z" fill="#292D32"/>
-                                        <path d="M9 6.5625C8.6925 6.5625 8.4375 6.3075 8.4375 6V3.75C8.4375 3.4425 8.6925 3.1875 9 3.1875C9.3075 3.1875 9.5625 3.4425 9.5625 3.75V6C9.5625 6.3075 9.3075 6.5625 9 6.5625Z" fill="#292D32"/>
-                                        <path d="M15 17.0625H3C2.6925 17.0625 2.4375 16.8075 2.4375 16.5V8.25C2.4375 6.435 3.435 5.4375 5.25 5.4375H12.75C14.565 5.4375 15.5625 6.435 15.5625 8.25V16.5C15.5625 16.8075 15.3075 17.0625 15 17.0625ZM3.5625 15.9375H14.4375V8.25C14.4375 7.065 13.935 6.5625 12.75 6.5625H5.25C4.065 6.5625 3.5625 7.065 3.5625 8.25V15.9375Z" fill="#292D32"/>
-                                        <path d="M14.5655 9.5625H3.43555C3.12805 9.5625 2.87305 9.3075 2.87305 9C2.87305 8.6925 3.12805 8.4375 3.43555 8.4375H14.5655C14.873 8.4375 15.128 8.6925 15.128 9C15.128 9.3075 14.873 9.5625 14.5655 9.5625Z" fill="#292D32"/>
-                                        <path d="M6.55469 9H5.42969V16.5H6.55469V9Z" fill="#292D32"/>
-                                        <path d="M9.55469 9H8.42969V16.5H9.55469V9Z" fill="#292D32"/>
-                                        <path d="M12.5547 9H11.4297V16.5H12.5547V9Z" fill="#292D32"/>
-                                        </svg>
+                                        <path d="M16.5 17.0625H1.5C1.1925 17.0625 0.9375 16.8075 0.9375 16.5C0.9375 16.1925 1.1925 15.9375 1.5 15.9375H16.5C16.8075 15.9375 17.0625 16.1925 17.0625 16.5C17.0625 16.8075 16.8075 17.0625 16.5 17.0625Z" fill="#292D32" />
+                                        <path
+                                            d="M10.875 4.67306C10.17 4.67306 9.465 4.53808 8.79 4.26808C8.58 4.18558 8.4375 3.97557 8.4375 3.74307V1.49307C8.4375 1.30557 8.5275 1.13307 8.685 1.02807C8.8425 0.92307 9.0375 0.900557 9.21 0.968057C10.2825 1.39556 11.4675 1.39556 12.54 0.968057C12.7125 0.900557 12.9075 0.92307 13.065 1.02807C13.2225 1.13307 13.3125 1.30557 13.3125 1.49307V3.74307C13.3125 3.97557 13.17 4.17808 12.96 4.26808C12.285 4.53808 11.58 4.67306 10.875 4.67306ZM9.5625 3.35305C10.4175 3.61555 11.3325 3.61555 12.1875 3.35305V2.26559C11.325 2.47559 10.425 2.47559 9.5625 2.26559V3.35305Z"
+                                            fill="#292D32" />
+                                        <path d="M9 6.5625C8.6925 6.5625 8.4375 6.3075 8.4375 6V3.75C8.4375 3.4425 8.6925 3.1875 9 3.1875C9.3075 3.1875 9.5625 3.4425 9.5625 3.75V6C9.5625 6.3075 9.3075 6.5625 9 6.5625Z" fill="#292D32" />
+                                        <path
+                                            d="M15 17.0625H3C2.6925 17.0625 2.4375 16.8075 2.4375 16.5V8.25C2.4375 6.435 3.435 5.4375 5.25 5.4375H12.75C14.565 5.4375 15.5625 6.435 15.5625 8.25V16.5C15.5625 16.8075 15.3075 17.0625 15 17.0625ZM3.5625 15.9375H14.4375V8.25C14.4375 7.065 13.935 6.5625 12.75 6.5625H5.25C4.065 6.5625 3.5625 7.065 3.5625 8.25V15.9375Z"
+                                            fill="#292D32" />
+                                        <path d="M14.5655 9.5625H3.43555C3.12805 9.5625 2.87305 9.3075 2.87305 9C2.87305 8.6925 3.12805 8.4375 3.43555 8.4375H14.5655C14.873 8.4375 15.128 8.6925 15.128 9C15.128 9.3075 14.873 9.5625 14.5655 9.5625Z" fill="#292D32" />
+                                        <path d="M6.55469 9H5.42969V16.5H6.55469V9Z" fill="#292D32" />
+                                        <path d="M9.55469 9H8.42969V16.5H9.55469V9Z" fill="#292D32" />
+                                        <path d="M12.5547 9H11.4297V16.5H12.5547V9Z" fill="#292D32" />
+                                    </svg>
                                     จัดการสถานที่ท่องเที่ยว >
                                 </h5>
                             </a>
@@ -374,6 +378,18 @@
                                 <div class="form-group col-6">
                                     <label>รหัสไปรษณีย์</label>
                                     <input type="text" id="postcode" class="form-control" placeholder="กรุณากรอกรหัสไปรษณีย์" value="{{ $touristAttraction->postcode }}" name="postcode">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label>พิกัด (Google Maps)</label>
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกลิงก์ google maps" value="{{ $touristAttraction->map_link }}" name="map_link">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>ละติจูด (Latitude)</label>
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกละติจูด(Lat)" value="{{ $touristAttraction->latitude }}" name="latitude">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>ลองติจูด (Longitude) </label>
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกลองติจูด(Long)" value="{{ $touristAttraction->longitude }}" name="longitude">
                                 </div>
                             </div>
                         </div>
@@ -648,7 +664,7 @@
                 message: '<div class="dropify-message"><span class="" /><div class="text-center"><button class="btn  btn-link">เพิ่มรูปภาพ</button></div> <p class=""><div class="text-color-1 font-weight-light fs-14" style="color:#00AEEF"><b>หรือวางไฟล์เพื่ออัพโหลด</b><p style="color:#C4C4C4;font-size:12px;">ขนาดที่แนะนำ 1200*628</p></div></p></div>',
                 preview: '<label class="dropify-preview " for="drop-1"><span class="dropify-render"><div class="fildrop"></div></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-infos-message"></p></div></div></label>',
                 filename: '<p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>',
-                clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="35"></button>',
+                clearButton: '<button type="button" class="dropify-clear"><img src="{{ asset('/assets/images/icon/ion_trash-bin.png') }}" width="20"></button>',
                 errorLine: '<p class="dropify-error"></p>',
                 errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
             }
@@ -719,9 +735,9 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
-           $('.summernote').summernote({
+            $('.summernote').summernote({
                 height: 300,
-           });
+            });
         });
     </script>
     {{-- end เกี่ยวกับข้อความรายละเอียดกับเงื่อนไขการใช้งาน textarea --}}

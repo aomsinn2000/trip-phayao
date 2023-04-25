@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\DestinationFolder\DestinationFolder;
 use App\Models\Tag\Tag;
 use App\Models\TouristAttraction\TouristAttraction;
+use App\Models\TouristAttractionCategory\TouristAttractionCategory;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,14 +16,34 @@ class DestinationFolderController extends Controller
 {
     public function showDestinationFolder($name)
     {
-        $destinations = DestinationFolder::where('is_status', 1)->where('name_th', $name)->with(['touristAttractions'])->first();
+        $destinations = DestinationFolder::where('is_status', 1)->where('name_th', $name)->with(['touristAttractions.touristAttractionCategory'])->first();
+        $category = $destinations->touristAttractions->groupBy('tourist_attraction_category_id')->map(function ($group, $categoryId) {
+            $category = TouristAttractionCategory::find($categoryId);
+            return [
+                'id' => $categoryId,
+                'name_th' => $category ? $category->name_th : 'Unknown',
+            ];
+        });
+        // dd($category);
         // dd($destinations->toArray());
-        return view('destination-folder.show-destination-folder', compact('destinations'));
+        return view('destination-folder.show-destination-folder', compact('destinations', 'category'));
+    }
+
+    public function showDestinationFolderByCategory($folderId, Request $request)
+    {
+        $categoryID = $request->get('category_id');
+        $ta = TouristAttraction::where('is_status', 1)
+            ->where('tourist_attraction_category_id', $categoryID)
+            ->whereHas('destinationFolders', function ($query) use ($folderId) {
+                $query->where('destination_folder_id', $folderId );
+            })
+            ->get();
+        // dd($ta);
+        return response()->json($ta);
     }
 
     public function showDestinationFolderDescription($name, $name_ta)
     {
-        // dd($name_ta,$name);
         // dd($name,$name_ta);
         $destination = $name;
         $attraction = TouristAttraction::where('name_th', $name_ta)->with('touristAttractionCategory')->first();
@@ -248,7 +269,7 @@ class DestinationFolderController extends Controller
 
     public function saveUpdateDestinationFolder(Request $request, $id)
     {
-        dd($request->toArray());
+        // dd($request->toArray());
         $updateDF = DestinationFolder::find($id);
         if ($request->hasFile('banner_image')) {
             Storage::delete($updateDF->banner_image);

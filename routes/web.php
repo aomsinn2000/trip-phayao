@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 //  Login
-Route::get('login', [LoginController::class, 'showLogin']);
+Route::get('admin-login', [LoginController::class, 'showLogin']);
 Route::post('handle', [LoginController::class, 'handle']);
 Route::get('logout', [LoginController::class, 'logout']);
 // end Login
@@ -76,9 +76,11 @@ Route::prefix('/home-banners')->group(function () {
 //*********หน้าบ้านโฟลเดอร์**********
 Route::prefix('/destinations')->group(function () {
     // Route::get('/', [DestinationFolderController::class, 'showDestinationFolder']);
+    // Route::get('/select-by-category', [DestinationFolderController::class, 'showDestinationFolderByCategory']);
+    Route::get('/select-by-category/{folderId}', [DestinationFolderController::class, 'showDestinationFolderByCategory']);
     Route::get('/{name}', [DestinationFolderController::class, 'showDestinationFolder']);
     Route::get('/{name}/{name_ta}', [DestinationFolderController::class, 'showDestinationFolderDescription']);
-    Route::get('/{name}/{name_ta}/{name_tag}',[DestinationFolderController::class,'showDestinationFolderDescriptionTag']);
+    Route::get('/{name}/{name_ta}/{name_tag}', [DestinationFolderController::class, 'showDestinationFolderDescriptionTag']);
 });
 //*********end หน้าบ้านโฟลเดอร์**********
 //*********หลังบ้านโฟลเดอร์**********

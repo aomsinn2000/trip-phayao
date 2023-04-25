@@ -82,7 +82,7 @@
         <br>
         <h2 style="text-align:center;">ดีลสุดพิเศษ</h2>
         <p class="line-header"></p>
-        <p style="color: #535151;" class="text-content-top-dessination">We provide various specialfeatures for all of you</p>
+        <p style="color: #535151;" class="text-content-top-dessination">รวบรวมข้อมูล ดีลสุดฮิต สุดร้อนแรง ใน จ.พะเยามาให้คุณ</p>
 
         <div id="specialDeal" class="img-special-deal">
             @foreach ($specialDeals as $key => $deal)
@@ -130,7 +130,7 @@
                     <div class="container place-top-destination">
                         <h2>สถานที่ยอดฮิต Top Destination </h2>
                         <p class="line-header"></p>
-                        <p style="color: #535151;" class="text-content-top-dessination">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
+                        <p style="color: #535151;" class="text-content-top-dessination">สถานที่ท่องเที่ยวยอดฮิต ที่คัดสรรข้อมูลแต่ละบริเวณสถานที่มาเพื่ออำนวยความสะดวกแก่นักท่องเที่ยวให้ได้เสพบรรยากาศทุกแหล่งท่องเที่ยวได้อย่างเต็มที่</p>
 
                         <div class="container">
                             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-xs-2 g-4">
@@ -220,7 +220,7 @@
         <br>
         <h2 style="text-align:center;">กิจกรรมยอดฮิต Trending Activities</h2>
         <p class="line-header"></p>
-        <p style="color: #535151;" class="text-content-top-dessination">We provide various specialfeatures for all of you</p>
+        <p style="color: #535151;" class="text-content-top-dessination">รวบรวมกิจกรรม หลากหลายรูปแบบ เพื่อการดื่มดำกับการท่องเที่ยว ใน จ.พะเยาให้ครบทุกมิติ</p>
 
         <div id="trendingActive" class="img-special-deal">
             <div>
@@ -333,7 +333,7 @@
                     <div class="container">
                         <h3 style="text-align: center;"><b> PACKAGE TOUR</b></h3>
                         <p class="line-header"></p>
-                        <p class="text-content-packageTour">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
+                        <p class="text-content-packageTour">รวบรวมแพ็คเกจ การท่องเที่ยวแบบต่างๆ มาบริการให้กับนักท่องเที่ยว มีทั้งแบบ One Day Trip และ Long Day Trip</p>
                         <div class="row row-cols-1 row-cols-lg-3 row-cols-md-6 g-4">
                             <div class="col col-lg-4 col-md-6">
                                 <a href="" style=" text-decoration: none;">
@@ -479,7 +479,7 @@
                     <div class="container">
                         <br>
                         <h2 style="text-align: center;">Story Tips Guide (Blog)</h2>
-                        <p class="text-content-story">We’ve designed and curated pieces that are a cut above your average home goods.</p>
+                        <p class="text-content-story">อัพเดทเรื่องราวการท่องเที่ยว รีวิวสถานที่กิน ที่พัก ที่เที่ยว หรือกิจกรรมต่างๆ</p>
                         <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4 ">
                             <div class="col">
                                 <div class="card">
@@ -776,7 +776,7 @@
                 <div class="col-10">
                     <h3 style="text-align: center;"><b>บริการเสริม</b></h3>
                     <p class="line-header"></p>
-                    <p class="text-content-packageTour">We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
+                    <p class="text-content-packageTour">รวบรวมบริการเสริมรูปแบบต่างๆ เช่น บริการเช่ารถ บริการรถรับ-ส่งสนามบิน บริการไกด์นำเที่ยว หรืออื่นๆอีกมากมาย</p>
                     <br>
                     <div class="row">
 

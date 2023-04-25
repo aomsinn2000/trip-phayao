@@ -134,7 +134,10 @@
                             <p class="text-deal">
                             <h3 style="font-family: 'Kanit', sans-serif;"><b>รายละเอียดเพิ่มเติม</b></h3>
                             </p>
-                            <?php echo $attraction->description_th; ?>
+                            <div>
+                                <span style="display: inline-block;"><?php echo $attraction->description_th; ?></span>
+                                <a href="{{ $attraction->map_link ?? '' }}" target="_blank">ดูแผนที่</a>
+                            </div>
                             {{-- <?php echo html_entity_decode($attraction->description_th); ?> --}}
                         </div>
                         {{-- end เนื้อหา --}}
@@ -144,7 +147,7 @@
                         <div class="text-address">
                             <hr>
                             <p><b>ที่ตั้ง :</b> ตำบล{{ $attraction->sub_district }} อำเภอ{{ $attraction->district }} จังหวัด{{ $attraction->province }}</p>
-                            <p><b>การเดินทาง :</b>  {{ $attraction->travel_th }}</p>
+                            <p><b>การเดินทาง :</b> {{ $attraction->travel_th }}</p>
                             <p><b>ช่วงเวลาท่องเที่ยว :</b>{{ $attraction->season_recommend_th }}</p>
                         </div>
 
