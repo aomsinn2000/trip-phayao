@@ -43,7 +43,7 @@
                         <br><br>
                         <h3 style="text-align: center; color:#00AEEF;"><b>Tag : {{ $tag->name_th }}</b> </h3>
                         <p style="margin: auto;background-color: #00AEEF; width: 120px;padding-top: 2px;"></p>
-                        <div class="wrapper">
+                        <div class="wrapper py-3">
                             <div class="row">
                                 <div class="col-lg-8 py-md-2">
                                     <div class="row">

@@ -155,7 +155,8 @@ a {
     width: 60%;
     color: #535151;
     text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
+    margin-top: 10px;
 }
 
 .address-place-hit {

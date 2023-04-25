@@ -172,7 +172,7 @@
             if (url.indexOf("youtube.com") > -1) {
                 var splitLink = url.split('watch?v=');
                 var embedLink = splitLink.join('embed/');
-                $('#embed-code').html('<iframe width="100%" height="315" src="' + embedLink + '" frameborder="0" allowfullscreen></iframe>');
+                $('#embed-code').html('<iframe class="youtube-width" src="' + embedLink + '" frameborder="0" allowfullscreen></iframe>');
             } else {
                 $('#embed-code').html('');
             }

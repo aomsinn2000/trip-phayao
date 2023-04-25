@@ -2897,7 +2897,6 @@ tr.selected td{
 
 .app.sidenav-toggled .side-menu svg path{
 /*    stroke: #FFF;*/
-    fill: #2f2f2f !important;
 }
 
  .app.sidenav-toggled  .side-menu .tg-fill-white svg path {
