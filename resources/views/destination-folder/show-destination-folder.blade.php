@@ -116,7 +116,7 @@
                                                         <h4>{{ $attractions->name_th }}</h4>
                                                         <div class="text-card-content-placeHit">
                                                             <span class="p1">{{ $attractions->detail_th }}</span>
-                                                            {{-- <span class="More" style="cursor:pointer;color:blue;">เพิ่มเติม</span> --}}
+                                                            <span class="More" style="cursor:pointer;color:blue;">แสดงเพิ่มเติม</span>
                                                         </div>
 
                                                     </div>
@@ -256,7 +256,7 @@
                             html += '<h4>' + data[i].name_th + '</h4>';
                             html += '<div class="text-card-content-placeHit">';
                             html += '<span class="p1" >' + (data[i].detail_th ?? '') + '</span>';
-                            // html += '<span class="More" style="cursor:pointer;color:blue;">เพิ่มเติม</span>';
+                            html += '<span class="More" style="cursor:pointer;color:blue;">เพิ่มเติม</span>';
                             html += '</div>';
                             html += '</div>';
                             html += '</div>';
@@ -267,6 +267,26 @@
                         }
                         console.log(data);
                         $('#category-place').html(html);
+                        //ปุ่มเพิ่มเติมในscriptประเภท
+                        $('#category-place span.More').click(function() {
+                            let span = $(this).prev();
+                            span.data('tmp', span.text());
+                            span.text(span.data('content'));
+                            span.data('content', span.data('tmp'));
+
+                            $(this).text($(this).data('state') == 1 ? 'แสดงเพิ่มเติม...' : 'แสดงน้อยลง...');
+                            $(this).data('state', 1 - $(this).data('state'));
+                        });
+                        $('#category-place span.p1').each(function() {
+                            $(this).data('content', $(this).text());
+                            if ($(this).text().length > 70) {
+                                $(this).text($(this).text().substr(0, 70) + '...');
+                                $(this).next().show();
+                            } else {
+                                $(this).next().hide();
+                            }
+                        });
+                        //endปุ่มเพิ่มเติมในscriptประเภท
                     },
                     error: function(data) {
                         console.log(data);
@@ -274,6 +294,35 @@
                     }
                 });
             });
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('span.More').forEach(bttn => {
+            bttn.dataset.state = 0;
+            bttn.addEventListener('click', function(e) {
+                let span = this.previousElementSibling;
+                span.dataset.tmp = span.textContent;
+                span.textContent = span.dataset.content;
+                span.dataset.content = span.dataset.tmp;
+
+                this.innerHTML = this.dataset.state == 1 ? 'แสดงเพิ่มเติม...' : 'แสดงน้อยลง...';
+                this.dataset.state = 1 - this.dataset.state;
+            })
+        });
+
+        document.querySelectorAll('span.p1').forEach(span => {
+            span.dataset.content = span.textContent;
+            if (span.textContent.length > 70) {
+                span.textContent = span.textContent.substr(0, 70) + '...';
+                // show the "More" button
+                const moreBtn = span.nextElementSibling;
+                moreBtn.style.display = "inline-block";
+            } else {
+                // hide the "More" button
+                const moreBtn = span.nextElementSibling;
+                moreBtn.style.display = "none";
+            }
         });
     </script>
 
