@@ -72,7 +72,12 @@
                                             <div class="card-body text-black">
                                                 <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>{{ $attractions->province }},ประเทศไทย</p>
                                                 <h4>{{ $attractions->name_th }}</h4>
-                                                <p class="text-card-content-placeHit">{{ $attractions->detail_th }}</p>
+                                                {{-- <span class="p1 text-card-content-placeHit">{{ $attractions->detail_th }}</span>
+                                                <span class="More" style="cursor:pointer;color:blue;">แสดงเพิ่มเติม</span> --}}
+                                                <div class="text-card-content-placeHit">
+                                                    <span class="p1" >{{ $attractions->detail_th }}</span>
+                                                    <span class="More" style="cursor:pointer;color:blue;">แสดงเพิ่มเติม</span>
+                                                </div>
                                                 {{-- <p>
                                                     <i class="bi bi-star-fill"></i>
                                                     <span> <i class="bi bi-star-fill"></i></span>
@@ -181,6 +186,38 @@
             }
         });
     </script>
+
+
+
+
+<script>
+    document.querySelectorAll('span.More').forEach(bttn => {
+      bttn.dataset.state = 0;
+      bttn.addEventListener('click', function(e) {
+          let span = this.previousElementSibling;
+          span.dataset.tmp = span.textContent;
+          span.textContent = span.dataset.content;
+          span.dataset.content = span.dataset.tmp;
+
+          this.innerHTML = this.dataset.state == 1 ? 'แสดงเพิ่มเติม...' : 'แสดงน้อยลง...';
+          this.dataset.state = 1 - this.dataset.state;
+      })
+  });
+
+  document.querySelectorAll('span.p1').forEach(span => {
+      span.dataset.content = span.textContent;
+      if (span.textContent.length > 70) {
+          span.textContent = span.textContent.substr(0, 70) + '...';
+          // show the "More" button
+          const moreBtn = span.nextElementSibling;
+          moreBtn.style.display = "inline-block";
+      } else {
+          // hide the "More" button
+          const moreBtn = span.nextElementSibling;
+          moreBtn.style.display = "none";
+      }
+  });
+  </script>
 
 
 
