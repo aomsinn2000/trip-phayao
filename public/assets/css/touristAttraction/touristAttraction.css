@@ -262,7 +262,7 @@ body {
 @media only screen and (max-width: 1200px) {
     .img-card-placeHit {
         border-radius: 5px;
-        width: 100;
+        width: 100%;
         height: 125px;
         object-fit: cover;
     }
@@ -317,7 +317,7 @@ body {
     }
     .img-card-placeHit {
         border-radius: 5px;
-        width: 100;
+        width: 100%;
         height: 190px;
         object-fit: cover;
     }
@@ -396,7 +396,7 @@ body {
 @media only screen and (max-width: 361px) {
     .img-card-placeHit {
         border-radius: 5px;
-        width: 100;
+        width: 100%;
         height: 155px;
         object-fit: cover;
     }

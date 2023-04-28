@@ -26,7 +26,7 @@ class DestinationFolderController extends Controller
         });
         // dd($category);
         // dd($destinations->toArray());
-        return view('destination-folder.show-destination-folder', compact('destinations', 'category'));
+        return view('destination-folder.show-tourist-attraction', compact('destinations', 'category'));
     }
 
     public function showDestinationFolderByCategory($folderId, Request $request)
@@ -47,7 +47,7 @@ class DestinationFolderController extends Controller
         // dd($name,$name_ta);
         $destination = $name;
         $attraction = TouristAttraction::where('name_th', $name_ta)->with('touristAttractionCategory')->first();
-        return view('destination-folder.show-destination-folder-description', compact('attraction', 'destination'));
+        return view('destination-folder.show-tourist-attraction-description', compact('attraction', 'destination'));
     }
 
     public function showDestinationFolderDescriptionTag($name, $name_ta, $name_tag)
@@ -57,7 +57,7 @@ class DestinationFolderController extends Controller
         $attraction = $name_ta;
         $tag = Tag::where('name_th', $name_tag)->with('touristAttractions')->first();
         $total = count($tag->touristAttractions);
-        return view('destination-folder.show-destination-folder-description-tags', compact('destination', 'attraction', 'tag', 'total'));
+        return view('destination-folder.show-tourist-attraction-tags', compact('destination', 'attraction', 'tag', 'total'));
     }
 
     public function viewDestinationFolder()
