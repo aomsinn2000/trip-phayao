@@ -36,14 +36,14 @@ class LoginController extends Controller
      *
      * @return void
      */
-     public function __construct()
+    public function __construct()
     {
         $this->middleware('guest')->except('logout'); /* อย่าลืมเปิดตอนทำloginเสร็จ */
     }
 
     public function showLogin()
     {
-        return view('auth.login');
+        return view('auth.admin-login');
     }
 
     public function handle(Request $request)
@@ -65,13 +65,13 @@ class LoginController extends Controller
             } */
             return redirect("/tourist-attractions/");
         } else {
-            return redirect()->back()->with('error','ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+            return redirect()->back()->with('error', 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/admin-login');
     }
-
 }

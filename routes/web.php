@@ -31,7 +31,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+// Auth::routes(); //เปิดเมื่อต้องการใช้route domainname/login
 
 //  Login
 Route::get('admin-login', [LoginController::class, 'showLogin']);
