@@ -681,6 +681,10 @@ p {
         transform: translate(-50%, -50%);
         color: #0FA0AB;
         font-size: 40px;
+    }.img-card-story {
+        width: 100%;
+        height: 20vw;
+        object-fit: cover;
     }
 }
 @media (max-width: 1200px) {
@@ -702,9 +706,7 @@ p {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
+    background-color: #E8F9FF;
 }
 .card-with-hover {
     position: relative;
@@ -853,9 +855,7 @@ p {
         width: 100px;
         height: 100px;
         border-radius: 50%;
-        border-style: solid;
-        border-width: 2px;
-        border-color: black;
+        background-color: #E8F9FF;
     }
 
 
@@ -1161,9 +1161,7 @@ p {
         height: 80px;
         border-radius: 50%;
         font-size: 8px;
-        border-style: solid;
-        border-width: 2px;
-        border-color: black;
+        background-color: #E8F9FF;
 
     }
 
@@ -1250,7 +1248,7 @@ p {
 
     /* package tour */
     .text-content-packageTour {
-        font-size: 8px;
+        font-size: 12px;
         width: 100%;
         text-align: center;
         color: #535151;
@@ -1262,8 +1260,14 @@ p {
     /* Story Tips Guide (Blog) */
     .img-card-story {
         width: 100%;
-        height: 50vw;
+        height: 30vw;
         object-fit: cover;
+    }
+    .text-place-card-story{
+        font-size: 8px;
+    }
+    .text-card-story{
+        font-size: 12px;
     }
 
     /*Story Tips Guide (Blog) */
@@ -1335,7 +1339,24 @@ p {
     border: 3px solid red;
     font-size: 15px;
 }
-
+.card-image {
+    text-align: center;
+    margin: -10px;
+}
+.img-other-service {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-top: -10px;
+}
+.card-other-service {
+    margin: 10px auto;
+    box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    height: auto;
+    transition: 0.3s;
+    background-color: #fff;
+}
     /* <!-- บริการเสริม --> */
 }
 

@@ -37,10 +37,10 @@
 
 </head>
 
-<body>
+<body style="font-family: 'Kanit', sans-serif;">
 
 
-    <div style="font-family: 'Kanit', sans-serif;">
+    <div>
         @include('layouts.navbar')
         <!-- image slider -->
 
@@ -329,128 +329,220 @@
         <!-- package tour -->
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-11">
+                <div class="col-xxl-11 col-xl-11 col-lg-12 col-md-12">
                     <div class="container">
                         <h3 style="text-align: center;"><b> PACKAGE TOUR</b></h3>
                         <p class="line-header"></p>
-                        <p class="text-content-packageTour">รวบรวมแพ็คเกจ การท่องเที่ยวแบบต่างๆ มาบริการให้กับนักท่องเที่ยว มีทั้งแบบ One Day Trip และ Long Day Trip</p>
-                        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-6 g-4">
-                            <div class="col col-lg-4 col-md-6">
-                                <a href="" style=" text-decoration: none;">
-                                    <div class="card  text-white">
-                                        <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
-                                        <div class="card-img-overlay">
-                                            <p class="best-seller">Best Seller</p>
-                                        </div>
-                                        <div class="card-body text-black">
-                                            <div class="d-flex bd-highlight mb-3">
-                                                <div class="p-2 bd-highlight">
-                                                    <h4>กว๊านพะเยา</h4>
-                                                </div>
-                                                <div class="ms-auto p-2 bd-highlight text-card-pakageTour">
-                                                    <i class="bi bi-geo-alt"></i><span>พะเยา,ประเทศไทย</span>
-                                                </div>
+                        <p class="text-content-packageTour mb-sm-2 mb-2">รวบรวมแพ็คเกจ การท่องเที่ยวแบบต่างๆ มาบริการให้กับนักท่องเที่ยว มีทั้งแบบ One Day Trip และ Long Day Trip</p>
+                        <div id="pakageTour" class="row">
+                            <div class="px-2">
+                                <div class="col col-lg-12 col-md-12">
+                                    <a href="" style=" text-decoration: none;">
+                                        <div class="card  text-white">
+                                            <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
+                                            <div class="card-img-overlay">
+                                                <p class="best-seller">Best Seller</p>
                                             </div>
-                                            <div class="container ">
-                                                <p class="text-address-card-pakageTour">ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
-                                                <div class="container">
-                                                    <div class="text-activity-card-pakageTour">
-                                                        <p>ปั่นจักรยาน</p>
-                                                        <p>ปั่นจักรยาน</p>
-                                                        <p>ปั่นจักรยาน</p>
+                                            <div class="card-body text-black">
+                                                <div class="d-flex bd-highlight mb-3">
+                                                    <div class="p-2 bd-highlight">
+                                                        <h4>กว๊านพะเยา</h4>
                                                     </div>
+                                                    <div class="ms-auto p-2 bd-highlight text-card-pakageTour">
+                                                        <i class="bi bi-geo-alt"></i><span>พะเยา,ประเทศไทย</span>
+                                                    </div>
+                                                </div>
+                                                <div class="container ">
+                                                    <p class="text-address-card-pakageTour">ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                    <div class="container">
+                                                        <div class="text-activity-card-pakageTour">
+                                                            <p>ปั่นจักรยาน</p>
+                                                            <p>ปั่นจักรยาน</p>
+                                                            <p>ปั่นจักรยาน</p>
+                                                        </div>
 
-                                                </div>
-                                                <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-                                                    <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
-                                                        <p class="br-card-pakageTour"><br></p>
-                                                        <span class="text-price-card-pakageTour">
-                                                            1,000฿/วัน
-                                                        </span>
+                                                    </div>
+                                                    <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+                                                        <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
+                                                            <p class="br-card-pakageTour"><br></p>
+                                                            <span class="text-price-card-pakageTour">
+                                                                1,000฿/วัน
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                </a>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="px-2">
+                                <div class="col col-lg-12 col-md-12">
+                                    <a href="" style=" text-decoration: none;">
+                                        <div class="card  text-white">
+                                            <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
+                                            <div class="card-img-overlay">
+                                                <p class="best-seller">Best Seller</p>
+                                            </div>
+                                            <div class="card-body text-black">
+                                                <div class="d-flex bd-highlight mb-3">
+                                                    <div class="p-2 bd-highlight">
+                                                        <h4>กว๊านพะเยา</h4>
+                                                    </div>
+                                                    <div class="ms-auto p-2 bd-highlight text-card-pakageTour">
+                                                        <i class="bi bi-geo-alt"></i><span>พะเยา,ประเทศไทย</span>
+                                                    </div>
+                                                </div>
+                                                <div class="container ">
+                                                    <p class="text-address-card-pakageTour">ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                    <div class="container">
+                                                        <div class="text-activity-card-pakageTour">
+                                                            <p>ปั่นจักรยาน</p>
+                                                            <p>ปั่นจักรยาน</p>
+                                                            <p>ปั่นจักรยาน</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+                                                        <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
+                                                            <p class="br-card-pakageTour"><br></p>
+                                                            <span class="text-price-card-pakageTour">
+                                                                1,000฿/วัน
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="px-2">
+                                <div class="col col-lg-12 col-md-12">
+                                    <a href="" style=" text-decoration: none;">
+                                        <div class="card  text-white">
+                                            <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
+                                            <div class="card-img-overlay">
+                                                <p class="best-seller">Best Seller</p>
+                                            </div>
+                                            <div class="card-body text-black">
+                                                <div class="d-flex bd-highlight mb-3">
+                                                    <div class="p-2 bd-highlight">
+                                                        <h4>กว๊านพะเยา</h4>
+                                                    </div>
+                                                    <div class="ms-auto p-2 bd-highlight text-card-pakageTour">
+                                                        <i class="bi bi-geo-alt"></i><span>พะเยา,ประเทศไทย</span>
+                                                    </div>
+                                                </div>
+                                                <div class="container ">
+                                                    <p class="text-address-card-pakageTour">ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                    <div class="container">
+                                                        <div class="text-activity-card-pakageTour">
+                                                            <p>ปั่นจักรยาน</p>
+                                                            <p>ปั่นจักรยาน</p>
+                                                            <p>ปั่นจักรยาน</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+                                                        <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
+                                                            <p class="br-card-pakageTour"><br></p>
+                                                            <span class="text-price-card-pakageTour">
+                                                                1,000฿/วัน
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="px-2">
+                                <div class="col col-lg-12 col-md-12">
+                                    <a href="" style=" text-decoration: none;">
+                                        <div class="card  text-white">
+                                            <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
+                                            <div class="card-img-overlay">
+                                                <p class="best-seller">Best Seller</p>
+                                            </div>
+                                            <div class="card-body text-black">
+                                                <div class="d-flex bd-highlight mb-3">
+                                                    <div class="p-2 bd-highlight">
+                                                        <h4>กว๊านพะเยา</h4>
+                                                    </div>
+                                                    <div class="ms-auto p-2 bd-highlight text-card-pakageTour">
+                                                        <i class="bi bi-geo-alt"></i><span>พะเยา,ประเทศไทย</span>
+                                                    </div>
+                                                </div>
+                                                <div class="container ">
+                                                    <p class="text-address-card-pakageTour">ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                    <div class="container">
+                                                        <div class="text-activity-card-pakageTour">
+                                                            <p>ปั่นจักรยาน</p>
+                                                            <p>ปั่นจักรยาน</p>
+                                                            <p>ปั่นจักรยาน</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+                                                        <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
+                                                            <p class="br-card-pakageTour"><br></p>
+                                                            <span class="text-price-card-pakageTour">
+                                                                1,000฿/วัน
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="px-2">
+                                <div class="col col-lg-12 col-md-12">
+                                    <a href="" style=" text-decoration: none;">
+                                        <div class="card  text-white">
+                                            <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
+                                            <div class="card-img-overlay">
+                                                <p class="best-seller">Best Seller</p>
+                                            </div>
+                                            <div class="card-body text-black">
+                                                <div class="d-flex bd-highlight mb-3">
+                                                    <div class="p-2 bd-highlight">
+                                                        <h4>กว๊านพะเยา</h4>
+                                                    </div>
+                                                    <div class="ms-auto p-2 bd-highlight text-card-pakageTour">
+                                                        <i class="bi bi-geo-alt"></i><span>พะเยา,ประเทศไทย</span>
+                                                    </div>
+                                                </div>
+                                                <div class="container ">
+                                                    <p class="text-address-card-pakageTour">ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
+                                                    <div class="container">
+                                                        <div class="text-activity-card-pakageTour">
+                                                            <p>ปั่นจักรยาน</p>
+                                                            <p>ปั่นจักรยาน</p>
+                                                            <p>ปั่นจักรยาน</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+                                                        <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
+                                                            <p class="br-card-pakageTour"><br></p>
+                                                            <span class="text-price-card-pakageTour">
+                                                                1,000฿/วัน
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div class="col col-lg-4 col-md-6">
-                            <a href="" style=" text-decoration: none;">
-                                <div class="card  text-white">
-                                    <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
-                                    <div class="card-img-overlay">
-                                        <p class="best-seller">Best Seller</p>
-                                    </div>
-                                    <div class="card-body text-black">
-                                        <div class="d-flex bd-highlight mb-3">
-                                            <div class="p-2 bd-highlight">
-                                                <h4>กว๊านพะเยา</h4>
-                                            </div>
-                                            <div class="ms-auto p-2 bd-highlight text-card-pakageTour">
-                                                <i class="bi bi-geo-alt"></i><span>พะเยา,ประเทศไทย</span>
-                                            </div>
-                                        </div>
-                                        <div class="container ">
-                                            <p class="text-address-card-pakageTour">ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
-                                            <div class="container">
-                                                <div class="text-activity-card-pakageTour">
-                                                    <p>ปั่นจักรยาน</p>
-                                                    <p>ปั่นจักรยาน</p>
-                                                    <p>ปั่นจักรยาน</p>
-                                                </div>
-
-                                            </div>
-                                            <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-                                                <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
-                                                    <p class="br-card-pakageTour"><br></p>
-                                                    <span class="text-price-card-pakageTour">
-                                                        1,000฿/วัน
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </a>
-                        </div>
                     </div>
-                    <div class="col col-lg-4 col-md-6">
-                        <a href="" style=" text-decoration: none;">
-                            <div class="card  text-white">
-                                <img src="https://cdn1.citylife.group/tat2/wp-content/uploads/2022/05/%E0%B8%81%E0%B8%A7%E0%B9%8A%E0%B8%B2%E0%B8%99%E0%B8%9E%E0%B8%B0%E0%B9%80%E0%B8%A2%E0%B8%B2-Gwan-Phayao-1.jpg" class="img-card-packageTour" alt="...">
-                                <div class="card-img-overlay">
-                                    <p class="best-seller">Best Seller</p>
-                                </div>
-                                <div class="card-body text-black">
-                                    <div class="d-flex bd-highlight mb-3">
-                                        <div class="p-2 bd-highlight">
-                                            <h4>กว๊านพะเยา</h4>
-                                        </div>
-                                        <div class="ms-auto p-2 bd-highlight text-card-pakageTour">
-                                            <i class="bi bi-geo-alt"></i><span>พะเยา,ประเทศไทย</span>
-                                        </div>
-                                    </div>
-                                    <div class="container ">
-                                        <p class="text-address-card-pakageTour">ที่ตั้ง : ตำบลเวียง อำเภอเมืองพะเยา จังหวัดพะเยา</p>
-                                        <div class="container">
-                                            <div class="text-activity-card-pakageTour">
-                                                <p>ปั่นจักรยาน</p>
-                                                <p>ปั่นจักรยาน</p>
-                                                <p>ปั่นจักรยาน</p>
-                                            </div>
 
-                                        </div>
-                                        <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-                                            <div class="mt-auto  bd-highlight text-price-pakageTour">ราคาแพ็กเกจ
-                                                <p class="br-card-pakageTour"><br></p>
-                                                <span class="text-price-card-pakageTour">
-                                                    1,000฿/วัน
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        </a>
-                    </div>
                 </div>
             </div>
             <br>
@@ -459,29 +551,20 @@
                 <a href="" type="button" class=" text-more-pakageTour" style="">ดู Pakage Tour เพิ่มเติม </a>
             </h5>
         </div>
-    </div>
-    </div>
-    </div>
-    <!-- end package tour -->
-
-    <br>
-
-
-
-
+         <!-- end package tour -->
 
 
     <!-- Story Tips Guide (Blog) -->
-    <div class="img-story">
+    <div class="img-story" >
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-11">
-                    <div class="container">
+                <div class="col-xxl-11">
+                    <div class="contianer">
                         <br>
                         <h2 style="text-align: center;">Story Tips Guide (Blog)</h2>
                         <p class="text-content-story">อัพเดทเรื่องราวการท่องเที่ยว รีวิวสถานที่กิน ที่พัก ที่เที่ยว หรือกิจกรรมต่างๆ</p>
-                        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4 ">
-                            <div class="col">
+                        <div class="row  row-cols-xxl-3 row-cols-md-3 row-cols-ms-2 g-xl-4 g-2 ">
+                            <div class="col text-card-story">
                                 <div class="card">
                                     <a href="">
                                         <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
@@ -504,7 +587,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col text-card-story">
                                 <div class="card">
                                     <a href="">
                                         <img src="https://woodychannel.com/wp-content/uploads/2014/09/gwanphayao-750x476.jpg" class="img-card-story" alt="...">
@@ -526,7 +609,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col text-card-story">
                                 <div class="card ">
                                     <a href="">
                                         <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
@@ -549,7 +632,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col text-card-story">
                                 <div class="card">
                                     <a href="">
                                         <img src="https://woodychannel.com/wp-content/uploads/2014/09/gwanphayao-750x476.jpg" class="img-card-story" alt="...">
@@ -571,7 +654,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col text-card-story">
                                 <div class="card">
                                     <a href="">
                                         <img src="https://pix10.agoda.net/geo/city/127871/1_127871_02.jpg?ca=6&ce=1&s=1920x822" class="img-card-story" alt="...">
@@ -594,7 +677,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col text-card-story">
                                 <div class="card">
                                     <a href="">
                                         <img src="https://woodychannel.com/wp-content/uploads/2014/09/gwanphayao-750x476.jpg" class="img-card-story" alt="...">
@@ -771,16 +854,16 @@
 
     <!-- บริการเสริม -->
     <div class="other-service-background">
-        <div class="container">
+        <div class="">
             <div class="row justify-content-center">
-                <div class="col-10">
+                <div class="col-xl-10 col-md-10 col-sm-12 col-12">
                     <h3 style="text-align: center;"><b>บริการเสริม</b></h3>
                     <p class="line-header"></p>
                     <p class="text-content-packageTour">รวบรวมบริการเสริมรูปแบบต่างๆ เช่น บริการเช่ารถ บริการรถรับ-ส่งสนามบิน บริการไกด์นำเที่ยว หรืออื่นๆอีกมากมาย</p>
                     <br>
                     <div class="row">
 
-                        <div class="col-lg-3 col-sm-6 col-md-6  py-1">
+                        <div class="col-xl-3 col-md-6 col-sm-6 col-6  py-1">
                             <div class="card-other-service">
                                 <div class="card-body">
                                     <a href="" class="card-text">
@@ -792,7 +875,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 col-md-6 py-1">
+                        <div class="col-xl-3 col-md-6 col-sm-6 col-6  py-1">
                             <div class="card-other-service">
                                 <div class="card-body">
                                     <a href="" class="card-text">
@@ -804,7 +887,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 col-md-6 py-1">
+                        <div class="col-xl-3 col-md-6 col-sm-6 col-6  py-1">
                             <div class="card-other-service">
                                 <div class="card-body">
                                     <a href="" class="card-text">
@@ -816,7 +899,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 col-md-6 py-1">
+                        <div class="col-xl-3 col-md-6 col-sm-6 col-6  py-1">
                             <div class="card-other-service">
                                 <div class="card-body">
                                     <a href="" class="card-text">
@@ -844,6 +927,17 @@
 
     @include('layouts.footer')
     </div>
+
+
+
+    </div>
+
+
+    <br>
+
+
+
+
 
 
 
@@ -1204,6 +1298,64 @@
         });
     </script>
     {{-- end script slick ประสบการณ์นักท่องเที่ยว --}}
+
+
+
+
+    {{-- script slick บทความ --}}
+    <script>
+        $('#pakageTour').slick({
+
+            dots: true,
+            arrows: false,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+
+
+            responsive: [{
+                    breakpoint: 1025,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: false,
+                        centerPadding: '100px',
+                        arrows: false
+                    }
+                },
+                {
+                    breakpoint: 840,
+                    settings: {
+                        arrows: false,
+                        centerMode: false,
+                        centerPadding: '0.5px',
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 390,
+                    settings: {
+                        arrows: false,
+                        centerMode: false,
+                        centerPadding: '60px',
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+            ]
+        });
+    </script>
+    {{-- end script slick บทความ --}}
 
 
 </body>
