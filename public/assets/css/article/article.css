@@ -112,7 +112,7 @@ body {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    height: auto;
+    height: 575px;
 }
 
 .img-popular-post {
@@ -247,24 +247,6 @@ body {
 
 }
 
-@media only screen and (max-width: 1200px) {
-    .background-popular-post {
-        background-color: rgb(255, 255, 255);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-        height: auto;
-    }
-    .text-title-popular {
-        text-decoration: none;
-        color: black;
-        font-size: 12px;
-    }
-    .text-place-card-story {
-        font-size: 10px;
-    }
-
-}
-
 @media only screen and (max-width:1025px) {
 
     .text-title-popular {
@@ -284,7 +266,7 @@ body {
         background-color: rgb(255, 255, 255);
         border-radius: 10px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        height: auto;
+        height: 640px;
     }
 
     .followMe-circle {
@@ -396,7 +378,7 @@ body {
         background-color: rgb(255, 255, 255);
         border-radius: 10px;
         box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-        height: auto;
+        height: 650px;
     }
 }
 
@@ -405,7 +387,7 @@ body {
         background-color: rgb(255, 255, 255);
         border-radius: 10px;
         box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-        height: auto;
+        height: 715px;
     }
     .padding-footer {
         padding-top: 800px;
