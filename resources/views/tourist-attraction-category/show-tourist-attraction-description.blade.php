@@ -12,21 +12,20 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
 </head>
 
 <body>
+
+
     <div style="font-family: 'Kanit', sans-serif;">
         @include('layouts.navbar')
         <div class="nav-background-placeHit">
             <p>
                 <a href="{{ url('/') }}" class="text-nav-placeHit"> หน้าหลัก /</a>
-                <span><a href="{{ url('/destinations/' . $destination) }}" class="text-nav-placeHit"> {{ $destination }} /</a></span>
+                <span><a href="{{ url('/touristattractioncategories/' . $attraction->touristAttractionCategory->name_th) }}" class="text-nav-placeHit"> {{ $attraction->touristAttractionCategory->name_th }} /</a></span>
                 <span><a href="" class="text-nav-placeHit" style="color: #27AAE1"> <b>{{ $attraction->name_th }}</b></a></span>
             </p>
         </div>
-
         <div class="container ">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -36,21 +35,10 @@
                             <div class="col-sm-6">
                                 <h2 style="font-family: 'Kanit', sans-serif;"><b>{{ $attraction->name_th }}</b></h2>
                             </div>
-                            {{-- <div class="col-sm-6">
-                                <p class=" share-news">แชร์ข่าว
-                                    <a href=""> <span class="px-1"><i class="bi bi-facebook"></i></span></a>
-                                    <a href=""> <span class="px-1"><i class="bi bi-twitter"></i></span></a>
-                                    <a href=""> <span class="px-1"><i class="bi bi-line"></i></span></a>
-                                    <a href=""> <span class="px-1"><i class="bi bi-link-45deg"></i></span></a>
-                                    <a href=""> <span class="px-1"><i class="bi bi-printer"></i></span></a>
-                                </p>
-                            </div> --}}
                         </div>
-
                         <p class="text-category">หมวดหมู่
                             <span style="color:#00AEEF;"><b>: {{ $attraction->touristAttractionCategory->name_th }}</b></span>
                         </p>
-
                         <div id="page">
                             <div class="row">
                                 <div class="column small-11 small-centered">
@@ -69,7 +57,7 @@
                                         @foreach ($attraction->touristAttractionImages as $images)
                                             <div class="px-1">
                                                 <span>
-                                                    <img class="image-small-touristAttraction" src="{{ $images->image ? asset('/storage/' . $images->image) : '' }}" alt="">
+                                                    <img data-enlargable width="100" class="image-small-touristAttraction" src="{{ $images->image ? asset('/storage/' . $images->image) : '' }}" alt="">
                                                 </span>
                                             </div>
                                         @endforeach
@@ -96,9 +84,9 @@
                         {{-- ที่ตั้ง --}}
                         <div class="text-address">
                             <hr>
-                            <p>ที่ตั้ง <b>ตำบล{{ $attraction->sub_district }} อำเภอ{{ $attraction->district }} จังหวัด{{ $attraction->province }}</b></p>
-                            <p>การเดินทาง : {{ $attraction->travel_th }}</p>
-                            <p>ช่วงเวลาท่องเที่ยว : <b>{{ $attraction->season_recommend_th }}</b></p>
+                            <p><b>ที่ตั้ง :</b> ตำบล{{ $attraction->sub_district }} อำเภอ{{ $attraction->district }} จังหวัด{{ $attraction->province }}</p>
+                            <p><b>การเดินทาง :</b> {{ $attraction->travel_th }}</p>
+                            <p><b>ช่วงเวลาท่องเที่ยว :</b>{{ $attraction->season_recommend_th }}</p>
                         </div>
 
                         {{-- end ที่ตั้ง --}}
@@ -109,12 +97,13 @@
                         <h3 style="font-family: 'Kanit', sans-serif;">
                             <b>Tags :<span>
                                     @foreach ($attraction->tags as $tags)
-                                        <a href="{{ url('/destinations/' . $destination . '/' . $attraction->name_th . '/' . $tags->name_th) }}" type="button" class="btn btn-outline-info">{{ $tags->name_th }}</a>
+                                        <a href="{{ url('/touristattractioncategories/' . $attraction->touristAttractionCategory->name_th . '/' . $attraction->name_th . '/' . $tags->name_th) }}" type="button" class="btn btn-outline-info">{{ $tags->name_th }}</a>
                                     @endforeach
                                 </span>
                             </b>
                         </h3>
                         </p>
+
                         {{-- end tags --}}
                     </div>
                 </div>
@@ -122,6 +111,7 @@
         </div>
 
         <br><br>
+
 
     </div>
 
@@ -145,6 +135,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- end script slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
     <script>
         $('#responsive').slick({
@@ -182,6 +173,9 @@
             ]
         });
     </script>
+
+
+
 
     <script>
         $('.slider-single').slick({
@@ -246,12 +240,13 @@
         });
     </script>
 
+
+
     <script>
         Fancybox.bind("[data-fancybox]", {
             // Your custom options
         })
     </script>
-
 
 </body>
 

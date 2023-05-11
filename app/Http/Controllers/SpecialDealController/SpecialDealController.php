@@ -19,13 +19,8 @@ class SpecialDealController extends Controller
     public function showSpecialDeal()
     {
         $specialDeal = SpecialDeal::with('specialDealCategory')->get();
-        // dd($deal);
         return view('special-deal.show-special-deal', compact('specialDeal'));
     }
-    /* public function showSpecialDealDescription()
-    {
-        return view('special-deal.show-special-deal-description');
-    } */
 
     public function showSpecialDealDescription($name)
     {
@@ -37,93 +32,133 @@ class SpecialDealController extends Controller
 
     public function searchSpecialDeal(Request $request)
     {
-        // $keyword = $request->get('word');
-        // $deals = SpecialDeal::with(['specialDealCategory'])->where('name_th', 'like', "%$keyword%")
-        //     ->orWhereHas('specialDealCategory', function ($query) use ($keyword) {
-        //         $query->where('name_th', 'like', "%$keyword%");
-        //     })->get();
-        // return response()->json($deals);
         $keyword = $request->get('word');
-        // $keyword = 'อร่อยเหาะ';
         $deals = SpecialDeal::with('specialDealCategory')
             ->where('name_th', 'like', "%$keyword%")
-            /* ->orWhereHas('specialDealCategory', function ($query) use ($keyword) {
-                $query->where('name_th', 'like', "%$keyword%");
-            }) */
             ->get()->toArray();
-        // dd($deals);
         return response()->json($deals);
     }
 
     public function viewSpecialDeal()
     {
-        return view('special-deal.view-special-deal');
+        $specialDealCategory = SpecialDealCategory::get();
+        return view('special-deal.view-special-deal', compact('specialDealCategory'));
     }
 
     public function specialDealAllDataTable(Request $request)
     {
-        $sd = SpecialDeal::with('specialDealCategory')->get();
-        $specialDeal = $sd->map(function ($item) {
-            [
-                $item->start_date = $item->start_date ? Carbon::parse($item->start_date)->addYear(543)->format('d/m/Y ') : '',
-                $item->end_date = $item->end_date ? Carbon::parse($item->end_date)->addYear(543)->format('d/m/Y') : '',
-                $item->created_at = $item->created_at ? Carbon::parse($item->created_at)->addYear(543) : '',
-                $item->updated_at = $item->updated_at ? Carbon::parse($item->updated_at)->addYear(543) : '',
-            ];
-            return $item;
-        });
+        $createDate = $request->create_date;
+        $keyword = $request->keyword;
+        $category = $request->category;
+        $total = SpecialDeal::with('specialDealCategory')->count();
+        $specialDeal = SpecialDeal::with('specialDealCategory')
+            ->when($createDate != null, function ($query) use ($createDate) {
+                $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+            })
+            ->when($category != 'ทั้งหมด', function ($query) use ($category) {
+                $query->whereHas('specialDealCategory', function ($query) use ($category) {
+                    $query->where('name_th', 'like', "%$category%");
+                });
+            })
+            ->when($keyword != null, function ($query) use ($keyword, $createDate) {
+                $query->where('deal_no', 'like', "%$keyword%")->orWhere('name_th', 'like', "%$keyword%");
+                if ($createDate != null) {
+                    $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+                }
+            });
 
         $output = array(
-            // "draw" => $request->draw,
-            // "recordsTotal" => $total,
-            // "recordsFiltered" => $specialDeal->get()->count(),
-            "data" => $specialDeal/* ->skip($request->start)->take($request->length) */
+            "draw" => $request->draw,
+            "recordsTotal" => $total,
+            "recordsFiltered" => $specialDeal->get()->count(),
+            "data" => $specialDeal->get()->map(function ($item) {
+                [
+                    $item->start_date = $item->start_date ? Carbon::parse($item->start_date)->addYear(543)->format('d/m/Y ') : '',
+                    $item->end_date = $item->end_date ? Carbon::parse($item->end_date)->addYear(543)->format('d/m/Y') : '',
+                    $item->created_at = $item->created_at ? Carbon::parse($item->created_at)->addYear(543) : '',
+                    $item->updated_at = $item->updated_at ? Carbon::parse($item->updated_at)->addYear(543) : '',
+                ];
+                return $item;
+            }),
         );
         return json_encode($output);
     }
 
     public function specialDealOnDataTable(Request $request)
     {
-        $sd = SpecialDeal::with('specialDealCategory')->where('is_status', 1)->get();
-        $specialDeal = $sd->map(function ($item) {
-            [
-                $item->start_date = $item->start_date ? Carbon::parse($item->start_date)->addYear(543)->format('d/m/Y ') : '',
-                $item->end_date = $item->end_date ? Carbon::parse($item->end_date)->addYear(543)->format('d/m/Y') : '',
-                $item->created_at = $item->created_at ? Carbon::parse($item->created_at)->addYear(543) : '',
-                $item->updated_at = $item->updated_at ? Carbon::parse($item->updated_at)->addYear(543) : '',
-            ];
-            return $item;
-        });
+        $createDate = $request->create_date;
+        $keyword = $request->keyword;
+        $category = $request->category;
+        $total = SpecialDeal::with('specialDealCategory')->where('is_status', 1)->count();
+        $specialDeal = SpecialDeal::with('specialDealCategory')->where('is_status', 1)
+            ->when($createDate != null, function ($query) use ($createDate) {
+                $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+            })
+            ->when($category != 'ทั้งหมด', function ($query) use ($category) {
+                $query->whereHas('specialDealCategory', function ($query) use ($category) {
+                    $query->where('name_th', 'like', "%$category%");
+                });
+            })
+            ->when($keyword != null, function ($query) use ($keyword, $createDate) {
+                $query->where('deal_no', 'like', "%$keyword%")->orWhere('name_th', 'like', "%$keyword%");
+                if ($createDate != null) {
+                    $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+                }
+            });
 
         $output = array(
-            // "draw" => $request->draw,
-            // "recordsTotal" => $total
-            // "recordsFiltered" => $specialDeal->get()->count(),
-            "data" => $specialDeal/* ->skip($request->start)->take($request->length) */
+            "draw" => $request->draw,
+            "recordsTotal" => $total,
+            "recordsFiltered" => $specialDeal->get()->count(),
+            "data" => $specialDeal->get()->map(function ($item) {
+                [
+                    $item->start_date = $item->start_date ? Carbon::parse($item->start_date)->addYear(543)->format('d/m/Y ') : '',
+                    $item->end_date = $item->end_date ? Carbon::parse($item->end_date)->addYear(543)->format('d/m/Y') : '',
+                    $item->created_at = $item->created_at ? Carbon::parse($item->created_at)->addYear(543) : '',
+                    $item->updated_at = $item->updated_at ? Carbon::parse($item->updated_at)->addYear(543) : '',
+                ];
+                return $item;
+            }),
         );
         return json_encode($output);
     }
 
     public function specialDealOffDataTable(Request $request)
     {
-        $sd = SpecialDeal::with('specialDealCategory')->where('is_status', 0)->get();
-        $specialDeal = $sd->map(function ($item) {
-            [
-                $item->start_date = $item->start_date ? Carbon::parse($item->start_date)->addYear(543)->format('d/m/Y ') : '',
-                $item->end_date = $item->end_date ? Carbon::parse($item->end_date)->addYear(543)->format('d/m/Y') : '',
-                $item->created_at = $item->created_at ? Carbon::parse($item->created_at)->addYear(543) : '',
-                $item->updated_at = $item->updated_at ? Carbon::parse($item->updated_at)->addYear(543) : '',
-            ];
-            return $item;
-        });
+        $createDate = $request->create_date;
+        $keyword = $request->keyword;
+        $category = $request->category;
+        $total = SpecialDeal::with('specialDealCategory')->where('is_status', 0)->count();
+        $specialDeal = SpecialDeal::with('specialDealCategory')->where('is_status', 0)
+            ->when($createDate != null, function ($query) use ($createDate) {
+                $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+            })
+            ->when($category != 'ทั้งหมด', function ($query) use ($category) {
+                $query->whereHas('specialDealCategory', function ($query) use ($category) {
+                    $query->where('name_th', 'like', "%$category%");
+                });
+            })
+            ->when($keyword != null, function ($query) use ($keyword, $createDate) {
+                $query->where('deal_no', 'like', "%$keyword%")->orWhere('name_th', 'like', "%$keyword%");
+                if ($createDate != null) {
+                    $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+                }
+            });
 
         $output = array(
-            // "draw" => $request->draw,
-            // "recordsTotal" => ,
-            // "recordsFiltered" => $specialDeal->get()->count(),
-            "data" => $specialDeal/* ->skip($request->start)->take($request->length) */
+            "draw" => $request->draw,
+            "recordsTotal" => $total,
+            "recordsFiltered" => $specialDeal->get()->count(),
+            "data" => $specialDeal->get()->map(function ($item) {
+                [
+                    $item->start_date = $item->start_date ? Carbon::parse($item->start_date)->addYear(543)->format('d/m/Y ') : '',
+                    $item->end_date = $item->end_date ? Carbon::parse($item->end_date)->addYear(543)->format('d/m/Y') : '',
+                    $item->created_at = $item->created_at ? Carbon::parse($item->created_at)->addYear(543) : '',
+                    $item->updated_at = $item->updated_at ? Carbon::parse($item->updated_at)->addYear(543) : '',
+                ];
+                return $item;
+            }),
         );
-        // return response()->json();
         return json_encode($output);
     }
 

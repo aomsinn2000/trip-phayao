@@ -225,8 +225,6 @@
             width: 100%;
             /* display: none; */
         }
-
-
     </style>
 
 
@@ -260,9 +258,10 @@
 
                             <h5 class="content-title mb-0 my-auto">
                                 <svg xmlns="http://www.w3.org/2000/svg"style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
-                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
-                                    <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
-                                  </svg>
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z" />
+                                    <path
+                                        d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                </svg>
                                 กิจกรรม >
                             </h5>
                             <a href="{{ url('/activity-manages/') }}">
@@ -324,7 +323,7 @@
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="category">วันที่เผยแพร่</label>
-                                    <input type="date" class="form-control mb-2" >
+                                    <input type="date" class="form-control mb-2">
                                 </div>
                             </div>
                         </div>
@@ -468,14 +467,15 @@
 
                             <div class="py-2">
                                 <label class="px-2"><b>แพ็คเกตทัวร์ที่เกี่ยวข้อง</b></label>
-                                <input  type="text" class="tagator"  data-tagator-show-all-options-on-focus="true" maxlength="10" data-tagator-autocomplete="['วัดติโลกอาราม', 'วัดศรีอุโมงค์คำ','วัดอนาลโยทิพยาราม (หลวงปู่ไพบูลย์)', 'วัดพระธาตุจอมทอง','กว๊านพะเยา']"style=" width: 99%;" placeholder="เพิ่มแท็ก...">
+                                <input type="text" class="tagator" data-tagator-show-all-options-on-focus="true" maxlength="10" data-tagator-autocomplete="['วัดติโลกอาราม', 'วัดศรีอุโมงค์คำ','วัดอนาลโยทิพยาราม (หลวงปู่ไพบูลย์)', 'วัดพระธาตุจอมทอง','กว๊านพะเยา']"style=" width: 99%;"
+                                    placeholder="เพิ่มแท็ก...">
 
 
                             </div>
 
-                            <div class="py-2" >
+                            <div class="py-2">
                                 <label class="px-2"><b>จัดกลุ่มโฟลเดอร์สถานที่ยอดฮิต</b></label>
-                                 <input  type="text" class="tagator"  data-tagator-show-all-options-on-focus="true" data-tagator-autocomplete="['ภูเขา', 'ธรรมชาติ', 'วัด','เดินป่า', 'กางเต้นท์','วัดศรีโคมคำ', 'กว๊านพะเยา']" style=" width: 99%;" placeholder="เพิ่มแท็ก...">
+                                <input type="text" class="tagator" data-tagator-show-all-options-on-focus="true" data-tagator-autocomplete="['ภูเขา', 'ธรรมชาติ', 'วัด','เดินป่า', 'กางเต้นท์','วัดศรีโคมคำ', 'กว๊านพะเยา']" style=" width: 99%;" placeholder="เพิ่มแท็ก...">
 
                             </div>
 

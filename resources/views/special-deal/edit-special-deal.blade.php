@@ -11,7 +11,7 @@
     <meta name="Keywords" content="" />
 
     <!-- Title -->
-    <title>Phayao Trip</title>
+    <title>แก้ไขดีลพิเศษ - {{$specialDeal->name_th}}</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -226,7 +226,7 @@
                                 </h5>
                             </a>
                             </h5>
-                            <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;"> แก้ไขดีลพิเศษ</h5>
+                            <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;"> แก้ไขดีลพิเศษ - {{$specialDeal->name_th}}</h5>
                         </div>
                     </div>
                 </div>

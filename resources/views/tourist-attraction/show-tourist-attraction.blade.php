@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}"> {{-- token for POST method --}}
     <title>สถานที่ท่องเที่ยว - TripPhayao</title>
 
 
     @include('layouts.head-LinkScript')
     <link href="{{ asset('assets/css/touristAttraction/touristAttraction.css') }}" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-    {{-- pagination --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.4/simplePagination.css" integrity="sha512-emkhkASXU1wKqnSDVZiYpSKjYEPP8RRG2lgIxDFVI4f/twjijBnDItdaRh7j+VRKFs4YzrAcV17JeFqX+3NVig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    {{-- end  pagination --}}
     <style>
         #map {
             height: 400px;
@@ -23,6 +20,14 @@
 
         .p1 {
             display: inline;
+        }
+
+        #load-more {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -75,86 +80,37 @@
                         <h3 style="text-align: center"><b>สถานที่ท่องเที่ยว</b> </h3>
                         <p class="line-header"></p>
                         <p style="color: #535151;" class="text-head-content-placeHit">สถานที่ท่องเที่ยวยอดฮิต ที่คัดสรรข้อมูลแต่ละบริเวณสถานที่มาเพื่ออำนวยความสะดวกแก่นักท่องเที่ยวให้ได้เสพบรรยากาศทุกแหล่งท่องเที่ยวได้อย่างเต็มที่</p>
-
                         <!-- Nav tabs -->
-
-                        <ul class="nav nav-pills  px-1 py-2" id="pills-tab" role="tablist">
+                        <ul class="nav nav-pills  px-1 py-2" id="category" role="tablist">
                             <h3>หมวดหมู่ : </h3>
                             <li class="nav-item px-1" role="presentation">
-                                <button type="button" class="btn btn-outline-info active " id="all-tab" data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab" aria-selected="true">ทั้งหมด</button>
+                                <button type="button" class="btn btn-outline-info active " id="all-tab" data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab" aria-selected="true" data-category="all">ทั้งหมด</button>
                             </li>
                             @foreach ($category as $cate)
                                 <li class="nav-item px-1" role="presentation">
-                                    <button type="button" class="btn btn-outline-info "id="category-tab" data-bs-toggle="pill" data-bs-target="#category" type="button" role="tab" aria-selected="false" data-category-id="{{ $cate->id }}">{{ $cate->name_th }}</button>
+                                    <button type="button" class="btn btn-outline-info" id="category-tab" data-bs-toggle="pill"
+                                        type="button" role="tab" aria-selected="false" data-category="{{ $cate->id }}">{{ $cate->name_th }}</button>
                                 </li>
                             @endforeach
-                            {{-- @foreach ($category as $cate)
-                                <li class="nav-item px-1" role="presentation">
-                                    <button type="button" class="btn btn-outline-info category-button" data-bs-toggle="pill" data-bs-target="#category" role="tab" aria-selected="false" data-category-id="{{ $cate->id }}">{{ $cate->name_th }}</button>
-                                </li>
-                            @endforeach --}}
                         </ul>
+                        <!--end Nav tabs -->
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="all" role="tabpanel">
+                            <div class="tab-pane fade show active" id="all-tab" role="tabpanel">
                                 <div class="wrapper">
                                     <div class="row list-wrapper">
-                                        @foreach ($touristAttractions as $attraction)
-                                            <div class="list-item col-lg-3 col-md-6 mb-lg-3">
-                                                <div class="card  text-white" style="border: none;">
-                                                    <a href="{{ url('/touristattractions/' . $attraction->name_th) }}">
-                                                        <img src="{{ $attraction->cover_image != null ? asset('/storage/' . $attraction->cover_image) : asset('assets/image/unfound-image-b.jpg') }}" class="img-card-placeHit" alt="...">
-                                                    </a>
-                                                    <div class="card-body text-black">
-                                                        <p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>{{ $attraction->province }},ประเทศไทย</p>
-                                                        <h4>{{ $attraction->name_th }}</h4>
-                                                        <div class="text-card-content-placeHit">
-                                                            <span class="p1">{{ $attraction->detail_th }}</span>
-                                                            <span class="More" style="cursor:pointer;color:blue;">แสดงเพิ่มเติม</span>
-                                                        </div>
-                                                        {{-- <div class="" style="text-align: right;color:#C4C4C4;"><i class="bi bi-eye"></i><span> {{$attraction->view}} </span></div> --}}
-                                                    </div>
-                                                </div>
-                                                <div class="padding-card-placeHit">
-                                                    <a href="{{ url('/touristattractions/' . $attraction->name_th) }}" type="button" class="btn btn-info text-white btn-map">ดูรายละเอียด</a>
-                                                </div>
-                                            </div>
-                                        @endforeach
+                                        <div id="tourist-attraction"></div>
                                     </div>
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center">
-                                            @for ($i = 1; $i <= $totalPages; $i++)
-                                                <li class="page-item {{ $touristAttractions->currentPage() == $i ? 'active' : '' }}">
-                                                    <a class="page-link" href="{{ $touristAttractions->url($i) }}">{{ $i }}</a>
-                                                </li>
-                                            @endfor
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="category" role="tabpanel">
-                                <div class="row list-wrapper">
-                                    <div class="row" id="category-place">
-
+                                    <div id="load-more">
+                                        <button id="load-more-btn" type="button" class="btn btn-primary">ดูเพิ่มเติม</button>
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="tab-pane fade" id="category" role="tabpanel">
-                                <div class="row list-wrapper">
-                                    <div class="row" id="category-place">
-
-                                    </div>
-                                    <div class="col-12 text-center mt-4">
-                                        <button id="load-more" type="button" class="btn btn-info">Load More</button>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
 
     {{-- <h2 style="text-align: center">Maps Location </h2>
@@ -162,12 +118,10 @@
     <br>
 
     <div id="map"></div> --}}
-
-
     <div class="padding-footer"></div>
     @include('layouts.footer')
 
-    <script>
+    {{-- <script>
         let map;
 
         function initMap() {
@@ -199,81 +153,118 @@
             });
         }
         window.initMap = initMap;
-    </script>
+    </script> --}}
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnuNFCpxLkWORNZymL1Tvr7cBa-d1TjD0&callback=initMap&v=weekly"></script>
+    {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnuNFCpxLkWORNZymL1Tvr7cBa-d1TjD0&callback=initMap&v=weekly"></script> --}}
     <!-- script slider -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- end script slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.4/jquery.simplePagination.min.js" integrity="sha512-J4OD+6Nca5l8HwpKlxiZZ5iF79e9sgRGSf0GxLsL1W55HHdg48AEiKCXqvQCNtA1NOMOVrw15DXnVuPpBm2mPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        var items = $(".list-wrapper .list-item");
-        var numItems = items.length;
-        var perPage = 12;
 
-        items.slice(perPage).hide();
-
-        $('#pagination').pagination({
-            items: numItems,
-            itemsOnPage: perPage,
-            prevText: "&laquo;",
-            nextText: "&raquo;",
-            onPageClick: function(pageNumber) {
-                var showFrom = perPage * (pageNumber - 1);
-                var showTo = showFrom + perPage;
-                items.hide().slice(showFrom, showTo).show();
-            }
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>{{-- lazy load test --}}
 
     <script>
         $(document).ready(function() {
-            $('#category-tab ').click(function() {
-                var categoryId = $(this).data('category-id');
+            var currentCategory = 'all';
+            var currentLimit = 8;
+            var loading = false;
+            loadData(currentCategory, currentLimit);
+
+            $('#category button').on('click', function() {
+                var category = $(this).data('category');
+                currentCategory = category;
+                currentLimit = 8;
+                loadData(currentCategory, currentLimit);
+            });
+
+            $('#load-more-btn').on('click', function() {
+                if (!loading) {
+                    loading = true;
+                    $('#load-more-btn').html('กำลังโหลด...');
+                    currentLimit += 8;
+                    loadData(currentCategory, currentLimit);
+                }
+            });
+
+            function loadData(category, limit) {
                 $.ajax({
-                    url: '/touristattractions/select-by-category',
-                    type: 'GET',
-                    data: {
-                        category_id: categoryId
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') //token สำหรับpost method ใช้คู่กับ<meta>ข้างบน
                     },
+                    url: '/touristattractions/select-by-category',
+                    type: 'POST',
                     dataType: 'json',
-                    success: function(data) {
+                    data: {
+                        category: category,
+                        limit: limit
+                    },
+                    success: function(response) {
                         var html = '';
-                        for (var i = 0; i < data.length; i++) {
+                        var counter = 0;
+                        $.each(response.data, function(index, value) {
+                            if (counter % 4 === 0) {
+                                html += '<div class="row">';
+                            }
                             html += '<div class="list-item col-lg-3 col-md-6 mb-lg-3">';
                             html += '<div class="card text-white" style="border: none;">';
-                            html += '<a href="{{ url('/touristattractions/' . $attraction->name_th) }}">';
-                            html += '<img src="' + (data[i].cover_image ? '/storage/' + data[i].cover_image : '{{ asset('assets/image/unfound-image-b.jpg') }}') + '" class="img-card-placeHit" alt="...">';
+                            html += '<div class="my-data-item">' + value.name_th + '</div>';
+                            html += '<a href="/touristattractions/' + value.name_th + '">';
+                            html += '<img src="' + (value.cover_image ? '/storage/' + value.cover_image : '/assets/image/unfound-image-b.jpg') + '" class="img-card-placeHit" alt="..." loading="lazy">';
                             html += '</a>'
                             html += '<div class="card-body text-black">';
-                            html += '<p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>' + data[i].province + ',ประเทศไทย</p>';
-                            html += '<h4>' + data[i].name_th + '</h4>';
+                            html += '<p class="text-card-add-placeHit"> <i class="bi bi-geo-alt"></i>' + value.province + ',ประเทศไทย</p>';
+                            html += '<h4>' + value.name_th + '</h4>';
                             html += '<div class="text-card-content-placeHit">';
-                            html += '<span class="p1" >' + (data[i].detail_th ?? '') + '</span>';
-                            html += '<span class="More" style="cursor:pointer;color:blue;">เพิ่มเติม</span>'; // move the "More" button inside the HTML for each new element
+                            html += '<span class="p1" >' + (value.detail_th ?? '') + '</span>';
+                            html += '<span class="More" style="cursor:pointer;color:blue;">เพิ่มเติม</span>';
                             html += '</div>';
                             html += '</div>';
                             html += '</div>';
                             html += '<div class="padding-card-placeHit">';
-                            html += '<a href="/touristattractions/' + data[i].name_th + '" type="button" class="btn btn-info text-white btn-map">ดูรายละเอียด</a>';
+                            html += '<a href="/touristattractions/' + value.name_th + '" type="button" class="btn btn-info text-white btn-map">ดูรายละเอียด</a>';
                             html += '</div>';
+                            html += '</div>';
+                            if (counter % 4 === 3) {
+                                html += '</div>';
+                            }
+                            counter++;
+                        });
+                        if (counter % 4 !== 0) {
                             html += '</div>';
                         }
-                        console.log(data);
-                        $('#category-place').html(html);
-                        //ปุ่มเพิ่มเติมในscriptประเภท
-                        $('#category-place span.More').click(function() {
+                        // if (response.total <= limit) {
+                        //     $('#load-more').hide();
+                        // } else {
+                        //     $('#load-more').show();
+                        // }
+                        if (response.total > currentLimit) {
+                            $('#load-more').show();
+                        } else {
+                            $('#load-more').hide();
+                        }
+                        if (currentLimit <= response.total) {
+                            loading = false;
+                            $('#load-more-btn').html('ดูเพิ่มเติม');
+                        }
+                        $('#tourist-attraction').html(html);
+
+                        $('#tourist-attraction span.More').click(function() {
                             let span = $(this).prev();
                             span.data('tmp', span.text());
                             span.text(span.data('content'));
                             span.data('content', span.data('tmp'));
 
-                            $(this).text($(this).data('state') == 1 ? 'แสดงเพิ่มเติม...' : 'แสดงน้อยลง...');
-                            $(this).data('state', 1 - $(this).data('state'));
+                            if ($(this).data('state') == 1) {
+                                $(this).text('แสดงเพิ่มเติม...');
+                                $(this).data('state', 0);
+                            } else {
+                                $(this).text('แสดงน้อยลง...');
+                                $(this).data('state', 1);
+                            }
                         });
-                        $('#category-place span.p1').each(function() {
+                        $('#tourist-attraction span.p1').each(function() {
                             $(this).data('content', $(this).text());
                             if ($(this).text().length > 70) {
                                 $(this).text($(this).text().substr(0, 70) + '...');
@@ -284,50 +275,13 @@
                         });
                         //endปุ่มเพิ่มเติมในscriptประเภท
                     },
-                    error: function(data) {
-                        console.log(data);
-                        console.log('Error: ' + error);
+                    error: function(xhr, status, error) {
+                        console.log(error);
                     }
                 });
-            });
-        });
-    </script>
-
-    <script>
-        document.querySelectorAll('span.More').forEach(bttn => {
-            bttn.dataset.state = 0;
-            bttn.addEventListener('click', function(e) {
-                let span = this.previousElementSibling;
-                span.dataset.tmp = span.textContent;
-                span.textContent = span.dataset.content;
-                span.dataset.content = span.dataset.tmp;
-
-                this.innerHTML = this.dataset.state == 1 ? 'แสดงเพิ่มเติม...' : 'แสดงน้อยลง...';
-                this.dataset.state = 1 - this.dataset.state;
-            })
-        });
-
-        document.querySelectorAll('span.p1').forEach(span => {
-            span.dataset.content = span.textContent;
-            if (span.textContent.length > 70) {
-                span.textContent = span.textContent.substr(0, 70) + '...';
-                // show the "More" button
-                const moreBtn = span.nextElementSibling;
-                moreBtn.style.display = "inline-block";
-            } else {
-                // hide the "More" button
-                const moreBtn = span.nextElementSibling;
-                moreBtn.style.display = "none";
             }
         });
     </script>
-
-
-
-
-
-
-
 
 </body>
 

@@ -1,11 +1,13 @@
 body {
     overflow-x: hidden;
 }
+
 .banner-slider {
     width: 100%;
     height: 450px;
     object-fit: cover;
 }
+
 .padding-footer {
     padding-top: 280px;
 }
@@ -243,7 +245,8 @@ body {
     color: #868383;
     text-decoration: none;
 }
-.nav-background-placeHit{
+
+.nav-background-placeHit {
     background-color: #F5F5F5;
     width: 100%;
     height: 60px;
@@ -251,14 +254,17 @@ body {
     padding-top: 20px;
 
 }
-.text-nav-placeHit{
+
+.text-nav-placeHit {
     color: #868383;
     text-decoration: none;
 }
-.youtube-width{
+
+.youtube-width {
     width: 150%;
     height: 350px;
 }
+
 @media only screen and (max-width: 1200px) {
     .img-card-placeHit {
         border-radius: 5px;
@@ -267,17 +273,17 @@ body {
         object-fit: cover;
     }
 
-    }
-
-@media only screen and (max-width: 1025px) {
-
 }
+
+@media only screen and (max-width: 1025px) {}
+
 @media only screen and (max-width: 830px) {
     .banner-slider {
         width: 100%;
         height: 250px;
         object-fit: cover;
     }
+
     .banner-placeHit {
         width: 100%;
         height: 210px;
@@ -315,13 +321,15 @@ body {
         text-align: center;
         padding-top: 10px;
     }
+
     .img-card-placeHit {
         border-radius: 5px;
         width: 100%;
         height: 190px;
         object-fit: cover;
     }
-    .youtube-width{
+
+    .youtube-width {
         width: 100%;
         height: 250px;
     }
@@ -343,6 +351,7 @@ body {
         height: 150px;
         object-fit: cover;
     }
+
     .banner-placeHit {
         width: 100%;
         height: 150px;
@@ -376,6 +385,7 @@ body {
         text-align: center;
         padding-top: 10px;
     }
+
     .nav-background-placeHit {
         background-color: #F5F5F5;
         width: 100%;
@@ -384,6 +394,7 @@ body {
         padding-top: 19px;
         padding-bottom: 1px;
     }
+
     .search-tags {
         border-color: black !important;
         width: 90% !important;

@@ -22,40 +22,31 @@ class TouristAttractionController extends Controller
     public function showTouristAttraction()
     {
         $homeBanners = HomeBanner::where('is_status', 1)->get();
-        $ta = TouristAttraction::/* with(['touristAttractionCategory', 'destinationFolders'])-> */where('is_status', 1)->get();
+        $ta = TouristAttraction::where('is_status', 1)->get();
         $category = TouristAttractionCategory::where('is_status', 1)->get();
 
-        $total = count($ta);
-        $totalPages = ceil($total / 12);
-        $touristAttractions = TouristAttraction::with(['touristAttractionCategory', 'destinationFolders'])->where('is_status', 1)->paginate(12);
-        // dd($touristAttraction, $category, $total, $totalPages, $touristAttractions);
-        return view('tourist-attraction.show-tourist-attraction', compact('homeBanners', 'ta', 'category', 'totalPages', 'touristAttractions'));
+        return view('tourist-attraction.show-tourist-attraction', compact('homeBanners', 'ta', 'category',));
     }
 
     public function showTouristAttractionByCategory(Request $request)
     {
-        // dd($request->toArray());
-        // $categoryID = $request->input('category_id');
-        $categoryID = $request->get('category_id');
-        // $categoryID = 1;
-        $ta = TouristAttraction::where('is_status', 1)->where('tourist_attraction_category_id', $categoryID)->get();
-        return response()->json($ta);
-    }
+        $category = $request->category;
+        $limit = $request->limit ?? 8;
+        $touristAttraction = TouristAttraction::with('touristAttractionCategory')->where('is_status', 1)
+            ->when($category != 'all', function ($query) use ($category) {
+                $query->whereHas('touristAttractionCategory', function ($query) use ($category) {
+                    $query->where('id', $category);
+                });
+            });
 
-    // public function showTouristAttractionByCategory(Request $request)
-    // {
-    //     $categoryID = $request->get('category_id');
-    //     $ta = TouristAttraction::where('is_status', 1)->where('tourist_attraction_category_id', $categoryID)->paginate(8);
-    //     return response()->json($ta);
-    // }
+        $total = $touristAttraction->count();
+        $data = $touristAttraction->limit($limit)->get();
+        $output = array(
+            "data" => $data,
+            "total" => $total
+        );
 
-    public function showTouristAttractionTags($name_ta, $name)
-    {
-        // dd($name_ta,$name);
-        $ta = $name_ta;
-        $tag = Tag::where('name_th', $name)->with('touristAttractions')->first();
-        $total = count($tag->touristAttractions);
-        return view('tourist-attraction.show-tourist-attraction-tags', compact('ta', 'tag', 'total'));
+        return json_encode($output);
     }
 
     public function showTouristAttractionDescription($name)
@@ -67,6 +58,14 @@ class TouristAttractionController extends Controller
         return view('tourist-attraction.show-tourist-attraction-description', compact('attraction'));
     }
 
+    public function showTouristAttractionTags($name_ta, $name)
+    {
+        $ta = $name_ta;
+        $tag = Tag::where('name_th', $name)->with('touristAttractions')->first();
+        $total = count($tag->touristAttractions);
+        return view('tourist-attraction.show-tourist-attraction-tags', compact('ta', 'tag', 'total'));
+    }
+
     public function touristAttractionDescription()
     {
         return view('tourist-attraction.show-tourist-attraction-description');
@@ -74,33 +73,112 @@ class TouristAttractionController extends Controller
 
     public function viewTouristAttraction()
     {
-        return view('tourist-attraction.view-tourist-attraction');
+        $touristAttractionCategory = TouristAttractionCategory::get();
+        return view('tourist-attraction.view-tourist-attraction', compact('touristAttractionCategory'));
     }
 
     public function touristAttractionAllDataTable(Request $request)
     {
-        $touristAttraction = TouristAttraction::with('touristAttractionCategory')->get();
+        $createDate = $request->create_date;
+        $keyword = $request->keyword;
+        $category = $request->category;
+        $total = $touristAttraction = TouristAttraction::with('touristAttractionCategory')->count();
+        $touristAttraction = TouristAttraction::with('touristAttractionCategory')
+            ->when($createDate != null, function ($query) use ($createDate) {
+                $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+            })
+            ->when($category != 'ทั้งหมด', function ($query) use ($category) {
+                $query->whereHas('touristAttractionCategory', function ($query) use ($category) {
+                    $query->where('name_th', 'like', '%' . $category . '%');
+                });
+            })
+            ->when($keyword != null, function ($query) use ($keyword, $createDate) {
+                $query->where(function ($query) use ($keyword, $createDate) {
+                    $query->where('attraction_no', 'like', '%' . $keyword . '%')
+                        ->orWhere('name_th', 'like', '%' . $keyword . '%')
+                        // ->orWhereHas('touristAttractionCategory', function ($query) use ($keyword) {
+                        //     $query->where('is_status', 1)->where('name_th', 'like', '%' . $keyword . '%');
+                        // })
+                    ;
+                    if ($createDate != null) {
+                        $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+                    }
+                });
+            });
+
         $output = array(
-            "data" => $touristAttraction,
+            "draw" => $request->draw,
+            "recordsTotal" => $total,
+            "recordsFiltered" => $touristAttraction->get()->count(),
+            "data" => $touristAttraction/* ->skip($request->start)->take($request->length) */->get(),
         );
-        // dd($output);
         return json_encode($output);
     }
 
     public function touristAttractionOnDataTable(Request $request)
     {
-        $touristAttraction = TouristAttraction::with('touristAttractionCategory')->where('is_status', 1)->get();
+        $createDate = $request->create_date;
+        $keyword = $request->keyword;
+        $category = $request->category;
+        $total = $touristAttraction = TouristAttraction::with('touristAttractionCategory')->where('is_status', 1)->count();
+        $touristAttraction = TouristAttraction::with('touristAttractionCategory')->where('is_status', 1)
+            ->when($createDate != null, function ($query) use ($createDate) {
+                $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+            })
+            ->when($category != 'ทั้งหมด', function ($query) use ($category) {
+                $query->whereHas('touristAttractionCategory', function ($query) use ($category) {
+                    $query->where('name_th', 'like', '%' . $category . '%');
+                });
+            })
+            ->when($keyword != null, function ($query) use ($keyword, $createDate) {
+                $query->where(function ($query) use ($keyword, $createDate) {
+                    $query->where('attraction_no', 'like', '%' . $keyword . '%')
+                        ->orWhere('name_th', 'like', '%' . $keyword . '%');
+                    if ($createDate != null) {
+                        $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+                    }
+                });
+            });
+
         $output = array(
-            "data" => $touristAttraction,
+            "draw" => $request->draw,
+            "recordsTotal" => $total,
+            "recordsFiltered" => $touristAttraction->get()->count(),
+            "data" => $touristAttraction->get(),
         );
         return json_encode($output);
     }
 
     public function touristAttractionOffDataTable(Request $request)
     {
-        $touristAttraction = TouristAttraction::with('touristAttractionCategory')->where('is_status', 0)->get();
+        $createDate = $request->create_date;
+        $keyword = $request->keyword;
+        $category = $request->category;
+        $total = $touristAttraction = TouristAttraction::with('touristAttractionCategory')->where('is_status', 0)->count();
+        $touristAttraction = TouristAttraction::with('touristAttractionCategory')->where('is_status', 0)
+            ->when($createDate != null, function ($query) use ($createDate) {
+                $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+            })
+            ->when($category != 'ทั้งหมด', function ($query) use ($category) {
+                $query->whereHas('touristAttractionCategory', function ($query) use ($category) {
+                    $query->where('name_th', 'like', '%' . $category . '%');
+                });
+            })
+            ->when($keyword != null, function ($query) use ($keyword, $createDate) {
+                $query->where(function ($query) use ($keyword, $createDate) {
+                    $query->where('attraction_no', 'like', '%' . $keyword . '%')
+                        ->orWhere('name_th', 'like', '%' . $keyword . '%');
+                    if ($createDate != null) {
+                        $query->whereDate('created_at', Carbon::createFromFormat('Y-m-d', $createDate));
+                    }
+                });
+            });
+
         $output = array(
-            "data" => $touristAttraction,
+            "draw" => $request->draw,
+            "recordsTotal" => $total,
+            "recordsFiltered" => $touristAttraction->get()->count(),
+            "data" => $touristAttraction->get(),
         );
         return json_encode($output);
     }
@@ -135,8 +213,6 @@ class TouristAttractionController extends Controller
         $destinationFolders = $destinationFolders->map(function ($item) {
             return $item->name_th;
         })->toArray();
-        // dd($destinationFolders);
-
         $month = Carbon::now('Asia/Bangkok')->isoFormat('MM');
         $year = Carbon::now('Asia/Bangkok')->isoFormat('YY');
         $number = TouristAttraction::orderBy('attraction_no', 'DESC')->get()->map(function ($item) {
@@ -149,13 +225,11 @@ class TouristAttractionController extends Controller
         } else {
             $attraction_no = 'P' . $year . $month . '001';
         }
-        // dd($attraction_no);
         return view('tourist-attraction.add-tourist-attraction', compact('touristAttractionCategory', 'attraction_no', 'destinationFolders',));
     }
     public function selectTag()
     {
         $tag = Tag::get();
-        // dd($tag->toArray());
         return response()->json($tag);
     }
 
@@ -167,7 +241,6 @@ class TouristAttractionController extends Controller
 
     public function createTouristAttraction(Request $request)
     {
-        // dd($request->toArray(), /* $selectFolders,$folder,$id,$name_th */);
         $request->validate([
             'name_th' => 'required|unique:tourist_attractions',
             // 'name_en' => 'required|unique:tourist_attraction_categories',
@@ -202,7 +275,6 @@ class TouristAttractionController extends Controller
         }
         $creator = Auth::user()->account_name;
         $ta = TouristAttraction::create([
-            // 'destination_id' => ,
             'attraction_no' => $request->attraction_no,
             'tourist_attraction_category_id' => $request->tourist_attraction_category_id,
             'name_th' => $request->name_th,
@@ -228,7 +300,6 @@ class TouristAttractionController extends Controller
             'is_status' => $request->is_status ? 1 : 0,
             'creator' => $creator,
         ]);
-        // dd($touristAttraction->toArray());
         if ($request->hasFile('images')) {
             foreach ($request->images as $key => $image) {
                 $image_path = $image->storeAs('images/TouristAttractions/' . $request->attraction_no, strtolower($request->attraction_no) . '-' . uniqid() . '.' . $image->extension());
@@ -255,14 +326,11 @@ class TouristAttractionController extends Controller
             }
         }
 
-        // dd($tags, $tag, $name);
-
         if ($request->select_folders) {
             $selectFolders = json_decode($request->select_folders, true);
 
             foreach ($selectFolders as $folder) {
                 $id = $folder['id'];
-                // $name_th = $folder['value'];
                 $ta->destinationFolders()->attach($id);
             }
         }
@@ -294,11 +362,11 @@ class TouristAttractionController extends Controller
         return redirect('/tourist-attractions/');
     }
 
-    public function editTag()
-    {
-        $tag = Tag::get();
-        $taTag = TouristAttraction::with('')->find(10);
-    }
+    // public function editTag()
+    // {
+    //     $tag = Tag::get();
+    //     $taTag = TouristAttraction::with('')->find(10);
+    // }
 
     public function editFolder()
     {
@@ -319,7 +387,6 @@ class TouristAttractionController extends Controller
                 'name_th' => $item->name_th,
             ];
         });
-        // dd($destinationFolder->toArray());
         return view('tourist-attraction.edit-tourist-attraction', compact('touristAttraction', 'touristAttractionCategory', 'touristAttractionTag', 'folderTouristAttraction',));
     }
 
@@ -332,8 +399,6 @@ class TouristAttractionController extends Controller
 
     public function saveUpdateTouristAttraction(Request $request, $id)
     {
-
-        // dd($request->toArray());
         $updateTA = TouristAttraction::with('touristAttractionImages')->find($id);
         $validationRules = [
             'cover_image' => [
@@ -370,7 +435,6 @@ class TouristAttractionController extends Controller
         if ($max_images > 10) {
             return redirect()->back()->with('error', 'รูปเกิน10แล้ว โปรดเพิ่มรูปใหม่อย่าให้เกิน10');
         }
-        // dd($updateSD->cover_image);
         if ($request->hasFile('cover_image')) {
             Storage::delete($updateTA->cover_image);
             $cover_image = $request->cover_image->storeAs('images/TouristAttractions/' . $updateTA->attraction_no,  strtolower($updateTA->attraction_no) . '-' . 'cover-' . uniqid() . '.' . $request->cover_image->extension());
@@ -409,7 +473,6 @@ class TouristAttractionController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->images as $key => $image) {
                 $image_path = $image->storeAs('images/TouristAttractions/' . $updateTA->attraction_no, strtolower($updateTA->attraction_no) . '-' . uniqid() . '.' . $image->extension());
-                // dd($image_path);
                 TouristAttractionImage::create([
                     'tourist_attraction_id' => $updateTA->id,
                     'image' => $image_path
@@ -447,10 +510,6 @@ class TouristAttractionController extends Controller
         } else if (($request->select_folders) == null) {
             $updateTA->destinationFolders()->detach();
         }
-
-
-
-
         return redirect('/tourist-attractions/');
     }
 }

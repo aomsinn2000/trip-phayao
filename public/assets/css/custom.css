@@ -2985,10 +2985,10 @@ tr.selected td{
 
 
 
-.side-menu__item.active svg path{
+/* .side-menu__item.active svg path{
     fill: rgb(0, 0, 0) !important;
 
-}
+} */
 .app-sidebar .slide .side-menu__item.active::before{
     content: unset;
 }

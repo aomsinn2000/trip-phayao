@@ -16,35 +16,39 @@ class DestinationFolderController extends Controller
 {
     public function showDestinationFolder($name)
     {
-        $destinations = DestinationFolder::where('is_status', 1)->where('name_th', $name)->with(['touristAttractions.touristAttractionCategory'])->first();
-        $category = $destinations->touristAttractions->groupBy('tourist_attraction_category_id')->map(function ($group, $categoryId) {
-            $category = TouristAttractionCategory::find($categoryId);
-            return [
-                'id' => $categoryId,
-                'name_th' => $category ? $category->name_th : 'Unknown',
-            ];
-        });
-        // dd($category);
-        // dd($destinations->toArray());
+        $destinations = DestinationFolder::where('is_status', 1)->where('name_th', $name)->with(['touristAttractions'])->first();
+        $category = TouristAttractionCategory::whereHas('touristAttractions', function ($query) use ($destinations) {
+            $ids = $destinations->touristAttractions->map(function ($attraction) {
+                return $attraction->id;
+            });
+            $query->whereIn('id', $ids);
+        })->get();
         return view('destination-folder.show-tourist-attraction', compact('destinations', 'category'));
     }
 
-    public function showDestinationFolderByCategory($folderId, Request $request)
+    public function showDestinationFolderByCategory(Request $request)
     {
-        $categoryID = $request->get('category_id');
-        $ta = TouristAttraction::where('is_status', 1)
-            ->where('tourist_attraction_category_id', $categoryID)
-            ->whereHas('destinationFolders', function ($query) use ($folderId) {
-                $query->where('destination_folder_id', $folderId );
+        $folderID = $request->folderID;
+        $category = $request->category;
+        $limit = $request->limit ?? 8;
+        $touristAttraction = TouristAttraction::with('touristAttractionCategory')->where('is_status', 1)
+            ->whereHas('destinationFolders', function ($query) use ($folderID) {
+                $query->where('destination_folder_id', $folderID);
             })
-            ->get();
-        // dd($ta);
-        return response()->json($ta);
+            ->when($category != 'all', function ($query) use ($category) {
+                $query->where('tourist_attraction_category_id', $category);
+            });
+        $output = array(
+            "total" => $touristAttraction->count(),
+            "data" => $touristAttraction->limit($limit)->get()
+
+        );
+
+        return json_encode($output);
     }
 
     public function showDestinationFolderDescription($name, $name_ta)
     {
-        // dd($name,$name_ta);
         $destination = $name;
         $attraction = TouristAttraction::where('name_th', $name_ta)->with('touristAttractionCategory')->first();
         return view('destination-folder.show-tourist-attraction-description', compact('attraction', 'destination'));
@@ -52,7 +56,6 @@ class DestinationFolderController extends Controller
 
     public function showDestinationFolderDescriptionTag($name, $name_ta, $name_tag)
     {
-        // dd($name_ta,$name);
         $destination = $name;
         $attraction = $name_ta;
         $tag = Tag::where('name_th', $name_tag)->with('touristAttractions')->first();
@@ -100,7 +103,6 @@ class DestinationFolderController extends Controller
             ];
             return $item;
         });
-        // dd($destinationFolder);
 
         $output = array(
             "data" => $destinationFolder
@@ -129,7 +131,6 @@ class DestinationFolderController extends Controller
             ];
             return $item;
         });
-        // dd($destinationFolder);
 
         $output = array(
             "data" => $destinationFolder
@@ -147,7 +148,6 @@ class DestinationFolderController extends Controller
             ];
             return $item;
         });
-        // dd($destinationFolder);
 
         $output = array(
             "data" => $destinationFolder
@@ -188,7 +188,6 @@ class DestinationFolderController extends Controller
         } else {
             $folder_no = 'F' . $year . $month . '001';
         }
-        // dd($folder_no);
         return view('destination-folder.add-destination-folder', compact('folder_no'));
     }
 
@@ -227,7 +226,7 @@ class DestinationFolderController extends Controller
         } else {
             $cover_image = null;
         }
-        // dd($request->toArray(), $banner_image, $cover_image);
+
         DestinationFolder::create([
             'folder_no' => $request->folder_no,
             'is_status' => $request->is_status ? 1 : 0,
@@ -269,7 +268,6 @@ class DestinationFolderController extends Controller
 
     public function saveUpdateDestinationFolder(Request $request, $id)
     {
-        // dd($request->toArray());
         $updateDF = DestinationFolder::find($id);
         if ($request->hasFile('banner_image')) {
             Storage::delete($updateDF->banner_image);
@@ -290,7 +288,6 @@ class DestinationFolderController extends Controller
         } else {
             $cover_image = $updateDF->cover_image;
         }
-
 
         $updateDF->update([
             'is_status' => $request->is_status ? 1 : 0,
