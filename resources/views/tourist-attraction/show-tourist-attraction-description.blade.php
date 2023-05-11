@@ -59,10 +59,6 @@
                                 <span class="fa fa-star-half-o"></span>
                             </span>
                         </p> --}}
-
-
-
-
                         <div id="page">
                             <div class="row">
                                 <div class="column small-11 small-centered">
@@ -70,7 +66,7 @@
                                         @foreach ($attraction->touristAttractionImages as $images)
                                             <div>
                                                 <a href="{{ $images->image ? asset('/storage/' . $images->image) : '' }}" data-fancybox="gallery">
-                                                    <img src="{{ $images->image ? asset('/storage/' . $images->image) : '' }}" class="image-large-touristAttraction"/>
+                                                    <img src="{{ $images->image ? asset('/storage/' . $images->image) : '' }}" class="image-large-touristAttraction" />
                                                 </a>
                                                 {{-- <img data-enlargable width="100" class="image-large-touristAttraction" src="{{ $images->image ? asset('/storage/' . $images->image) : '' }}" alt=""> --}}
                                             </div>
@@ -90,8 +86,6 @@
                                 </div>
                             </div>
                         </div>
-
-
 
                         {{-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
@@ -120,28 +114,17 @@
 
 
                         {{-- เนื้อหา --}}
-                        {{-- <p class="text-content">วัดอนาลโยทิพยาราม หรือที่เรียกสั้นๆ ว่า วัดอนาลโย ตั้งอยู่บริเวณดอยบุษราคัม และม่อนพระนอน เป็นวัดที่เต็มไปด้วยพระพุทธรูปต่างๆ มากมาย ทั้ง ศิลปะแบบสุโขทัย พระพุทธไสยาสน์ พระพุทธรูปปางลีลา พระพุทธรูปปางนาคปรก เป็นต้น ซึ่งทั้งหมดก็สร้างด้วยความประณีต
-                            สวยงามอย่างมาก
-                            รวมถึงมีไฮไลท์อย่าง รัตนเจดีย์ ที่สร้างในรูปแบบของศิลปะอินเดียพุทธคยา และยังมีเก๋งจีน ไว้ประดิษฐาน เจ้าแม่กวนอิม มีหอพระแก้วมรกตจำลอง ซึ่งถ้ามองวิวจากยอดเขาก็
-                            สามารถชมทัศนียภาพสวยๆ ของกว๊านพะเยาได้ด้วย </p>
-                        <img class="image-content py-3" src="https://cms.dmpcdn.com/travel/2022/05/05/69cfebd0-cc40-11ec-96f4-69b6cdc032b9_webp_original.jpg" alt="">
-
-                        <img class="image-content" src="https://cms.dmpcdn.com/travel/2022/05/05/6ddc7360-cc40-11ec-865a-01accc7b7682_webp_original.jpg" alt="">
-                        <br><br>
-                        <p class="text-content">วัดอนาลโยทิพยาราม แห่งนี้ คือสถานที่ปฏิบัติธรรมรายล้อมไปด้วยธรรมชาติ สร้างขึ้นด้วยแรงศรัทธาของผู้เลื่อมใสในพระพุทธศาสนาและวัตรปฏิบัติของ พระปัญญาพิศาลเถร หรือ หลวงพ่อไพบูลย์ สุมังคโล พระสายวิปัสนาที่มีลูกศิษย์ให้ความเคารพศรัทธาอย่างมาก
-                            จนทำให้เกิดสถานที่ปฏิบัติธรรมบนดอยบุษราคัมแห่งนี้นั่นเอง </p> --}}
                         <div>
                             <p class="text-deal">
                             <h3 style="font-family: 'Kanit', sans-serif;"><b>รายละเอียดเพิ่มเติม</b></h3>
                             </p>
                             <div>
                                 <span style="display: inline-block;"><?php echo $attraction->description_th; ?></span>
-                                <a href="{{ $attraction->map_link ?? '' }}" target="_blank">ดูแผนที่</a>
+                                <a href="{{ $attraction->map_link ?? '' }}" target="_blank">{{ $attraction->map_link ? 'ดูแผนที่' : '' }}</a>
                             </div>
                             {{-- <?php echo html_entity_decode($attraction->description_th); ?> --}}
                         </div>
                         {{-- end เนื้อหา --}}
-
 
                         {{-- ที่ตั้ง --}}
                         <div class="text-address">
@@ -173,19 +156,6 @@
         </div>
 
         <br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         {{-- reviews --}}
         {{-- <div class="review-background">
@@ -366,10 +336,7 @@
         </div> --}}
         {{-- end reviews --}}
 
-
     </div>
-
-
 
     <div class="padding-footer"></div>
     @include('layouts.footer')
@@ -499,9 +466,9 @@
 
 
     <script>
-Fancybox.bind("[data-fancybox]", {
-    // Your custom options
-})
+        Fancybox.bind("[data-fancybox]", {
+            // Your custom options
+        })
     </script>
 
 </body>

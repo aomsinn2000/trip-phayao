@@ -16,7 +16,6 @@ use App\Http\Controllers\DestinationFolderController\DestinationFolderController
 use App\Http\Controllers\SpecialDealController\SpecialDealController;
 use App\Http\Controllers\SpecialDealCategoryController\SpecialDealCategoryController;
 use App\Http\Controllers\TouristAttractionCategoryController\TouristAttractionCategoryController;
-use App\Models\SpecialDealCategory\SpecialDealCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +37,7 @@ Route::get('admin-login', [LoginController::class, 'showLogin']);
 Route::post('handle', [LoginController::class, 'handle']);
 Route::get('logout', [LoginController::class, 'logout']);
 // end Login
+
 // ลืมรหัสผ่าน
 Route::post('sendEmail', [ForgotPasswordController::class, 'showSentEmail']); //view ตอบกลับว่าส่งไปอีเมล์ไหนเมื่อลืมรหัสผ่าน
 Route::post('forgotPassword', [ForgotPasswordController::class, 'showForgotPassword']); //view หน้าให้ใส่อีเมล์เมื่อลืมรหัสผ่าน
@@ -67,22 +67,15 @@ Route::prefix('/home-banners')->group(function () {
 });
 //*********end หลังบ้านจัดการแบนเนอร์**********
 
-//*********หน้าบ้านโฟลเดอร์แบบมีคำว่าfolder**********
-// Route::prefix('/destinationfolders')->group(function () {
-//     Route::get('/', [DestinationFolderController::class, 'showDestinationFolder']);
-// });
-//*********endหน้าบ้านโฟลเดอร์**********
-
 //*********หน้าบ้านโฟลเดอร์**********
 Route::prefix('/destinations')->group(function () {
-    // Route::get('/', [DestinationFolderController::class, 'showDestinationFolder']);
-    // Route::get('/select-by-category', [DestinationFolderController::class, 'showDestinationFolderByCategory']);
-    Route::get('/select-by-category/{folderId}', [DestinationFolderController::class, 'showDestinationFolderByCategory']);
+    Route::post('/select-by-category', [DestinationFolderController::class, 'showDestinationFolderByCategory']);
     Route::get('/{name}', [DestinationFolderController::class, 'showDestinationFolder']);
     Route::get('/{name}/{name_ta}', [DestinationFolderController::class, 'showDestinationFolderDescription']);
     Route::get('/{name}/{name_ta}/{name_tag}', [DestinationFolderController::class, 'showDestinationFolderDescriptionTag']);
 });
 //*********end หน้าบ้านโฟลเดอร์**********
+
 //*********หลังบ้านโฟลเดอร์**********
 Route::prefix('/destination-folders')->group(function () {
     Route::get('/', [DestinationFolderController::class, 'viewDestinationFolder']);
@@ -103,15 +96,12 @@ Route::prefix('/destination-folders')->group(function () {
 //*********end หลังบ้านโฟลเดอร์**********
 
 // ดีลพิเศษ หน้าบ้าน
-// Route::get('specialdeals', [SpecialDealController::class, 'showSpecialDeal']); //navbar view ดีลสุดพิเศษ
+
 Route::prefix('/specialdeals')->group(function () {
     Route::get('/', [SpecialDealController::class, 'showSpecialDeal']); //navbar view หน้าบทความ
     Route::get('/search', [SpecialDealController::class, 'searchSpecialDeal']);
-    // Route::get('/description', [SpecialDealController::class, 'showSpecialDealDescription']); //view รายละเอียดบทความเมื่อคลิกเลือกบทความ
     Route::get("/{name}", [SpecialDealController::class, 'showSpecialDealDescription']);
 });
-
-
 
 //*********หลังบ้านจัดการดีลสุดพิเศษ**********
 Route::prefix('/special-deals')->group(function () {
@@ -138,7 +128,6 @@ Route::prefix('/special-deals')->group(function () {
 Route::prefix('/special-deal-categories')->group(function () {
     Route::get('/', [SpecialDealCategoryController::class, 'viewSpecialDealCategory']); // ตาราง จัดการหมวดหมู่ดีลสุดพิเศษ
     Route::get('/add', [SpecialDealCategoryController::class, 'addSpecialDealCategory']); // ไปหน้าเพิ่มข้อมูล หมวดหมู่ดีลสุดพิเศษ
-
     Route::post('/create', [SpecialDealCategoryController::class, 'createSpecialDealCategory']); //เพิ่ม
     Route::post('/delete', [SpecialDealCategoryController::class, 'deleteSpecialDealCategory']); //ลบ
     Route::post("/delete/{id}", [SpecialDealCategoryController::class, 'deleteSpecialDealCategoryById']);
@@ -157,7 +146,7 @@ Route::prefix('/special-deal-categories')->group(function () {
 //******************หน้าบ้าน สถานที่ยอดฮิต******************
 Route::prefix('/touristattractions')->group(function () {
     Route::get('/', [TouristAttractionController::class, 'showTouristAttraction']); //navbar view สถานที่ยอดฮิต
-    Route::get('/select-by-category', [TouristAttractionController::class, 'showTouristAttractionByCategory']);
+    Route::post('/select-by-category', [TouristAttractionController::class, 'showTouristAttractionByCategory']);
     Route::get('/{name}', [TouristAttractionController::class, 'showTouristAttractionDescription']); //view รายละเอียดสถานที่ยอดฮิตเมื่อคลิก
     Route::get('/{name_ta}/{name}', [TouristAttractionController::class, 'showTouristAttractionTags']);
 });
@@ -173,11 +162,10 @@ Route::prefix('/tourist-attractions')->group(function () {
     Route::get("/edit/{id}", [TouristAttractionController::class, 'editTouristAttraction']); //navbar view สถานที่ยอดฮิต
     Route::post('/delete-image', [TouristAttractionController::class, 'deleteTouristAttractionImage']);
     Route::post("/save-update/{id}", [TouristAttractionController::class, 'saveUpdateTouristAttraction']);
-
     Route::get('/selectTag', [TouristAttractionController::class, 'selectTag']);
     Route::get('/selectFolder', [TouristAttractionController::class, 'selectFolder']);
-    // Route::get('/editFolder',[TouristAttractionController::class,'editFolder']);
 
+    // Route::get('/editFolder',[TouristAttractionController::class,'editFolder']);
     Route::get('/count', [TouristAttractionController::class, 'countTouristAttraction']);
     Route::post('/switch-status', [TouristAttractionController::class, 'switchTouristAttraction']);
     Route::post('/tourist-attraction-all-datatable', [TouristAttractionController::class, 'touristAttractionAllDataTable']);
@@ -187,7 +175,10 @@ Route::prefix('/tourist-attractions')->group(function () {
 //******************end หลังบ้าน สถานที่ยอดฮิต******************
 
 Route::prefix('touristattractioncategories')->group(function () {
+    Route::post('/tourist-attraction-in-category', [TouristAttractionCategoryController::class, 'showTouristAttractionInCategory']);
     Route::get('/{name}', [TouristAttractionCategoryController::class, 'showTouristAttractionByCategory']);
+    Route::get('/{name}/{name_ta}', [TouristAttractionCategoryController::class, 'showTouristAttractionDescriptionByCategory']);
+    Route::get('/{name}/{name_ta}/{name_tag}', [TouristAttractionCategoryController::class, 'showTouristAttractionTagsByCategory']);
 });
 
 //*********หลังบ้านจัดการหมวดหมู่สถานที่ยอดฮิต**********
@@ -216,8 +207,9 @@ Route::prefix('activities')->group(function () {
     Route::get('/description', [ActivityController::class, 'showActivityDescription']);
 });
 //******************end หน้าบ้าน หน้ารวมกิจกรรม******************
+
 //******************หลังบ้าน หน้ารวมกิจกรรม******************
-Route::prefix('activity-manages')->group(function () {
+Route::prefix('activities-manage')->group(function () {
     Route::get('/', [ActivityController::class, 'viewActivity']);
     Route::get('/add', [ActivityController::class, 'addActivity']);
     Route::get('/edit/{id}', [ActivityController::class, 'editActivity']);
@@ -230,6 +222,7 @@ Route::prefix('packagetours')->group(function () {
     Route::get('/description', [PackageTourController::class, 'showPackageTourDescription']);
 });
 //******************หน้าบ้าน แพ็คเกจทัวร์******************
+
 //******************หลังบ้าน แพ็คเกจทัวร์******************
 Route::prefix('package-tours')->group(function () {
     Route::get('/', [PackageTourController::class, 'viewPackageTour']);
@@ -254,20 +247,13 @@ Route::prefix('service-manages')->group(function () {
 });
 //******************end หลังบ้านหน้าบริการต่างๆ******************
 
-
-
-// Route::prefix('/services')->group(function () {
-//     Route::get('/', [ServiceController::class, 'showService']); //navbar view หน้าบริการต่างๆ
-// });
-
-//******************end หน้าบ้าน หน้ารวมกิจกรรม******************
-
 //******************หน้าบ้าน หน้าบทความ******************
 Route::prefix('/articles')->group(function () {
     Route::get('/', [ArticleController::class, 'showArticle']); //navbar view หน้าบทความ
     Route::get('/description', [ArticleController::class, 'showArticleDescription']); //view รายละเอียดบทความเมื่อคลิกเลือกบทความ
 });
 //******************end หน้าบ้าน หน้าบทความ******************
+
 //******************หลังบ้าน หน้าบทความ******************
 Route::prefix('/article-manages')->group(function () {
     Route::get('/', [ArticleController::class, 'viewArticle']);
@@ -282,5 +268,4 @@ Route::prefix('/contactus')->group(function () {
 });
 //******************end หน้าบ้าน หน้าติดต่อ******************
 
-// app('debugbar')->disable();
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// app('debugbar')->disable(); ปิด debug bar

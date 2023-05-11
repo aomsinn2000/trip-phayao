@@ -163,6 +163,7 @@
             border: none;
             background: transparent;
         }
+
         .toggle-off.btn-xs {
             padding-right: 1rem;
             padding-top: 10px;
@@ -177,6 +178,7 @@
             font-size: 12px;
             background-color: #00a32a;
         }
+
         .toggle.btn-xs {
             min-width: 90px !important;
             min-height: 30px !important;
@@ -234,9 +236,11 @@
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
                                 <svg style="color: black;margin-bottom:5px;" width="20" height="20"viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.55556 12.0556H4.56444M4.55556 2.27778H2.77778C2.30628 2.27778 1.8541 2.46508 1.5207 2.79848C1.1873 3.13187 1 3.58406 1 4.05556V14.7222C1 15.1937 1.1873 15.6459 1.5207 15.9793C1.8541 16.3127 2.30628 16.5 2.77778 16.5H11.6667C12.1382 16.5 12.5903 16.3127 12.9237 15.9793C13.2571 15.6459 13.4444 15.1937 13.4444 14.7222V4.05556C13.4444 3.58406 13.2571 3.13187 12.9237 2.79848C12.5903 2.46508 12.1382 2.27778 11.6667 2.27778H9.88889H4.55556ZM4.55556 2.27778C4.55556 2.74927 4.74286 3.20146 5.07626 3.53486C5.40965 3.86825 5.86184 4.05556 6.33333 4.05556H8.11111C8.58261 4.05556 9.03479 3.86825 9.36819 3.53486C9.70159 3.20146 9.88889 2.74927 9.88889 2.27778H4.55556ZM4.55556 2.27778C4.55556 1.80628 4.74286 1.3541 5.07626 1.0207C5.40965 0.687301 5.86184 0.5 6.33333 0.5H8.11111C8.58261 0.5 9.03479 0.687301 9.36819 1.0207C9.70159 1.3541 9.88889 1.80628 9.88889 2.27778H4.55556ZM7.22222 8.5H9.88889H7.22222ZM7.22222 12.0556H9.88889H7.22222ZM4.55556 8.5H4.56444H4.55556Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path
+                                        d="M4.55556 12.0556H4.56444M4.55556 2.27778H2.77778C2.30628 2.27778 1.8541 2.46508 1.5207 2.79848C1.1873 3.13187 1 3.58406 1 4.05556V14.7222C1 15.1937 1.1873 15.6459 1.5207 15.9793C1.8541 16.3127 2.30628 16.5 2.77778 16.5H11.6667C12.1382 16.5 12.5903 16.3127 12.9237 15.9793C13.2571 15.6459 13.4444 15.1937 13.4444 14.7222V4.05556C13.4444 3.58406 13.2571 3.13187 12.9237 2.79848C12.5903 2.46508 12.1382 2.27778 11.6667 2.27778H9.88889H4.55556ZM4.55556 2.27778C4.55556 2.74927 4.74286 3.20146 5.07626 3.53486C5.40965 3.86825 5.86184 4.05556 6.33333 4.05556H8.11111C8.58261 4.05556 9.03479 3.86825 9.36819 3.53486C9.70159 3.20146 9.88889 2.74927 9.88889 2.27778H4.55556ZM4.55556 2.27778C4.55556 1.80628 4.74286 1.3541 5.07626 1.0207C5.40965 0.687301 5.86184 0.5 6.33333 0.5H8.11111C8.58261 0.5 9.03479 0.687301 9.36819 1.0207C9.70159 1.3541 9.88889 1.80628 9.88889 2.27778H4.55556ZM7.22222 8.5H9.88889H7.22222ZM7.22222 12.0556H9.88889H7.22222ZM4.55556 8.5H4.56444H4.55556Z"
+                                        stroke="black" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                จัดการดีลพิเศษ 
+                                จัดการดีลพิเศษ
                             </h5>
                         </div>
                     </div>
@@ -258,16 +262,16 @@
                                 <div style="padding-top:60px;"></div>
                                 <nav>
                                     <div class="nav main-nav-line" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-specialDeal" role="tab" aria-selected="true"><b id="total">ทั้งหมด ()</b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-specialDeal" role="tab" aria-selected="false"><b id="on">เปิดการใช้งาน () </b></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-specialDeal" role="tab" aria-selected="false"><b id="off">ปิดการใช้งาน ()</b></a>
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#all-specialDeal-tab" role="tab" aria-selected="true"><b id="total">ทั้งหมด ()</b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#on-specialDeal-tab" role="tab" aria-selected="false"><b id="on">เปิดการใช้งาน () </b></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#off-specialDeal-tab" role="tab" aria-selected="false"><b id="off">ปิดการใช้งาน ()</b></a>
                                     </div>
                                 </nav>
                                 <div class="tab-content" id="nav-tabContent">
 
 
                                     {{-- ทั้งหมด --}}
-                                    <div class="tab-pane fade show active" id="all-specialDeal" role="tabpanel" aria-labelledby="all-specialDeal-tab">
+                                    <div class="tab-pane fade show active" id="all-specialDeal-tab" role="tabpanel" aria-labelledby="all-specialDeal-tab">
                                         <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
 
                                             <div class="col-2 py-3">
@@ -276,8 +280,8 @@
                                                     </svg> นำข้อมูลออก</button>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
-                                                <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
+                                                <label for=""><b>เลือกจากวันที่สร้าง</b></label>
+                                                <input type="date" id="create_date" name="create_date" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
                                             </div>
                                             <div class="col-4 py-3">
                                                 <div class="row">
@@ -286,7 +290,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
+                                                <input type="text" id="search"class="form-control" placeholder="พิมพ์คำค้นหา รหัสดีล,ชื่อ">
                                             </div>
                                         </div>
                                         <table class="table table table-striped position-relative my-3" id="allSpecialDeal-table">
@@ -296,10 +300,11 @@
                                                     <th>ชื่อดีล</th>
                                                     <th>ยอดนิยม</th>
                                                     <th>หมวดหมู่
-                                                        <select class="form-control selectStyle" id="selectCategory">
+                                                        <select class="form-control selectStyle" id="category">
                                                             <option selected>ทั้งหมด</option>
-                                                            <option style="padding-top: 10px;">ที่พัก</option>
-                                                            <option>ท่องเที่ยว</option>
+                                                            @foreach ($specialDealCategory as $sdc)
+                                                                <option {{-- style="padding-top: 10px;" --}}>{{ $sdc->name_th }}</option>
+                                                            @endforeach
                                                         </select>
                                                     </th>
                                                     <th>ระยะเวลา</th>
@@ -323,7 +328,7 @@
 
 
                                     {{-- เปิดการใช้งาน --}}
-                                    <div class="tab-pane fade" id="on-specialDeal" role="tabpanel" aria-labelledby="">
+                                    <div class="tab-pane fade" id="on-specialDeal-tab" role="tabpanel" aria-labelledby="">
                                         <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
 
                                             <div class="col-2 py-3">
@@ -332,8 +337,8 @@
                                                     </svg> นำข้อมูลออก</button>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
-                                                <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
+                                                <label for=""><b>เลือกจากวันที่สร้าง</b></label>
+                                                <input type="date" id="create_date" name="create_date" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
                                             </div>
                                             <div class="col-4 py-3">
                                                 <div class="row">
@@ -342,7 +347,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
+                                                <input type="text" id="search" class="form-control" placeholder="พิมพ์คำค้นหา รหัสดีล,ชื่อ">
                                             </div>
                                         </div>
                                         <table class="table table table-striped position-relative my-3" id="onSpecialDeal-table">
@@ -352,10 +357,11 @@
                                                     <th>ชื่อดีล</th>
                                                     <th>ยอดนิยม</th>
                                                     <th>หมวดหมู่
-                                                        <select class="form-control selectStyle" id="selectCategory">
+                                                        <select class="form-control selectStyle" id="category">
                                                             <option selected>ทั้งหมด</option>
-                                                            <option style="padding-top: 10px;">ที่พัก</option>
-                                                            <option>ท่องเที่ยว</option>
+                                                            @foreach ($specialDealCategory as $sdc)
+                                                                <option {{-- style="padding-top: 10px;" --}}>{{ $sdc->name_th }}</option>
+                                                            @endforeach
                                                         </select>
                                                     </th>
                                                     <th>ระยะเวลา</th>
@@ -373,7 +379,7 @@
 
 
                                     {{-- ปิดการใช้งาน --}}
-                                    <div class="tab-pane fade" id="off-specialDeal" role="tabpanel" aria-labelledby="">
+                                    <div class="tab-pane fade" id="off-specialDeal-tab" role="tabpanel" aria-labelledby="">
                                         <div class="row justify-content-center px-2 " style="background-color: #ECF0FA; height:70px;">
 
                                             <div class="col-2 py-3">
@@ -382,8 +388,8 @@
                                                     </svg> นำข้อมูลออก</button>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <label for="firstDay"><b>เลือกจากวันที่สร้าง</b></label>
-                                                <input type="date" id="firstDay" name="" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
+                                                <label for=""><b>เลือกจากวันที่สร้าง</b></label>
+                                                <input type="date" id="create_date" name="create_date" style="height: 40px; width:50%;    border-color: #e9e9e9; border-radius:5px;">
                                             </div>
                                             <div class="col-4 py-3">
                                                 <div class="row">
@@ -392,7 +398,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
-                                                <input type="text" class="form-control" placeholder="พิมพ์คำค้นหา">
+                                                <input type="text" id="search" class="form-control" placeholder="พิมพ์คำค้นหา รหัสดีล,ชื่อ">
                                             </div>
                                         </div>
                                         <table class="table table-striped position-relative my-3 " id="offSpecialDeal-table">
@@ -402,10 +408,11 @@
                                                     <th>ชื่อดีล</th>
                                                     <th>ยอดนิยม</th>
                                                     <th>หมวดหมู่
-                                                        <select class="form-control selectStyle" id="selectCategory">
+                                                        <select class="form-control selectStyle" id="category">
                                                             <option selected>ทั้งหมด</option>
-                                                            <option style="padding-top: 10px;">ที่พัก</option>
-                                                            <option>ท่องเที่ยว</option>
+                                                            @foreach ($specialDealCategory as $sdc)
+                                                                <option {{-- style="padding-top: 10px;" --}}>{{ $sdc->name_th }}</option>
+                                                            @endforeach
                                                         </select>
                                                     </th>
                                                     <th>ระยะเวลา</th>
@@ -585,15 +592,43 @@
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
             $('#allSpecialDeal-table').DataTable().columns.adjust();
         });
+        $('#all-specialDeal-tab #create_date').on('change', function() {
+            $('#allSpecialDeal-table').DataTable().draw();
+        });
+        $('#all-specialDeal-tab #search').on('keyup', function() {
+            $('#allSpecialDeal-table').DataTable().draw();
+        });
+        $('#all-specialDeal-tab #category').on('change', function() {
+            $('#allSpecialDeal-table').DataTable().draw();
+        });
+
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
             $('#onSpecialDeal-table').DataTable().columns.adjust();
         });
+        $('#on-specialDeal-tab #create_date').on('change', function() {
+            $('#onSpecialDeal-table').DataTable().draw();
+        });
+        $('#on-specialDeal-tab #search').on('keyup', function() {
+            $('#onSpecialDeal-table').DataTable().draw();
+        });
+        $('#on-specialDeal-tab #category').on('change', function() {
+            $('#onSpecialDeal-table').DataTable().draw();
+        });
+
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
             $('#offSpecialDeal-table').DataTable().columns.adjust();
         });
+        $('#off-specialDeal-tab #create_date').on('change', function() {
+            $('#offSpecialDeal-table').DataTable().draw();
+        });
+        $('#off-specialDeal-tab #search').on('keyup', function() {
+            $('#offSpecialDeal-table').DataTable().draw();
+        });
+        $('#off-specialDeal-tab #category').on('change', function() {
+            $('#offSpecialDeal-table').DataTable().draw();
+        });
     </script>
     {{-- End script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
-
 
 
     {{-- script ส่งid record จากปุ่มลบไปยังmodal --}}
@@ -650,15 +685,20 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
+
+            serverSide: true, //สำคัญมาก ทำให้ค่าที่datatableสามารถใช้งานได้เช่น ค้นหา เลือกวัน
+            processing: false,
+            // lengthChange: false,
             ajax: {
                 url: "/special-deals/special-deal-all-datatable",
                 type: "POST",
                 datatype: "json",
                 data: function(data) {
                     data._token = "{{ csrf_token() }}";
-                    // data.keyword = $('#cod-prepared-tab #search').val();
-                    // data.account = $('#cod-prepared-tab #account-filter').val();
-                    // data.date_filter = $('#cod-prepared-tab input[name="datefilter"]').val();
+                    data.keyword = $('#all-specialDeal-tab #search').val();
+                    data.create_date = $('#all-specialDeal-tab #create_date').val();
+                    data.category = $('#all-specialDeal-tab #category').val();
+                    // console.log(data.keyword, data.create_date);
                 }
             },
             columns: [{
@@ -803,16 +843,17 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
+            serverSide: true, //สำคัญมาก ทำให้ค่าที่datatableสามารถใช้งานได้เช่น ค้นหา เลือกวัน
+            processing: false,
             ajax: {
                 url: "/special-deals/special-deal-on-datatable",
                 type: "POST",
                 datatype: "json",
                 data: function(data) {
                     data._token = "{{ csrf_token() }}";
-                    // data.keyword = $('#cod-prepared-tab #search').val();
-                    // data.account = $('#cod-prepared-tab #account-filter').val();
-                    // data.date_filter = $('#cod-prepared-tab input[name="datefilter"]').val();
-                    // data.class = $('.switchstatus').attr('class');
+                    data.keyword = $('#on-specialDeal-tab #search').val();
+                    data.create_date = $('#on-specialDeal-tab #create_date').val();
+                    data.category = $('#on-specialDeal-tab #category').val();
                 }
             },
             columns: [{
@@ -913,16 +954,17 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
+            serverSide: true, //สำคัญมาก ทำให้ค่าที่datatableสามารถใช้งานได้เช่น ค้นหา เลือกวัน
+            processing: false,
             ajax: {
                 url: "/special-deals/special-deal-off-datatable",
                 type: "POST",
                 datatype: "json",
                 data: function(data) {
                     data._token = "{{ csrf_token() }}";
-                    // data.keyword = $('#cod-prepared-tab #search').val();
-                    // data.account = $('#cod-prepared-tab #account-filter').val();
-                    // data.date_filter = $('#cod-prepared-tab input[name="datefilter"]').val();
-                    // data.class = $('.switchstatus').attr('class');
+                    data.keyword = $('#off-specialDeal-tab #search').val();
+                    data.create_date = $('#off-specialDeal-tab #create_date').val();
+                    data.category = $('#off-specialDeal-tab #category').val();
                 }
             },
             columns: [{

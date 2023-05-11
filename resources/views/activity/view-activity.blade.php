@@ -11,7 +11,7 @@
     <meta name="Keywords" content="" />
 
     <!-- Title -->
-    <title>Phayao Trip</title>
+    <title>จัดการกิจกรรม</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -64,7 +64,9 @@
     <style>
         .btn-color {
             background-color: #ffff;
-        } .main-nav-line .nav-link {
+        }
+
+        .main-nav-line .nav-link {
             padding: 0;
             color: #4d5875;
             position: relative;
@@ -139,6 +141,7 @@
             border: none;
             background: transparent;
         }
+
         .toggle-off.btn-xs {
             padding-right: 1rem;
             padding-top: 10px;
@@ -153,6 +156,7 @@
             font-size: 12px;
             background-color: #00a32a;
         }
+
         .toggle.btn-xs {
             min-width: 90px !important;
             min-height: 30px !important;
@@ -188,10 +192,11 @@
                     <div class="my-auto">
                         <div class="d-flex">
                             <h5 class="content-title mb-0 my-auto">
-                                  <svg xmlns="http://www.w3.org/2000/svg"style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
-                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
-                                    <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
-                                  </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg"style="color: black; margin-bottom:5px;" width="20" height="20" fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z" />
+                                    <path
+                                        d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                </svg>
                                 กิจกรรม >
                             </h5>
                             <h5 class="content-title mb-0 my-auto px-2" style="padding-bottom: 5px;">จัดการกิจกรรม</h5>
@@ -211,7 +216,7 @@
                                         <h5><b>จัดการกิจกรรม</b></h5>
                                     </div>
                                     <div class="col-6">
-                                        <a style="float: right; margin-right:35px;" href="{{ url('/activity-manages/add') }}" type="button" class="btn btn-info">เพิ่มกิจกรรม</a>
+                                        <a style="float: right; margin-right:35px;" href="{{ url('/activities-manage/add') }}" type="button" class="btn btn-info">เพิ่มกิจกรรม</a>
                                     </div>
                                 </div>
                                 <div style="padding-top:60px;"></div>
@@ -242,7 +247,7 @@
                                             <div class="col-4 py-3">
                                                 <div class="row">
                                                     <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                    <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
@@ -346,7 +351,7 @@
                                             <div class="col-4 py-3">
                                                 <div class="row">
                                                     <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                    <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
@@ -395,7 +400,9 @@
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td> <div class="statusOn">เปิดใช้งาน</div> </td>
+                                                    <td>
+                                                        <div class="statusOn">เปิดใช้งาน</div>
+                                                    </td>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -417,7 +424,9 @@
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td> <div class="statusOn">เปิดใช้งาน</div> </td>
+                                                    <td>
+                                                        <div class="statusOn">เปิดใช้งาน</div>
+                                                    </td>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -447,7 +456,7 @@
                                             <div class="col-4 py-3">
                                                 <div class="row">
                                                     <label for="" class="px-2 py-2"><b>ระยะเวลาที่เผยแพร่</b></label>
-                                                   <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
+                                                    <span> <input class="form-control" type="text" value="" id="datefilter" name="datefilter" style="height: 40px; width:100%;"></span>
                                                 </div>
                                             </div>
                                             <div class="col-3 py-3">
@@ -495,7 +504,9 @@
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td> <div class="statusOff">ปิดใช้งาน</div> </td>
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -517,7 +528,9 @@
                                                         นางสาวเบญจวรรณ บัวพิทักษ์<br>
                                                         <label for=""> 01/01/2566 12:12</label>
                                                     </td>
-                                                    <td> <div class="statusOff">ปิดใช้งาน</div> </td>
+                                                    <td>
+                                                        <div class="statusOff">ปิดใช้งาน</div>
+                                                    </td>
                                                     <td><button class="btn-trash" data-toggle="modal" data-target="#exampleModal">
                                                             <svg style="color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                                 <path
@@ -536,38 +549,38 @@
 
 
 
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-                <!-- Modal ถึงขยะ -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body text-center">
-                                <br>
-                                <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
-                                <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                </svg><br><br>
-                                <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ ไม่สามารถกู้คืนได้</div>
-                            </div>
-                            <div class="modal-footer ">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-                                <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <!--end Modal ถึงขยะ -->
             </div>
-            <!-- Container closed -->
+
+
+            <!-- Modal ถึงขยะ -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <br>
+                            <h3 style="color: red;"> คุณแน่ใจใช่ไหมว่าต้องการลบข้อมูลนี้!</h3>
+                            <svg style="color: rgb(206 16 16)" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg><br><br>
+                            <div style="color: rgb(206 16 16)">คำเตือน : เมื่อลบแล้วข้อมูลจะถูกย้ายไปถังขยะ ไม่สามารถกู้คืนได้</div>
+                        </div>
+                        <div class="modal-footer ">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                            <button type="button" class="btn btn-primary" style="background-color: rgb(206 16 16)">ฉันแน่ใจ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end Modal ถึงขยะ -->
         </div>
-        <!-- main-content closed -->
+        <!-- Container closed -->
+    </div>
+    <!-- main-content closed -->
 
     </div>
     <!-- End Page -->
@@ -637,59 +650,59 @@
 
 
 
-     {{-- Script ปฏิทิน --}}
-     <link type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" />
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-     {{-- End Script ปฏิทิน --}}
+    {{-- Script ปฏิทิน --}}
+    <link type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    {{-- End Script ปฏิทิน --}}
 
 
-   {{-- Script ปฏิทิน --}}
-     <script>
-         $('input[name="datefilter"]').daterangepicker({
-             autoUpdateInput: false,
-             locale: {
-                 cancelLabel: 'Clear'
-             }
-         });
+    {{-- Script ปฏิทิน --}}
+    <script>
+        $('input[name="datefilter"]').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
 
-         $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-             $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
-         });
+        $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+        });
 
-         $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-             $(this).val('');
-         });
+        $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+            $(this).val('');
+        });
 
-         var start = moment().subtract(1, 'month');
-         var end = moment();
+        var start = moment().subtract(1, 'month');
+        var end = moment();
 
-         function cb(start, end) {
-             start = moment(start);
-             end = moment(end);
-             $('.daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-         }
+        function cb(start, end) {
+            start = moment(start);
+            end = moment(end);
+            $('.daterange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
 
-         $('.daterange').daterangepicker({
-             startDate: start,
-             endDate: end,
-             autoUpdateInput: true,
-             alwaysShowCalendars: true,
-             locale: {
-                 format: 'DD/MM/YYYY',
-             },
-             ranges: {
-                 'Today': [moment(), moment()],
-                 'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                 'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                 'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                 'This Month': [moment().startOf('month'), moment().endOf('month')],
-                 'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-             }
-         }, cb);
+        $('.daterange').daterangepicker({
+            startDate: start,
+            endDate: end,
+            autoUpdateInput: true,
+            alwaysShowCalendars: true,
+            locale: {
+                format: 'DD/MM/YYYY',
+            },
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
 
-         cb(start, end);
-     </script>
- {{-- End Script ปฏิทิน --}}
+        cb(start, end);
+    </script>
+    {{-- End Script ปฏิทิน --}}
 
     {{-- script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
     <script>
@@ -702,7 +715,6 @@
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
             $('#offActivity-table').DataTable().columns.adjust();
         });
-
     </script>
     {{-- End script เอาไว้จัดระเบียบเทเบิลไม่ให้บีบตัว --}}
 
@@ -730,8 +742,7 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [
-                {
+            columns: [{
                 "width": "80px"
             }, {
                 "width": "150px",
@@ -776,7 +787,7 @@
             language: {
                 emptyTable: "ไม่พบข้อมูล"
             },
-            columns: [ {
+            columns: [{
                 "width": "80px"
             }, {
                 "width": "150px",

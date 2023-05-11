@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\TouristAttractionCategoryController;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tag\Tag;
 use App\Models\TouristAttraction\TouristAttraction;
 use App\Models\TouristAttractionCategory\TouristAttractionCategory;
 use Carbon\Carbon;
@@ -20,13 +21,60 @@ class TouristAttractionCategoryController extends Controller
     {
         $category = TouristAttractionCategory::with('touristAttractions')->where('name_th', $name)->where('is_status', 1)->first();
         $total = count($category->touristAttractions);
-
-        $totalPages = ceil($total / 12);
         $touristAttractions = TouristAttraction::where('tourist_attraction_category_id', $category->id)
             ->where('is_status', 1)
-            ->paginate(12);
-        // dd($touristAttractions,$totalPages);
-        return view('tourist-attraction-category.show-tourist-attraction', compact('category', 'total', 'touristAttractions', 'totalPages'));
+            ->get();
+            
+        return view('tourist-attraction-category.show-tourist-attraction', compact('category', 'total', 'touristAttractions'));
+    }
+
+    public function showTouristAttractionInCategory(Request $request)
+    {
+        $category = $request->category;
+        $sort = $request->sort;
+        $keyword = $request->keyword;
+        $limit = $request->limit ?? 8;
+        $touristAttraction = TouristAttraction::where('is_status', 1)
+            ->whereHas('touristAttractionCategory', function ($query) use ($category) {
+                $query->where('id', $category);
+            })
+            ->when($sort != null, function ($query) use ($sort) {
+                if ($sort == 1) {
+                    $query->orderBy('created_at', 'desc');
+                } elseif ($sort == 2) {
+                    $query->whereMonth('created_at', Carbon::now()->month)->orderBy('created_at', 'desc'); //ในเดือนปัจจุบันเท่านั้น
+                    // $query->whereBetween('created_at', [Carbon::now()->subMonth(), Carbon::now()])
+                    //     ->orderBy('created_at', 'desc');  // นับย้อนหลังตั้งแต่วันที่ปัจจุบันไปยัง30วันที่แล้ว
+                }
+            }, function ($query) {
+                $query->orderBy('created_at', 'asc');
+            })
+            ->when($keyword != null, function ($query) use ($keyword, $sort) {
+                $query->where('name_th', 'like', "%$keyword%");
+            });
+        $total = $touristAttraction->count();
+        $data = $touristAttraction->limit($limit)->get();
+        $output = array(
+            "data" => $data,
+            "total" => $total
+        );
+        return json_encode($output);
+    }
+
+    public function showTouristAttractionDescriptionByCategory($name, $name_ta)
+    {
+        $attraction = TouristAttraction::with(['touristAttractionCategory', 'touristAttractionImages', 'destinationFolders'])
+            ->where('name_th', $name_ta)->first();
+        return view('tourist-attraction-category.show-tourist-attraction-description', compact('attraction'));
+    }
+
+    public function showTouristAttractionTagsByCategory($name, $name_ta, $name_tag)
+    {
+        $category = $name;
+        $ta = $name_ta;
+        $tag = Tag::where('name_th', $name_tag)->with('touristAttractions')->first();
+        $total = count($tag->touristAttractions);
+        return view('tourist-attraction-category.show-tourist-attraction-tags', compact('category', 'ta', 'tag', 'total'));
     }
 
     public function viewTouristAttractionCategory()
@@ -137,7 +185,6 @@ class TouristAttractionCategoryController extends Controller
 
     public function createTouristAttractionCategory(Request $request)
     {
-        // dd($request->toArray());
         $request->validate([
             // 'name_th' => 'required|unique:tourist_attraction_categories',
             'name_th' => [
@@ -157,13 +204,11 @@ class TouristAttractionCategoryController extends Controller
             'image.mimes' => 'ไฟล์ภาพต้องนามสกุล jpeg, png, jpg, gif, svg เท่านั้น',
             'image.max' => 'รูปภาพต้องขนาดไม่เกิน 5 mb.'
         ]);
-        // Log::error($request);
         if ($request->hasFile('image')) {
             $image = $request->image->storeAs('images/TouristAttractionCategories', strtolower($request->category_no) . '-' . uniqid() . '.' . $request->image->extension());
         } else {
             $image = null;
         }
-        // dd($request, $request->image, $image);
         Log::info($request);
         $creator = Auth::user()->account_name;
         TouristAttractionCategory::create([
@@ -192,7 +237,6 @@ class TouristAttractionCategoryController extends Controller
         } else {
             return redirect()->back()->with('error', 'ลบประเภทท่องเที่ยวนี้ไม่ได้เนื่องจากยังมีสถานที่ท่องเที่ยวใช้อยู่');
         }
-        // return  redirect()->back();
     }
 
     public function deleteTouristAttractionCategoryById($id)
@@ -208,8 +252,6 @@ class TouristAttractionCategoryController extends Controller
         } else {
             return redirect()->back()->with('error', 'ลบประเภทท่องเที่ยวนี้ไม่ได้เนื่องจากยังมีสถานที่ท่องเที่ยวใช้อยู่');
         }
-        // dd($delete->touristAttractions);
-
     }
 
     public function editTouristAttractionCategory($id)
@@ -233,7 +275,6 @@ class TouristAttractionCategoryController extends Controller
             'image.mimes' => 'ไฟล์ภาพต้องนามสกุล jpeg, png, jpg, gif, svg เท่านั้น',
             'image.max' => 'รูปภาพต้องขนาดไม่เกิน 5 mb.'
         ]);
-        // dd($updateTac->image);
         $updateTac = TouristAttractionCategory::find($id);
         if ($request->hasFile('image')) {
             Storage::delete($updateTac->image);
