@@ -283,7 +283,6 @@
                                         <a class="nav-item nav-link" data-toggle="tab" href="#on-touristAttractionCategory" role="tab" aria-selected="false"><b id="on">เปิดใช้งาน ()</b></a>
                                         <a class="nav-item nav-link" data-toggle="tab" href="#off-touristAttractionCategory" role="tab" aria-selected="false"><b id="off">ปิดใช้งาน ()</b></a>
                                         <a class="nav-item nav-link" data-toggle="tab" href="#trash-touristAttractionCategory" role="tab" aria-selected="false"><b id="trash">ถังขยะ ()</b></a>
-
                                     </div>
                                 </nav>
                                 <div class="tab-content" id="nav-tabContent">
